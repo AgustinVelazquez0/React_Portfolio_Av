@@ -64,7 +64,7 @@ export const PROJECTS = [
     image: project4,
     description: "In this project, I practiced and applied responsive mode.",
     technologies: ["HTML", "CSS"],
-    link: "https://agustinvelazquez0.github.io/Responsive-PortFolio-HTML-CSS", // Agrega el enlace aquí
+    link: "https://agustinvelazquez0.github.io/Responsive-PortFolio-HTML-CSS/", // Agrega el enlace aquí
   },
 ];
 
