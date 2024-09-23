@@ -27,7 +27,7 @@ export const EXPERIENCES = [
     technologies: ["Node.js", "React", "Linux-Ubuntu", "TypeScript", "Figma"],
   },
   {
-    year: "09/2023 - Finished.",
+    year: "09/2023 - Finished",
     role: "Course",
     company: "CodeCademy",
     description: `My first courses and exercises completed were here. With an intuitive interface it is a good place to practice and learn. I have done many here, beginner, intermediate and advanced levels.`,
@@ -37,7 +37,7 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "To Do List.",
+    title: "To Do List",
     image: project1,
     description:
       "Application to mark and unmark tasks. With integrated LocalStorage and MediaQuery for cellular devices.",
@@ -45,7 +45,7 @@ export const PROJECTS = [
     link: "https://agustinvelazquez0.github.io/todolist/", // Agrega el enlace aquí
   },
   {
-    title: "The Corner Books.",
+    title: "The Corner Books",
     image: project2,
     description: "Simple website where you can find unusual books.",
     technologies: ["HTML", "CSS"],
