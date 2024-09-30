@@ -23,7 +23,7 @@ export const EXPERIENCES = [
     year: "2024 - In course",
     role: "Full-Stack Developer with REACT",
     company: "BIOS.",
-    description: `Full-stack BootCamp in one of the best and recognized technology companies in the country.`,
+    description: `Technical School Full-stack in one of the best and recognized technology companies in the country.`,
     technologies: ["Node.js", "React", "Linux-Ubuntu", "TypeScript", "Figma"],
   },
   {
