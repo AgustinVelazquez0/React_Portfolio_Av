@@ -21,7 +21,7 @@ function Experience() {
               transition={{ duration: 1 }}
               className="w-full lg:w-1/4"
             >
-              <p className="mb-2 text-sm text-neutral-400">{experience.year}</p>
+              <p className="mt-1 text-sm text-neutral-400">{experience.year}</p>
             </motion.div>
 
             <motion.div
