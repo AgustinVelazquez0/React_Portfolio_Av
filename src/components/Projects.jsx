@@ -27,7 +27,7 @@ function Projects() {
                   width={150}
                   height={150}
                   alt={project.title}
-                  className="mt-6 rounded"
+                  className="mt-1 rounded"
                 />
               </a>
             </motion.div>
