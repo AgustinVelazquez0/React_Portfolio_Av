@@ -3,6 +3,7 @@ import project2 from "../assets/projects/project2.png";
 import project3 from "../assets/projects/project3.png";
 import project4 from "../assets/projects/project4.png";
 import project5 from "../assets/projects/project5.png";
+import project6 from "../assets/projects/project6.png";
 
 export const HERO_CONTENT = `Hello! I'm Agustín from Montevideo, Uruguay.
 I'm a passionate full-stack developer with a deep love for technology and a strong drive for continuous learning and self-improvement. My journey in web development, with a focus on React and other modern technologies, has allowed me to build dynamic, responsive applications that deliver great user experiences.
@@ -46,10 +47,17 @@ export const PROJECTS = [
     link: "https://agustinvelazquez0.github.io/todolist/", // Agrega el enlace aquí
   },
   {
+    title: "Rick and Morty API",
+    image: project6,
+    description: "React project to fetch data from an API.",
+    technologies: ["ReactJs", "SCSS", "Git", "WSL"],
+    link: "https://react-rick-and-morty-flax.vercel.app/", // Agrega el enlace aquí
+  },
+  {
     title: "Food Menu",
     image: project5,
     description: "React project, food shopping order simulator.",
-    technologies: ["REACT", "CSS", "GIT", "WSL"],
+    technologies: ["ReactJs", "CSS", "GIT", "WSL"],
     link: "https://food-list-one.vercel.app/", // Agrega el enlace aquí
   },
   {
