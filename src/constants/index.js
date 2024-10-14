@@ -51,7 +51,7 @@ export const PROJECTS = [
     image: project6,
     description: "React project to fetch data from an API.",
     technologies: ["ReactJs", "SCSS", "Git", "WSL"],
-    link: "https://react-rick-and-morty-flax.vercel.app/", // Agrega el enlace aquí
+    link: "https://react-rick-and-morty-lime.vercel.app/", // Agrega el enlace aquí
   },
   {
     title: "Food Menu",
