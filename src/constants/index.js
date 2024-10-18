@@ -44,7 +44,7 @@ export const PROJECTS = [
     description:
       "Application to mark and unmark tasks. With integrated LocalStorage and MediaQuery for cellular devices.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://agustinvelazquez0.github.io/todolist/", // Agrega el enlace aquí
+    link: "https://agustinvelazquez0.github.io/Js-To-do-List/", // Agrega el enlace aquí
   },
   {
     title: "Rick and Morty API",
