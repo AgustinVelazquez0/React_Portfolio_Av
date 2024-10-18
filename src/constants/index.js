@@ -54,7 +54,7 @@ export const PROJECTS = [
     link: "https://react-rick-and-morty-lime.vercel.app/", // Agrega el enlace aquí
   },
   {
-    title: "Food Menu",
+    title: "Food Menu API",
     image: project5,
     description: "React project, food shopping order simulator.",
     technologies: ["ReactJs", "CSS", "Git", "WSL"],
