@@ -58,7 +58,7 @@ export const PROJECTS = [
     image: project5,
     description: "React project, food shopping order simulator.",
     technologies: ["ReactJs", "CSS", "Git", "WSL"],
-    link: "https://food-list-one.vercel.app/", // Agrega el enlace aquí
+    link: "https://react-food-list-six.vercel.app/", // Agrega el enlace aquí
   },
   {
     title: "The Corner Books",
