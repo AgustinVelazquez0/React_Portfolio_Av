@@ -42,9 +42,9 @@ export const PROJECTS = [
     title: "React ToDoList",
     image: project6,
     description:
-      "React project, with useReducer, useContext, and other hooks to put and change your activities",
+      "React project, with Json-server, useReducer, useContext, and other hooks to put and change your activities",
     technologies: ["ReactJs", "Vite", "CSS", "Git", "WSL"],
-    link: "https://react-to-do-list-gules-pi.vercel.app/",
+    link: "src/assets/todo.png",
   },
   {
     title: "To Do List",
