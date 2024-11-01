@@ -39,33 +39,41 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
+    title: "React ToDoList",
+    image: project6,
+    description:
+      "React project, with useReducer, useContext, and other hooks to put and change your activities",
+    technologies: ["ReactJs", "Vite", "CSS", "Git", "WSL"],
+    link: "https://react-to-do-list-gules-pi.vercel.app/",
+  },
+  {
     title: "To Do List",
     image: project1,
     description:
       "Application to mark and unmark tasks. With integrated LocalStorage and MediaQuery for cellular devices.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://agustinvelazquez0.github.io/Js-To-do-List/", // Agrega el enlace aquí
+    link: "https://agustinvelazquez0.github.io/Js-To-do-List/",
   },
   {
     title: "Rick and Morty API",
     image: project6,
     description: "React project to fetch data from an API.",
     technologies: ["ReactJs", "SCSS", "Git", "WSL"],
-    link: "https://react-rick-and-morty-lime.vercel.app/", // Agrega el enlace aquí
+    link: "https://react-rick-and-morty-lime.vercel.app/",
   },
   {
     title: "Food Menu API",
     image: project5,
     description: "React project, food shopping order simulator.",
     technologies: ["ReactJs", "CSS", "Git", "WSL"],
-    link: "https://react-food-list-six.vercel.app/", // Agrega el enlace aquí
+    link: "https://react-food-list-six.vercel.app/",
   },
   {
     title: "The Corner Books",
     image: project2,
     description: "Simple website where you can find unusual books.",
     technologies: ["HTML", "CSS"],
-    link: "https://agustinvelazquez0.github.io/CornerBooks/", // Agrega el enlace aquí
+    link: "https://agustinvelazquez0.github.io/CornerBooks/",
   },
   {
     title: "Portfolio Website",
@@ -73,14 +81,14 @@ export const PROJECTS = [
     description:
       "It's my first personal portfolio website. Show projects, skills, and contact information. With MediaQuery and other features.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://agustinvelazquez0.github.io/", // Agrega el enlace aquí
+    link: "https://agustinvelazquez0.github.io/",
   },
   {
     title: "Responsive Empty Portfolio",
     image: project4,
     description: "In this project, I practiced and applied responsive mode.",
     technologies: ["HTML", "CSS"],
-    link: "https://agustinvelazquez0.github.io/Responsive-PortFolio-HTML-CSS/", // Agrega el enlace aquí
+    link: "https://agustinvelazquez0.github.io/Responsive-PortFolio-HTML-CSS/",
   },
 ];
 
