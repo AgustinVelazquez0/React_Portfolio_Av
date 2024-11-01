@@ -4,6 +4,7 @@ import project3 from "../assets/projects/project3.png";
 import project4 from "../assets/projects/project4.png";
 import project5 from "../assets/projects/project5.png";
 import project6 from "../assets/projects/project6.png";
+import project7 from "../assets/projects/project7.png";
 
 export const HERO_CONTENT = `Hello! I'm Agustín from Montevideo, Uruguay.
 I'm a passionate full-stack developer with a deep love for technology and a strong drive for continuous learning and self-improvement. My journey in web development, with a focus on React and other modern technologies, has allowed me to build dynamic, responsive applications that deliver great user experiences.
@@ -40,11 +41,11 @@ export const EXPERIENCES = [
 export const PROJECTS = [
   {
     title: "React ToDoList",
-    image: project6,
+    image: project7,
     description:
       "React project, with Json-server, useReducer, useContext, and other hooks to put and change your activities",
     technologies: ["ReactJs", "Vite", "CSS", "Git", "WSL"],
-    link: "src/assets/todo.png",
+    link: "https://raw.githubusercontent.com/AgustinVelazquez0/react-portfolio-av/main/src/assets/todo.png",
   },
   {
     title: "To Do List",
