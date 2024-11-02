@@ -40,7 +40,7 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "React ToDoList",
+    title: "React ToDoList // Json-Server",
     image: project7,
     description:
       "React project, with Json-server, useReducer, useContext, and other hooks to put and change your activities.",
