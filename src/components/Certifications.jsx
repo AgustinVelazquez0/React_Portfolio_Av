@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function Certifications() {
   return (
-    <div className="pb-4">
+    <div className="pb-4 border-b border-neutral-900">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -11,14 +11,14 @@ function Certifications() {
       >
         Certifications
       </motion.h2>
-      <div className="flex flex-wrap justify-center">
-        {/* Ejemplo de Certificado 1 */}
+      <div className="flex flex-wrap justify-center gap-8">
+        {/* Certificado 1 */}
         <div className="mb-8 flex justify-center">
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="w-full max-w-xs"
+            className="w-full max-w-xs text-center flex justify-center"
           >
             <a
               href="https://drive.google.com/file/d/1FmlQ96_KjTt2A2_-JaCKlljDAejCCyYy/view"
@@ -27,36 +27,60 @@ function Certifications() {
             >
               <img
                 src="https://raw.githubusercontent.com/AgustinVelazquez0/react-portfolio-av/main/src/assets/projects/Certificado%20PNG.png"
-                width={100}
-                height={100}
                 alt="Certification 1"
-                className="rounded"
+                className="rounded mb-4 w-32 h-32 object-cover"
               />
             </a>
           </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center"
+          >
+            <h3 className="text-xl font-semibold mb-2">
+              Digital Skills in the Professional World.
+            </h3>
+            <p className="text-neutral-400">
+              Certification validating proficiency in key digital tools
+              essential for the current professional environment.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Ejemplo de Certificado 2 */}
+        {/* Certificado 2 */}
         <div className="mb-8 flex justify-center">
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="w-full max-w-xs"
+            className="w-full max-w-xs text-center flex justify-center"
           >
             <a
-              href="LINK_A_TU_CERTIFICADO_2"
+              href="https://www.freecodecamp.org/certification/AgustinVelazquez/responsive-web-design"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                src="IMAGEN_DE_TU_CERTIFICADO_2" // Sustituir con la imagen de tu certificado
-                width={100}
-                height={100}
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/react-portfolio-av/main/src/assets/projects/FreeCodeCamp%20Certificado%20PNG.png"
                 alt="Certification 2"
-                className="rounded"
+                className="rounded mb-4 w-32 h-32 object-cover"
               />
             </a>
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center"
+          >
+            <h3 className="text-xl font-semibold mb-2">
+              Responsive Web Design.
+            </h3>
+            <p className="text-neutral-400">
+              Certification demonstrating skills in responsive web design and
+              front-end development.
+            </p>
           </motion.div>
         </div>
       </div>

@@ -21,8 +21,8 @@ function App() {
         <Hero />
         <Technologies />
         <Experience />
-        <Projects />
         <Certifications />
+        <Projects />
         <About />
         <Contact />
       </div>
