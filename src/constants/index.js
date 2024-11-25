@@ -23,11 +23,32 @@ I am excited about the possibility of joining a team where I can contribute my s
 
 export const EXPERIENCES = [
   {
-    year: "2024 - In course",
+    year: "03/2024 - In course",
     role: "Full-Stack Developer with REACT",
-    company: "BIOS.",
+    company: "Instituto BIOS.",
     description: `Technical School Full-stack in one of the best and recognized technology companies in the country.`,
-    technologies: ["Node.js", "React", "Linux-Ubuntu", "TypeScript", "Figma"],
+    technologies: [
+      "Node.js",
+      "React",
+      "Linux-Ubuntu",
+      "TypeScript",
+      "Figma",
+      "Express",
+    ],
+  },
+  {
+    year: "09/2024 - 12/2024 - Approved(97/100)",
+    role: " Habilidades Digitales para el Ámbito Laboral.",
+    company: "Instituto BIOS.",
+    description: `Course on Communication, Applications, Work Tools, Cybersecurity, Design Tools, and AI Tools.`,
+    technologies: [
+      "Office 365",
+      "Google Drive",
+      "Canva",
+      "ChatGPT",
+      "WeTransfer",
+      "AI Apps",
+    ],
   },
   {
     year: "09/2023 - Finished",
