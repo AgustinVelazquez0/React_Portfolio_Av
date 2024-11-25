@@ -21,12 +21,12 @@ function Certifications() {
             className="w-full max-w-xs"
           >
             <a
-              href="LINK_A_TU_CERTIFICADO_1"
+              href="https://drive.google.com/file/d/1FmlQ96_KjTt2A2_-JaCKlljDAejCCyYy/view"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                src="IMAGEN_DE_TU_CERTIFICADO_1" // Sustituir con la imagen de tu certificado
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/react-portfolio-av/main/src/assets/projects/Certificado%20PNG.png"
                 width={100}
                 height={100}
                 alt="Certification 1"
