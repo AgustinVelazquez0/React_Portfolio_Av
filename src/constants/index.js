@@ -38,7 +38,7 @@ export const EXPERIENCES = [
   },
   {
     year: "09/2024 - 12/2024 - Approved(97/100)",
-    role: " Habilidades Digitales para el Ámbito Laboral.",
+    role: "Digital Skills in the Professional World.",
     company: "Instituto BIOS.",
     description: `Course on Communication, Applications, Work Tools, Cybersecurity, Design Tools, and AI Tools.`,
     technologies: [
