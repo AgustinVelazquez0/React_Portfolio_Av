@@ -42,7 +42,7 @@ export const EXPERIENCES = [
     company: "Instituto BIOS.",
     description: `Course on Communication, Applications, Work Tools, Cybersecurity, Design Tools, and AI Tools.`,
     technologies: [
-      "Office 365",
+      "Office365",
       "Google Drive",
       "Canva",
       "ChatGPT",
