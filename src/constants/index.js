@@ -64,7 +64,7 @@ export const PROJECTS = [
     title: "React ToDoList // Back-End // Json-Server",
     image: project7,
     description:
-      "Installation instructions in README.md // file React project, with Json-server, useReducer, useContext, and other hooks to put and change your activities.",
+      "Installation instructions in README.md // file React project, with the Back-End in mongoDB and plus option of Json-server. Utilities like useReducer, useContext, and other hooks to put and change your activities.",
     technologies: [
       "ReactJs",
       "Vite",
