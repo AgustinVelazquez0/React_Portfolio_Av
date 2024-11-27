@@ -61,11 +61,23 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "React ToDoList // Json-Server",
+    title: "React ToDoList // Back-End // Json-Server",
     image: project7,
     description:
       "Installation instructions in README.md // file React project, with Json-server, useReducer, useContext, and other hooks to put and change your activities.",
-    technologies: ["ReactJs", "Vite", "CSS", "Git", "WSL"],
+    technologies: [
+      "ReactJs",
+      "Vite",
+      "CSS",
+      "Git",
+      "WSL",
+      "Express.js",
+      "Node.js",
+      "GitHub",
+      "PostMan",
+      "MongoDB",
+      "MongoDB Compass",
+    ],
     link: "https://react-to-do-list-gules-pi.vercel.app/",
   },
   {
