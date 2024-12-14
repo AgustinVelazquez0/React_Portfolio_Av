@@ -75,7 +75,7 @@ export const PROJECTS = [
       "PostMan",
       "GitHub",
     ],
-    link: "https://react-to-do-list-gules-pi.vercel.app/",
+    link: "https://github.com/AgustinVelazquez0/Todo_List_Front",
   },
   {
     title: "To Do List",
@@ -83,21 +83,21 @@ export const PROJECTS = [
     description:
       "Application to mark and unmark tasks. With integrated LocalStorage and MediaQuery for cellular devices.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://agustinvelazquez0.github.io/Js-To-do-List/",
+    link: "https://github.com/AgustinVelazquez0/Todo_List_Front_Js",
   },
   {
     title: "Rick and Morty API",
     image: project6,
     description: "React project to fetch data from an API.",
     technologies: ["ReactJs", "SCSS", "Git", "WSL"],
-    link: "https://react-rick-and-morty-lime.vercel.app/",
+    link: "https://github.com/AgustinVelazquez0/React-Rick-and-Morty",
   },
   {
     title: "Food Menu API",
     image: project5,
     description: "React project, food shopping order simulator.",
     technologies: ["ReactJs", "CSS", "Git", "WSL"],
-    link: "https://react-food-list-six.vercel.app/",
+    link: "https://github.com/AgustinVelazquez0/Food_List_Front",
   },
   {
     title: "The Corner Books",
