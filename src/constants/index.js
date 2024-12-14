@@ -6,12 +6,7 @@ import project5 from "../assets/projects/project5.png";
 import project6 from "../assets/projects/project6.png";
 import project7 from "../assets/projects/project7.png";
 
-export const HERO_CONTENT = `Hello! I'm Agustín from Montevideo, Uruguay.
-I'm a passionate full-stack developer with a deep love for technology and a strong drive for continuous learning and self-improvement. My journey in web development, with a focus on React and other modern technologies, has allowed me to build dynamic, responsive applications that deliver great user experiences.
-
-I thrive on challenges, always looking for opportunities to push my limits and grow both professionally and personally. I approach every project with dedication, aiming to implement best practices and stay updated with industry trends.
-
-As a full-stack developer, I enjoy working across the entire development process, from backend logic to frontend interfaces, ensuring seamless functionality and design. My goal is to keep evolving in the tech industry, contribute to innovative projects, and collaborate with teams that share my passion for building impactful solutions.`;
+export const HERO_CONTENT = `As a full-stack developer from Uruguay, I offer professional services in building robust web applications using modern technologies such as ReactJS, Node.js, Express.js, Docker, PostgreSQL, MongoDB, and more. My expertise includes working with WSL, Vite, CSS, Git, MongoDB Compass, PostMan, and GitHub to deliver high-quality solutions tailored to your needs.`;
 
 export const ABOUT_TEXT = `I am a passionate full-stack developer from Montevideo, Uruguay, specializing in modern technologies like React, Node.js, and TypeScript. My journey in the tech industry began as a quest for personal improvement, rooted in a lifelong fascination with computers and technology.
 
@@ -61,22 +56,24 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "React ToDoList // Back-End // Json-Server",
+    title: "React ToDoList - Instructions in README for install DB.",
     image: project7,
     description:
-      "Installation instructions in README.md // file React project, with the Back-End in mongoDB and plus option of Json-server. Utilities like useReducer, useContext, and other hooks to put and change your activities.",
+      "Installation instructions in README.md. React project, with the Back-End in MongoDB. Utilities like useReducer, useContext, and other hooks to manage and modify your activities. Additionally, I have used Docker and PostgreSQL to create a user database with login and registration functionality. ",
     technologies: [
+      "WSL",
       "ReactJs",
       "Vite",
       "CSS",
       "Git",
-      "WSL",
       "Express.js",
       "Node.js",
-      "GitHub",
-      "PostMan",
+      "Docker",
+      "PostgreSql",
       "MongoDB",
       "MongoDB Compass",
+      "PostMan",
+      "GitHub",
     ],
     link: "https://react-to-do-list-gules-pi.vercel.app/",
   },
