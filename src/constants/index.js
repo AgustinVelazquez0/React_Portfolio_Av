@@ -56,7 +56,7 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "React ToDoList - Instructions in README for install DB.",
+    title: "To Do List",
     image: project7,
     description:
       "Installation instructions in README.md. React project, with the Back-End in MongoDB. Utilities like useReducer, useContext, and other hooks to manage and modify your activities. Additionally, I have used Docker and PostgreSQL to create a user database with login and registration functionality. To open the project, you need install the dependences: https://github.com/AgustinVelazquez0/Todo_List_Front https://github.com/AgustinVelazquez0/Todo_List_Back",
