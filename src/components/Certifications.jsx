@@ -42,8 +42,8 @@ function Certifications() {
               Digital Skills in the Professional World.
             </h3>
             <p className="text-neutral-400">
-              Certification validating proficiency in key digital tools
-              essential for the current professional environment.
+              Certification validating proficiency in key digital tools for the
+              current professional environment.
             </p>
           </motion.div>
         </div>
@@ -78,8 +78,8 @@ function Certifications() {
               Responsive Web Design.
             </h3>
             <p className="text-neutral-400">
-              Certification demonstrating skills in responsive web design and
-              front-end development.
+              Certification skills in responsive web design and front-end
+              development.
             </p>
           </motion.div>
         </div>
