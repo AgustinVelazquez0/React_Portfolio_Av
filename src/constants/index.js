@@ -8,13 +8,11 @@ import project7 from "../assets/projects/project7.png";
 
 export const HERO_CONTENT = `As a full-stack developer from Uruguay, I offer professional services in building robust web applications using modern technologies such as ReactJS, Node.js, Express.js, Docker, PostgreSQL, MongoDB, and more. My expertise includes working with WSL, Vite, CSS, Git, MongoDB Compass, PostMan, and GitHub to deliver high-quality solutions tailored to your needs.`;
 
-export const ABOUT_TEXT = `I am a passionate full-stack developer from Montevideo, Uruguay, specializing in modern technologies like React, Node.js, and TypeScript. My journey in the tech industry began as a quest for personal improvement, rooted in a lifelong fascination with computers and technology.
+export const ABOUT_TEXT = `I’m a full-stack developer from Montevideo, Uruguay, with a strong focus on modern technologies like React, Node.js, and TypeScript. My passion for tech started early, driven by a curiosity for how computers work and how technology can shape our world.
 
-From an early age, I cultivated a solid foundation in computing, which evolved into a deep passion for how technology shapes our world. I thrive on challenges and constantly seek opportunities for growth, always aiming to implement best practices and stay updated with industry trends.
+I enjoy taking on challenges, learning new things, and building clean, efficient solutions while staying up-to-date with industry trends. Outside of coding, I’m a Techno music producer, a curious reader exploring everything from philosophy to Gnostic literature, and a big fan of traveling to connect with nature.
 
-Beyond my professional pursuits, I have diverse interests that enrich my life. I love music and am a Techno music producer, allowing me to express my creativity in unique ways. I am also an avid reader, often diving into works by some of the most brilliant minds, as well as exploring Gnostic literature and various religions. Traveling to natural places and experiencing the beauty of the world is another passion of mine.
-
-I am excited about the possibility of joining a team where I can contribute my skills and enthusiasm while continuing to grow in this dynamic field. I look forward to connecting with you!`;
+I’m excited to bring my skills, energy, and passion to a team where I can contribute and grow. Let’s connect!`;
 
 export const EXPERIENCES = [
   {
