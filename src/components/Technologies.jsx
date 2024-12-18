@@ -1,18 +1,22 @@
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { FaJsSquare } from "react-icons/fa";
-import { SiUbuntu } from "react-icons/si";
-import { SiTailwindcss } from "react-icons/si";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaNodeJs,
+  FaGithub,
+  FaGit,
+} from "react-icons/fa";
+import {
+  SiUbuntu,
+  SiTailwindcss,
+  SiExpress,
+  SiDocker,
+  SiPostgresql,
+  SiMongodb,
+  SiDbeaver,
+  SiPostman,
+} from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
-import { FaNodeJs } from "react-icons/fa";
-import { SiExpress } from "react-icons/si";
-import { SiDocker } from "react-icons/si";
-import { SiPostgresql } from "react-icons/si";
-import { SiMongodb } from "react-icons/si";
-import { FaGithub } from "react-icons/fa";
-import { FaGit } from "react-icons/fa";
-import { SiDbeaver } from "react-icons/si";
-import { SiPostman } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const iconVariants = (duration) => ({
@@ -31,6 +35,7 @@ const iconVariants = (duration) => ({
 function Technologies() {
   return (
     <div className="border-b border-neutral-800 pb-24">
+      {/* Section: Technologies */}
       <h2 className="my-20 text-center text-4xl">Technologies</h2>
       <motion.div
         whileInView={{ opacity: 1, x: 0 }}
@@ -38,6 +43,36 @@ function Technologies() {
         transition={{ duration: 1.5 }}
         className="flex flex-wrap items-center justify-center gap-4"
       >
+        {/* HTML5 */}
+        <motion.div
+          variants={iconVariants(3.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <FaHtml5 className="text-7xl text-red-600" />
+        </motion.div>
+
+        {/* CSS3 */}
+        <motion.div
+          variants={iconVariants(1.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <FaCss3Alt className="text-7xl text-blue-600" />
+        </motion.div>
+
+        {/* JavaScript */}
+        <motion.div
+          variants={iconVariants(2)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <FaJsSquare className="text-7xl text-yellow-400" />
+        </motion.div>
+
         {/* React */}
         <motion.div
           variants={iconVariants(2.5)}
@@ -87,37 +122,16 @@ function Technologies() {
         >
           <SiUbuntu className="text-7xl text-orange-500" />
         </motion.div>
+      </motion.div>
 
-        {/* JavaScript */}
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaJsSquare className="text-7xl text-yellow-400" />
-        </motion.div>
-
-        {/* CSS3 */}
-        <motion.div
-          variants={iconVariants(1.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaCss3Alt className="text-7xl text-blue-600" />
-        </motion.div>
-
-        {/* HTML5 */}
-        <motion.div
-          variants={iconVariants(3.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaHtml5 className="text-7xl text-red-600" />
-        </motion.div>
-
+      {/* Section: Tools */}
+      <h2 className="my-20 text-center text-4xl">Tools</h2>
+      <motion.div
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        transition={{ duration: 1.5 }}
+        className="flex flex-wrap items-center justify-center gap-4"
+      >
         {/* Docker */}
         <motion.div
           variants={iconVariants(2.5)}
