@@ -123,14 +123,14 @@ export const PROJECTS = [
     description:
       "This is my first personal portfolio website. It showcases my projects, skills, and contact information, featuring MediaQuery and other functionalities.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://agustinvelazquez0.github.io/",
+    link: "https://github.com/AgustinVelazquez0/AgustinVelazquez0.github.io",
   },
   {
     title: "The Corner Books",
     image: project2,
     description: "Simple website where you can find unusual books.",
     technologies: ["HTML", "CSS"],
-    link: "https://agustinvelazquez0.github.io/CornerBooks/",
+    link: "https://github.com/AgustinVelazquez0/Html_Page_Books",
   },
   {
     title: "Responsive Empty Portfolio",
@@ -138,7 +138,7 @@ export const PROJECTS = [
     description:
       "In this project, I practiced and applied responsive design techniques.",
     technologies: ["HTML", "CSS"],
-    link: "https://agustinvelazquez0.github.io/Responsive-PortFolio-HTML-CSS/",
+    link: "https://github.com/AgustinVelazquez0/Responsive-PortFolio-HTML-CSS",
   },
 ];
 
