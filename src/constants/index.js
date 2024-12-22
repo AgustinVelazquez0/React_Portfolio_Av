@@ -83,26 +83,47 @@ export const PROJECTS = [
     link: "https://github.com/AgustinVelazquez0/Todo_List_Front",
   },
   {
-    title: "To Do List",
-    image: project1,
+    title: "Food Menu API",
+    image: project5,
     description:
-      "Application to mark and unmark tasks. With integrated LocalStorage and MediaQuery for cellular devices.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/AgustinVelazquez0/Todo_List_Front_Js",
+      "React project: a food shopping order simulator. The database is built with MongoDB, and instructions can be found in the README file. To open the project, install the dependencies listed in the GitHub link provided in the image.",
+    technologies: [
+      "ReactJs",
+      "MongoDB",
+      "CSS",
+      "Git",
+      "WSL",
+      "Vite",
+      "Express.js",
+      "Node.js",
+      "MongoDB Compass",
+      "PostMan",
+      "GitHub",
+    ],
+    link: "https://github.com/AgustinVelazquez0/Food_List_Front",
   },
   {
     title: "Rick and Morty API",
     image: project6,
-    description: "React project to fetch data from an API.",
+    description: "A React project designed to fetch data from an API.",
     technologies: ["ReactJs", "SCSS", "Git", "WSL"],
     link: "https://github.com/AgustinVelazquez0/React-Rick-and-Morty",
   },
   {
-    title: "Food Menu API",
-    image: project5,
-    description: "React project, food shopping order simulator.",
-    technologies: ["ReactJs", "CSS", "Git", "WSL"],
-    link: "https://github.com/AgustinVelazquez0/Food_List_Front",
+    title: "To Do List",
+    image: project1,
+    description:
+      "An application for marking and unmarking tasks, featuring integrated LocalStorage and MediaQuery support for mobile devices.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/AgustinVelazquez0/Todo_List_Front_Js",
+  },
+  {
+    title: "Portfolio Website",
+    image: project3,
+    description:
+      "This is my first personal portfolio website. It showcases my projects, skills, and contact information, featuring MediaQuery and other functionalities.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://agustinvelazquez0.github.io/",
   },
   {
     title: "The Corner Books",
@@ -112,17 +133,10 @@ export const PROJECTS = [
     link: "https://agustinvelazquez0.github.io/CornerBooks/",
   },
   {
-    title: "Portfolio Website",
-    image: project3,
-    description:
-      "It's my first personal portfolio website. Show projects, skills, and contact information. With MediaQuery and other features.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://agustinvelazquez0.github.io/",
-  },
-  {
     title: "Responsive Empty Portfolio",
     image: project4,
-    description: "In this project, I practiced and applied responsive mode.",
+    description:
+      "In this project, I practiced and applied responsive design techniques.",
     technologies: ["HTML", "CSS"],
     link: "https://agustinvelazquez0.github.io/Responsive-PortFolio-HTML-CSS/",
   },
