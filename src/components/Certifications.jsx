@@ -83,6 +83,77 @@ function Certifications() {
             </p>
           </motion.div>
         </div>
+
+        {/* Certificado 3 */}
+        <div className="mb-8 flex justify-center">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center flex justify-center"
+          >
+            <a
+              href="https://drive.google.com/file/d/12z8akRooJ2q7XJXj5sp1TANJkpEZTOeo/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/react-portfolio-av/main/src/assets/projects/Certificado%20PNG.png"
+                alt="Certification 3"
+                className="rounded mb-4 w-32 h-32 object-cover"
+              />
+            </a>
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center"
+          >
+            <h3 className="text-xl font-semibold mb-2">
+              Introduction to Data Science.
+            </h3>
+            <p className="text-neutral-400">
+              Certification in foundational data science concepts and methods.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Certificado 4 */}
+        <div className="mb-8 flex justify-center">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center flex justify-center"
+          >
+            <a
+              href="https://drive.google.com/file/d/1-wnjPOFy7Ujb_G7PwPGAUiqQ_imwr6Dx/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/react-portfolio-av/main/src/assets/projects/Certificado%20PNG.png"
+                alt="Certification 4"
+                className="rounded mb-4 w-32 h-32 object-cover"
+              />
+            </a>
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center"
+          >
+            <h3 className="text-xl font-semibold mb-2">
+              English Essentials for Professional Growth.
+            </h3>
+            <p className="text-neutral-400">
+              Certification validating essential English skills for career
+              development.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
