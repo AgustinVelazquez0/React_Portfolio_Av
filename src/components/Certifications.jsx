@@ -26,7 +26,8 @@ function Certifications() {
               rel="noopener noreferrer"
             >
               <img
-                src="https://raw.githubusercontent.com/AgustinVelazquez0/react-portfolio-av/main/src/assets/projects/Certificado%20PNG.png"
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/projects/Habilidades%20Digitales%20Certificado.png
+"
                 alt="Certification 1"
                 className="rounded mb-4 w-32 h-32 object-cover"
               />
@@ -62,7 +63,8 @@ function Certifications() {
               rel="noopener noreferrer"
             >
               <img
-                src="https://raw.githubusercontent.com/AgustinVelazquez0/react-portfolio-av/main/src/assets/projects/FreeCodeCamp%20Certificado%20PNG.png"
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/projects/Responsive%20Certificate.png
+"
                 alt="Certification 2"
                 className="rounded mb-4 w-32 h-32 object-cover"
               />
@@ -98,7 +100,7 @@ function Certifications() {
               rel="noopener noreferrer"
             >
               <img
-                src="https://raw.githubusercontent.com/AgustinVelazquez0/react-portfolio-av/main/src/assets/projects/Certificado%20PNG.png"
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/projects/Certificado%20Ciencia%20de%20datos.png"
                 alt="Certification 3"
                 className="rounded mb-4 w-32 h-32 object-cover"
               />
@@ -133,7 +135,7 @@ function Certifications() {
               rel="noopener noreferrer"
             >
               <img
-                src="https://raw.githubusercontent.com/AgustinVelazquez0/react-portfolio-av/main/src/assets/projects/Certificado%20PNG.png"
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/projects/English%20Essentials%20for%20Professional%20Growth%20Certificate.png"
                 alt="Certification 4"
                 className="rounded mb-4 w-32 h-32 object-cover"
               />
