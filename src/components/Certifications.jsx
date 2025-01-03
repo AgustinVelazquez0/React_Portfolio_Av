@@ -214,7 +214,7 @@ function Certifications() {
             transition={{ duration: 1 }}
             className="w-full max-w-xs text-center"
           >
-            <h3 className="text-xl font-semibold mb-2">ChatGPT Mastery.</h3>
+            <h3 className="text-xl font-semibold mb-2">ChatGPT.</h3>
             <p className="text-neutral-400">
               Certification in using ChatGPT for various professional tasks.
             </p>
