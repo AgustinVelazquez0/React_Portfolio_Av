@@ -26,8 +26,7 @@ function Certifications() {
               rel="noopener noreferrer"
             >
               <img
-                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/projects/Habilidades%20Digitales%20Certificado.png
-"
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/projects/Habilidades%20Digitales%20Certificado.png"
                 alt="Certification 1"
                 className="rounded mb-4 w-32 h-32 object-cover"
               />
@@ -63,8 +62,7 @@ function Certifications() {
               rel="noopener noreferrer"
             >
               <img
-                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/projects/Responsive%20Certificate.png
-"
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/projects/Responsive%20Certificate.png"
                 alt="Certification 2"
                 className="rounded mb-4 w-32 h-32 object-cover"
               />
@@ -153,6 +151,72 @@ function Certifications() {
             <p className="text-neutral-400">
               Certification validating essential English skills for career
               development.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Certificado 5 (Python) */}
+        <div className="mb-8 flex justify-center">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center flex justify-center"
+          >
+            <a
+              href="https://drive.google.com/file/d/1ArqH7x6Owqm3Z6Tb3DATVXj9p258XeSJ/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/Python.png"
+                alt="Python Certification"
+                className="rounded mb-4 w-32 h-32 object-cover"
+              />
+            </a>
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center"
+          >
+            <h3 className="text-xl font-semibold mb-2">Python Programming.</h3>
+            <p className="text-neutral-400">
+              Certification validating proficiency in Python programming.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Certificado 6 (ChatGPT) */}
+        <div className="mb-8 flex justify-center">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center flex justify-center"
+          >
+            <a
+              href="https://drive.google.com/file/d/1kxKh_TozizCEB-E4crh0aKSBRK_5ImCt/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/ChatGPT.png"
+                alt="ChatGPT Certification"
+                className="rounded mb-4 w-32 h-32 object-cover"
+              />
+            </a>
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center"
+          >
+            <h3 className="text-xl font-semibold mb-2">ChatGPT Mastery.</h3>
+            <p className="text-neutral-400">
+              Certification in using ChatGPT for various professional tasks.
             </p>
           </motion.div>
         </div>
