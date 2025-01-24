@@ -12,7 +12,43 @@ function Certifications() {
         Certifications
       </motion.h2>
       <div className="flex flex-wrap justify-center gap-8">
-        {/* Certificado 1 */}
+        {/* Certificado 1 (Full Stack Developer) */}
+        <div className="mb-8 flex justify-center">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center flex justify-center"
+          >
+            <a
+              href="https://drive.google.com/file/d/1YKgsHIwNC8eGZc2k1cErBzAJJR2tgwSl/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/projects/Full%20stack.png"
+                alt="Full Stack Developer Certification"
+                className="rounded mb-4 w-32 h-32 object-cover"
+              />
+            </a>
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center"
+          >
+            <h3 className="text-xl font-semibold mb-2">
+              Full Stack Developer.
+            </h3>
+            <p className="text-neutral-400">
+              Certification validating skills in full stack development,
+              including front-end and back-end technologies.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Certificado 2 (Digital Skills in the Professional World) */}
         <div className="mb-8 flex justify-center">
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
@@ -48,7 +84,7 @@ function Certifications() {
           </motion.div>
         </div>
 
-        {/* Certificado 2 */}
+        {/* Certificado 3 (Responsive Web Design) */}
         <div className="mb-8 flex justify-center">
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
@@ -84,7 +120,40 @@ function Certifications() {
           </motion.div>
         </div>
 
-        {/* Certificado 3 */}
+        {/* Certificado 4 (Python Programming) */}
+        <div className="mb-8 flex justify-center">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center flex justify-center"
+          >
+            <a
+              href="https://drive.google.com/file/d/1ArqH7x6Owqm3Z6Tb3DATVXj9p258XeSJ/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/Python.png"
+                alt="Python Certification"
+                className="rounded mb-4 w-32 h-32 object-cover"
+              />
+            </a>
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center"
+          >
+            <h3 className="text-xl font-semibold mb-2">Python Programming.</h3>
+            <p className="text-neutral-400">
+              Certification validating proficiency in Python programming.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Certificado 5 (Introduction to Data Science) */}
         <div className="mb-8 flex justify-center">
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
@@ -119,7 +188,7 @@ function Certifications() {
           </motion.div>
         </div>
 
-        {/* Certificado 4 */}
+        {/* Certificado 6 (English Essentials for Professional Growth) */}
         <div className="mb-8 flex justify-center">
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
@@ -155,40 +224,7 @@ function Certifications() {
           </motion.div>
         </div>
 
-        {/* Certificado 5 (Python) */}
-        <div className="mb-8 flex justify-center">
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="w-full max-w-xs text-center flex justify-center"
-          >
-            <a
-              href="https://drive.google.com/file/d/1ArqH7x6Owqm3Z6Tb3DATVXj9p258XeSJ/view"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/Python.png"
-                alt="Python Certification"
-                className="rounded mb-4 w-32 h-32 object-cover"
-              />
-            </a>
-          </motion.div>
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="w-full max-w-xs text-center"
-          >
-            <h3 className="text-xl font-semibold mb-2">Python Programming.</h3>
-            <p className="text-neutral-400">
-              Certification validating proficiency in Python programming.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Certificado 6 (ChatGPT) */}
+        {/* Certificado 7 (ChatGPT) */}
         <div className="mb-8 flex justify-center">
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
@@ -217,41 +253,6 @@ function Certifications() {
             <h3 className="text-xl font-semibold mb-2">ChatGPT.</h3>
             <p className="text-neutral-400">
               Certification in using ChatGPT for various professional tasks.
-            </p>
-          </motion.div>
-        </div>
-        {/* Certificado 7 (Full Stack Developer) */}
-        <div className="mb-8 flex justify-center">
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="w-full max-w-xs text-center flex justify-center"
-          >
-            <a
-              href="https://drive.google.com/file/d/1exampleURL/view"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/projects/FullStackCertificate.png"
-                alt="Full Stack Developer Certification"
-                className="rounded mb-4 w-32 h-32 object-cover"
-              />
-            </a>
-          </motion.div>
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="w-full max-w-xs text-center"
-          >
-            <h3 className="text-xl font-semibold mb-2">
-              Full Stack Developer.
-            </h3>
-            <p className="text-neutral-400">
-              Certification validating skills in full stack development,
-              including front-end and back-end technologies.
             </p>
           </motion.div>
         </div>
