@@ -5,6 +5,14 @@ import project4 from "../assets/projects/project4.png";
 import project5 from "../assets/projects/project5.png";
 import project6 from "../assets/projects/project6.png";
 import project7 from "../assets/projects/project7.png";
+import project8_platformer_game from "../assets/projects/project8_platformer_game.png";
+import project9_palindrome_checker from "../assets/projects/project9_palindrome_checker.png";
+import project10_role_playing_game from "../assets/projects/project10_role_playing_game.png";
+import project11_pokemon_search from "../assets/projects/project11_pokemon_search.png";
+import project12_roman_converter from "../assets/projects/project12_roman_converter.png";
+import project13_shopping_cart from "../assets/projects/project13_shopping_cart.png";
+import project14_calorie_counter from "../assets/projects/project14_calorie_counter.png";
+import project15_music_player from "../assets/projects/project15_music_player.png";
 
 export const HERO_CONTENT = `As a full-stack developer from Uruguay, I offer professional services in building robust web applications using modern technologies such as ReactJS, Node.js, Express.js, Docker, PostgreSQL, MongoDB, and more. My expertise includes working with WSL, Vite, CSS, Git, MongoDB Compass, PostMan, and GitHub to deliver high-quality solutions tailored to your needs.`;
 
@@ -139,6 +147,71 @@ export const PROJECTS = [
       "In this project, I practiced and applied responsive design techniques.",
     technologies: ["HTML", "CSS"],
     link: "https://github.com/AgustinVelazquez0/Responsive-PortFolio-HTML-CSS",
+  },
+  // Nuevos proyectos:
+  {
+    title: "Platformer Game",
+    image: project8_platformer_game,
+    description:
+      "A platformer game built with JavaScript, HTML, and CSS. It features player movement, jumping mechanics, and interaction with game elements.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/AgustinVelazquez0/platformer_game",
+  },
+  {
+    title: "Palindrome Checker",
+    image: project9_palindrome_checker,
+    description:
+      "A simple palindrome checker tool built with JavaScript that checks if a word or phrase is a palindrome.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/AgustinVelazquez0/palindrome_checker",
+  },
+  {
+    title: "Role Playing Game",
+    image: project10_role_playing_game,
+    description:
+      "A role-playing game (RPG) built using HTML, CSS, and JavaScript. You can move your character and interact with enemies and items.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/AgustinVelazquez0/role_playing_game",
+  },
+  {
+    title: "Pokemon Search App",
+    image: project11_pokemon_search,
+    description:
+      "An app where you can search and view details of different Pokémon using an external API.",
+    technologies: ["HTML", "CSS", "JavaScript", "API"],
+    link: "https://github.com/AgustinVelazquez0/pokemon_serch",
+  },
+  {
+    title: "Roman Numeral Converter",
+    image: project12_roman_converter,
+    description:
+      "A tool that converts decimal numbers to Roman numerals, using simple JavaScript logic.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/AgustinVelazquez0/roman_converter",
+  },
+  {
+    title: "Shopping Cart",
+    image: project13_shopping_cart,
+    description:
+      "A shopping cart built with JavaScript, using an interactive UI and managing the cart's items, prices, and totals.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/AgustinVelazquez0/shopping_cart",
+  },
+  {
+    title: "Calorie Counter",
+    image: project14_calorie_counter,
+    description:
+      "A simple calorie counter web application built with HTML, CSS, and JavaScript to help users track the calories consumed in a day.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/AgustinVelazquez0/calorie_counter",
+  },
+  {
+    title: "Music Player",
+    image: project15_music_player,
+    description:
+      "A web-based music player built with plain HTML, CSS, and JavaScript, where users can play, pause, and switch between songs.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/AgustinVelazquez0/music_player",
   },
 ];
 
