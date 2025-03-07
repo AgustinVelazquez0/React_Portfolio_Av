@@ -148,14 +148,13 @@ export const PROJECTS = [
     technologies: ["HTML", "CSS"],
     link: "https://github.com/AgustinVelazquez0/Responsive-PortFolio-HTML-CSS",
   },
-  // Nuevos proyectos:
   {
     title: "Platformer Game",
     image: project8_platformer_game,
     description:
       "A platformer game built with JavaScript, HTML, and CSS. It features player movement, jumping mechanics, and interaction with game elements.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/AgustinVelazquez0/platformer_game",
+    link: "https://platformer-game-snowy.vercel.app/",
   },
   {
     title: "Palindrome Checker",
@@ -163,7 +162,7 @@ export const PROJECTS = [
     description:
       "A simple palindrome checker tool built with JavaScript that checks if a word or phrase is a palindrome.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/AgustinVelazquez0/palindrome_checker",
+    link: "https://palindrome-checker-iota-one.vercel.app/",
   },
   {
     title: "Role Playing Game",
@@ -171,7 +170,7 @@ export const PROJECTS = [
     description:
       "A role-playing game (RPG) built using HTML, CSS, and JavaScript. You can move your character and interact with enemies and items.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/AgustinVelazquez0/role_playing_game",
+    link: "https://role-playing-game-sandy.vercel.app/",
   },
   {
     title: "Pokemon Search App",
@@ -179,7 +178,7 @@ export const PROJECTS = [
     description:
       "An app where you can search and view details of different Pokémon using an external API.",
     technologies: ["HTML", "CSS", "JavaScript", "API"],
-    link: "https://github.com/AgustinVelazquez0/pokemon_serch",
+    link: "https://pokemon-serch.vercel.app/",
   },
   {
     title: "Roman Numeral Converter",
@@ -187,7 +186,7 @@ export const PROJECTS = [
     description:
       "A tool that converts decimal numbers to Roman numerals, using simple JavaScript logic.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/AgustinVelazquez0/roman_converter",
+    link: "https://roman-converter-one.vercel.app/",
   },
   {
     title: "Shopping Cart",
@@ -195,7 +194,7 @@ export const PROJECTS = [
     description:
       "A shopping cart built with JavaScript, using an interactive UI and managing the cart's items, prices, and totals.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/AgustinVelazquez0/shopping_cart",
+    link: "https://shopping-cart-umber-gamma.vercel.app/",
   },
   {
     title: "Calorie Counter",
@@ -203,7 +202,7 @@ export const PROJECTS = [
     description:
       "A simple calorie counter web application built with HTML, CSS, and JavaScript to help users track the calories consumed in a day.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/AgustinVelazquez0/calorie_counter",
+    link: "https://calorie-counter-lake.vercel.app/",
   },
   {
     title: "Music Player",
@@ -211,7 +210,7 @@ export const PROJECTS = [
     description:
       "A web-based music player built with plain HTML, CSS, and JavaScript, where users can play, pause, and switch between songs.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/AgustinVelazquez0/music_player",
+    link: "https://music-player-alpha-gules.vercel.app/",
   },
 ];
 
