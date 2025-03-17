@@ -1,7 +1,6 @@
 import project1 from "../assets/projects/project1.png";
 import project2 from "../assets/projects/project2.png";
 import project3 from "../assets/projects/project3.png";
-import project4 from "../assets/projects/project4.png";
 import project5 from "../assets/projects/project5.png";
 import project6 from "../assets/projects/project6.png";
 import project7 from "../assets/projects/project7.png";
@@ -126,27 +125,12 @@ export const PROJECTS = [
     link: "https://github.com/AgustinVelazquez0/Todo_List_Front_Js",
   },
   {
-    title: "Portfolio Website",
-    image: project3,
+    title: "Music Player",
+    image: project15_music_player,
     description:
-      "This is my first personal portfolio website. It showcases my projects, skills, and contact information, featuring MediaQuery and other functionalities.",
+      "A web-based music player built with plain HTML, CSS, and JavaScript, where users can play, pause, and switch between songs.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/AgustinVelazquez0/AgustinVelazquez0.github.io",
-  },
-  {
-    title: "The Corner Books",
-    image: project2,
-    description: "Simple website where you can find unusual books.",
-    technologies: ["HTML", "CSS"],
-    link: "https://github.com/AgustinVelazquez0/Html_Page_Books",
-  },
-  {
-    title: "Responsive Empty Portfolio",
-    image: project4,
-    description:
-      "In this project, I practiced and applied responsive design techniques.",
-    technologies: ["HTML", "CSS"],
-    link: "https://github.com/AgustinVelazquez0/Responsive-PortFolio-HTML-CSS",
+    link: "https://music-player-alpha-gules.vercel.app/",
   },
   {
     title: "Platformer Game",
@@ -155,14 +139,6 @@ export const PROJECTS = [
       "A platformer game built with JavaScript, HTML, and CSS. It features player movement, jumping mechanics, and interaction with game elements.",
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://platformer-game-snowy.vercel.app/",
-  },
-  {
-    title: "Palindrome Checker",
-    image: project9_palindrome_checker,
-    description:
-      "A simple palindrome checker tool built with JavaScript that checks if a word or phrase is a palindrome.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://palindrome-checker-iota-one.vercel.app/",
   },
   {
     title: "Role Playing Game",
@@ -181,6 +157,14 @@ export const PROJECTS = [
     link: "https://pokemon-serch.vercel.app/",
   },
   {
+    title: "Calorie Counter",
+    image: project14_calorie_counter,
+    description:
+      "A simple calorie counter web application built with HTML, CSS, and JavaScript to help users track the calories consumed in a day.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://calorie-counter-lake.vercel.app/",
+  },
+  {
     title: "Roman Numeral Converter",
     image: project12_roman_converter,
     description:
@@ -197,20 +181,27 @@ export const PROJECTS = [
     link: "https://shopping-cart-umber-gamma.vercel.app/",
   },
   {
-    title: "Calorie Counter",
-    image: project14_calorie_counter,
+    title: "Palindrome Checker",
+    image: project9_palindrome_checker,
     description:
-      "A simple calorie counter web application built with HTML, CSS, and JavaScript to help users track the calories consumed in a day.",
+      "A simple palindrome checker tool built with JavaScript that checks if a word or phrase is a palindrome.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://calorie-counter-lake.vercel.app/",
+    link: "https://palindrome-checker-iota-one.vercel.app/",
   },
   {
-    title: "Music Player",
-    image: project15_music_player,
+    title: "The Corner Books",
+    image: project2,
+    description: "Simple website where you can find unusual books.",
+    technologies: ["HTML", "CSS"],
+    link: "https://github.com/AgustinVelazquez0/Html_Page_Books",
+  },
+  {
+    title: "Portfolio Website",
+    image: project3,
     description:
-      "A web-based music player built with plain HTML, CSS, and JavaScript, where users can play, pause, and switch between songs.",
+      "This is my first personal portfolio website. It showcases my projects, skills, and contact information, featuring MediaQuery and other functionalities.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://music-player-alpha-gules.vercel.app/",
+    link: "https://github.com/AgustinVelazquez0/AgustinVelazquez0.github.io",
   },
 ];
 
