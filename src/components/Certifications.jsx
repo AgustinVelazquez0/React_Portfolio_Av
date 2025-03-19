@@ -84,6 +84,42 @@ function Certifications() {
           </motion.div>
         </div>
 
+        {/* Certificado 3 (JavaScript Algorithms and Data Structures) */}
+        <div className="mb-8 flex justify-center">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center flex justify-center"
+          >
+            <a
+              href="https://www.freecodecamp.org/certification/AgustinVelazquez/javascript-algorithms-and-data-structures-v8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="src/assets/js certification.png"
+                alt="JavaScript Certification"
+                className="rounded mb-4 w-32 h-32 object-cover"
+              />
+            </a>
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xs text-center"
+          >
+            <h3 className="text-xl font-semibold mb-2">
+              JavaScript Algorithms and Data Structures.
+            </h3>
+            <p className="text-neutral-400">
+              Certification validating skills in JavaScript algorithms and data
+              structures.
+            </p>
+          </motion.div>
+        </div>
+
         {/* Certificado 3 (Responsive Web Design) */}
         <div className="mb-8 flex justify-center">
           <motion.div
