@@ -98,7 +98,7 @@ function Certifications() {
               rel="noopener noreferrer"
             >
               <img
-                src="src/assets/js certification.png"
+                src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/js%20certification.png"
                 alt="JavaScript Certification"
                 className="rounded mb-4 w-32 h-32 object-cover"
               />
