@@ -66,144 +66,150 @@ export const EXPERIENCES = [
   },
 ];
 
-export const PROJECTS = [
-  {
-    title: "To Do List",
-    image: project7,
-    description:
-      "Installation instructions in README.md. React project, with the Back-End in MongoDB. Utilities like useReducer, useContext, and other hooks to manage and modify your activities. Additionally, I have used Docker and PostgreSQL to create a user database with login and registration functionality. To open the project, you need install the dependences: https://github.com/AgustinVelazquez0/Todo_List_Front https://github.com/AgustinVelazquez0/Todo_List_Back",
-    technologies: [
-      "WSL",
-      "ReactJs",
-      "Vite",
-      "CSS",
-      "Git",
-      "Express.js",
-      "Node.js",
-      "Docker",
-      "PostgreSql",
-      "MongoDB",
-      "MongoDB Compass",
-      "PostMan",
-      "GitHub",
-    ],
-    link: "https://github.com/AgustinVelazquez0/Todo_List_Front",
-  },
-  {
-    title: "Food Menu API",
-    image: project5,
-    description:
-      "React project: a food shopping order simulator. The database is built with MongoDB, and instructions can be found in the README file. To open the project, install the dependencies listed in the GitHub link provided in the image.",
-    technologies: [
-      "ReactJs",
-      "MongoDB",
-      "CSS",
-      "Git",
-      "WSL",
-      "Vite",
-      "Express.js",
-      "Node.js",
-      "MongoDB Compass",
-      "PostMan",
-      "GitHub",
-    ],
-    link: "https://github.com/AgustinVelazquez0/Food_List_Front",
-  },
-  {
-    title: "Rick and Morty API",
-    image: project6,
-    description: "A React project designed to fetch data from an API.",
-    technologies: ["ReactJs", "SCSS", "Git", "WSL"],
-    link: "https://github.com/AgustinVelazquez0/React-Rick-and-Morty",
-  },
-  {
-    title: "To Do List",
-    image: project1,
-    description:
-      "An application for marking and unmarking tasks, featuring integrated LocalStorage and MediaQuery support for mobile devices.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/AgustinVelazquez0/Todo_List_Front_Js",
-  },
-  {
-    title: "Music Player",
-    image: project15_music_player,
-    description:
-      "A web-based music player built with plain HTML, CSS, and JavaScript, where users can play, pause, and switch between songs.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://music-player-alpha-gules.vercel.app/",
-  },
-  {
-    title: "Platformer Game",
-    image: project8_platformer_game,
-    description:
-      "A platformer game built with JavaScript, HTML, and CSS. It features player movement, jumping mechanics, and interaction with game elements.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://platformer-game-snowy.vercel.app/",
-  },
-  {
-    title: "Role Playing Game",
-    image: project10_role_playing_game,
-    description:
-      "A role-playing game (RPG) built using HTML, CSS, and JavaScript. You can move your character and interact with enemies and items.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://role-playing-game-sandy.vercel.app/",
-  },
-  {
-    title: "Pokemon Search App",
-    image: project11_pokemon_search,
-    description:
-      "An app where you can search and view details of different Pokémon using an external API.",
-    technologies: ["HTML", "CSS", "JavaScript", "API"],
-    link: "https://pokemon-serch.vercel.app/",
-  },
-  {
-    title: "Calorie Counter",
-    image: project14_calorie_counter,
-    description:
-      "A simple calorie counter web application built with HTML, CSS, and JavaScript to help users track the calories consumed in a day.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://calorie-counter-lake.vercel.app/",
-  },
-  {
-    title: "Roman Numeral Converter",
-    image: project12_roman_converter,
-    description:
-      "A tool that converts decimal numbers to Roman numerals, using simple JavaScript logic.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://roman-converter-one.vercel.app/",
-  },
-  {
-    title: "Shopping Cart",
-    image: project13_shopping_cart,
-    description:
-      "A shopping cart built with JavaScript, using an interactive UI and managing the cart's items, prices, and totals.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://shopping-cart-umber-gamma.vercel.app/",
-  },
-  {
-    title: "Palindrome Checker",
-    image: project9_palindrome_checker,
-    description:
-      "A simple palindrome checker tool built with JavaScript that checks if a word or phrase is a palindrome.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://palindrome-checker-iota-one.vercel.app/",
-  },
-  {
-    title: "The Corner Books",
-    image: project2,
-    description: "Simple website where you can find unusual books.",
-    technologies: ["HTML", "CSS"],
-    link: "https://github.com/AgustinVelazquez0/Html_Page_Books",
-  },
-  {
-    title: "Portfolio Website",
-    image: project3,
-    description:
-      "This is my first personal portfolio website. It showcases my projects, skills, and contact information, featuring MediaQuery and other functionalities.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/AgustinVelazquez0/AgustinVelazquez0.github.io",
-  },
-];
+export const PROJECTS = {
+  REACT: [
+    {
+      title: "To Do List",
+      image: project7,
+      description:
+        "Installation instructions in README.md. React project, with the Back-End in MongoDB. Utilities like useReducer, useContext, and other hooks to manage and modify your activities. Additionally, I have used Docker and PostgreSQL to create a user database with login and registration functionality. To open the project, you need install the dependences: https://github.com/AgustinVelazquez0/Todo_List_Front https://github.com/AgustinVelazquez0/Todo_List_Back",
+      technologies: [
+        "WSL",
+        "ReactJs",
+        "Vite",
+        "CSS",
+        "Git",
+        "Express.js",
+        "Node.js",
+        "Docker",
+        "PostgreSql",
+        "MongoDB",
+        "MongoDB Compass",
+        "PostMan",
+        "GitHub",
+      ],
+      link: "https://github.com/AgustinVelazquez0/Todo_List_Front",
+    },
+    {
+      title: "Food Menu API",
+      image: project5,
+      description:
+        "React project: a food shopping order simulator. The database is built with MongoDB, and instructions can be found in the README file. To open the project, install the dependencies listed in the GitHub link provided in the image.",
+      technologies: [
+        "ReactJs",
+        "MongoDB",
+        "CSS",
+        "Git",
+        "WSL",
+        "Vite",
+        "Express.js",
+        "Node.js",
+        "MongoDB Compass",
+        "PostMan",
+        "GitHub",
+      ],
+      link: "https://github.com/AgustinVelazquez0/Food_List_Front",
+    },
+    {
+      title: "Rick and Morty API",
+      image: project6,
+      description: "A React project designed to fetch data from an API.",
+      technologies: ["ReactJs", "SCSS", "Git", "WSL"],
+      link: "https://github.com/AgustinVelazquez0/React-Rick-and-Morty",
+    },
+  ],
+  JS: [
+    {
+      title: "To Do List",
+      image: project1,
+      description:
+        "An application for marking and unmarking tasks, featuring integrated LocalStorage and MediaQuery support for mobile devices.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://github.com/AgustinVelazquez0/Todo_List_Front_Js",
+    },
+    {
+      title: "Music Player",
+      image: project15_music_player,
+      description:
+        "A web-based music player built with plain HTML, CSS, and JavaScript, where users can play, pause, and switch between songs.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://music-player-alpha-gules.vercel.app/",
+    },
+    {
+      title: "Platformer Game",
+      image: project8_platformer_game,
+      description:
+        "A platformer game built with JavaScript, HTML, and CSS. It features player movement, jumping mechanics, and interaction with game elements.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://platformer-game-snowy.vercel.app/",
+    },
+    {
+      title: "Role Playing Game",
+      image: project10_role_playing_game,
+      description:
+        "A role-playing game (RPG) built using HTML, CSS, and JavaScript. You can move your character and interact with enemies and items.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://role-playing-game-sandy.vercel.app/",
+    },
+    {
+      title: "Pokemon Search App",
+      image: project11_pokemon_search,
+      description:
+        "An app where you can search and view details of different Pokémon using an external API.",
+      technologies: ["HTML", "CSS", "JavaScript", "API"],
+      link: "https://pokemon-serch.vercel.app/",
+    },
+    {
+      title: "Calorie Counter",
+      image: project14_calorie_counter,
+      description:
+        "A simple calorie counter web application built with HTML, CSS, and JavaScript to help users track the calories consumed in a day.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://calorie-counter-lake.vercel.app/",
+    },
+    {
+      title: "Roman Numeral Converter",
+      image: project12_roman_converter,
+      description:
+        "A tool that converts decimal numbers to Roman numerals, using simple JavaScript logic.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://roman-converter-one.vercel.app/",
+    },
+    {
+      title: "Shopping Cart",
+      image: project13_shopping_cart,
+      description:
+        "A shopping cart built with JavaScript, using an interactive UI and managing the cart's items, prices, and totals.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://shopping-cart-umber-gamma.vercel.app/",
+    },
+    {
+      title: "Palindrome Checker",
+      image: project9_palindrome_checker,
+      description:
+        "A simple palindrome checker tool built with JavaScript that checks if a word or phrase is a palindrome.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://palindrome-checker-iota-one.vercel.app/",
+    },
+  ],
+  HTML_CSS: [
+    {
+      title: "The Corner Books",
+      image: project2,
+      description: "Simple website where you can find unusual books.",
+      technologies: ["HTML", "CSS"],
+      link: "https://github.com/AgustinVelazquez0/Html_Page_Books",
+    },
+    {
+      title: "Portfolio Website",
+      image: project3,
+      description:
+        "This is my first personal portfolio website. It showcases my projects, skills, and contact information, featuring MediaQuery and other functionalities.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://github.com/AgustinVelazquez0/AgustinVelazquez0.github.io",
+    },
+  ],
+};
 
 export const CONTACT = {
   address: "Uruguay, Montevideo ",
