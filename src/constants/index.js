@@ -60,7 +60,7 @@ export const EXPERIENCES = [
   {
     year: "09/2023 - 01/2024",
     role: "Course",
-    company: "CodeCademy",
+    company: "CodeCademy.",
     description: `My first courses and exercises completed were here. With an intuitive interface it is a good place to practice and learn. I have done many here, beginner, intermediate and advanced levels.`,
     technologies: ["Javascript", "HTML", ".CSS"],
   },
