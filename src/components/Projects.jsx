@@ -14,7 +14,7 @@ function Projects() {
       </motion.h2>
 
       {/* Grupo de proyectos: REACT */}
-      <h3 className="my-10 text-2xl text-center text-purple-500">
+      <h3 className="my-10 text-2xl text-center text-blue-500">
         React Projects
       </h3>
       <div>
@@ -48,7 +48,7 @@ function Projects() {
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-900"
+                    className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600"
                   >
                     {tech}
                   </span>
@@ -60,7 +60,7 @@ function Projects() {
       </div>
 
       {/* Grupo de proyectos: JS */}
-      <h3 className="my-10 text-2xl text-center text-green-500">
+      <h3 className="my-10 text-2xl text-center text-yellow-500">
         JavaScript Projects
       </h3>
       <div>
@@ -94,7 +94,7 @@ function Projects() {
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-green-900"
+                    className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-yellow-600"
                   >
                     {tech}
                   </span>
@@ -106,7 +106,7 @@ function Projects() {
       </div>
 
       {/* Grupo de proyectos: HTML y CSS */}
-      <h3 className="my-10 text-2xl text-center text-blue-500">
+      <h3 className="my-10 text-2xl text-center text-green-500">
         HTML & CSS Projects
       </h3>
       <div>
@@ -140,7 +140,7 @@ function Projects() {
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-900"
+                    className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-green-600"
                   >
                     {tech}
                   </span>

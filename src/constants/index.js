@@ -23,7 +23,7 @@ I’m excited to bring my skills, energy, and passion to a team where I can cont
 
 export const EXPERIENCES = [
   {
-    year: "03/2024 - In course",
+    year: "03/2024 - 01/2025",
     role: "Full-Stack Developer with REACT",
     company: "Instituto BIOS.",
     description: `Technical School Full-stack in one of the best and recognized technology companies in the country.`,
@@ -44,7 +44,7 @@ export const EXPERIENCES = [
     ],
   },
   {
-    year: "09/2024 - 12/2024 - Approved(97/100)",
+    year: "09/2024 - 01/2025",
     role: "Digital Skills in the Professional World.",
     company: "Instituto BIOS.",
     description: `Course on Communication, Applications, Work Tools, Cybersecurity, Design Tools, and AI Tools.`,
@@ -58,7 +58,7 @@ export const EXPERIENCES = [
     ],
   },
   {
-    year: "09/2023 - 01/2024 - Approved",
+    year: "09/2023 - 01/2024",
     role: "Course",
     company: "CodeCademy",
     description: `My first courses and exercises completed were here. With an intuitive interface it is a good place to practice and learn. I have done many here, beginner, intermediate and advanced levels.`,
@@ -94,7 +94,7 @@ export const PROJECTS = {
       title: "Food Menu API",
       image: project5,
       description:
-        "React project: a food shopping order simulator. The database is built with MongoDB, and instructions can be found in the README file. To open the project, install the dependencies listed in the GitHub link provided in the image.",
+        "React project: a food shopping order simulator. The database is built with MongoDB, and instructions can be found in the README file. To open the project, install the dependencies listed in the GitHub link provided in the image. https://github.com/AgustinVelazquez0/Food_List_Front https://github.com/AgustinVelazquez0/Food_List_Back",
       technologies: [
         "ReactJs",
         "MongoDB",
