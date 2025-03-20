@@ -113,9 +113,10 @@ export const PROJECTS = {
     {
       title: "Rick and Morty API",
       image: project6,
-      description: "A React project designed to fetch data from an API.",
+      description:
+        "A React project designed to fetch data from an API. https://github.com/AgustinVelazquez0/React-Rick-and-Morty",
       technologies: ["ReactJs", "SCSS", "Git", "WSL"],
-      link: "https://github.com/AgustinVelazquez0/React-Rick-and-Morty",
+      link: "https://react-rick-and-morty-lime.vercel.app/",
     },
   ],
   JS: [
@@ -123,9 +124,9 @@ export const PROJECTS = {
       title: "To Do List",
       image: project1,
       description:
-        "An application for marking and unmarking tasks, featuring integrated LocalStorage and MediaQuery support for mobile devices.",
+        "An application for marking and unmarking tasks, featuring integrated LocalStorage and MediaQuery support for mobile devices. https://github.com/AgustinVelazquez0/Todo_List_Front_Js",
       technologies: ["HTML", "CSS", "JavaScript"],
-      link: "https://github.com/AgustinVelazquez0/Todo_List_Front_Js",
+      link: "https://agustinvelazquez0.github.io/Todo_List_Front_Js/",
     },
     {
       title: "Music Player",
@@ -196,17 +197,18 @@ export const PROJECTS = {
     {
       title: "The Corner Books",
       image: project2,
-      description: "Simple website where you can find unusual books.",
+      description:
+        "Simple website where you can find unusual books. https://github.com/AgustinVelazquez0/Html_Page_Books",
       technologies: ["HTML", "CSS"],
-      link: "https://github.com/AgustinVelazquez0/Html_Page_Books",
+      link: "https://agustinvelazquez0.github.io/Html_Page_Books/",
     },
     {
       title: "Portfolio Website",
       image: project3,
       description:
-        "This is my first personal portfolio website. It showcases my projects, skills, and contact information, featuring MediaQuery and other functionalities.",
+        "This is my first personal portfolio website. It showcases my projects, skills, and contact information, featuring MediaQuery and other functionalities. https://github.com/AgustinVelazquez0/AgustinVelazquez0.github.io",
       technologies: ["HTML", "CSS", "JavaScript"],
-      link: "https://github.com/AgustinVelazquez0/AgustinVelazquez0.github.io",
+      link: "https://agustinvelazquez0.github.io/",
     },
   ],
 };
