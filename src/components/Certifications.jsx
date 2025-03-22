@@ -112,7 +112,7 @@ function Certifications() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/js%20certification.png"
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/JavaScript%20Algorithms%20and%20Data%20Structures.png"
                   alt="JavaScript Certification"
                   className="rounded mb-4 w-32 h-32 object-cover"
                 />
@@ -148,7 +148,7 @@ function Certifications() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/projects/Responsive%20Certificate.png"
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/Responsive%20Web%20Design.png"
                   alt="Certification 2"
                   className="rounded mb-4 w-32 h-32 object-cover"
                 />
@@ -166,6 +166,44 @@ function Certifications() {
               <p className="text-neutral-400">
                 Certification skills in responsive web design and front-end
                 development.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Certificado 5 (Front End Development Libraries) */}
+          <div className="mb-8 flex justify-center">
+            <motion.div
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-xs text-center flex justify-center"
+            >
+              <a
+                href="https://www.freecodecamp.org/certification/AgustinVelazquez/front-end-development-libraries"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/Front%20end%20freecodecamp%20certification.png"
+                  alt="Front End Development Libraries Certification"
+                  className="rounded mb-4 w-32 h-32 object-cover"
+                />
+              </a>
+            </motion.div>
+            <motion.div
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-xs text-center"
+            >
+              <h3 className="text-xl font-semibold mb-2">
+                Front End Development Libraries.
+              </h3>
+              <p className="text-neutral-400">
+                Certification validating skills in JavaScript, React, CSS,
+                jQuery, Bootstrap, and Redux. I have learned to build modern,
+                responsive web applications and manage state effectively across
+                components.
               </p>
             </motion.div>
           </div>
