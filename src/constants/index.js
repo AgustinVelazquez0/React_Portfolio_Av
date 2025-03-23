@@ -12,6 +12,9 @@ import project12_roman_converter from "../assets/projects/project12_roman_conver
 import project13_shopping_cart from "../assets/projects/project13_shopping_cart.png";
 import project14_calorie_counter from "../assets/projects/project14_calorie_counter.png";
 import project15_music_player from "../assets/projects/project15_music_player.png";
+import project16_calculator from "../assets/projects/project16_calculator.png";
+import project17_markdown from "../assets/projects/project17_markdown.png";
+import project18_clock from "../assets/projects/project18_clock.png";
 
 export const HERO_CONTENT = `As a full-stack developer from Uruguay, I offer professional services in building robust web applications using modern technologies such as ReactJS, Node.js, Express.js, Docker, PostgreSQL, MongoDB, and more. My expertise includes working with WSL, Vite, CSS, Git, MongoDB Compass, PostMan, and GitHub to deliver high-quality solutions tailored to your needs.`;
 
@@ -96,14 +99,14 @@ export const PROJECTS = {
       description:
         "React project: a food shopping order simulator. The database is built with MongoDB, and instructions can be found in the README file. To open the project, install the dependencies listed in the GitHub link provided in the image. https://github.com/AgustinVelazquez0/Food_List_Front https://github.com/AgustinVelazquez0/Food_List_Back",
       technologies: [
+        "WSL",
         "ReactJs",
-        "MongoDB",
+        "Vite",
         "CSS",
         "Git",
-        "WSL",
-        "Vite",
         "Express.js",
         "Node.js",
+        "MongoDB",
         "MongoDB Compass",
         "PostMan",
         "GitHub",
@@ -115,8 +118,64 @@ export const PROJECTS = {
       image: project6,
       description:
         "A React project designed to fetch data from an API. https://github.com/AgustinVelazquez0/React-Rick-and-Morty",
-      technologies: ["ReactJs", "SCSS", "Git", "WSL"],
+      technologies: [
+        "WSL",
+        "ReactJs",
+        "Vite",
+        "SCSS",
+        "Git",
+        "Node.js",
+        "GitHub",
+      ],
       link: "https://react-rick-and-morty-lime.vercel.app/",
+    },
+    {
+      title: "Calculator",
+      image: project16_calculator,
+      description:
+        "A fully functional React calculator with basic arithmetic operations. Built using hooks and responsive design. Instructions and code available in the README file.",
+      technologies: [
+        "WSL",
+        "ReactJs",
+        "Vite",
+        "CSS",
+        "Git",
+        "Node.js",
+        "GitHub",
+      ],
+      link: "https://github.com/AgustinVelazquez0/Calculator",
+    },
+    {
+      title: "Markdown Previewer",
+      image: project17_markdown,
+      description:
+        "A React application that converts Markdown syntax into live HTML preview. Supports GitHub-flavored Markdown. ",
+      technologies: [
+        "WSL",
+        "ReactJs",
+        "Vite",
+        "CSS",
+        "Git",
+        "Node.js",
+        "GitHub",
+      ],
+      link: "https://github.com/AgustinVelazquez0/MarkDown",
+    },
+    {
+      title: "25 + 5 Clock",
+      image: project18_clock,
+      description:
+        "A Pomodoro-style clock that allows you to track 25-minute work sessions followed by 5-minute breaks. Built with React hooks and styled using CSS modules.",
+      technologies: [
+        "WSL",
+        "ReactJs",
+        "Vite",
+        "CSS",
+        "Git",
+        "Node.js",
+        "GitHub",
+      ],
+      link: "https://github.com/AgustinVelazquez0/25-5-Clock",
     },
   ],
   JS: [
