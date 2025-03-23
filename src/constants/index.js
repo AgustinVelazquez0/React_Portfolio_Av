@@ -75,7 +75,7 @@ export const PROJECTS = {
       title: "To Do List",
       image: project7,
       description:
-        "Installation instructions in README.md. React project, with the Back-End in MongoDB. Utilities like useReducer, useContext, and other hooks to manage and modify your activities. Additionally, I have used Docker and PostgreSQL to create a user database with login and registration functionality. To open the project, you need install the dependences: https://github.com/AgustinVelazquez0/Todo_List_Front https://github.com/AgustinVelazquez0/Todo_List_Back",
+        "React project, with the back-end in MongoDB. Utilities like useReducer, useContext, and other hooks to manage and modify your activities. Additionally, i have used Docker and PostgreSQL to create a user database with login and registration functionality. Note: The back-end is not currently live due to hosting limitations, but you can view and run it locally by checking out the back-end repository. To open the project, you need to install the dependencies in links buttons.",
       technologies: [
         "WSL",
         "ReactJs",
@@ -92,12 +92,13 @@ export const PROJECTS = {
         "GitHub",
       ],
       link: "https://github.com/AgustinVelazquez0/Todo_List_Front",
+      github: "https://github.com/AgustinVelazquez0/Todo_List_Back",
     },
     {
       title: "Food Menu API",
       image: project5,
       description:
-        "React project: a food shopping order simulator. The database is built with MongoDB, and instructions can be found in the README file. To open the project, install the dependencies listed in the GitHub link provided in the image. https://github.com/AgustinVelazquez0/Food_List_Front https://github.com/AgustinVelazquez0/Food_List_Back",
+        "React project a food shopping order simulator. The database is built with MongoDB, and instructions can be found in the README file. Note: The back-end is not currently deployed, but you can view the full project and run the back-end locally by checking out the GitHub repositories. To open the project, install the dependencies in links buttons.",
       technologies: [
         "WSL",
         "ReactJs",
@@ -112,12 +113,12 @@ export const PROJECTS = {
         "GitHub",
       ],
       link: "https://github.com/AgustinVelazquez0/Food_List_Front",
+      github: "https://github.com/AgustinVelazquez0/Food_List_Back",
     },
     {
       title: "Rick and Morty API",
       image: project6,
-      description:
-        "A React project designed to fetch data from an API. https://github.com/AgustinVelazquez0/React-Rick-and-Morty",
+      description: "A React project designed to fetch data from an API.",
       technologies: [
         "WSL",
         "ReactJs",
@@ -128,6 +129,7 @@ export const PROJECTS = {
         "GitHub",
       ],
       link: "https://react-rick-and-morty-lime.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/React-Rick-and-Morty",
     },
     {
       title: "Calculator",
@@ -143,7 +145,8 @@ export const PROJECTS = {
         "Node.js",
         "GitHub",
       ],
-      link: "https://github.com/AgustinVelazquez0/Calculator",
+      link: "https://calculator-agustins-projects-569e7477.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/Calculator",
     },
     {
       title: "Markdown Previewer",
@@ -159,7 +162,8 @@ export const PROJECTS = {
         "Node.js",
         "GitHub",
       ],
-      link: "https://github.com/AgustinVelazquez0/MarkDown",
+      link: "https://mark-down-iota.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/MarkDown",
     },
     {
       title: "25 + 5 Clock",
@@ -175,7 +179,8 @@ export const PROJECTS = {
         "Node.js",
         "GitHub",
       ],
-      link: "https://github.com/AgustinVelazquez0/25-5-Clock",
+      link: "https://25-5-clock-zeta.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/25-5-Clock",
     },
   ],
   JS: [
@@ -183,9 +188,10 @@ export const PROJECTS = {
       title: "To Do List",
       image: project1,
       description:
-        "An application for marking and unmarking tasks, featuring integrated LocalStorage and MediaQuery support for mobile devices. https://github.com/AgustinVelazquez0/Todo_List_Front_Js",
+        "An application for marking and unmarking tasks, featuring integrated LocalStorage and MediaQuery support for mobile devices.",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://agustinvelazquez0.github.io/Todo_List_Front_Js/",
+      github: "https://github.com/AgustinVelazquez0/Todo_List_Front_Js",
     },
     {
       title: "Music Player",
@@ -194,6 +200,7 @@ export const PROJECTS = {
         "A web-based music player built with plain HTML, CSS, and JavaScript, where users can play, pause, and switch between songs.",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://music-player-alpha-gules.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/music_player",
     },
     {
       title: "Platformer Game",
@@ -202,6 +209,7 @@ export const PROJECTS = {
         "A platformer game built with JavaScript, HTML, and CSS. It features player movement, jumping mechanics, and interaction with game elements.",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://platformer-game-snowy.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/platformer-game",
     },
     {
       title: "Role Playing Game",
@@ -210,6 +218,7 @@ export const PROJECTS = {
         "A role-playing game (RPG) built using HTML, CSS, and JavaScript. You can move your character and interact with enemies and items.",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://role-playing-game-sandy.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/role_playing_game",
     },
     {
       title: "Pokemon Search App",
@@ -218,6 +227,7 @@ export const PROJECTS = {
         "An app where you can search and view details of different Pokémon using an external API.",
       technologies: ["HTML", "CSS", "JavaScript", "API"],
       link: "https://pokemon-serch.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/pokemon_serch",
     },
     {
       title: "Calorie Counter",
@@ -226,6 +236,7 @@ export const PROJECTS = {
         "A simple calorie counter web application built with HTML, CSS, and JavaScript to help users track the calories consumed in a day.",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://calorie-counter-lake.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/calorie_counter",
     },
     {
       title: "Roman Numeral Converter",
@@ -234,6 +245,7 @@ export const PROJECTS = {
         "A tool that converts decimal numbers to Roman numerals, using simple JavaScript logic.",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://roman-converter-one.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/roman_converter",
     },
     {
       title: "Shopping Cart",
@@ -242,6 +254,7 @@ export const PROJECTS = {
         "A shopping cart built with JavaScript, using an interactive UI and managing the cart's items, prices, and totals.",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://shopping-cart-umber-gamma.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/shopping_cart",
     },
     {
       title: "Palindrome Checker",
@@ -250,24 +263,27 @@ export const PROJECTS = {
         "A simple palindrome checker tool built with JavaScript that checks if a word or phrase is a palindrome.",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://palindrome-checker-iota-one.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/palindrome_checker",
     },
   ],
   HTML_CSS: [
     {
       title: "The Corner Books",
       image: project2,
-      description:
-        "Simple website where you can find unusual books. https://github.com/AgustinVelazquez0/Html_Page_Books",
+      description: "Simple website where you can find unusual books.",
       technologies: ["HTML", "CSS"],
       link: "https://agustinvelazquez0.github.io/Html_Page_Books/",
+      github: "https://github.com/AgustinVelazquez0/Html_Page_Books",
     },
     {
       title: "Portfolio Website",
       image: project3,
       description:
-        "This is my first personal portfolio website. It showcases my projects, skills, and contact information, featuring MediaQuery and other functionalities. https://github.com/AgustinVelazquez0/AgustinVelazquez0.github.io",
+        "This is my first personal portfolio website. It showcases my projects, skills, and contact information, featuring MediaQuery and other functionalities.",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://agustinvelazquez0.github.io/",
+      github:
+        "https://github.com/AgustinVelazquez0/AgustinVelazquez0.github.io",
     },
   ],
 };
