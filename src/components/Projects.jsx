@@ -56,18 +56,38 @@ function Projects() {
               </div>
               {/* Botones con estilos */}
               <div className="mt-4 flex gap-2">
-                <button
-                  onClick={() => window.open(project.link, "_blank")}
-                  className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition duration-300"
-                >
-                  Ver proyecto
-                </button>
-                <button
-                  onClick={() => window.open(project.github, "_blank")}
-                  className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition duration-300"
-                >
-                  Ver código
-                </button>
+                {/* Mostrar dos botones "View code" solo para los primeros dos proyectos */}
+                {index < 2 ? (
+                  <>
+                    <button
+                      onClick={() => window.open(project.link, "_blank")}
+                      className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition duration-300"
+                    >
+                      View code (Frontend)
+                    </button>
+                    <button
+                      onClick={() => window.open(project.github, "_blank")}
+                      className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition duration-300"
+                    >
+                      View code (Backend)
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button
+                      onClick={() => window.open(project.link, "_blank")}
+                      className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition duration-300"
+                    >
+                      View project
+                    </button>
+                    <button
+                      onClick={() => window.open(project.github, "_blank")}
+                      className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition duration-300"
+                    >
+                      View code
+                    </button>
+                  </>
+                )}
               </div>
             </motion.div>
           </div>
@@ -121,13 +141,13 @@ function Projects() {
                   onClick={() => window.open(project.link, "_blank")}
                   className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-700 transition duration-300"
                 >
-                  Ver proyecto
+                  View project
                 </button>
                 <button
                   onClick={() => window.open(project.github, "_blank")}
                   className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-700 transition duration-300"
                 >
-                  Ver código
+                  View code
                 </button>
               </div>
             </motion.div>
@@ -182,13 +202,13 @@ function Projects() {
                   onClick={() => window.open(project.link, "_blank")}
                   className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-700 transition duration-300"
                 >
-                  Ver proyecto
+                  View project
                 </button>
                 <button
                   onClick={() => window.open(project.github, "_blank")}
                   className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-700 transition duration-300"
                 >
-                  Ver código
+                  View code
                 </button>
               </div>
             </motion.div>
