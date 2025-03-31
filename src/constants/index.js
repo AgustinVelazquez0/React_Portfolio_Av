@@ -15,14 +15,20 @@ import project15_music_player from "../assets/projects/project15_music_player.pn
 import project16_calculator from "../assets/projects/project16_calculator.png";
 import project17_markdown from "../assets/projects/project17_markdown.png";
 import project18_clock from "../assets/projects/project18_clock.png";
+import project19_bar_chart from "../assets/projects/data_visualization/project19_bar-chart.png";
+import project20_treemap from "../assets/projects/data_visualization/project20_treemap.png";
+import project21_choropleth from "../assets/projects/data_visualization/project21_choropleth.png";
+import project22_heat_map from "../assets/projects/data_visualization/project22_heat-map.png";
+import project23_scatterploth from "../assets/projects/data_visualization/project23_scatterploth.png";
+// Import your SVG project images here
 
 export const HERO_CONTENT = `As a full-stack developer from Uruguay, I offer professional services in building robust web applications using modern technologies such as ReactJS, Node.js, Express.js, Docker, PostgreSQL, MongoDB, and more. My expertise includes working with WSL, Vite, CSS, Git, MongoDB Compass, PostMan, and GitHub to deliver high-quality solutions tailored to your needs.`;
 
-export const ABOUT_TEXT = `I’m a full-stack developer from Montevideo, Uruguay, with a strong focus on modern technologies like React, Node.js, and TypeScript. My passion for tech started early, driven by a curiosity for how computers work and how technology can shape our world.
+export const ABOUT_TEXT = `I'm a full-stack developer from Montevideo, Uruguay, with a strong focus on modern technologies like React, Node.js, and TypeScript. My passion for tech started early, driven by a curiosity for how computers work and how technology can shape our world.
 
-I enjoy taking on challenges, learning new things, and building clean, efficient solutions while staying up-to-date with industry trends. Outside of coding, I’m a Techno music producer, a curious reader exploring everything from philosophy to Gnostic literature, and a big fan of traveling to connect with nature.
+I enjoy taking on challenges, learning new things, and building clean, efficient solutions while staying up-to-date with industry trends. Outside of coding, I'm a Techno music producer, a curious reader exploring everything from philosophy to Gnostic literature, and a big fan of traveling to connect with nature.
 
-I’m excited to bring my skills, energy, and passion to a team where I can contribute and grow. Let’s connect!`;
+I'm excited to bring my skills, energy, and passion to a team where I can contribute and grow. Let's connect!`;
 
 export const EXPERIENCES = [
   {
@@ -181,6 +187,54 @@ export const PROJECTS = {
       ],
       link: "https://25-5-clock-zeta.vercel.app/",
       github: "https://github.com/AgustinVelazquez0/25-5-Clock",
+    },
+  ],
+  SVG_3D: [
+    // SVG/3D visualization projects
+    {
+      title: "Bar Chart",
+      image: project19_bar_chart,
+      description:
+        "Built with React, D3.js, SVG, CSS, APIs, and AJAX. The project fetches and processes a dataset, then uses D3 to create an interactive bar chart with tooltips.",
+      technologies: ["React", "D3.js", "SVG", "CSS", "APIs", "AJAX"],
+      link: "https://bar-chart-two.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/bar-chart",
+    },
+    {
+      title: "Tree Map",
+      image: project20_treemap,
+      description:
+        "Built with React, D3.js, SVG, CSS, APIs, and AJAX. The project fetches and processes a dataset, then uses D3 to create an interactive bar chart with tooltips.",
+      technologies: ["React", "D3.js", "SVG", "CSS", "APIs", "AJAX"],
+      link: "https://tree-map-mu.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/tree-map",
+    },
+    {
+      title: "Choropleth Map Graphic",
+      image: project21_choropleth,
+      description:
+        "Built with React, D3.js, SVG, CSS, APIs, and AJAX. The project fetches and processes a dataset, then uses D3 to create an interactive bar chart with tooltips.",
+      technologies: ["React", "D3.js", "SVG", "CSS", "APIs", "AJAX"],
+      link: "https://choropleth-map-mauve.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/choropleth-map",
+    },
+    {
+      title: "Heat Map",
+      image: project22_heat_map,
+      description:
+        "Built with React, D3.js, SVG, CSS, APIs, and AJAX. The project fetches and processes a dataset, then uses D3 to create an interactive bar chart with tooltips.",
+      technologies: ["React", "D3.js", "SVG", "CSS", "APIs", "AJAX"],
+      link: "https://heat-map-mu.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/heat-map",
+    },
+    {
+      title: "Scatterploth Graphic",
+      image: project23_scatterploth,
+      description:
+        "Built with React, D3.js, SVG, CSS, APIs, and AJAX. The project fetches and processes a dataset, then uses D3 to create an interactive bar chart with tooltips.",
+      technologies: ["React", "D3.js", "SVG", "CSS", "APIs", "AJAX"],
+      link: "https://scatterplot-graph-rho.vercel.app/",
+      github: "https://github.com/AgustinVelazquez0/scatterplot-graph",
     },
   ],
   JS: [

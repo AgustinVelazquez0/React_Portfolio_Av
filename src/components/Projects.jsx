@@ -100,6 +100,73 @@ function Projects() {
         ))}
       </div>
 
+      {/* Grupo de proyectos: SVG_3D */}
+      <h3 className="my-10 text-2xl text-center text-purple-500">
+        3D Graphics (SVG Data Visualization)
+      </h3>
+      <div className="flex flex-wrap justify-center gap-12 px-6">
+        {PROJECTS.SVG_3D.map((project, index) => (
+          <motion.div
+            key={index}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.5 }}
+            className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          >
+            <div className="flex flex-wrap">
+              <div className="w-1/3">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={project.image}
+                    width={150}
+                    height={150}
+                    alt={project.title}
+                    className="mt-1 rounded"
+                  />
+                </a>
+              </div>
+              <div className="w-2/3 pl-4">
+                <h6 className="mb-2 font-semibold">{project.title}</h6>
+                <p className="mb-4 text-neutral-400 text-sm">
+                  {project.description}
+                </p>
+              </div>
+            </div>
+            <div className="mt-auto">
+              <div className="flex flex-wrap gap-2 mt-4">
+                {project.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-600"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              {/* Botones con estilos */}
+              <div className="mt-4 flex gap-2">
+                <button
+                  onClick={() => window.open(project.link, "_blank")}
+                  className="px-3 py-1 bg-purple-500 text-white rounded-md hover:bg-purple-700 transition duration-300 text-sm"
+                >
+                  View project
+                </button>
+                <button
+                  onClick={() => window.open(project.github, "_blank")}
+                  className="px-3 py-1 bg-purple-500 text-white rounded-md hover:bg-purple-700 transition duration-300 text-sm"
+                >
+                  View code
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
       {/* Grupo de proyectos: JS */}
       <h3 className="my-10 text-2xl text-center text-yellow-500">
         JavaScript Projects
