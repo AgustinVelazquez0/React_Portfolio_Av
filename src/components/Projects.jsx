@@ -102,7 +102,7 @@ function Projects() {
 
       {/* Grupo de proyectos: SVG_3D */}
       <h3 className="my-10 text-2xl text-center text-purple-500">
-        3D Graphics (SVG Data Visualization)
+        D3 Graphics (SVG Data Visualization)
       </h3>
       <div className="flex flex-wrap justify-center gap-12 px-6">
         {PROJECTS.SVG_3D.map((project, index) => (
