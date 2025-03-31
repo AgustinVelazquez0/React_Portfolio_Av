@@ -134,6 +134,43 @@ function Certifications() {
             </motion.div>
           </div>
 
+          {/* Certificado Data Visualization */}
+          <div className="mb-8 flex justify-center">
+            <motion.div
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-xs text-center flex justify-center"
+            >
+              <a
+                href="https://www.freecodecamp.org/certification/AgustinVelazquez/data-visualization"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/Data%20Visualization.png"
+                  alt="Data Visualization Certification"
+                  className="rounded mb-4 w-32 h-32 object-cover"
+                />
+              </a>
+            </motion.div>
+            <motion.div
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-xs text-center"
+            >
+              <h3 className="text-xl font-semibold mb-2">Data Visualization</h3>
+              <p className="text-neutral-400">
+                Certification validating skills in D3.js, working with data to
+                create different charts, graphs, hover elements, and other
+                ingredients to create dynamic and attractive data
+                visualizations, JSON APIs and AJAX, and Scalable Vector Graphics
+                (SVG).
+              </p>
+            </motion.div>
+          </div>
+
           {/* Certificado 4 (Responsive Web Design) */}
           <div className="mb-8 flex justify-center">
             <motion.div
