@@ -22,20 +22,15 @@ import project22_heat_map from "../assets/projects/data_visualization/project22_
 import project23_scatterploth from "../assets/projects/data_visualization/project23_scatterploth.png";
 // Import your SVG project images here
 
-export const HERO_CONTENT = `As a full-stack developer from Uruguay, I offer professional services in building robust web applications using modern technologies such as ReactJS, Node.js, Express.js, Docker, PostgreSQL, MongoDB, and more. My expertise includes working with WSL, Vite, CSS, Git, MongoDB Compass, PostMan, and GitHub to deliver high-quality solutions tailored to your needs.`;
-
-export const ABOUT_TEXT = `I'm a full-stack developer from Montevideo, Uruguay, with a strong focus on modern technologies like React, Node.js, and TypeScript. My passion for tech started early, driven by a curiosity for how computers work and how technology can shape our world.
-
-I enjoy taking on challenges, learning new things, and building clean, efficient solutions while staying up-to-date with industry trends. Outside of coding, I'm a Techno music producer, a curious reader exploring everything from philosophy to Gnostic literature, and a big fan of traveling to connect with nature.
-
-I'm excited to bring my skills, energy, and passion to a team where I can contribute and grow. Let's connect!`;
+export const HERO_CONTENT = `I'm a full-stack developer from Uruguay with hands-on experience building and deploying complete web applications—from frontend to backend—using technologies like React, Node.js, Express, PostgreSQL, and MongoDB. I’ve completed certifications from FreeCodeCamp, Open Santander Academy, and BIOS, focusing on modern development, APIs, databases, and cloud tools. I work confidently with Git, Docker, WSL, Postman, and MongoDB Compass, and I deploy full-stack projects using platforms like Render and Glitch. Passionate about learning and problem-solving, I create clean, scalable solutions through real-world personal projects.`;
 
 export const EXPERIENCES = [
   {
     year: "03/2024 - 01/2025",
     role: "Full-Stack Developer with REACT",
     company: "Instituto BIOS.",
-    description: `Technical School Full-stack in one of the best and recognized technology companies in the country.`,
+    description: `Completed a comprehensive Full-Stack Web Development diploma at BIOS.Acquired practical skills in both frontend and backend development, including JavaScript, Node.js, Express.js, and React. Gained hands-on experience working with relational and non-relational databases such as PostgreSQL (via DBeaver) and MongoDB (via MongoDB Compass and MongoDB Atlas). Developed and tested RESTful APIs, used Postman for endpoint testing, and managed version control with Git and GitHub. Also learned to work in Linux-Ubuntu environments, use Docker containers for local development, and follow best practices in software deployment and collaboration.
+`,
     technologies: [
       "Node.js",
       "Express.js",
@@ -56,7 +51,7 @@ export const EXPERIENCES = [
     year: "09/2024 - 01/2025",
     role: "Digital Skills in the Professional World.",
     company: "Instituto BIOS.",
-    description: `Course on Communication, Applications, Work Tools, Cybersecurity, Design Tools, and AI Tools.`,
+    description: `Completed a course on Digital Skills in the Professional World, focusing on essential tools and technologies for modern workplaces. Gained proficiency in using Microsoft Office 365, Google Drive, Canva, and ChatGPT for productivity and collaboration. Developed skills in file sharing with WeTransfer and data visualization with Power BI. Enhanced digital literacy and adaptability to various software applications, preparing for a dynamic work environment.`,
     technologies: [
       "Office365",
       "Google Drive",
@@ -64,14 +59,41 @@ export const EXPERIENCES = [
       "ChatGPT",
       "WeTransfer",
       "AI Apps",
+      "Power BI",
     ],
   },
   {
     year: "09/2023 - 01/2024",
-    role: "Course",
-    company: "CodeCademy.",
-    description: `My first courses and exercises completed were here. With an intuitive interface it is a good place to practice and learn. I have done many here, beginner, intermediate and advanced levels.`,
-    technologies: ["Javascript", "HTML", ".CSS"],
+    role: "Courses",
+    company: "FreeCodeCamp.",
+    description: `Completed multiple hands-on projects through FreeCodeCamp's certification programs, focusing on web development, APIs, databases, and data visualization. Built full-stack applications using technologies such as Node.js, Express.js, MongoDB, PostgreSQL, and React. Developed and deployed projects like timestamp and exercise tracker microservices, dynamic data visualizations (Treemap, Heat Map), and database systems (Celestial Bodies, World Cup Database) with SQL and Bash scripting. Projects were built and tested locally using WSL and then deployed to platforms like Render and Glitch. Gained practical experience working with REST APIs, JSON, AJAX, MongoDB Compass, and version control with GitHub.
+`,
+    technologies: [
+      "JavaScript",
+      "React",
+      "HTML",
+      "CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "MongoDB Compass",
+      "Mongoose",
+      "MongoDB Atlas",
+      "PostgreSQL",
+      "DBeaver",
+      "SQL",
+      "Bash",
+      "Linux",
+      "AJAX",
+      "JSON",
+      "REST API",
+      "Git",
+      "GitHub",
+      "D3.js",
+      "Vite",
+      "Render",
+      "Glitch",
+    ],
   },
 ];
 
