@@ -7,16 +7,28 @@ import {
   FaGit,
 } from "react-icons/fa";
 import {
-  SiUbuntu,
-  SiTailwindcss,
+  SiTypescript,
   SiExpress,
+  SiTailwindcss,
+  SiUbuntu,
   SiDocker,
   SiPostgresql,
   SiMongodb,
   SiDbeaver,
   SiPostman,
+  SiRender,
+  SiGlitch,
+  SiGoogledrive,
+  SiCanva,
+  SiOpenai,
+  SiWetransfer,
+  SiVite,
+  SiGnubash,
+  SiJson,
+  SiApachenetbeanside,
 } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
+
 import { motion } from "framer-motion";
 
 const iconVariants = (duration) => ({
@@ -73,6 +85,16 @@ function Technologies() {
           <FaJsSquare className="text-7xl text-yellow-400" />
         </motion.div>
 
+        {/* TypeScript */}
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiTypescript className="text-7xl text-blue-600" />
+        </motion.div>
+
         {/* React */}
         <motion.div
           variants={iconVariants(2.5)}
@@ -122,6 +144,46 @@ function Technologies() {
         >
           <SiUbuntu className="text-7xl text-orange-500" />
         </motion.div>
+
+        {/* Vite */}
+        <motion.div
+          variants={iconVariants(5.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiVite className="text-7xl text-purple-500" />
+        </motion.div>
+
+        {/* Bash */}
+        <motion.div
+          variants={iconVariants(4.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiGnubash className="text-7xl text-green-700" />
+        </motion.div>
+
+        {/* JSON */}
+        <motion.div
+          variants={iconVariants(3.3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiJson className="text-7xl text-amber-600" />
+        </motion.div>
+
+        {/* API */}
+        <motion.div
+          variants={iconVariants(2.2)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiApachenetbeanside className="text-7xl text-indigo-600" />
+        </motion.div>
       </motion.div>
 
       {/* Section: Tools */}
@@ -162,6 +224,16 @@ function Technologies() {
           <SiMongodb className="text-7xl text-green-500" />
         </motion.div>
 
+        {/* MongoDB Compass */}
+        <motion.div
+          variants={iconVariants(2.3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiMongodb className="text-7xl text-green-700" />
+        </motion.div>
+
         {/* GitHub */}
         <motion.div
           variants={iconVariants(2)}
@@ -200,6 +272,66 @@ function Technologies() {
           className="rounded-2xl border-4 border-neutral-800 p-4"
         >
           <SiPostman className="text-7xl text-orange-500" />
+        </motion.div>
+
+        {/* Render */}
+        <motion.div
+          variants={iconVariants(4.8)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiRender className="text-7xl text-purple-700" />
+        </motion.div>
+
+        {/* Glitch */}
+        <motion.div
+          variants={iconVariants(4.2)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiGlitch className="text-7xl text-blue-600" />
+        </motion.div>
+
+        {/* Google Drive */}
+        <motion.div
+          variants={iconVariants(3.6)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiGoogledrive className="text-7xl text-green-600" />
+        </motion.div>
+
+        {/* Canva */}
+        <motion.div
+          variants={iconVariants(3.4)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiCanva className="text-7xl text-purple-500" />
+        </motion.div>
+
+        {/* OpenAI */}
+        <motion.div
+          variants={iconVariants(5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiOpenai className="text-7xl text-gray-500" />
+        </motion.div>
+
+        {/* WeTransfer */}
+        <motion.div
+          variants={iconVariants(3.2)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiWetransfer className="text-7xl text-blue-500" />
         </motion.div>
       </motion.div>
     </div>
