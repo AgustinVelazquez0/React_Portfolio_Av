@@ -103,7 +103,7 @@ export const PROJECTS = {
       title: "To Do List",
       image: project7,
       description:
-        "React project, with the back-end in MongoDB. Utilities like useReducer, useContext, and other hooks to manage and modify your activities. Additionally, i have used Docker and PostgreSQL to create a user database with login and registration functionality. Note: The back-end is not currently live due to hosting limitations, but you can view and run it locally by checking out the back-end repository. To open the project, you need to install the dependencies in links buttons. Is deployed in Render",
+        "React project with the back-end hosted on Render. The back-end uses MongoDB Atlas to manage tasks and PostgreSQL for user login, both deployed in Render. The front-end is built with React and Vite, and the back-end utilizes Express.js, Node.js, Docker, and JWT for secure authentication. The project also uses utilities like useReducer, useContext, and other React hooks to manage and modify activities.",
       technologies: [
         "WSL",
         "ReactJs",
@@ -113,7 +113,7 @@ export const PROJECTS = {
         "Express.js",
         "Node.js",
         "Docker",
-        "PostgreSql",
+        "PostgreSQL",
         "DBeaver",
         "MongoDB",
         "MongoDB Atlas",
