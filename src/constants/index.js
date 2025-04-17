@@ -81,7 +81,7 @@ export const PROJECTS = {
       title: "To Do List",
       image: project7,
       description:
-        "React project, with the back-end in MongoDB. Utilities like useReducer, useContext, and other hooks to manage and modify your activities. Additionally, i have used Docker and PostgreSQL to create a user database with login and registration functionality. Note: The back-end is not currently live due to hosting limitations, but you can view and run it locally by checking out the back-end repository. To open the project, you need to install the dependencies in links buttons.",
+        "React project, with the back-end in MongoDB. Utilities like useReducer, useContext, and other hooks to manage and modify your activities. Additionally, i have used Docker and PostgreSQL to create a user database with login and registration functionality. Note: The back-end is not currently live due to hosting limitations, but you can view and run it locally by checking out the back-end repository. To open the project, you need to install the dependencies in links buttons. Is deployed in Render",
       technologies: [
         "WSL",
         "ReactJs",
