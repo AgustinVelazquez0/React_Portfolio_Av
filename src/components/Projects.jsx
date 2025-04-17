@@ -60,11 +60,20 @@ function Projects() {
                   </span>
                 ))}
               </div>
+
               {/* Botones con estilos */}
-              <div className="mt-4 flex gap-2">
-                {/* Mostrar dos botones "View code" solo para los primeros dos proyectos */}
+              <div className="mt-4 flex flex-wrap gap-2">
+                {/* Mostrar tres botones para los primeros dos proyectos */}
                 {index < 2 ? (
                   <>
+                    <button
+                      onClick={() =>
+                        window.open(project.demo || project.link, "_blank")
+                      }
+                      className="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm"
+                    >
+                      View project
+                    </button>
                     <button
                       onClick={() => window.open(project.link, "_blank")}
                       className="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm"
