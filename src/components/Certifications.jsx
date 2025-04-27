@@ -98,6 +98,78 @@ function Certifications() {
           FreeCodeCamp
         </h3>
         <div className="flex flex-wrap justify-center gap-8">
+          {/* Certificado Back End Development and APIs */}
+          <div className="mb-8 flex justify-center">
+            <motion.div
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-xs text-center flex justify-center"
+            >
+              <a
+                href="https://www.freecodecamp.org/certification/AgustinVelazquez/back-end-development-and-apis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/Back%20End%20Development%20and%20APIs.png"
+                  alt="Back End Development and APIs Certification"
+                  className="rounded mb-4 w-32 h-32 object-cover"
+                />
+              </a>
+            </motion.div>
+            <motion.div
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-xs text-center"
+            >
+              <h3 className="text-xl font-semibold mb-2">
+                Back End Development and APIs.
+              </h3>
+              <p className="text-neutral-400">
+                Certification validating skills in building APIs, managing
+                databases, and using Node.js and Express.js.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Certificado Relational Database */}
+          <div className="mb-8 flex justify-center">
+            <motion.div
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-xs text-center flex justify-center"
+            >
+              <a
+                href="https://www.freecodecamp.org/certification/AgustinVelazquez/relational-database-v8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/Relational%20Database.png"
+                  alt="Relational Database Certification"
+                  className="rounded mb-4 w-32 h-32 object-cover"
+                />
+              </a>
+            </motion.div>
+            <motion.div
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-xs text-center"
+            >
+              <h3 className="text-xl font-semibold mb-2">
+                Relational Database.
+              </h3>
+              <p className="text-neutral-400">
+                Certification validating skills in SQL, relational database
+                design, PostgreSQL, and building database-driven applications.
+              </p>
+            </motion.div>
+          </div>
+
           {/* Certificado 3 (JavaScript Algorithms and Data Structures) */}
           <div className="mb-8 flex justify-center">
             <motion.div
