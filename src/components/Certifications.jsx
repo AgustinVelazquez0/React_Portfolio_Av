@@ -128,8 +128,12 @@ function Certifications() {
                 Back End Development and APIs.
               </h3>
               <p className="text-neutral-400">
-                Certification validating skills in building APIs, managing
-                databases, and using Node.js and Express.js.
+                Certification validating skills in Node.js, Express, MongoDB,
+                and Mongoose. I have learned to build backend applications,
+                create APIs, and manage databases using JavaScript. I gained
+                hands-on experience in developing microservices and handling
+                data persistence with MongoDB, while utilizing Express to manage
+                routes and requests efficiently.
               </p>
             </motion.div>
           </div>
@@ -164,8 +168,13 @@ function Certifications() {
                 Relational Database.
               </h3>
               <p className="text-neutral-400">
-                Certification validating skills in SQL, relational database
-                design, PostgreSQL, and building database-driven applications.
+                Certification validating skills in Bash, PostgreSQL, SQL, and
+                Git. I have learned to navigate the Linux terminal, use
+                relational databases with PostgreSQL, and automate tasks with
+                Bash scripting. Additionally, I gained proficiency in version
+                control with Git, creating and managing databases, and building
+                interactive projects such as a salon appointment scheduler and a
+                bike rental shop.
               </p>
             </motion.div>
           </div>
@@ -200,8 +209,12 @@ function Certifications() {
                 JavaScript Algorithms and Data Structures.
               </h3>
               <p className="text-neutral-400">
-                Certification validating skills in JavaScript algorithms and
-                data structures.
+                Certification validating skills in JavaScript, including
+                variables, arrays, objects, loops, functions, and the DOM. I
+                have learned Object-Oriented Programming (OOP), Functional
+                Programming, algorithmic thinking, local storage, APIs,
+                debugging, recursion, regular expressions, and advanced array
+                methods.
               </p>
             </motion.div>
           </div>
@@ -273,8 +286,10 @@ function Certifications() {
                 Responsive Web Design.
               </h3>
               <p className="text-neutral-400">
-                Certification skills in responsive web design and front-end
-                development.
+                Certification validating skills in HTML and CSS, including
+                building webpages using HTML for content and CSS for design. I
+                have learned modern techniques such as Flexbox, CSS Grid, CSS
+                variables, and best practices for accessibility.
               </p>
             </motion.div>
           </div>
