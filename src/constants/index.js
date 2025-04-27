@@ -20,7 +20,6 @@ import project20_treemap from "../assets/projects/data_visualization/project20_t
 import project21_choropleth from "../assets/projects/data_visualization/project21_choropleth.png";
 import project22_heat_map from "../assets/projects/data_visualization/project22_heat-map.png";
 import project23_scatterploth from "../assets/projects/data_visualization/project23_scatterploth.png";
-// Import your SVG project images here
 
 export const HERO_CONTENT = `I'm a full-stack developer from Uruguay with hands-on experience building and deploying complete web applications—from frontend to backend—using technologies like React, Node.js, Express, PostgreSQL, and MongoDB. I’ve completed certifications from FreeCodeCamp, Open Santander Academy, and BIOS, focusing on modern development, APIs, databases, and cloud tools. I work confidently with Git, Docker, WSL, Postman, and MongoDB Compass, and I deploy full-stack projects using platforms like Render and Glitch. Passionate about learning and problem-solving, I create clean, scalable solutions through real-world personal projects.`;
 
