@@ -219,6 +219,45 @@ function Certifications() {
             </motion.div>
           </div>
 
+          {/* Certificado (Quality Assurance) */}
+          <div className="mb-8 flex justify-center">
+            <motion.div
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-xs text-center flex justify-center"
+            >
+              <a
+                href="https://www.freecodecamp.org/certification/AgustinVelazquez/quality-assurance-v7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/Quality%20Assurance.png"
+                  alt="Certification 10"
+                  className="rounded mb-4 w-32 h-32 object-cover"
+                />
+              </a>
+            </motion.div>
+            <motion.div
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-xs text-center"
+            >
+              <h3 className="text-xl font-semibold mb-2">Quality Assurance.</h3>
+              <p className="text-neutral-400">
+                In the Quality Assurance certification, I learned to write and
+                run tests with Chai to ensure my web applications function
+                correctly after changes. I deepened my knowledge of Node.js and
+                Express.js to build full-stack applications, implementing
+                authentication with Passport and real-time communication with
+                Socket.io. I also used Pug as a template engine for rapid
+                frontend development.
+              </p>
+            </motion.div>
+          </div>
+
           {/* Certificado Data Visualization */}
           <div className="mb-8 flex justify-center">
             <motion.div
