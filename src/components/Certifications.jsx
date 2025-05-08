@@ -152,7 +152,7 @@ function Certifications() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/Relational%20Database.png"
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/Relational%20Database.png"
                   alt="Relational Database Certification"
                   className="rounded mb-4 w-32 h-32 object-cover"
                 />
