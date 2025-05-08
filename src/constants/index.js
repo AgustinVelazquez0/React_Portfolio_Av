@@ -5,21 +5,17 @@ import project5 from "../assets/projects/project5.png";
 import project6 from "../assets/projects/project6.png";
 import project7 from "../assets/projects/project7.png";
 import project8_platformer_game from "../assets/projects/project8_platformer_game.png";
-import project9_palindrome_checker from "../assets/projects/project9_palindrome_checker.png";
 import project10_role_playing_game from "../assets/projects/project10_role_playing_game.png";
 import project11_pokemon_search from "../assets/projects/project11_pokemon_search.png";
-import project12_roman_converter from "../assets/projects/project12_roman_converter.png";
-import project13_shopping_cart from "../assets/projects/project13_shopping_cart.png";
 import project14_calorie_counter from "../assets/projects/project14_calorie_counter.png";
 import project15_music_player from "../assets/projects/project15_music_player.png";
 import project16_calculator from "../assets/projects/project16_calculator.png";
-import project17_markdown from "../assets/projects/project17_markdown.png";
-import project18_clock from "../assets/projects/project18_clock.png";
 import project19_bar_chart from "../assets/projects/data_visualization/project19_bar-chart.png";
 import project20_treemap from "../assets/projects/data_visualization/project20_treemap.png";
 import project21_choropleth from "../assets/projects/data_visualization/project21_choropleth.png";
 import project22_heat_map from "../assets/projects/data_visualization/project22_heat-map.png";
 import project23_scatterploth from "../assets/projects/data_visualization/project23_scatterploth.png";
+import project24_library from "../assets/projects/project24_library.png";
 
 export const HERO_CONTENT = `I'm a full-stack developer from Uruguay with hands-on experience building and deploying complete web applications—from frontend to backend—using technologies like React, Node.js, Express, PostgreSQL, and MongoDB. I’ve completed certifications from FreeCodeCamp, Open Santander Academy, and BIOS, focusing on modern development, APIs, databases, and cloud tools. I work confidently with Git, Docker, WSL, Postman, and MongoDB Compass, and I deploy full-stack projects using platforms like Render and Glitch. Passionate about learning and problem-solving, I create clean, scalable solutions through real-world personal projects.`;
 
@@ -98,6 +94,29 @@ export const EXPERIENCES = [
 
 export const PROJECTS = {
   REACT: [
+    {
+      title: "Library App",
+      image: project24_library,
+      description:
+        "A full-stack web application developed with Node, React, Vite, Express, and MongoDB. The library system features a user authentication system, allowing users to log in and manage their profiles. Users can write and submit book reviews, rate books, and download them. The application also offers personalized library customization, enabling users to organize and display their book collection in a unique way.",
+      technologies: [
+        "WSL",
+        "ReactJs",
+        "Vite",
+        "CSS",
+        "Git",
+        "Express.js",
+        "Node.js",
+        "MongoDB",
+        "PostMan",
+        "GitHub",
+        "MongoDB Atlas",
+        "Render",
+      ],
+      link: "https://github.com/AgustinVelazquez0/corner-books-log",
+      github: "https://github.com/AgustinVelazquez0/library-back-end",
+      demo: "https://corner-books-log.onrender.com/register",
+    },
     {
       title: "To Do List",
       image: project7,
@@ -178,40 +197,6 @@ export const PROJECTS = {
       ],
       link: "https://calculator-agustins-projects-569e7477.vercel.app/",
       github: "https://github.com/AgustinVelazquez0/Calculator",
-    },
-    {
-      title: "Markdown Previewer",
-      image: project17_markdown,
-      description:
-        "A React application that converts Markdown syntax into live HTML preview. Supports GitHub-flavored Markdown. ",
-      technologies: [
-        "WSL",
-        "ReactJs",
-        "Vite",
-        "CSS",
-        "Git",
-        "Node.js",
-        "GitHub",
-      ],
-      link: "https://mark-down-iota.vercel.app/",
-      github: "https://github.com/AgustinVelazquez0/MarkDown",
-    },
-    {
-      title: "25 + 5 Clock",
-      image: project18_clock,
-      description:
-        "A Pomodoro-style clock that allows you to track 25-minute work sessions followed by 5-minute breaks. Built with React hooks and styled using CSS modules.",
-      technologies: [
-        "WSL",
-        "ReactJs",
-        "Vite",
-        "CSS",
-        "Git",
-        "Node.js",
-        "GitHub",
-      ],
-      link: "https://25-5-clock-zeta.vercel.app/",
-      github: "https://github.com/AgustinVelazquez0/25-5-Clock",
     },
   ],
   SVG_3D: [
@@ -316,33 +301,6 @@ export const PROJECTS = {
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://calorie-counter-lake.vercel.app/",
       github: "https://github.com/AgustinVelazquez0/calorie_counter",
-    },
-    {
-      title: "Roman Numeral Converter",
-      image: project12_roman_converter,
-      description:
-        "A tool that converts decimal numbers to Roman numerals, using simple JavaScript logic.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      link: "https://roman-converter-one.vercel.app/",
-      github: "https://github.com/AgustinVelazquez0/roman_converter",
-    },
-    {
-      title: "Shopping Cart",
-      image: project13_shopping_cart,
-      description:
-        "A shopping cart built with JavaScript, using an interactive UI and managing the cart's items, prices, and totals.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      link: "https://shopping-cart-umber-gamma.vercel.app/",
-      github: "https://github.com/AgustinVelazquez0/shopping_cart",
-    },
-    {
-      title: "Palindrome Checker",
-      image: project9_palindrome_checker,
-      description:
-        "A simple palindrome checker tool built with JavaScript that checks if a word or phrase is a palindrome.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      link: "https://palindrome-checker-iota-one.vercel.app/",
-      github: "https://github.com/AgustinVelazquez0/palindrome_checker",
     },
   ],
   HTML_CSS: [
