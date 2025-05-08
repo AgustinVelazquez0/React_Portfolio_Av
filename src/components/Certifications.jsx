@@ -272,7 +272,7 @@ function Certifications() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/Data%20Visualization.png"
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/Data%20Visualization.png"
                   alt="Data Visualization Certification"
                   className="rounded mb-4 w-32 h-32 object-cover"
                 />
