@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "technologies": "Tecnologías",
+    "certifications": "Certificaciones",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Agustín",
+    "role": "Desarrollador Full-Stack",
+    "description": "Apasionado por crear soluciones web modernas y robustas",
+    "cta": "Ver proyectos"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "intro": "Soy un desarrollador Full-Stack con experiencia en el stack MERN y otras tecnologías web modernas.",
+    "journey": "Mi viaje en la programación comenzó con una profunda curiosidad por entender cómo funcionan las aplicaciones web. Desde entonces, he desarrollado habilidades tanto en frontend como en backend.",
+    "passion": "Me apasiona crear interfaces de usuario intuitivas y sistemas backend robustos que resuelvan problemas reales.",
+    "goal": "Busco continuamente aprender y mejorar mis habilidades para ofrecer soluciones de alta calidad."
+  },
+  "projects": {
+    "title": "Proyectos destacados",
+    "description": "Una selección de mis trabajos más relevantes",
+    "viewLive": "Ver demo",
+    "viewCode": "Ver código",
+    "technologies": "Tecnologías usadas"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "education": "Educación",
+    "skills": "Habilidades"
+  },
+  "technologies": {
+    "title": "Tecnologías",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Herramientas"
+  },
+  "certifications": {
+    "title": "Certificaciones",
+    "viewCertificate": "Ver certificado"
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "¿Interesado en trabajar juntos? Contáctame a través de:",
+    "nameLabel": "Nombre",
+    "emailLabel": "Email",
+    "messageLabel": "Mensaje",
+    "submitButton": "Enviar mensaje",
+    "emailMe": "Envíame un email",
+    "findMe": "Encuéntrame en"
+  },
+  "footer": {
+    "copyright": "© 2025 Agustín. Todos los derechos reservados.",
+    "madeWith": "Hecho con React y Tailwind CSS"
+  }
+}

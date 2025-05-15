@@ -1,4 +1,4 @@
-import { PROJECTS } from "../constants";
+import { PROJECTS } from "../../constants";
 import { motion } from "framer-motion";
 
 function Projects() {

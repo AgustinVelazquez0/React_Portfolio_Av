@@ -1,4 +1,4 @@
-import { CONTACT } from "../constants";
+import { CONTACT } from "../../constants";
 import { motion } from "framer-motion";
 import { useState } from "react";
 

@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "technologies": "Technologies",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Agustín",
+    "role": "Full-Stack Developer",
+    "description": "Passionate about creating modern and robust web solutions",
+    "cta": "View projects"
+  },
+  "about": {
+    "title": "About me",
+    "intro": "I'm a Full-Stack developer with experience in the MERN stack and other modern web technologies.",
+    "journey": "My programming journey began with a deep curiosity to understand how web applications work. Since then, I've developed skills in both frontend and backend.",
+    "passion": "I'm passionate about creating intuitive user interfaces and robust backend systems that solve real problems.",
+    "goal": "I continuously seek to learn and improve my skills to deliver high-quality solutions."
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "description": "A selection of my most relevant work",
+    "viewLive": "View demo",
+    "viewCode": "View code",
+    "technologies": "Technologies used"
+  },
+  "experience": {
+    "title": "Experience",
+    "education": "Education",
+    "skills": "Skills"
+  },
+  "technologies": {
+    "title": "Technologies",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "viewCertificate": "View certificate"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Interested in working together? Reach out through:",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "submitButton": "Send message",
+    "emailMe": "Email me",
+    "findMe": "Find me on"
+  },
+  "footer": {
+    "copyright": "© 2025 Agustín. All rights reserved.",
+    "madeWith": "Made with React and Tailwind CSS"
+  }
+}
