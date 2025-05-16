@@ -1,8 +1,10 @@
 import { CONTACT } from "../../constants";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "../../hooks/useTranslation";
 
 function Contact() {
+  const { t } = useTranslation();
   const [message, setMessage] = useState("");
 
   const sendMessage = () => {
@@ -27,7 +29,7 @@ function Contact() {
         transition={{ duration: 0.5 }}
         className="my-10 text-center text-4xl"
       >
-        Get in Touch
+        {t("contact.title")}
       </motion.h2>
       <div className="text-center tracking-tighter">
         <motion.p
@@ -52,12 +54,12 @@ function Contact() {
 
         <div className="mt-8">
           <h3 className="text-xl">WhatsApp</h3>
-          <p>Click the button below to open WhatsApp:</p>
+          <p>{t("contact.messageLabel")}</p>
           <button
             onClick={openWhatsApp}
             className="mt-2 bg-cyan-500 text-white rounded px-4 py-2"
           >
-            Open WhatsApp
+            {t("contact.buttonLabel")}
           </button>
           <div className="mt-4">
             <motion.h4
@@ -65,7 +67,7 @@ function Contact() {
               initial={{ opacity: 0, y: -100 }}
               transition={{ duration: 1 }}
             >
-              Send a Message:
+              {t("contact.submitButton")}
             </motion.h4>
             <motion.input
               whileInView={{ opacity: 1, x: 0 }}
@@ -74,7 +76,7 @@ function Contact() {
               type="text"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Type your message"
+              placeholder={t("contact.placeholder")}
               className="border rounded p-2"
             />
             <motion.button
@@ -84,7 +86,7 @@ function Contact() {
               onClick={sendMessage}
               className="ml-2 bg-cyan-500 text-white rounded px-4 py-2"
             >
-              Send Message
+              {t("contact.submitButton")}
             </motion.button>
           </div>
         </div>

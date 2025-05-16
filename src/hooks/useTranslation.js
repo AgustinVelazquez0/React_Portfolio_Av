@@ -1,12 +1,19 @@
-import { useLanguage } from "../context/LenguageContext";
-import translations from "../i18n/translations";
+import { useContext } from "react";
+import { LanguageContext } from "../context/LenguageContext.jsx";
+import en from "../locales/en.json";
+import es from "../locales/es.json";
+
+const translations = { en, es };
 
 export const useTranslation = () => {
-  const { language } = useLanguage();
-
+  const { language } = useContext(LanguageContext);
   const t = (key) => {
-    return translations[language][key] || key;
+    const keys = key.split(".");
+    return keys.reduce(
+      (obj, k) => (obj && obj[k] ? obj[k] : key),
+      translations[language]
+    );
   };
 
-  return { t };
+  return { t, language };
 };

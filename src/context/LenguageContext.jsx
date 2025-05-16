@@ -1,24 +1,13 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
-// Creamos el contexto con valores por defecto
-const LanguageContext = createContext();
+export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  // Estado que maneja el idioma actual
-  const [language, setLanguage] = useState("es");
+  const [language, setLanguage] = useState("en");
 
-  // Función para cambiar el idioma
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "es" ? "en" : "es"));
-  };
-
-  // Lo que va a estar disponible para los consumidores
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+    <LanguageContext.Provider value={{ language, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
 };
-
-// Hook personalizado para usar el contexto más fácil
-export const useLanguage = () => useContext(LanguageContext);

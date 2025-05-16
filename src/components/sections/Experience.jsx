@@ -1,7 +1,10 @@
 import { EXPERIENCES } from "../../constants";
 import { motion } from "framer-motion";
+import { useTranslation } from "../../hooks/useTranslation";
 
 function Experience() {
+  const { t } = useTranslation();
+
   return (
     <div className="border-b border-neutral-900 pb-4">
       <motion.h2
@@ -10,7 +13,7 @@ function Experience() {
         transition={{ duration: 0.5 }}
         className="my-20 text-center text-4xl"
       >
-        Experience Proyects
+        {t("experience.title")}
       </motion.h2>
       <div>
         {EXPERIENCES.map((experience, index) => (
@@ -21,7 +24,9 @@ function Experience() {
               transition={{ duration: 1 }}
               className="w-full lg:w-1/4"
             >
-              <p className="mt-1 text-sm text-neutral-400">{experience.year}</p>
+              <p className="mt-1 text-sm text-neutral-400">
+                {t(`experience.items.${index}.year`)}
+              </p>
             </motion.div>
 
             <motion.div
@@ -31,16 +36,18 @@ function Experience() {
               className="w-full max-w-xl lg:w-3/4"
             >
               <h6 className="mb-2 font-semibold">
-                {experience.role} -{" "}
+                {t(`experience.items.${index}.role`)} -{" "}
                 <span className="text-sm text-purple-100">
-                  {experience.company}
+                  {t(`experience.items.${index}.company`)}
                 </span>
               </h6>
-              <p className="mb-4 text-neutral-400">{experience.description}</p>
+              <p className="mb-4 text-neutral-400">
+                {t(`experience.items.${index}.description`)}
+              </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                {experience.technologies.map((tech, index) => (
+                {experience.technologies.map((tech, techIndex) => (
                   <span
-                    key={index}
+                    key={techIndex}
                     className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-800"
                   >
                     {tech}

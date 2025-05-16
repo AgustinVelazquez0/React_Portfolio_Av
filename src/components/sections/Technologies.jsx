@@ -30,6 +30,7 @@ import {
 import { RiReactjsLine } from "react-icons/ri";
 
 import { motion } from "framer-motion";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -45,10 +46,11 @@ const iconVariants = (duration) => ({
 });
 
 function Technologies() {
+  const { t } = useTranslation();
   return (
     <div className="border-b border-neutral-800 pb-24">
       {/* Section: Technologies */}
-      <h2 className="my-20 text-center text-4xl">Technologies</h2>
+      <h2 className="my-20 text-center text-4xl">{t("technologies.title")}</h2>
       <motion.div
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}
@@ -187,7 +189,7 @@ function Technologies() {
       </motion.div>
 
       {/* Section: Tools */}
-      <h2 className="my-20 text-center text-4xl">Tools</h2>
+      <h2 className="my-20 text-center text-4xl">{t("technologies.tools")}</h2>
       <motion.div
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}

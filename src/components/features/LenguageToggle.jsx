@@ -1,4 +1,13 @@
-const LanguageToggle = ({ language, toggleLanguage }) => {
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LenguageContext";
+
+const LanguageToggle = () => {
+  const { language, setLanguage } = useContext(LanguageContext);
+
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "es" ? "en" : "es"));
+  };
+
   return (
     <button
       onClick={toggleLanguage}

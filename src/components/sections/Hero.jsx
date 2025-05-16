@@ -1,6 +1,6 @@
-import { HERO_CONTENT } from "../../constants";
 import profilePic from "../../assets/Agustin.png";
 import { motion } from "framer-motion";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -12,6 +12,8 @@ const container = (delay) => ({
 });
 
 function Hero() {
+  const { t } = useTranslation(); // 🎯 Usamos el hook para obtener la traducción
+
   return (
     <div className="border-b border-neutral-900 pb-4 lg:mb-35">
       <div className="flex flex-wrap">
@@ -25,6 +27,7 @@ function Hero() {
             >
               Agustin Velazquez
             </motion.h1>
+
             <motion.span
               variants={container(0.5)}
               initial="hidden"
@@ -33,18 +36,21 @@ function Hero() {
   from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight
   text-transparent"
             >
-              Full Stack Developer
+              {t("hero.title")} {/* 🟢 Traducción del título */}
             </motion.span>
+
             <motion.p
               variants={container(1)}
               initial="hidden"
               animate="visible"
               className="my-2 max-w-xl py-6 font-light tracking-tighter"
             >
-              {HERO_CONTENT}
+              {t("hero.content")}
+              {/* 🟢 Traducción del contenido */}
             </motion.p>
           </div>
         </div>
+
         <div className="w-full lg:w-1/2 lg:p-8">
           <div className="flex justify-center">
             <motion.img

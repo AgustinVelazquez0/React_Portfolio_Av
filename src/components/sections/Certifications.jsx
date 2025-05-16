@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "../../hooks/useTranslation";
 
 function Certifications() {
+  const { t } = useTranslation();
+
   return (
     <div className="pb-4 border-b border-neutral-900">
       <motion.h2
@@ -9,7 +12,7 @@ function Certifications() {
         transition={{ duration: 0.5 }}
         className="my-20 text-center text-4xl"
       >
-        Certifications
+        {t("certifications.title")}
       </motion.h2>
 
       {/* BIOS Institute Certifications */}
@@ -45,11 +48,10 @@ function Certifications() {
               className="w-full max-w-xs text-center"
             >
               <h3 className="text-xl font-semibold mb-2">
-                Full Stack Developer.
+                {t("certifications.certificates.fullStack.title")}
               </h3>
               <p className="text-neutral-400">
-                Certification validating skills in full stack development,
-                including front-end and back-end technologies.
+                {t("certifications.certificates.fullStack.description")}
               </p>
             </motion.div>
           </div>
@@ -81,11 +83,10 @@ function Certifications() {
               className="w-full max-w-xs text-center"
             >
               <h3 className="text-xl font-semibold mb-2">
-                Digital Skills in the Professional World.
+                {t("certifications.certificates.digitalSkills.title")}
               </h3>
               <p className="text-neutral-400">
-                Certification validating proficiency in key digital tools for
-                the current professional environment.
+                {t("certifications.certificates.digitalSkills.description")}
               </p>
             </motion.div>
           </div>
@@ -112,7 +113,7 @@ function Certifications() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/Back%20End%20Development%20and%20APIs.png"
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/certificates/Back%20End%20Development%20and%20APIs.png"
                   alt="Back End Development and APIs Certification"
                   className="rounded mb-4 w-32 h-32 object-cover"
                 />
@@ -125,15 +126,10 @@ function Certifications() {
               className="w-full max-w-xs text-center"
             >
               <h3 className="text-xl font-semibold mb-2">
-                Back End Development and APIs.
+                {t("certifications.certificates.backEnd.title")}
               </h3>
               <p className="text-neutral-400">
-                Certification validating skills in Node.js, Express, MongoDB,
-                and Mongoose. I have learned to build backend applications,
-                create APIs, and manage databases using JavaScript. I gained
-                hands-on experience in developing microservices and handling
-                data persistence with MongoDB, while utilizing Express to manage
-                routes and requests efficiently.
+                {t("certifications.certificates.backEnd.description")}
               </p>
             </motion.div>
           </div>
@@ -152,7 +148,7 @@ function Certifications() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/Relational%20Database.png"
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/certificates/Relational%20Database.png"
                   alt="Relational Database Certification"
                   className="rounded mb-4 w-32 h-32 object-cover"
                 />
@@ -165,16 +161,12 @@ function Certifications() {
               className="w-full max-w-xs text-center"
             >
               <h3 className="text-xl font-semibold mb-2">
-                Relational Database.
+                {t("certifications.certificates.relationalDatabase.title")}
               </h3>
               <p className="text-neutral-400">
-                Certification validating skills in Bash, PostgreSQL, SQL, and
-                Git. I have learned to navigate the Linux terminal, use
-                relational databases with PostgreSQL, and automate tasks with
-                Bash scripting. Additionally, I gained proficiency in version
-                control with Git, creating and managing databases, and building
-                interactive projects such as a salon appointment scheduler and a
-                bike rental shop.
+                {t(
+                  "certifications.certificates.relationalDatabase.description"
+                )}
               </p>
             </motion.div>
           </div>
@@ -193,7 +185,7 @@ function Certifications() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/JavaScript%20Algorithms%20and%20Data%20Structures.png"
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/certificates/JavaScript%20Algorithms%20and%20Data%20Structures.png"
                   alt="JavaScript Certification"
                   className="rounded mb-4 w-32 h-32 object-cover"
                 />
@@ -206,15 +198,10 @@ function Certifications() {
               className="w-full max-w-xs text-center"
             >
               <h3 className="text-xl font-semibold mb-2">
-                JavaScript Algorithms and Data Structures.
+                {t("certifications.certificates.javascript.title")}
               </h3>
               <p className="text-neutral-400">
-                Certification validating skills in JavaScript, including
-                variables, arrays, objects, loops, functions, and the DOM. I
-                have learned Object-Oriented Programming (OOP), Functional
-                Programming, algorithmic thinking, local storage, APIs,
-                debugging, recursion, regular expressions, and advanced array
-                methods.
+                {t("certifications.certificates.javascript.description")}
               </p>
             </motion.div>
           </div>
@@ -233,8 +220,7 @@ function Certifications() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/Quality%20Assurance.png"
-                  alt="Certification 10"
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/certificates/Quality%20Assurance.png"
                   className="rounded mb-4 w-32 h-32 object-cover"
                 />
               </a>
@@ -245,15 +231,11 @@ function Certifications() {
               transition={{ duration: 1 }}
               className="w-full max-w-xs text-center"
             >
-              <h3 className="text-xl font-semibold mb-2">Quality Assurance.</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                {t("certifications.certificates.qualityAssurance.title")}
+              </h3>
               <p className="text-neutral-400">
-                In the Quality Assurance certification, I learned to write and
-                run tests with Chai to ensure my web applications function
-                correctly after changes. I deepened my knowledge of Node.js and
-                Express.js to build full-stack applications, implementing
-                authentication with Passport and real-time communication with
-                Socket.io. I also used Pug as a template engine for rapid
-                frontend development.
+                {t("certifications.certificates.qualityAssurance.description")}
               </p>
             </motion.div>
           </div>
@@ -272,7 +254,7 @@ function Certifications() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/Data%20Visualization.png"
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/certificates/Data%20Visualization.png"
                   alt="Data Visualization Certification"
                   className="rounded mb-4 w-32 h-32 object-cover"
                 />
@@ -284,13 +266,11 @@ function Certifications() {
               transition={{ duration: 1 }}
               className="w-full max-w-xs text-center"
             >
-              <h3 className="text-xl font-semibold mb-2">Data Visualization</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                {t("certifications.certificates.dataVisualization.title")}
+              </h3>
               <p className="text-neutral-400">
-                Certification validating skills in D3.js, working with data to
-                create different charts, graphs, hover elements, and other
-                ingredients to create dynamic and attractive data
-                visualizations, JSON APIs and AJAX, and Scalable Vector Graphics
-                (SVG).
+                {t("certifications.certificates.dataVisualization.description")}
               </p>
             </motion.div>
           </div>
@@ -309,7 +289,7 @@ function Certifications() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/Responsive%20Web%20Design.png"
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/certificates/Responsive%20Web%20Design.png"
                   alt="Certification 2"
                   className="rounded mb-4 w-32 h-32 object-cover"
                 />
@@ -322,13 +302,12 @@ function Certifications() {
               className="w-full max-w-xs text-center"
             >
               <h3 className="text-xl font-semibold mb-2">
-                Responsive Web Design.
+                {t("certifications.certificates.responsiveWebDesign.title")}
               </h3>
               <p className="text-neutral-400">
-                Certification validating skills in HTML and CSS, including
-                building webpages using HTML for content and CSS for design. I
-                have learned modern techniques such as Flexbox, CSS Grid, CSS
-                variables, and best practices for accessibility.
+                {t(
+                  "certifications.certificates.responsiveWebDesign.description"
+                )}
               </p>
             </motion.div>
           </div>
@@ -347,7 +326,7 @@ function Certifications() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/main/src/assets/Front%20end%20freecodecamp%20certification.png"
+                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/certificates/Front%20end%20freecodecamp%20certification.png"
                   alt="Front End Development Libraries Certification"
                   className="rounded mb-4 w-32 h-32 object-cover"
                 />
@@ -360,13 +339,10 @@ function Certifications() {
               className="w-full max-w-xs text-center"
             >
               <h3 className="text-xl font-semibold mb-2">
-                Front End Development Libraries.
+                {t("certifications.certificates.frontEnd.title")}
               </h3>
               <p className="text-neutral-400">
-                Certification validating skills in JavaScript, React, CSS,
-                jQuery, Bootstrap, and Redux. I have learned to build modern,
-                responsive web applications and manage state effectively across
-                components.
+                {t("certifications.certificates.frontEnd.description")}
               </p>
             </motion.div>
           </div>
@@ -406,10 +382,10 @@ function Certifications() {
               className="w-full max-w-xs text-center"
             >
               <h3 className="text-xl font-semibold mb-2">
-                Introduction to Data Science.
+                {t("certifications.certificates.dataScience.title")}
               </h3>
               <p className="text-neutral-400">
-                Certification in foundational data science concepts and methods.
+                {t("certifications.certificates.dataScience.description")}
               </p>
             </motion.div>
           </div>
@@ -441,11 +417,10 @@ function Certifications() {
               className="w-full max-w-xs text-center"
             >
               <h3 className="text-xl font-semibold mb-2">
-                English Essentials for Professional Growth.
+                {t("certifications.certificates.english.title")}
               </h3>
               <p className="text-neutral-400">
-                Certification validating essential English skills for career
-                development.
+                {t("certifications.certificates.english.description")}
               </p>
             </motion.div>
           </div>
@@ -478,10 +453,10 @@ function Certifications() {
               className="w-full max-w-xs text-center"
             >
               <h3 className="text-xl font-semibold mb-2">
-                Python Programming.
+                {t("certifications.certificates.python.title")}
               </h3>
               <p className="text-neutral-400">
-                Certification validating proficiency in Python programming.
+                {t("certifications.certificates.python.description")}
               </p>
             </motion.div>
           </div>
@@ -512,9 +487,11 @@ function Certifications() {
               transition={{ duration: 1 }}
               className="w-full max-w-xs text-center"
             >
-              <h3 className="text-xl font-semibold mb-2">ChatGPT.</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                {t("certifications.certificates.chatGPT.title")}
+              </h3>
               <p className="text-neutral-400">
-                Certification in using ChatGPT for various professional tasks.
+                {t("certifications.certificates.chatGPT.description")}
               </p>
             </motion.div>
           </div>

@@ -1,23 +1,16 @@
 import project1 from "../assets/projects/project1.png";
-import project2 from "../assets/projects/project2.png";
-import project3 from "../assets/projects/project3.png";
 import project5 from "../assets/projects/project5.png";
 import project6 from "../assets/projects/project6.png";
 import project7 from "../assets/projects/project7.png";
 import project8_platformer_game from "../assets/projects/project8_platformer_game.png";
 import project10_role_playing_game from "../assets/projects/project10_role_playing_game.png";
-import project11_pokemon_search from "../assets/projects/project11_pokemon_search.png";
-import project14_calorie_counter from "../assets/projects/project14_calorie_counter.png";
 import project15_music_player from "../assets/projects/project15_music_player.png";
 import project16_calculator from "../assets/projects/project16_calculator.png";
-import project19_bar_chart from "../assets/projects/data_visualization/project19_bar-chart.png";
 import project20_treemap from "../assets/projects/data_visualization/project20_treemap.png";
 import project21_choropleth from "../assets/projects/data_visualization/project21_choropleth.png";
-import project22_heat_map from "../assets/projects/data_visualization/project22_heat-map.png";
-import project23_scatterploth from "../assets/projects/data_visualization/project23_scatterploth.png";
 import project24_library from "../assets/projects/project24_library.png";
 
-export const HERO_CONTENT = `I'm a full-stack developer from Uruguay with hands-on experience building and deploying complete web applications—from frontend to backend—using technologies like React, Node.js, Express, PostgreSQL, and MongoDB. I’ve completed certifications from FreeCodeCamp, Open Santander Academy, and BIOS, focusing on modern development, APIs, databases, and cloud tools. I work confidently with Git, Docker, WSL, Postman, and MongoDB Compass, and I deploy full-stack projects using platforms like Render and Glitch. Passionate about learning and problem-solving, I create clean, scalable solutions through real-world personal projects.`;
+export const HERO_CONTENT_KEY = `I'm a full-stack developer from Uruguay with hands-on experience building and deploying complete web applications—from frontend to backend—using technologies like React, Node.js, Express, PostgreSQL, and MongoDB. I’ve completed certifications from FreeCodeCamp, Open Santander Academy, and BIOS, focusing on modern development, APIs, databases, and cloud tools. I work confidently with Git, Docker, WSL, Postman, and MongoDB Compass, and I deploy full-stack projects using platforms like Render and Glitch. Passionate about learning and problem-solving, I create clean, scalable solutions through real-world personal projects.`;
 
 export const EXPERIENCES = [
   {
@@ -182,7 +175,7 @@ export const PROJECTS = {
       github: "https://github.com/AgustinVelazquez0/React-Rick-and-Morty",
     },
     {
-      title: "Calculator",
+      title: "Calculator App",
       image: project16_calculator,
       description:
         "A fully functional React calculator with basic arithmetic operations. Built using hooks and responsive design. Instructions and code available in the README file.",
@@ -202,15 +195,6 @@ export const PROJECTS = {
   SVG_3D: [
     // SVG/3D visualization projects
     {
-      title: "Bar Chart",
-      image: project19_bar_chart,
-      description:
-        "Built with React, D3.js, SVG, CSS, APIs, and AJAX. The project fetches and processes a dataset, then uses D3 to create an interactive bar chart with tooltips.",
-      technologies: ["React", "D3.js", "SVG", "CSS", "APIs", "AJAX"],
-      link: "https://bar-chart-two.vercel.app/",
-      github: "https://github.com/AgustinVelazquez0/bar-chart",
-    },
-    {
       title: "Tree Map",
       image: project20_treemap,
       description:
@@ -227,24 +211,6 @@ export const PROJECTS = {
       technologies: ["React", "D3.js", "SVG", "CSS", "APIs", "AJAX"],
       link: "https://choropleth-map-mauve.vercel.app/",
       github: "https://github.com/AgustinVelazquez0/choropleth-map",
-    },
-    {
-      title: "Heat Map",
-      image: project22_heat_map,
-      description:
-        "Built with React, D3.js, SVG, CSS, APIs, and AJAX. The project fetches and processes a dataset, then uses D3 to create an interactive bar chart with tooltips.",
-      technologies: ["React", "D3.js", "SVG", "CSS", "APIs", "AJAX"],
-      link: "https://heat-map-mu.vercel.app/",
-      github: "https://github.com/AgustinVelazquez0/heat-map",
-    },
-    {
-      title: "Scatterploth Graphic",
-      image: project23_scatterploth,
-      description:
-        "Built with React, D3.js, SVG, CSS, APIs, and AJAX. The project fetches and processes a dataset, then uses D3 to create an interactive bar chart with tooltips.",
-      technologies: ["React", "D3.js", "SVG", "CSS", "APIs", "AJAX"],
-      link: "https://scatterplot-graph-rho.vercel.app/",
-      github: "https://github.com/AgustinVelazquez0/scatterplot-graph",
     },
   ],
   JS: [
@@ -276,51 +242,13 @@ export const PROJECTS = {
       github: "https://github.com/AgustinVelazquez0/platformer-game",
     },
     {
-      title: "Role Playing Game",
+      title: "Role Playing Game (RPG)",
       image: project10_role_playing_game,
       description:
         "A role-playing game (RPG) built using HTML, CSS, and JavaScript. You can move your character and interact with enemies and items.",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://role-playing-game-sandy.vercel.app/",
       github: "https://github.com/AgustinVelazquez0/role_playing_game",
-    },
-    {
-      title: "Pokemon Search App",
-      image: project11_pokemon_search,
-      description:
-        "An app where you can search and view details of different Pokémon using an external API.",
-      technologies: ["HTML", "CSS", "JavaScript", "API"],
-      link: "https://pokemon-serch.vercel.app/",
-      github: "https://github.com/AgustinVelazquez0/pokemon_serch",
-    },
-    {
-      title: "Calorie Counter",
-      image: project14_calorie_counter,
-      description:
-        "A simple calorie counter web application built with HTML, CSS, and JavaScript to help users track the calories consumed in a day.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      link: "https://calorie-counter-lake.vercel.app/",
-      github: "https://github.com/AgustinVelazquez0/calorie_counter",
-    },
-  ],
-  HTML_CSS: [
-    {
-      title: "The Corner Books",
-      image: project2,
-      description: "Simple website where you can find unusual books.",
-      technologies: ["HTML", "CSS"],
-      link: "https://agustinvelazquez0.github.io/Html_Page_Books/",
-      github: "https://github.com/AgustinVelazquez0/Html_Page_Books",
-    },
-    {
-      title: "Portfolio Website",
-      image: project3,
-      description:
-        "This is my first personal portfolio website. It showcases my projects, skills, and contact information, featuring MediaQuery and other functionalities.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      link: "https://agustinvelazquez0.github.io/",
-      github:
-        "https://github.com/AgustinVelazquez0/AgustinVelazquez0.github.io",
     },
   ],
 };
