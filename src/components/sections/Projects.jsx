@@ -21,7 +21,7 @@ function Projects() {
         {/* Proyecto React 1 */}
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 10 }}
           whileHover={{
             scale: 1.01,
             boxShadow: "0 0 15px 1px rgba(59, 130, 246, 0.3)",
