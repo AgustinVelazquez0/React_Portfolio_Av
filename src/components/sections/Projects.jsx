@@ -349,6 +349,9 @@ function Projects() {
                 Node.js
               </span>
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                SCSS
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
                 API
               </span>
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
