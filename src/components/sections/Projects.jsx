@@ -8,8 +8,9 @@ function Projects() {
     <div className="border-b border-neutral-900 pb-4">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
         className="my-20 text-center text-4xl"
       >
         {t("projects.title")}
@@ -22,11 +23,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 10 }}
+          viewport={{ once: true, margin: "-50px" }}
           whileHover={{
-            scale: 1.01,
-            boxShadow: "0 0 15px 1px rgba(59, 130, 246, 0.3)",
+            scale: 1.005,
+            boxShadow: "0 0 12px 1px rgba(59, 130, 246, 0.2)",
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
@@ -116,12 +118,13 @@ function Projects() {
         {/* Proyecto React 2 */}
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 10 }}
+          viewport={{ once: true, margin: "-50px" }}
           whileHover={{
-            scale: 1.01,
-            boxShadow: "0 0 15px 1px rgba(59, 130, 246, 0.3)",
+            scale: 1.005,
+            boxShadow: "0 0 12px 1px rgba(59, 130, 246, 0.2)",
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }} // Añadir ease para suavizar
           className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
@@ -225,12 +228,13 @@ function Projects() {
         {/* Proyecto React 3 */}
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 10 }}
+          viewport={{ once: true, margin: "-50px" }}
           whileHover={{
-            scale: 1.01,
-            boxShadow: "0 0 15px 1px rgba(59, 130, 246, 0.3)",
+            scale: 1.005,
+            boxShadow: "0 0 12px 1px rgba(59, 130, 246, 0.2)",
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
@@ -307,12 +311,13 @@ function Projects() {
         {/* Proyecto React 4 */}
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 10 }}
+          viewport={{ once: true, margin: "-50px" }}
           whileHover={{
-            scale: 1.01,
-            boxShadow: "0 0 15px 1px rgba(59, 130, 246, 0.3)",
+            scale: 1.005,
+            boxShadow: "0 0 12px 1px rgba(59, 130, 246, 0.2)",
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
@@ -389,12 +394,13 @@ function Projects() {
         {/* Proyecto React 5 */}
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 10 }}
+          viewport={{ once: true, margin: "-50px" }}
           whileHover={{
-            scale: 1.01,
-            boxShadow: "0 0 15px 1px rgba(59, 130, 246, 0.3)",
+            scale: 1.005,
+            boxShadow: "0 0 12px 1px rgba(59, 130, 246, 0.2)",
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
@@ -468,12 +474,13 @@ function Projects() {
         {/* Proyecto SVG 1 */}
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 10 }}
+          viewport={{ once: true, margin: "-50px" }}
           whileHover={{
-            scale: 1.01,
-            boxShadow: "0 0 15px 1px rgba(168, 85, 247, 0.3)",
+            scale: 1.005,
+            boxShadow: "0 0 12px 1px rgba(168, 85, 247, 0.2)",
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
@@ -546,12 +553,13 @@ function Projects() {
         {/* Proyecto SVG 2 */}
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 10 }}
+          viewport={{ once: true, margin: "-50px" }}
           whileHover={{
-            scale: 1.01,
-            boxShadow: "0 0 15px 1px rgba(168, 85, 247, 0.3)",
+            scale: 1.005,
+            boxShadow: "0 0 12px 1px rgba(168, 85, 247, 0.2)",
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
@@ -631,12 +639,13 @@ function Projects() {
         {/* Proyecto JS 1 */}
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 10 }}
+          viewport={{ once: true, margin: "-50px" }}
           whileHover={{
-            scale: 1.01,
-            boxShadow: "0 0 15px 1px rgba(234, 179, 8, 0.3)",
+            scale: 1.005,
+            boxShadow: "0 0 12px 1px rgba(234, 179, 8, 0.2)",
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
@@ -706,12 +715,13 @@ function Projects() {
         {/* Proyecto JS 2 */}
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 10 }}
+          viewport={{ once: true, margin: "-50px" }}
           whileHover={{
-            scale: 1.01,
-            boxShadow: "0 0 15px 1px rgba(234, 179, 8, 0.3)",
+            scale: 1.005,
+            boxShadow: "0 0 12px 1px rgba(234, 179, 8, 0.2)",
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
@@ -781,12 +791,13 @@ function Projects() {
         {/* Proyecto JS 3 */}
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 10 }}
+          viewport={{ once: true, margin: "-50px" }}
           whileHover={{
-            scale: 1.01,
-            boxShadow: "0 0 15px 1px rgba(234, 179, 8, 0.3)",
+            scale: 1.005,
+            boxShadow: "0 0 12px 1px rgba(234, 179, 8, 0.2)",
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
@@ -856,12 +867,13 @@ function Projects() {
         {/* Proyecto JS 4 */}
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 10 }}
+          viewport={{ once: true, margin: "-50px" }}
           whileHover={{
-            scale: 1.01,
-            boxShadow: "0 0 15px 1px rgba(234, 179, 8, 0.3)",
+            scale: 1.005,
+            boxShadow: "0 0 12px 1px rgba(234, 179, 8, 0.2)",
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
