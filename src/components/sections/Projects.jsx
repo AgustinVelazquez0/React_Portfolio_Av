@@ -22,8 +22,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: "0 0 15px 1px rgba(59, 130, 246, 0.3)",
+          }}
           transition={{ duration: 0.5 }}
-          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
             <div className="w-1/3">
@@ -98,8 +102,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: "0 0 15px 1px rgba(59, 130, 246, 0.3)",
+          }}
           transition={{ duration: 0.5 }}
-          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
             <div className="w-1/3">
@@ -176,8 +184,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: "0 0 15px 1px rgba(59, 130, 246, 0.3)",
+          }}
           transition={{ duration: 0.5 }}
-          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
             <div className="w-1/3">
@@ -248,8 +260,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: "0 0 15px 1px rgba(59, 130, 246, 0.3)",
+          }}
           transition={{ duration: 0.5 }}
-          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
             <div className="w-1/3">
@@ -317,8 +333,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: "0 0 15px 1px rgba(59, 130, 246, 0.3)",
+          }}
           transition={{ duration: 0.5 }}
-          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
             <div className="w-1/3">
@@ -392,8 +412,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: "0 0 15px 1px rgba(168, 85, 247, 0.3)",
+          }}
           transition={{ duration: 0.5 }}
-          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
             <div className="w-1/3">
@@ -460,8 +484,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: "0 0 15px 1px rgba(168, 85, 247, 0.3)",
+          }}
           transition={{ duration: 0.5 }}
-          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
             <div className="w-1/3">
@@ -535,8 +563,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: "0 0 15px 1px rgba(234, 179, 8, 0.3)",
+          }}
           transition={{ duration: 0.5 }}
-          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
             <div className="w-1/3">
@@ -606,8 +638,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: "0 0 15px 1px rgba(234, 179, 8, 0.3)",
+          }}
           transition={{ duration: 0.5 }}
-          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
             <div className="w-1/3">
@@ -677,8 +713,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: "0 0 15px 1px rgba(234, 179, 8, 0.3)",
+          }}
           transition={{ duration: 0.5 }}
-          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
             <div className="w-1/3">
@@ -748,8 +788,12 @@ function Projects() {
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: "0 0 15px 1px rgba(234, 179, 8, 0.3)",
+          }}
           transition={{ duration: 0.5 }}
-          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-neutral-950 p-6 rounded-lg shadow-lg"
+          className="mb-12 w-full sm:w-full md:w-5/12 lg:w-5/12 flex flex-col bg-[#0b0f18] p-6 rounded-lg shadow-lg border border-transparent hover:border-blue-500/30 transition-all duration-300"
         >
           <div className="flex flex-wrap">
             <div className="w-1/3">
