@@ -63,7 +63,22 @@ function Projects() {
                 Node.js
               </span>
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                Express.js
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
                 MongoDB
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                Git
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                GitHub
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                PostMan
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                MongoDB Compass
               </span>
             </div>
 
@@ -140,10 +155,37 @@ function Projects() {
                 React
               </span>
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
-                Express
+                Express.js
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                Node.js
               </span>
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
                 PostgreSQL
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                MongoDB
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                Docker
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                Git
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                GitHub
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                PostMan
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                MongoDB Compass
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                DBeaver
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                Linux
               </span>
             </div>
 
@@ -222,10 +264,16 @@ function Projects() {
                 React
               </span>
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
-                Firebase
+                Node.js
               </span>
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
-                Tailwind
+                Express.js
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                MongoDB
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                API
               </span>
             </div>
 
@@ -301,7 +349,13 @@ function Projects() {
                 Node.js
               </span>
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
-                MongoDB
+                API
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                Git
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-blue-600">
+                GitHub
               </span>
             </div>
 
@@ -447,7 +501,13 @@ function Projects() {
           <div className="mt-auto">
             <div className="flex flex-wrap gap-2 mt-4">
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-600">
+                React
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-600">
                 D3.js
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-600">
+                API
               </span>
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-600">
                 SVG
@@ -519,7 +579,13 @@ function Projects() {
           <div className="mt-auto">
             <div className="flex flex-wrap gap-2 mt-4">
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-600">
+                React
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-600">
                 D3.js
+              </span>
+              <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-600">
+                API
               </span>
               <span className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-600">
                 SVG
