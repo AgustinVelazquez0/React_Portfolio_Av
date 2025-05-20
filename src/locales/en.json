@@ -22,7 +22,7 @@
   "projects": {
     "title": "Featured Projects",
     "description": "A selection of my most relevant work",
-    "buttonViewProject": "Ver proyect",
+    "buttonViewProject": "View proyect",
     "buttonViewFrontCode": "View code (Frontend)",
     "buttonViewBackCode": "View code (Backend)",
     "REACT": {
