@@ -107,8 +107,13 @@
     "title": "Tecnologías",
     "frontend": "Frontend",
     "backend": "Backend",
+    "systemBuild": "Sistema y Build",
     "databases": "Bases de Datos",
-    "tools": "Herramientas"
+    "tools": "Herramientas",
+    "versionControl": "Control de Versiones",
+    "devopsInfra": "DevOps e Infraestructura",
+    "apiTesting": "APIs y Despliegue",
+    "productivity": "Productividad y Diseño"
   },
   "certifications": {
     "title": "Certificaciones",

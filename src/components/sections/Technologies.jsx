@@ -38,8 +38,8 @@ import IconCard from "../ui/IconCard";
 function Technologies() {
   const { t } = useTranslation();
 
-  // Configuración de tecnologías (Frontend/Backend)
-  const technologies = [
+  // Configuración de tecnologías Frontend
+  const frontendTechnologies = [
     { icon: FaHtml5, name: "HTML5", color: "text-red-600", duration: 3.5 },
     { icon: FaCss3Alt, name: "CSS3", color: "text-blue-600", duration: 1.5 },
     {
@@ -66,6 +66,16 @@ function Technologies() {
       color: "text-cyan-300",
       duration: 2.8,
     },
+    {
+      icon: SiTailwindcss,
+      name: "Tailwind CSS",
+      color: "text-blue-400",
+      duration: 5,
+    },
+  ];
+
+  // Configuración de tecnologías Backend
+  const backendTechnologies = [
     { icon: FaNodeJs, name: "Node.js", color: "text-green-600", duration: 3 },
     {
       icon: SiExpress,
@@ -74,21 +84,19 @@ function Technologies() {
       duration: 4,
     },
     {
-      icon: SiTailwindcss,
-      name: "Tailwind CSS",
-      color: "text-blue-400",
-      duration: 5,
-    },
-    { icon: SiUbuntu, name: "Ubuntu", color: "text-orange-500", duration: 6 },
-    { icon: SiVite, name: "Vite", color: "text-purple-500", duration: 5.5 },
-    { icon: SiGnubash, name: "Bash", color: "text-green-700", duration: 4.5 },
-    { icon: SiJson, name: "JSON", color: "text-amber-600", duration: 3.3 },
-    {
       icon: SiApachenetbeanside,
       name: "API",
       color: "text-indigo-600",
       duration: 2.2,
     },
+  ];
+
+  // Configuración de herramientas de sistema y build
+  const systemBuildTools = [
+    { icon: SiUbuntu, name: "Ubuntu", color: "text-orange-500", duration: 6 },
+    { icon: SiVite, name: "Vite", color: "text-purple-500", duration: 5.5 },
+    { icon: SiGnubash, name: "Bash", color: "text-green-700", duration: 4.5 },
+    { icon: SiJson, name: "JSON", color: "text-amber-600", duration: 3.3 },
   ];
 
   // Configuración de bases de datos principales
@@ -118,14 +126,27 @@ function Technologies() {
     { icon: SiDbeaver, name: "DBeaver", color: "text-blue-700", duration: 3.5 },
   ];
 
-  // Configuración de herramientas de desarrollo
-  const tools = [
-    { icon: SiDocker, name: "Docker", color: "text-blue-500", duration: 2.5 },
+  // Configuración de herramientas - Version Control & Collaboration
+  const versionControlTools = [
     { icon: FaGithub, name: "GitHub", color: "text-gray-500", duration: 2 },
     { icon: FaGit, name: "Git", color: "text-orange-600", duration: 2.8 },
+  ];
+
+  // Configuración de herramientas - DevOps & Infrastructure
+  const devopsInfraTools = [
+    { icon: SiDocker, name: "Docker", color: "text-blue-500", duration: 2.5 },
+    { icon: SiNginx, name: "Nginx", color: "text-green-600", duration: 3.7 },
+  ];
+
+  // Configuración de herramientas - API Testing & Deployment
+  const apiTestingTools = [
     { icon: SiPostman, name: "Postman", color: "text-orange-500", duration: 4 },
     { icon: SiRender, name: "Render", color: "text-purple-700", duration: 4.8 },
     { icon: SiGlitch, name: "Glitch", color: "text-blue-600", duration: 4.2 },
+  ];
+
+  // Configuración de herramientas - Productivity & Design
+  const productivityTools = [
     {
       icon: SiGoogledrive,
       name: "Google Drive",
@@ -140,29 +161,82 @@ function Technologies() {
       color: "text-blue-500",
       duration: 3.2,
     },
-    { icon: SiNginx, name: "Nginx", color: "text-green-600", duration: 3.7 },
   ];
 
   return (
     <div className="border-b border-neutral-800 pb-24">
       {/* Section: Technologies */}
       <h2 className="my-20 text-center text-4xl">{t("technologies.title")}</h2>
-      <motion.div
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 1.5 }}
-        className="flex flex-wrap items-center justify-center gap-4"
-      >
-        {technologies.map((tech, index) => (
-          <IconCard
-            key={index}
-            icon={tech.icon}
-            name={tech.name}
-            color={tech.color}
-            duration={tech.duration}
-          />
-        ))}
-      </motion.div>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {/* Frontend Technologies */}
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 1.5, delay: 0.2 }}
+          className="flex flex-col items-center"
+        >
+          <h3 className="text-xl font-semibold text-neutral-300 mb-6">
+            {t("technologies.frontend")}
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {frontendTechnologies.map((tech, index) => (
+              <IconCard
+                key={index}
+                icon={tech.icon}
+                name={tech.name}
+                color={tech.color}
+                duration={tech.duration}
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Backend Technologies */}
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 1.5, delay: 0.4 }}
+          className="flex flex-col items-center"
+        >
+          <h3 className="text-xl font-semibold text-neutral-300 mb-6">
+            {t("technologies.backend")}
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {backendTechnologies.map((tech, index) => (
+              <IconCard
+                key={index}
+                icon={tech.icon}
+                name={tech.name}
+                color={tech.color}
+                duration={tech.duration}
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* System & Build Tools */}
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 1.5, delay: 0.6 }}
+          className="flex flex-col items-center"
+        >
+          <h3 className="text-xl font-semibold text-neutral-300 mb-6">
+            {t("technologies.systemBuild")}
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {systemBuildTools.map((tech, index) => (
+              <IconCard
+                key={index}
+                icon={tech.icon}
+                name={tech.name}
+                color={tech.color}
+                duration={tech.duration}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </div>
 
       {/* Section: Databases */}
       <h2 className="my-20 text-center text-4xl">
@@ -218,22 +292,99 @@ function Technologies() {
 
       {/* Section: Tools */}
       <h2 className="my-20 text-center text-4xl">{t("technologies.tools")}</h2>
-      <motion.div
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 1.5 }}
-        className="flex flex-wrap items-center justify-center gap-4"
-      >
-        {tools.map((tool, index) => (
-          <IconCard
-            key={index}
-            icon={tool.icon}
-            name={tool.name}
-            color={tool.color}
-            duration={tool.duration}
-          />
-        ))}
-      </motion.div>
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+        {/* Version Control & Collaboration */}
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 1.5, delay: 0.2 }}
+          className="flex flex-col items-center"
+        >
+          <h3 className="text-lg font-semibold text-neutral-300 mb-6 text-center">
+            {t("technologies.versionControl")}
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {versionControlTools.map((tool, index) => (
+              <IconCard
+                key={index}
+                icon={tool.icon}
+                name={tool.name}
+                color={tool.color}
+                duration={tool.duration}
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* DevOps & Infrastructure */}
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 1.5, delay: 0.4 }}
+          className="flex flex-col items-center"
+        >
+          <h3 className="text-lg font-semibold text-neutral-300 mb-6 text-center">
+            {t("technologies.devopsInfra")}
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {devopsInfraTools.map((tool, index) => (
+              <IconCard
+                key={index}
+                icon={tool.icon}
+                name={tool.name}
+                color={tool.color}
+                duration={tool.duration}
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* API Testing & Deployment */}
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 1.5, delay: 0.6 }}
+          className="flex flex-col items-center"
+        >
+          <h3 className="text-lg font-semibold text-neutral-300 mb-6 text-center">
+            {t("technologies.apiTesting")}
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {apiTestingTools.map((tool, index) => (
+              <IconCard
+                key={index}
+                icon={tool.icon}
+                name={tool.name}
+                color={tool.color}
+                duration={tool.duration}
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Productivity & Design */}
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 1.5, delay: 0.8 }}
+          className="flex flex-col items-center"
+        >
+          <h3 className="text-lg font-semibold text-neutral-300 mb-6 text-center">
+            {t("technologies.productivity")}
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {productivityTools.map((tool, index) => (
+              <IconCard
+                key={index}
+                icon={tool.icon}
+                name={tool.name}
+                color={tool.color}
+                duration={tool.duration}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }
