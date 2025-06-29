@@ -38,7 +38,7 @@ import IconCard from "../ui/IconCard";
 function Technologies() {
   const { t } = useTranslation();
 
-  // Configuración de tecnologías (nombres fijos)
+  // Configuración de tecnologías (Frontend/Backend)
   const technologies = [
     { icon: FaHtml5, name: "HTML5", color: "text-red-600", duration: 3.5 },
     { icon: FaCss3Alt, name: "CSS3", color: "text-blue-600", duration: 1.5 },
@@ -91,25 +91,38 @@ function Technologies() {
     },
   ];
 
-  // Configuración de herramientas (nombres fijos)
-  const tools = [
-    { icon: SiDocker, name: "Docker", color: "text-blue-500", duration: 2.5 },
+  // Configuración de bases de datos principales
+  const databases = [
     {
       icon: SiPostgresql,
       name: "PostgreSQL",
       color: "text-blue-400",
       duration: 3,
     },
-    { icon: SiMongodb, name: "MongoDB", color: "text-green-500", duration: 3 },
+    {
+      icon: SiMongodb,
+      name: "MongoDB",
+      color: "text-green-500",
+      duration: 3.2,
+    },
+  ];
+
+  // Configuración de clientes/herramientas de bases de datos
+  const databaseClients = [
     {
       icon: SiMongodb,
       name: "MongoDB Compass",
       color: "text-green-700",
-      duration: 2.3,
+      duration: 2.8,
     },
+    { icon: SiDbeaver, name: "DBeaver", color: "text-blue-700", duration: 3.5 },
+  ];
+
+  // Configuración de herramientas de desarrollo
+  const tools = [
+    { icon: SiDocker, name: "Docker", color: "text-blue-500", duration: 2.5 },
     { icon: FaGithub, name: "GitHub", color: "text-gray-500", duration: 2 },
     { icon: FaGit, name: "Git", color: "text-orange-600", duration: 2.8 },
-    { icon: SiDbeaver, name: "DBeaver", color: "text-blue-700", duration: 3.5 },
     { icon: SiPostman, name: "Postman", color: "text-orange-500", duration: 4 },
     { icon: SiRender, name: "Render", color: "text-purple-700", duration: 4.8 },
     { icon: SiGlitch, name: "Glitch", color: "text-blue-600", duration: 4.2 },
@@ -150,6 +163,58 @@ function Technologies() {
           />
         ))}
       </motion.div>
+
+      {/* Section: Databases */}
+      <h2 className="my-20 text-center text-4xl">
+        {t("technologies.databases")}
+      </h2>
+      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {/* Bases de datos principales */}
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -100 }}
+          transition={{ duration: 1.5 }}
+          className="flex flex-col items-center"
+        >
+          <h3 className="text-xl font-semibold text-neutral-300 mb-6">
+            Databases
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {databases.map((db, index) => (
+              <IconCard
+                key={index}
+                icon={db.icon}
+                name={db.name}
+                color={db.color}
+                duration={db.duration}
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Clientes de bases de datos */}
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 100 }}
+          transition={{ duration: 1.5 }}
+          className="flex flex-col items-center"
+        >
+          <h3 className="text-xl font-semibold text-neutral-300 mb-6">
+            Database Clients
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {databaseClients.map((client, index) => (
+              <IconCard
+                key={index}
+                icon={client.icon}
+                name={client.name}
+                color={client.color}
+                duration={client.duration}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </div>
 
       {/* Section: Tools */}
       <h2 className="my-20 text-center text-4xl">{t("technologies.tools")}</h2>
