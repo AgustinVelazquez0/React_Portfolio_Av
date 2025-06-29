@@ -26,27 +26,110 @@ import {
   SiGnubash,
   SiJson,
   SiApachenetbeanside,
+  SiReact,
+  SiNginx,
 } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
 
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
-
-const iconVariants = (duration) => ({
-  initial: { y: -10 },
-  animate: {
-    y: [10, -10],
-    transition: {
-      duration: duration,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "reverse",
-    },
-  },
-});
+import IconCard from "../ui/IconCard";
 
 function Technologies() {
   const { t } = useTranslation();
+
+  // Configuración de tecnologías (nombres fijos)
+  const technologies = [
+    { icon: FaHtml5, name: "HTML5", color: "text-red-600", duration: 3.5 },
+    { icon: FaCss3Alt, name: "CSS3", color: "text-blue-600", duration: 1.5 },
+    {
+      icon: FaJsSquare,
+      name: "JavaScript",
+      color: "text-yellow-400",
+      duration: 2,
+    },
+    {
+      icon: SiTypescript,
+      name: "TypeScript",
+      color: "text-blue-600",
+      duration: 3,
+    },
+    {
+      icon: RiReactjsLine,
+      name: "React",
+      color: "text-cyan-400",
+      duration: 2.5,
+    },
+    {
+      icon: SiReact,
+      name: "React Native",
+      color: "text-cyan-300",
+      duration: 2.8,
+    },
+    { icon: FaNodeJs, name: "Node.js", color: "text-green-600", duration: 3 },
+    {
+      icon: SiExpress,
+      name: "Express.js",
+      color: "text-gray-400",
+      duration: 4,
+    },
+    {
+      icon: SiTailwindcss,
+      name: "Tailwind CSS",
+      color: "text-blue-400",
+      duration: 5,
+    },
+    { icon: SiUbuntu, name: "Ubuntu", color: "text-orange-500", duration: 6 },
+    { icon: SiVite, name: "Vite", color: "text-purple-500", duration: 5.5 },
+    { icon: SiGnubash, name: "Bash", color: "text-green-700", duration: 4.5 },
+    { icon: SiJson, name: "JSON", color: "text-amber-600", duration: 3.3 },
+    {
+      icon: SiApachenetbeanside,
+      name: "API",
+      color: "text-indigo-600",
+      duration: 2.2,
+    },
+  ];
+
+  // Configuración de herramientas (nombres fijos)
+  const tools = [
+    { icon: SiDocker, name: "Docker", color: "text-blue-500", duration: 2.5 },
+    {
+      icon: SiPostgresql,
+      name: "PostgreSQL",
+      color: "text-blue-400",
+      duration: 3,
+    },
+    { icon: SiMongodb, name: "MongoDB", color: "text-green-500", duration: 3 },
+    {
+      icon: SiMongodb,
+      name: "MongoDB Compass",
+      color: "text-green-700",
+      duration: 2.3,
+    },
+    { icon: FaGithub, name: "GitHub", color: "text-gray-500", duration: 2 },
+    { icon: FaGit, name: "Git", color: "text-orange-600", duration: 2.8 },
+    { icon: SiDbeaver, name: "DBeaver", color: "text-blue-700", duration: 3.5 },
+    { icon: SiPostman, name: "Postman", color: "text-orange-500", duration: 4 },
+    { icon: SiRender, name: "Render", color: "text-purple-700", duration: 4.8 },
+    { icon: SiGlitch, name: "Glitch", color: "text-blue-600", duration: 4.2 },
+    {
+      icon: SiGoogledrive,
+      name: "Google Drive",
+      color: "text-green-600",
+      duration: 3.6,
+    },
+    { icon: SiCanva, name: "Canva", color: "text-purple-500", duration: 3.4 },
+    { icon: SiOpenai, name: "OpenAI", color: "text-gray-500", duration: 5 },
+    {
+      icon: SiWetransfer,
+      name: "WeTransfer",
+      color: "text-blue-500",
+      duration: 3.2,
+    },
+    { icon: SiNginx, name: "Nginx", color: "text-green-600", duration: 3.7 },
+  ];
+
   return (
     <div className="border-b border-neutral-800 pb-24">
       {/* Section: Technologies */}
@@ -57,135 +140,15 @@ function Technologies() {
         transition={{ duration: 1.5 }}
         className="flex flex-wrap items-center justify-center gap-4"
       >
-        {/* HTML5 */}
-        <motion.div
-          variants={iconVariants(3.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaHtml5 className="text-7xl text-red-600" />
-        </motion.div>
-
-        {/* CSS3 */}
-        <motion.div
-          variants={iconVariants(1.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaCss3Alt className="text-7xl text-blue-600" />
-        </motion.div>
-
-        {/* JavaScript */}
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaJsSquare className="text-7xl text-yellow-400" />
-        </motion.div>
-
-        {/* TypeScript */}
-        <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiTypescript className="text-7xl text-blue-600" />
-        </motion.div>
-
-        {/* React */}
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <RiReactjsLine className="text-7xl text-cyan-400" />
-        </motion.div>
-
-        {/* Node.js */}
-        <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaNodeJs className="text-7xl text-green-600" />
-        </motion.div>
-
-        {/* Express.js */}
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiExpress className="text-7xl text-gray-400" />
-        </motion.div>
-
-        {/* Tailwind CSS */}
-        <motion.div
-          variants={iconVariants(5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiTailwindcss className="text-7xl text-blue-400" />
-        </motion.div>
-
-        {/* Ubuntu */}
-        <motion.div
-          variants={iconVariants(6)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiUbuntu className="text-7xl text-orange-500" />
-        </motion.div>
-
-        {/* Vite */}
-        <motion.div
-          variants={iconVariants(5.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiVite className="text-7xl text-purple-500" />
-        </motion.div>
-
-        {/* Bash */}
-        <motion.div
-          variants={iconVariants(4.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiGnubash className="text-7xl text-green-700" />
-        </motion.div>
-
-        {/* JSON */}
-        <motion.div
-          variants={iconVariants(3.3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiJson className="text-7xl text-amber-600" />
-        </motion.div>
-
-        {/* API */}
-        <motion.div
-          variants={iconVariants(2.2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiApachenetbeanside className="text-7xl text-indigo-600" />
-        </motion.div>
+        {technologies.map((tech, index) => (
+          <IconCard
+            key={index}
+            icon={tech.icon}
+            name={tech.name}
+            color={tech.color}
+            duration={tech.duration}
+          />
+        ))}
       </motion.div>
 
       {/* Section: Tools */}
@@ -196,145 +159,15 @@ function Technologies() {
         transition={{ duration: 1.5 }}
         className="flex flex-wrap items-center justify-center gap-4"
       >
-        {/* Docker */}
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiDocker className="text-7xl text-blue-500" />
-        </motion.div>
-
-        {/* PostgreSQL */}
-        <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiPostgresql className="text-7xl text-blue-400" />
-        </motion.div>
-
-        {/* MongoDB */}
-        <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiMongodb className="text-7xl text-green-500" />
-        </motion.div>
-
-        {/* MongoDB Compass */}
-        <motion.div
-          variants={iconVariants(2.3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiMongodb className="text-7xl text-green-700" />
-        </motion.div>
-
-        {/* GitHub */}
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaGithub className="text-7xl text-gray-500" />
-        </motion.div>
-
-        {/* Git */}
-        <motion.div
-          variants={iconVariants(2.8)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaGit className="text-7xl text-orange-600" />
-        </motion.div>
-
-        {/* DBeaver */}
-        <motion.div
-          variants={iconVariants(3.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiDbeaver className="text-7xl text-blue-700" />
-        </motion.div>
-
-        {/* Postman */}
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiPostman className="text-7xl text-orange-500" />
-        </motion.div>
-
-        {/* Render */}
-        <motion.div
-          variants={iconVariants(4.8)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiRender className="text-7xl text-purple-700" />
-        </motion.div>
-
-        {/* Glitch */}
-        <motion.div
-          variants={iconVariants(4.2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiGlitch className="text-7xl text-blue-600" />
-        </motion.div>
-
-        {/* Google Drive */}
-        <motion.div
-          variants={iconVariants(3.6)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiGoogledrive className="text-7xl text-green-600" />
-        </motion.div>
-
-        {/* Canva */}
-        <motion.div
-          variants={iconVariants(3.4)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiCanva className="text-7xl text-purple-500" />
-        </motion.div>
-
-        {/* OpenAI */}
-        <motion.div
-          variants={iconVariants(5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiOpenai className="text-7xl text-gray-500" />
-        </motion.div>
-
-        {/* WeTransfer */}
-        <motion.div
-          variants={iconVariants(3.2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiWetransfer className="text-7xl text-blue-500" />
-        </motion.div>
+        {tools.map((tool, index) => (
+          <IconCard
+            key={index}
+            icon={tool.icon}
+            name={tool.name}
+            color={tool.color}
+            duration={tool.duration}
+          />
+        ))}
       </motion.div>
     </div>
   );
