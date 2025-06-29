@@ -165,225 +165,157 @@ function Technologies() {
 
   return (
     <div className="border-b border-neutral-800 pb-24">
-      {/* Section: Technologies */}
+      {/* Section: Technologies - Layout en 2 columnas principales */}
       <h2 className="my-20 text-center text-4xl">{t("technologies.title")}</h2>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {/* Frontend Technologies */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 1.5, delay: 0.2 }}
-          className="flex flex-col items-center"
-        >
-          <h3 className="text-xl font-semibold text-neutral-300 mb-6">
-            {t("technologies.frontend")}
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {frontendTechnologies.map((tech, index) => (
-              <IconCard
-                key={index}
-                icon={tech.icon}
-                name={tech.name}
-                color={tech.color}
-                duration={tech.duration}
-              />
-            ))}
-          </div>
-        </motion.div>
 
-        {/* Backend Technologies */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 1.5, delay: 0.4 }}
-          className="flex flex-col items-center"
-        >
-          <h3 className="text-xl font-semibold text-neutral-300 mb-6">
-            {t("technologies.backend")}
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {backendTechnologies.map((tech, index) => (
-              <IconCard
-                key={index}
-                icon={tech.icon}
-                name={tech.name}
-                color={tech.color}
-                duration={tech.duration}
-              />
-            ))}
-          </div>
-        </motion.div>
+      <div className="grid lg:grid-cols-2 gap-12 max-w-full mx-auto px-4">
+        {/* COLUMNA IZQUIERDA */}
+        <div className="space-y-16">
+          {/* Frontend Technologies */}
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex flex-col items-center"
+          >
+            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+              {t("technologies.frontend")}
+            </h3>
+            <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
+              {frontendTechnologies.map((tech, index) => (
+                <IconCard
+                  key={index}
+                  icon={tech.icon}
+                  name={tech.name}
+                  color={tech.color}
+                  duration={tech.duration}
+                />
+              ))}
+            </div>
+          </motion.div>
 
-        {/* System & Build Tools */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 1.5, delay: 0.6 }}
-          className="flex flex-col items-center"
-        >
-          <h3 className="text-xl font-semibold text-neutral-300 mb-6">
-            {t("technologies.systemBuild")}
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {systemBuildTools.map((tech, index) => (
-              <IconCard
-                key={index}
-                icon={tech.icon}
-                name={tech.name}
-                color={tech.color}
-                duration={tech.duration}
-              />
-            ))}
-          </div>
-        </motion.div>
-      </div>
+          {/* Databases */}
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.4 }}
+            className="flex flex-col items-center"
+          >
+            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+              {t("technologies.databases")}
+            </h3>
+            <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
+              {databases.map((db, index) => (
+                <IconCard
+                  key={index}
+                  icon={db.icon}
+                  name={db.name}
+                  color={db.color}
+                  duration={db.duration}
+                />
+              ))}
+            </div>
+          </motion.div>
 
-      {/* Section: Databases */}
-      <h2 className="my-20 text-center text-4xl">
-        {t("technologies.databases")}
-      </h2>
-      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        {/* Bases de datos principales */}
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1.5 }}
-          className="flex flex-col items-center"
-        >
-          <h3 className="text-xl font-semibold text-neutral-300 mb-6">
-            Databases
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {databases.map((db, index) => (
-              <IconCard
-                key={index}
-                icon={db.icon}
-                name={db.name}
-                color={db.color}
-                duration={db.duration}
-              />
-            ))}
-          </div>
-        </motion.div>
+          {/* Version Control & DevOps */}
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.6 }}
+            className="flex flex-col items-center"
+          >
+            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+              {t("technologies.versionControl")} & DevOps
+            </h3>
+            <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
+              {[...versionControlTools, ...devopsInfraTools].map(
+                (tool, index) => (
+                  <IconCard
+                    key={index}
+                    icon={tool.icon}
+                    name={tool.name}
+                    color={tool.color}
+                    duration={tool.duration}
+                  />
+                )
+              )}
+            </div>
+          </motion.div>
+        </div>
 
-        {/* Clientes de bases de datos */}
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 1.5 }}
-          className="flex flex-col items-center"
-        >
-          <h3 className="text-xl font-semibold text-neutral-300 mb-6">
-            Database Clients
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {databaseClients.map((client, index) => (
-              <IconCard
-                key={index}
-                icon={client.icon}
-                name={client.name}
-                color={client.color}
-                duration={client.duration}
-              />
-            ))}
-          </div>
-        </motion.div>
-      </div>
+        {/* COLUMNA DERECHA */}
+        <div className="space-y-16">
+          {/* Backend & System Tools */}
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.3 }}
+            className="flex flex-col items-center"
+          >
+            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+              {t("technologies.backend")} & {t("technologies.systemBuild")}
+            </h3>
+            <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
+              {[...backendTechnologies, ...systemBuildTools].map(
+                (tech, index) => (
+                  <IconCard
+                    key={index}
+                    icon={tech.icon}
+                    name={tech.name}
+                    color={tech.color}
+                    duration={tech.duration}
+                  />
+                )
+              )}
+            </div>
+          </motion.div>
 
-      {/* Section: Tools */}
-      <h2 className="my-20 text-center text-4xl">{t("technologies.tools")}</h2>
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
-        {/* Version Control & Collaboration */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 1.5, delay: 0.2 }}
-          className="flex flex-col items-center"
-        >
-          <h3 className="text-lg font-semibold text-neutral-300 mb-6 text-center">
-            {t("technologies.versionControl")}
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {versionControlTools.map((tool, index) => (
-              <IconCard
-                key={index}
-                icon={tool.icon}
-                name={tool.name}
-                color={tool.color}
-                duration={tool.duration}
-              />
-            ))}
-          </div>
-        </motion.div>
+          {/* Database Clients */}
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+            className="flex flex-col items-center"
+          >
+            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+              Database Clients
+            </h3>
+            <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
+              {databaseClients.map((client, index) => (
+                <IconCard
+                  key={index}
+                  icon={client.icon}
+                  name={client.name}
+                  color={client.color}
+                  duration={client.duration}
+                />
+              ))}
+            </div>
+          </motion.div>
 
-        {/* DevOps & Infrastructure */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 1.5, delay: 0.4 }}
-          className="flex flex-col items-center"
-        >
-          <h3 className="text-lg font-semibold text-neutral-300 mb-6 text-center">
-            {t("technologies.devopsInfra")}
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {devopsInfraTools.map((tool, index) => (
-              <IconCard
-                key={index}
-                icon={tool.icon}
-                name={tool.name}
-                color={tool.color}
-                duration={tool.duration}
-              />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* API Testing & Deployment */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 1.5, delay: 0.6 }}
-          className="flex flex-col items-center"
-        >
-          <h3 className="text-lg font-semibold text-neutral-300 mb-6 text-center">
-            {t("technologies.apiTesting")}
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {apiTestingTools.map((tool, index) => (
-              <IconCard
-                key={index}
-                icon={tool.icon}
-                name={tool.name}
-                color={tool.color}
-                duration={tool.duration}
-              />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Productivity & Design */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 1.5, delay: 0.8 }}
-          className="flex flex-col items-center"
-        >
-          <h3 className="text-lg font-semibold text-neutral-300 mb-6 text-center">
-            {t("technologies.productivity")}
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {productivityTools.map((tool, index) => (
-              <IconCard
-                key={index}
-                icon={tool.icon}
-                name={tool.name}
-                color={tool.color}
-                duration={tool.duration}
-              />
-            ))}
-          </div>
-        </motion.div>
+          {/* API Testing & Productivity */}
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.7 }}
+            className="flex flex-col items-center"
+          >
+            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+              {t("technologies.apiTesting")} & {t("technologies.productivity")}
+            </h3>
+            <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
+              {[...apiTestingTools, ...productivityTools].map((tool, index) => (
+                <IconCard
+                  key={index}
+                  icon={tool.icon}
+                  name={tool.name}
+                  color={tool.color}
+                  duration={tool.duration}
+                />
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
