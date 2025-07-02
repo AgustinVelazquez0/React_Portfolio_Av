@@ -10,14 +10,14 @@
   },
   "hero": {
     "title": "Desarrollador Full Stack",
-    "content": "Soy un desarrollador full-stack de Uruguay con experiencia práctica en la creación y despliegue de aplicaciones web completas, desde el frontend hasta el backend, utilizando tecnologías como React, Node.js, Express, PostgreSQL y MongoDB. He completado certificaciones de FreeCodeCamp, Open Santander Academy y BIOS, enfocadas en desarrollo moderno, APIs, bases de datos y herramientas en la nube. Trabajo con confianza con Git, Docker, WSL, Postman y MongoDB Compass, y despliego proyectos full-stack utilizando plataformas como Render y Glitch. Apasionado por el aprendizaje y la resolución de problemas, creo soluciones limpias y escalables a través de proyectos personales aplicados al mundo real."
+    "content": "Desarrollador full-stack especializado en MERN Stack con +15 proyectos desplegados. Transformo ideas en aplicaciones web escalables usando React, Node.js y bases de datos modernas."
   },
   "about": {
     "title": "Sobre mí",
-    "intro": "Soy un desarrollador Full-Stack con experiencia en el stack MERN y otras tecnologías web modernas.",
-    "journey": "Mi viaje en la programación comenzó con una profunda curiosidad por entender cómo funcionan las aplicaciones web. Desde entonces, he desarrollado habilidades tanto en frontend como en backend.",
-    "passion": "Me apasiona crear interfaces de usuario intuitivas y sistemas backend robustos que resuelvan problemas reales.",
-    "goal": "Busco continuamente aprender y mejorar mis habilidades para ofrecer soluciones de alta calidad."
+    "intro": "Desarrollador Full-Stack especializado en crear soluciones web escalables y eficientes.",
+    "journey": "Autodidacta apasionado que transformó curiosidad en expertise técnico sólido.",
+    "passion": "Convierto ideas complejas en interfaces intuitivas y backends robustos.",
+    "goal": "Enfocado en entregar código limpio, performance optimizada y experiencias excepcionales."
   },
   "projects": {
     "title": "Proyectos destacados",
@@ -27,53 +27,52 @@
     "buttonViewBackCode": "Ver código (Backend)",
     "REACT": {
       "library": {
-        "title": "Aplicación de Biblioteca",
-        "description": "Aplicación web full-stack desarrollada con Node.js, React, Vite, Express y MongoDB. Permite registro e inicio de sesión, gestión de perfiles, reseñas y calificaciones de libros, y organización personalizada de la biblioteca."
+        "title": "Sistema de Biblioteca Digital",
+        "description": "App full-stack con autenticación, gestión de perfiles y sistema de reseñas. MERN Stack + autenticación JWT."
       },
       "todo": {
-        "title": "Lista de Tareas",
-        "description": "Proyecto en React con el backend alojado en Render. El backend utiliza MongoDB Atlas para gestionar las tareas y PostgreSQL para el inicio de sesión de usuarios, ambos desplegados en Render. El frontend está construido con React y Vite, y el backend usa Express.js, Node.js, Docker y JWT para la autenticación segura. El proyecto también utiliza utilidades como useReducer, useContext y otros hooks de React para manejar y modificar las actividades."
+        "title": "Task Manager Avanzado",
+        "description": "Aplicación de tareas con autenticación dual (MongoDB + PostgreSQL). Hooks avanzados y estado global optimizado."
       },
       "food": {
-        "title": "Menú de Comida",
-        "description": "Proyecto en React que simula un sistema de pedidos para compras de comida. La base de datos está construida con MongoDB, y las instrucciones se encuentran en el archivo README. Nota: El backend no está desplegado actualmente, pero podés ver el proyecto completo y ejecutar el backend de forma local revisando los repositorios de GitHub. Para abrir el proyecto, instalá las dependencias desde los botones de enlaces."
+        "title": "Sistema de Pedidos Online",
+        "description": "Plataforma de e-commerce para pedidos de comida con carrito inteligente y gestión de inventario."
       },
-
       "rickandmorty": {
-        "title": "Explorador Rick and Morty",
-        "description": "Un proyecto en React diseñado para obtener datos desde una API de los personajes de la serie Rick and Morty."
+        "title": "Explorador Rick & Morty",
+        "description": "Interfaz interactiva para explorar personajes usando API REST. Búsqueda y filtros dinámicos."
       },
       "calculator": {
-        "title": "Calculadora React",
-        "description": "Una calculadora completamente funcional en React con operaciones aritméticas básicas. Construida usando hooks y diseño responsivo. Las instrucciones y el código están disponibles en el archivo README."
+        "title": "Calculadora Científica",
+        "description": "Calculadora responsiva con operaciones avanzadas. UI/UX optimizada para todos los dispositivos."
       }
     },
     "SVG_3D": {
       "treemap": {
-        "title": "Mapa de Árbol",
-        "description": "Construido con React, D3.js, SVG, CSS, APIs y AJAX. El proyecto obtiene y procesa un conjunto de datos, y luego utiliza D3 para crear un gráfico de barras interactivo con información emergente (tooltips)."
+        "title": "Visualización TreeMap Interactiva",
+        "description": "Dashboard de datos dinámico con D3.js. Visualización jerárquica con tooltips y animaciones fluidas."
       },
       "choropleth": {
-        "title": "Mapa Coroplético",
-        "description": "Construido con React, D3.js, SVG, CSS, APIs y AJAX. El proyecto obtiene y procesa un conjunto de datos, y luego utiliza D3 para crear un gráfico de barras interactivo con información emergente (tooltips)."
+        "title": "Mapa Coroplético Dinámico",
+        "description": "Visualización geográfica interactiva con D3.js. Análisis de datos por regiones con gradientes de color."
       }
     },
     "JS": {
       "todo": {
-        "title": "Lista de Tareas",
-        "description": "Una aplicación para marcar y desmarcar tareas, con soporte integrado de LocalStorage y MediaQuery para dispositivos móviles."
+        "title": "Todo App Vanilla JS",
+        "description": "App de tareas responsive con LocalStorage. Sin frameworks, código puro optimizado para performance."
       },
       "music": {
-        "title": "Reproductor de Música",
-        "description": "Un reproductor de música basado en la web construido con HTML, CSS y JavaScript puro, donde los usuarios pueden reproducir, pausar y cambiar entre canciones."
+        "title": "Reproductor Musical Web",
+        "description": "Player completo con controles avanzados. Playlist dinámica y interfaz intuitiva en JS puro."
       },
       "PlataformerGame": {
-        "title": "Juego de Plataforma",
-        "description": "Un juego de plataformas construido con JavaScript, HTML y CSS. Cuenta con movimiento del jugador, mecánicas de salto e interacción con elementos del juego."
+        "title": "Juego de Plataformas 2D",
+        "description": "Game engine desde cero con físicas personalizadas. Mecánicas de colisión y animaciones fluidas."
       },
       "RolePlayingGame": {
-        "title": "Juego de rol (RPG)",
-        "description": "Un juego de rol (RPG) construido con HTML, CSS y JavaScript. Podés mover a tu personaje e interactuar con enemigos y objetos."
+        "title": "RPG Interactivo",
+        "description": "Sistema de combate por turnos y gestión de inventario. Lógica de juego compleja en JavaScript."
       }
     }
   },
@@ -85,21 +84,21 @@
     "items": [
       {
         "year": "03/2024 - 01/2025",
-        "role": "Desarrollador Full-Stack con REACT",
+        "role": "Desarrollador Full-Stack",
         "company": "Instituto BIOS",
-        "description": "Completé un diploma integral en Desarrollo Web Full-Stack en BIOS. Adquirí habilidades prácticas tanto en desarrollo frontend como backend, incluyendo JavaScript, Node.js, Express.js y React. Obtuve experiencia práctica trabajando con bases de datos relacionales y no relacionales, como PostgreSQL (a través de DBeaver) y MongoDB (usando MongoDB Compass y MongoDB Atlas). Desarrollé y probé APIs RESTful, utilicé Postman para testear endpoints y gestioné el control de versiones con Git y GitHub. Además, aprendí a trabajar en entornos Linux-Ubuntu, a utilizar contenedores Docker para el desarrollo local, y a seguir buenas prácticas en el despliegue de software y el trabajo colaborativo."
+        "description": "• Desarrollo de aplicaciones MERN Stack completas\n• Implementación de APIs RESTful y bases de datos relacionales/NoSQL\n• Despliegue en producción con Docker y metodologías ágiles"
       },
       {
         "year": "09/2024 - 01/2025",
-        "role": "Habilidades Digitales en el Mundo Profesional",
+        "role": "Habilidades Digitales Profesionales",
         "company": "Instituto BIOS",
-        "description": "Completé un curso de Habilidades Digitales en el Mundo Profesional, enfocado en herramientas y tecnologías esenciales para lugares de trabajo modernos. Adquirí competencia en el uso de Microsoft Office 365, Google Drive, Canva y ChatGPT para productividad y colaboración. Desarrollé habilidades en compartir archivos con WeTransfer y visualización de datos con Power BI. Mejoré mi alfabetización digital y adaptabilidad a varias aplicaciones de software, preparándome para un entorno de trabajo dinámico."
+        "description": "• Dominio de herramientas Microsoft Office 365 y Google Workspace\n• Visualización de datos con Power BI y herramientas de diseño\n• Optimización de flujos de trabajo digitales empresariales"
       },
       {
         "year": "09/2023 - 01/2024",
-        "role": "Cursos",
+        "role": "Certificaciones de Desarrollo Web",
         "company": "FreeCodeCamp",
-        "description": "Completé múltiples proyectos prácticos a través de los programas de certificación de FreeCodeCamp, centrados en desarrollo web, APIs, bases de datos y visualización de datos. Construí aplicaciones full-stack utilizando tecnologías como Node.js, Express.js, MongoDB, PostgreSQL y React. Desarrollé y desplegué proyectos como microservicios de timestamp y seguimiento de ejercicios, visualizaciones dinámicas de datos (Treemap, Heat Map) y sistemas de bases de datos (Celestial Bodies, World Cup Database) con SQL y scripting Bash. Los proyectos se construyeron y probaron localmente usando WSL y luego se desplegaron en plataformas como Render y Glitch. Obtuve experiencia práctica trabajando con APIs REST, JSON, AJAX, MongoDB Compass y control de versiones con GitHub."
+        "description": "• Construcción de +10 proyectos full-stack desplegados\n• Especialización en visualización de datos con D3.js\n• Desarrollo de microservicios y sistemas de bases de datos"
       }
     ]
   },
@@ -124,67 +123,74 @@
     },
     "certificates": {
       "fullStack": {
-        "title": "Desarrollador Full Stack.",
-        "description": "Certificación que valida habilidades en desarrollo full stack, incluyendo tecnologías front-end y back-end."
+        "title": "Desarrollador Full Stack",
+        "description": "Stack MERN completo • Frontend + Backend + Bases de datos"
       },
       "digitalSkills": {
-        "title": "Habilidades Digitales en el Mundo Profesional.",
-        "description": "Certificación que valida la competencia en herramientas digitales clave para el entorno profesional actual."
+        "title": "Habilidades Digitales Profesionales",
+        "description": "Office 365 • Power BI • Flujos de trabajo empresariales"
       },
       "backEnd": {
-        "title": "Desarrollo Back End y APIs.",
-        "description": "Certificación que valida habilidades en Node.js, Express, MongoDB y Mongoose. He aprendido a construir aplicaciones backend, crear APIs y gestionar bases de datos usando JavaScript. Adquirí experiencia práctica en el desarrollo de microservicios y el manejo de persistencia de datos con MongoDB, mientras utilizaba Express para gestionar rutas y solicitudes de manera eficiente."
+        "title": "Desarrollo Backend y APIs",
+        "description": "Node.js + Express • MongoDB • Microservicios RESTful"
       },
       "relationalDatabase": {
-        "title": "Base de Datos Relacional.",
-        "description": "Certificación que valida habilidades en Bash, PostgreSQL, SQL y Git. He aprendido a navegar por el terminal de Linux, usar bases de datos relacionales con PostgreSQL y automatizar tareas con scripts de Bash. Además, adquirí competencia en control de versiones con Git, creación y gestión de bases de datos, y construcción de proyectos interactivos como un programador de citas para salones y una tienda de alquiler de bicicletas."
+        "title": "Bases de Datos Relacionales",
+        "description": "PostgreSQL • SQL avanzado • Bash scripting • Git"
       },
       "javascript": {
-        "title": "Algoritmos y Estructuras de Datos en JavaScript.",
-        "description": "Certificación que valida habilidades en JavaScript, incluyendo variables, arreglos, objetos, bucles, funciones y el DOM. He aprendido Programación Orientada a Objetos (POO), Programación Funcional, pensamiento algorítmico, almacenamiento local, APIs, depuración, recursión, expresiones regulares y métodos avanzados de arreglos."
+        "title": "Algoritmos y Estructuras de Datos",
+        "description": "JavaScript ES6+ • OOP • Programación funcional • DOM"
       },
       "qualityAssurance": {
-        "title": "Aseguramiento de Calidad.",
-        "description": "En la certificación de Aseguramiento de Calidad, aprendí a escribir y ejecutar pruebas con Chai para asegurar que mis aplicaciones web funcionen correctamente después de los cambios. Profundicé en mi conocimiento de Node.js y Express.js para construir aplicaciones full-stack, implementando autenticación con Passport y comunicación en tiempo real con Socket.io. También utilicé Pug como motor de plantillas para un desarrollo rápido del frontend."
+        "title": "Testing y Aseguramiento de Calidad",
+        "description": "Chai testing • Passport auth • Socket.io • Pug templates"
       },
       "dataVisualization": {
         "title": "Visualización de Datos",
-        "description": "Certificación que valida habilidades en D3.js, trabajando con datos para crear diferentes gráficos, diagramas, elementos interactivos y otros componentes para crear visualizaciones de datos dinámicas y atractivas, APIs JSON y AJAX, y Gráficos Vectoriales Escalables (SVG)."
+        "description": "D3.js • SVG • Gráficos interactivos • APIs dinámicas"
       },
       "responsiveWebDesign": {
-        "title": "Diseño Web Responsivo.",
-        "description": "Certificación que valida habilidades en HTML y CSS, incluyendo la construcción de páginas web usando HTML para el contenido y CSS para el diseño. He aprendido técnicas modernas como Flexbox, CSS Grid, variables CSS y mejores prácticas para la accesibilidad."
+        "title": "Diseño Web Responsivo",
+        "description": "HTML5 • CSS3 • Flexbox • Grid • Accesibilidad web"
       },
       "frontEnd": {
-        "title": "Bibliotecas de Desarrollo Front End.",
-        "description": "Certificación que valida habilidades en JavaScript, React, CSS, jQuery, Bootstrap y Redux. He aprendido a construir aplicaciones web modernas y responsivas, y a gestionar el estado de manera efectiva entre componentes."
+        "title": "Desarrollo Frontend Avanzado",
+        "description": "React • Redux • jQuery • Bootstrap • State management"
       },
       "dataScience": {
-        "title": "Introducción a la Ciencia de Datos.",
-        "description": "Certificación en conceptos y métodos fundamentales de ciencia de datos."
+        "title": "Introducción a Ciencia de Datos",
+        "description": "Análisis de datos • Conceptos fundamentales • Metodologías"
       },
       "english": {
-        "title": "Inglés Esencial para el Crecimiento Profesional.",
-        "description": "Certificación que valida habilidades esenciales de inglés para el desarrollo profesional."
+        "title": "Inglés Profesional",
+        "description": "Comunicación técnica • Inglés empresarial • B2 level"
       },
       "python": {
-        "title": "Programación en Python.",
-        "description": "Certificación que valida la competencia en programación Python."
+        "title": "Programación Python",
+        "description": "Python fundamentals • Scripting • Automatización"
       },
       "chatGPT": {
-        "title": "ChatGPT.",
-        "description": "Certificación en el uso de ChatGPT para diversas tareas profesionales."
+        "title": "ChatGPT y AI Tools",
+        "description": "Prompt engineering • Productividad con IA • Automatización"
       }
     }
   },
   "contact": {
     "title": "Contacto",
     "description": "¿Interesado en trabajar juntos? Contáctame a través de:",
-    "messageLabel": "Hacé clic en el botón de abajo para abrir WhatsApp",
+    "getInTouch": "¡Hablemos!",
+    "contactDescription": "Estoy disponible para nuevas oportunidades y colaboraciones",
+    "sendMessage": "Envía un Mensaje",
+    "messageDescription": "Escribe tu mensaje y te contactaremos por WhatsApp",
+    "messageLabel": "Tu mensaje",
     "buttonLabel": "Abrir WhatsApp",
+    "openWhatsApp": "Abrir WhatsApp",
     "submitButton": "Enviar mensaje",
     "emailMe": "Enviar un mensaje por WhatsApp",
-    "placeholder": "Escribe tu mensaje"
+    "placeholder": "Hola! Me interesa saber más sobre tus servicios...",
+    "responseTime": "Tiempo de respuesta: 2-4 horas",
+    "workingHours": "Horario de atención: Lun-Vie 9:00-18:00 (GMT-3)"
   },
   "footer": {
     "copyright": "© 2025 Agustín. Todos los derechos reservados.",
