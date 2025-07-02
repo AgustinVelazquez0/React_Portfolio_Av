@@ -46,14 +46,14 @@ function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 rounded-2xl p-8 border border-neutral-700 hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+          className="bg-neutral-100 dark:bg-neutral-900/30 rounded-2xl p-8 border border-neutral-700 hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
         >
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">
                 {t("contact.getInTouch") || "¡Hablemos!"}
               </h3>
-              <p className="text-neutral-400">
+              <p className="text-neutral-600 dark:text-neutral-400">
                 {t("contact.contactDescription") ||
                   "Estoy disponible para nuevas oportunidades y colaboraciones"}
               </p>
@@ -64,7 +64,7 @@ function Contact() {
               {/* Ubicación */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center p-4 bg-neutral-800 rounded-lg hover:bg-neutral-700 transition-all duration-300 group cursor-pointer"
+                className="flex items-center p-4 bg-neutral-200 dark:bg-neutral-800 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-all duration-300 group cursor-pointer"
                 onClick={() => copyToClipboard(CONTACT.address)}
               >
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
@@ -89,15 +89,19 @@ function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Ubicación</p>
-                  <p className="text-neutral-400">{CONTACT.address}</p>
+                  <p className="text-neutral-900 dark:text-white font-semibold">
+                    Ubicación
+                  </p>
+                  <p className="text-neutral-600 dark:text-neutral-400">
+                    {CONTACT.address}
+                  </p>
                 </div>
               </motion.div>
 
               {/* Teléfono */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center p-4 bg-neutral-800 rounded-lg hover:bg-neutral-700 transition-all duration-300 group cursor-pointer"
+                className="flex items-center p-4 bg-neutral-200 dark:bg-neutral-800 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-all duration-300 group cursor-pointer"
                 onClick={() => copyToClipboard(CONTACT.phoneNo)}
               >
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
@@ -116,15 +120,19 @@ function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Teléfono</p>
-                  <p className="text-neutral-400">{CONTACT.phoneNo}</p>
+                  <p className="text-neutral-900 dark:text-white font-semibold">
+                    Teléfono
+                  </p>
+                  <p className="text-neutral-600 dark:text-neutral-400">
+                    {CONTACT.phoneNo}
+                  </p>
                 </div>
               </motion.div>
 
               {/* Email */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center p-4 bg-neutral-800 rounded-lg hover:bg-neutral-700 transition-all duration-300 group cursor-pointer"
+                className="flex items-center p-4 bg-neutral-200 dark:bg-neutral-800 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-all duration-300 group cursor-pointer"
                 onClick={openEmail}
               >
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
@@ -143,8 +151,12 @@ function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Email</p>
-                  <p className="text-neutral-400">{CONTACT.email}</p>
+                  <p className="text-neutral-900 dark:text-white font-semibold">
+                    Email
+                  </p>
+                  <p className="text-neutral-600 dark:text-neutral-400">
+                    {CONTACT.email}
+                  </p>
                 </div>
               </motion.div>
             </div>
@@ -169,13 +181,13 @@ function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 100 }}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 rounded-2xl p-8 border border-neutral-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
+          className="bg-neutral-100 dark:bg-neutral-900/30 rounded-2xl p-8 border border-neutral-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-2">
+            <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">
               {t("contact.sendMessage") || "Envía un Mensaje"}
             </h3>
-            <p className="text-neutral-400">
+            <p className="text-neutral-600 dark:text-neutral-400">
               {t("contact.messageDescription") ||
                 "Escribe tu mensaje y te contactaremos por WhatsApp"}
             </p>
@@ -184,7 +196,7 @@ function Contact() {
           <div className="space-y-6">
             {/* Textarea para el mensaje */}
             <div>
-              <label className="block text-sm font-medium text-neutral-300 mb-2">
+              <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
                 {t("contact.messageLabel") || "Tu mensaje"}
               </label>
               <motion.textarea
@@ -196,7 +208,7 @@ function Contact() {
                   "Hola! Me interesa saber más sobre tus servicios..."
                 }
                 rows={6}
-                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-600 rounded-lg text-white placeholder-neutral-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none transition-all duration-300 resize-none"
+                className="w-full px-4 py-3 bg-neutral-200 dark:bg-neutral-800 border border-neutral-600 rounded-lg text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none transition-all duration-300 resize-none"
               />
             </div>
 

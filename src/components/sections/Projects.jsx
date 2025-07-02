@@ -11,14 +11,14 @@ function Projects() {
         initial={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="my-20 text-center text-4xl"
+        className="my-20 text-center text-4xl text-neutral-900 dark:text-white"
       >
         {t("projects.title")}
       </motion.h2>
 
       {/* Grupo de proyectos: REACT */}
       <div className="mb-16">
-        <h3 className="my-10 text-2xl text-center text-blue-500 font-semibold">
+        <h3 className="my-10 text-2xl text-center text-blue-600 dark:text-blue-500 font-semibold">
           React
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
@@ -32,7 +32,7 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-br from-neutral-900/40 to-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -48,10 +48,10 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-white">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.REACT.library.title")}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                   {t("projects.REACT.library.description")}
                 </p>
               </div>
@@ -112,7 +112,7 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-br from-neutral-900/40 to-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -128,10 +128,10 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-white">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.REACT.todo.title")}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                   {t("projects.REACT.todo.description")}
                 </p>
               </div>
@@ -192,7 +192,7 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-br from-neutral-900/40 to-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -208,10 +208,10 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-white">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.REACT.food.title")}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                   {t("projects.REACT.food.description")}
                 </p>
               </div>
@@ -262,7 +262,7 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-br from-neutral-900/40 to-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -278,10 +278,10 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-white">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.REACT.rickandmorty.title")}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                   {t("projects.REACT.rickandmorty.description")}
                 </p>
               </div>
@@ -307,7 +307,7 @@ function Projects() {
                 }
                 className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors duration-200"
               >
-                Ver Código
+                {t("projects.buttonViewProject")}
               </button>
             </div>
           </motion.div>
@@ -322,7 +322,7 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-br from-neutral-900/40 to-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -338,10 +338,10 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-white">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.REACT.calculator.title")}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                   {t("projects.REACT.calculator.description")}
                 </p>
               </div>
@@ -362,12 +362,20 @@ function Projects() {
               <button
                 onClick={() =>
                   window.open(
-                    "https://github.com/AgustinVelazquez0/React-Calculator"
+                    "https://calculator-agustins-projects-569e7477.vercel.app/"
                   )
                 }
                 className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors duration-200"
               >
-                Ver Código
+                {t("projects.buttonViewProject")}
+              </button>
+              <button
+                onClick={() =>
+                  window.open("https://github.com/AgustinVelazquez0/Calculator")
+                }
+                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white text-sm rounded-lg transition-colors duration-200"
+              >
+                {t("projects.buttonViewCode")}
               </button>
             </div>
           </motion.div>
@@ -376,7 +384,7 @@ function Projects() {
 
       {/* Grupo de proyectos: D3.js & Data Visualization */}
       <div className="mb-16">
-        <h3 className="my-10 text-2xl text-center text-green-500 font-semibold">
+        <h3 className="my-10 text-2xl text-center text-emerald-600 dark:text-emerald-500 font-semibold">
           D3.js & Data Visualization
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
@@ -390,7 +398,7 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(34, 197, 94, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-br from-neutral-900/40 to-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-700/50 hover:border-green-500/40 transition-all duration-300"
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-green-500/40 transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -406,10 +414,10 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-white">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.SVG_3D.treemap.title")}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                   {t("projects.SVG_3D.treemap.description")}
                 </p>
               </div>
@@ -428,14 +436,18 @@ function Projects() {
 
             <div className="flex flex-wrap gap-2">
               <button
-                onClick={() =>
-                  window.open(
-                    "https://github.com/AgustinVelazquez0/TreeMap-FreeCodeCamp"
-                  )
-                }
-                className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg transition-colors duration-200"
+                onClick={() => window.open("https://tree-map-mu.vercel.app/")}
+                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm rounded-lg transition-colors duration-200"
               >
-                Ver Código
+                {t("projects.buttonViewProject")}
+              </button>
+              <button
+                onClick={() =>
+                  window.open("https://github.com/AgustinVelazquez0/tree-map")
+                }
+                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white text-sm rounded-lg transition-colors duration-200"
+              >
+                {t("projects.buttonViewCode")}
               </button>
             </div>
           </motion.div>
@@ -450,7 +462,7 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(34, 197, 94, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-br from-neutral-900/40 to-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-700/50 hover:border-green-500/40 transition-all duration-300"
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-green-500/40 transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -466,10 +478,10 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-white">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.SVG_3D.choropleth.title")}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                   {t("projects.SVG_3D.choropleth.description")}
                 </p>
               </div>
@@ -489,13 +501,21 @@ function Projects() {
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() =>
+                  window.open("https://choropleth-map-mauve.vercel.app/")
+                }
+                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm rounded-lg transition-colors duration-200"
+              >
+                {t("projects.buttonViewProject")}
+              </button>
+              <button
+                onClick={() =>
                   window.open(
-                    "https://github.com/AgustinVelazquez0/Choropleth-Map-FreeCodeCamp"
+                    "https://github.com/AgustinVelazquez0/choropleth-map"
                   )
                 }
-                className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg transition-colors duration-200"
+                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white text-sm rounded-lg transition-colors duration-200"
               >
-                Ver Código
+                {t("projects.buttonViewCode")}
               </button>
             </div>
           </motion.div>
@@ -504,7 +524,7 @@ function Projects() {
 
       {/* Grupo de proyectos: Vanilla JavaScript */}
       <div className="mb-12">
-        <h3 className="my-10 text-2xl text-center text-yellow-500 font-semibold">
+        <h3 className="my-10 text-2xl text-center text-yellow-600 dark:text-yellow-500 font-semibold">
           Vanilla JavaScript
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
@@ -518,7 +538,7 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-br from-neutral-900/40 to-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -534,10 +554,10 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-white">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.JS.todo.title")}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                   {t("projects.JS.todo.description")}
                 </p>
               </div>
@@ -561,7 +581,7 @@ function Projects() {
                 }
                 className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-sm rounded-lg transition-colors duration-200"
               >
-                Ver Código
+                {t("projects.buttonViewCode")}
               </button>
             </div>
           </motion.div>
@@ -576,7 +596,7 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-br from-neutral-900/40 to-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -592,10 +612,10 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-white">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.JS.music.title")}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                   {t("projects.JS.music.description")}
                 </p>
               </div>
@@ -621,7 +641,7 @@ function Projects() {
                 }
                 className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-sm rounded-lg transition-colors duration-200"
               >
-                Ver Código
+                {t("projects.buttonViewCode")}
               </button>
             </div>
           </motion.div>
@@ -636,7 +656,7 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-br from-neutral-900/40 to-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -652,10 +672,10 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-white">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.JS.PlataformerGame.title")}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                   {t("projects.JS.PlataformerGame.description")}
                 </p>
               </div>
@@ -683,7 +703,7 @@ function Projects() {
                 }
                 className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-sm rounded-lg transition-colors duration-200"
               >
-                Ver Código
+                {t("projects.buttonViewCode")}
               </button>
             </div>
           </motion.div>
@@ -698,7 +718,7 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-br from-neutral-900/40 to-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -714,10 +734,10 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-white">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.JS.RolePlayingGame.title")}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                   {t("projects.JS.RolePlayingGame.description")}
                 </p>
               </div>
@@ -743,7 +763,7 @@ function Projects() {
                 }
                 className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-sm rounded-lg transition-colors duration-200"
               >
-                Ver Código
+                {t("projects.buttonViewCode")}
               </button>
             </div>
           </motion.div>

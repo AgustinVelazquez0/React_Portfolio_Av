@@ -22,9 +22,10 @@
   "projects": {
     "title": "Featured Projects",
     "description": "A selection of my most relevant work",
-    "buttonViewProject": "View proyect",
+    "buttonViewProject": "View project",
     "buttonViewFrontCode": "View code (Frontend)",
     "buttonViewBackCode": "View code (Backend)",
+    "buttonViewCode": "View code",
     "REACT": {
       "library": {
         "title": "Digital Library System",

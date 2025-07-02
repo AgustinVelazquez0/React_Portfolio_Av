@@ -25,6 +25,7 @@
     "buttonViewProject": "Ver proyecto",
     "buttonViewFrontCode": "Ver código (Frontend)",
     "buttonViewBackCode": "Ver código (Backend)",
+    "buttonViewCode": "Ver código",
     "REACT": {
       "library": {
         "title": "Sistema de Biblioteca Digital",

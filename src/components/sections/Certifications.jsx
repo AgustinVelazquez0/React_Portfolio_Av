@@ -5,19 +5,19 @@ function Certifications() {
   const { t } = useTranslation();
 
   return (
-    <div className="pb-4 border-b border-neutral-900">
+    <div className="pb-4 border-b border-neutral-900 dark:border-neutral-700">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.5 }}
-        className="my-20 text-center text-4xl"
+        className="my-20 text-center text-4xl text-neutral-900 dark:text-white"
       >
         {t("certifications.title")}
       </motion.h2>
 
       {/* BIOS Institute Certifications */}
       <div className="mb-12">
-        <h3 className="text-3xl text-center font-semibold mb-8">
+        <h3 className="text-3xl text-center font-semibold mb-8 text-neutral-900 dark:text-white">
           BIOS Institute
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
@@ -26,7 +26,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://drive.google.com/file/d/1YKgsHIwNC8eGZc2k1cErBzAJJR2tgwSl/view?usp=drive_link"
@@ -41,10 +41,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.fullStack.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t("certifications.certificates.fullStack.description")}
               </p>
             </div>
@@ -55,7 +55,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://drive.google.com/file/d/1FmlQ96_KjTt2A2_-JaCKlljDAejCCyYy/view"
@@ -70,10 +70,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.digitalSkills.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t("certifications.certificates.digitalSkills.description")}
               </p>
             </div>
@@ -83,7 +83,7 @@ function Certifications() {
 
       {/* FreeCodeCamp Certifications */}
       <div className="mb-12">
-        <h3 className="text-3xl text-center font-semibold mb-8">
+        <h3 className="text-3xl text-center font-semibold mb-8 text-neutral-900 dark:text-white">
           FreeCodeCamp
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
@@ -92,7 +92,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/back-end-development-and-apis"
@@ -107,10 +107,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.backEnd.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t("certifications.certificates.backEnd.description")}
               </p>
             </div>
@@ -121,7 +121,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/relational-database-v8"
@@ -136,10 +136,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.relationalDatabase.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t(
                   "certifications.certificates.relationalDatabase.description"
                 )}
@@ -152,7 +152,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/javascript-algorithms-and-data-structures-v8"
@@ -167,10 +167,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.javascript.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t("certifications.certificates.javascript.description")}
               </p>
             </div>
@@ -181,7 +181,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/quality-assurance-v7"
@@ -196,10 +196,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.qualityAssurance.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t("certifications.certificates.qualityAssurance.description")}
               </p>
             </div>
@@ -210,7 +210,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/data-visualization"
@@ -225,10 +225,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.dataVisualization.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t("certifications.certificates.dataVisualization.description")}
               </p>
             </div>
@@ -239,7 +239,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/responsive-web-design"
@@ -254,10 +254,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.responsiveWebDesign.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t(
                   "certifications.certificates.responsiveWebDesign.description"
                 )}
@@ -270,7 +270,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/front-end-development-libraries"
@@ -285,10 +285,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.frontEnd.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t("certifications.certificates.frontEnd.description")}
               </p>
             </div>
@@ -298,7 +298,7 @@ function Certifications() {
 
       {/* Santander Open Academy Certifications */}
       <div className="mb-8">
-        <h3 className="text-3xl text-center font-semibold mb-8">
+        <h3 className="text-3xl text-center font-semibold mb-8 text-neutral-900 dark:text-white">
           Santander Open Academy
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
@@ -307,7 +307,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://drive.google.com/file/d/12z8akRooJ2q7XJXj5sp1TANJkpEZTOeo/view"
@@ -322,10 +322,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.dataScience.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t("certifications.certificates.dataScience.description")}
               </p>
             </div>
@@ -336,7 +336,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://drive.google.com/file/d/1-wnjPOFy7Ujb_G7PwPGAUiqQ_imwr6Dx/view"
@@ -351,10 +351,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.english.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t("certifications.certificates.english.description")}
               </p>
             </div>
@@ -365,7 +365,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://drive.google.com/file/d/1ArqH7x6Owqm3Z6Tb3DATVXj9p258XeSJ/view"
@@ -380,10 +380,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.python.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t("certifications.certificates.python.description")}
               </p>
             </div>
@@ -394,7 +394,7 @@ function Certifications() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
             transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-900/50 transition-colors duration-300"
+            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
           >
             <a
               href="https://drive.google.com/file/d/1HmojqKuGJJPOL6PuTFZmB1cGFd-WACJ7/view"
@@ -409,10 +409,10 @@ function Certifications() {
               />
             </a>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold mb-2 text-white">
+              <h4 className="text-lg font-semibold mb-2 text-neutral-900 dark:text-white">
                 {t("certifications.certificates.chatGPT.title")}
               </h4>
-              <p className="text-neutral-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {t("certifications.certificates.chatGPT.description")}
               </p>
             </div>
