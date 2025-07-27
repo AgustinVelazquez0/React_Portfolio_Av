@@ -33,10 +33,12 @@ import { RiReactjsLine } from "react-icons/ri";
 
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
+import { useTheme } from "../../context/ThemeContext";
 import IconCard from "../ui/IconCard";
 
 function Technologies() {
   const { t } = useTranslation();
+  const { isDarkMode } = useTheme();
 
   // Configuración de tecnologías Frontend
   const frontendTechnologies = [
@@ -178,7 +180,11 @@ function Technologies() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex flex-col items-center"
           >
-            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+            <h3
+              className={`text-2xl font-semibold mb-8 ${
+                isDarkMode ? "text-neutral-300" : "text-black"
+              }`}
+            >
               {t("technologies.frontend")}
             </h3>
             <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
@@ -201,7 +207,11 @@ function Technologies() {
             transition={{ duration: 1.5, delay: 0.4 }}
             className="flex flex-col items-center"
           >
-            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+            <h3
+              className={`text-2xl font-semibold mb-8 ${
+                isDarkMode ? "text-neutral-300" : "text-black"
+              }`}
+            >
               {t("technologies.databases")}
             </h3>
             <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
@@ -224,7 +234,11 @@ function Technologies() {
             transition={{ duration: 1.5, delay: 0.6 }}
             className="flex flex-col items-center"
           >
-            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+            <h3
+              className={`text-2xl font-semibold mb-8 ${
+                isDarkMode ? "text-neutral-300" : "text-black"
+              }`}
+            >
               {t("technologies.versionControl")} & DevOps
             </h3>
             <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
@@ -252,7 +266,11 @@ function Technologies() {
             transition={{ duration: 1.5, delay: 0.3 }}
             className="flex flex-col items-center"
           >
-            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+            <h3
+              className={`text-2xl font-semibold mb-8 ${
+                isDarkMode ? "text-neutral-300" : "text-black"
+              }`}
+            >
               {t("technologies.backend")} & {t("technologies.systemBuild")}
             </h3>
             <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
@@ -277,7 +295,11 @@ function Technologies() {
             transition={{ duration: 1.5, delay: 0.5 }}
             className="flex flex-col items-center"
           >
-            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+            <h3
+              className={`text-2xl font-semibold mb-8 ${
+                isDarkMode ? "text-neutral-300" : "text-black"
+              }`}
+            >
               Database Clients
             </h3>
             <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
@@ -300,7 +322,11 @@ function Technologies() {
             transition={{ duration: 1.5, delay: 0.7 }}
             className="flex flex-col items-center"
           >
-            <h3 className="text-2xl font-semibold text-neutral-300 mb-8">
+            <h3
+              className={`text-2xl font-semibold mb-8 ${
+                isDarkMode ? "text-neutral-300" : "text-black"
+              }`}
+            >
               {t("technologies.apiTesting")} & {t("technologies.productivity")}
             </h3>
             <div className="flex flex-wrap items-center justify-center gap-4 max-w-lg">
