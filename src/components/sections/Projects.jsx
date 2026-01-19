@@ -1,24 +1,103 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
+import { useState } from "react";
 
 function Projects() {
   const { t } = useTranslation();
+  const [expandedGroups, setExpandedGroups] = useState({
+    react: false,
+    d3: false,
+    js: false,
+  });
+
+  const toggleGroup = (group) => {
+    setExpandedGroups((prev) => ({
+      ...prev,
+      [group]: !prev[group],
+    }));
+  };
 
   return (
-    <div className="border-b border-neutral-900 pb-4">
+    <div id="projects" className="border-b border-neutral-900 pb-4">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="my-20 text-center text-4xl text-neutral-900 dark:text-white"
+        className="my-16 text-center text-3xl font-semibold
+        text-neutral-900 dark:text-white lg:text-4xl"
       >
         {t("projects.title")}
       </motion.h2>
 
+      {/* Grupo de proyectos: Mobile Apps */}
+      <div className="mb-12">
+        <h3 className="my-10 text-xl text-center font-semibold
+        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
+          {t("projects.mobileAppsTitle")}
+        </h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
+          {/* Proyecto Mobile - Mental: Hipnosis personalizada */}
+          <motion.div
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{
+              scale: 1.02,
+              boxShadow: "0 10px 30px rgba(168, 85, 247, 0.3)",
+            }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            border border-neutral-200 dark:border-neutral-800 
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
+          >
+            <div className="flex gap-6 mb-4">
+              <div className="flex-shrink-0 flex flex-col items-center">
+                <a
+                  href="https://www.mental.app/descarga"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fwww.mental.app%2Fdescarga"
+                    alt="QR Code - Mental App"
+                    className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </a>
+                <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-2 text-center">
+                  {t("projects.MOBILE_APPS.mental.qrText")}
+                </p>
+              </div>
+              <div className="flex-1">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
+                  {t("projects.MOBILE_APPS.mental.title")}
+                </h4>
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+                  {t("projects.MOBILE_APPS.mental.description")}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {["React Native", "MongoDB", "MongoDB Compass", "TypeScript", "Postman", "Cursor AI", "xCode", "AppStore", "PlayStore"].map((tech) => (
+                <span
+                  key={tech}
+                  className="px-2 py-1 bg-purple-600/20 text-purple-700 dark:text-purple-300 text-xs rounded-full border border-purple-500/30 font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
       {/* Grupo de proyectos: REACT */}
       <div className="mb-16">
-        <h3 className="my-10 text-2xl text-center text-blue-600 dark:text-blue-500 font-semibold">
+        <h3 className="my-10 text-xl text-center font-semibold
+        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
           React
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
@@ -32,7 +111,11 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            border border-neutral-200 dark:border-neutral-800 
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -62,7 +145,7 @@ function Projects() {
                 (tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-blue-600/20 text-blue-400 text-xs rounded-full border border-blue-500/30"
+                    className="px-2 py-1 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full border border-blue-500/30 font-medium"
                   >
                     {tech}
                   </span>
@@ -112,7 +195,11 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            border border-neutral-200 dark:border-neutral-800 
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -142,7 +229,7 @@ function Projects() {
                 (tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-blue-600/20 text-blue-400 text-xs rounded-full border border-blue-500/30"
+                    className="px-2 py-1 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full border border-blue-500/30 font-medium"
                   >
                     {tech}
                   </span>
@@ -183,6 +270,7 @@ function Projects() {
           </motion.div>
 
           {/* Proyecto React 3 - Sistema de Pedidos Online */}
+          {(expandedGroups.react || false) && (
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
@@ -192,7 +280,11 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            border border-neutral-200 dark:border-neutral-800 
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -251,8 +343,10 @@ function Projects() {
               </button>
             </div>
           </motion.div>
+          )}
 
           {/* Proyecto React 4 - Explorador Rick & Morty */}
+          {(expandedGroups.react || false) && (
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
@@ -262,7 +356,11 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            border border-neutral-200 dark:border-neutral-800 
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -311,8 +409,10 @@ function Projects() {
               </button>
             </div>
           </motion.div>
+          )}
 
           {/* Proyecto React 5 - Calculadora Científica */}
+          {(expandedGroups.react || false) && (
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
@@ -322,7 +422,11 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-blue-500/40 transition-all duration-300"
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            border border-neutral-200 dark:border-neutral-800 
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -379,12 +483,38 @@ function Projects() {
               </button>
             </div>
           </motion.div>
+          )}
         </div>
+        {!expandedGroups.react && (
+          <div className="text-center mt-6">
+            <button
+              onClick={() => toggleGroup("react")}
+              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
+              dark:bg-neutral-600 dark:hover:bg-neutral-700 
+              text-white rounded-lg transition-colors duration-200"
+            >
+              {t("projects.showMore").replace("{count}", "3")}
+            </button>
+          </div>
+        )}
+        {expandedGroups.react && (
+          <div className="text-center mt-6">
+            <button
+              onClick={() => toggleGroup("react")}
+              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
+              dark:bg-neutral-600 dark:hover:bg-neutral-700 
+              text-white rounded-lg transition-colors duration-200"
+            >
+              {t("projects.showLess")}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Grupo de proyectos: D3.js & Data Visualization */}
       <div className="mb-16">
-        <h3 className="my-10 text-2xl text-center text-emerald-600 dark:text-emerald-500 font-semibold">
+        <h3 className="my-10 text-xl text-center font-semibold
+        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
           D3.js & Data Visualization
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
@@ -427,7 +557,7 @@ function Projects() {
               {["D3.js", "SVG", "JavaScript", "CSS3", "AJAX"].map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-1 bg-green-600/20 text-green-400 text-xs rounded-full border border-green-500/30"
+                  className="px-2 py-1 bg-green-600/20 text-green-700 dark:text-green-300 text-xs rounded-full border border-green-500/30 font-medium"
                 >
                   {tech}
                 </span>
@@ -491,7 +621,7 @@ function Projects() {
               {["D3.js", "SVG", "GeoJSON", "CSS3", "AJAX"].map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-1 bg-green-600/20 text-green-400 text-xs rounded-full border border-green-500/30"
+                  className="px-2 py-1 bg-green-600/20 text-green-700 dark:text-green-300 text-xs rounded-full border border-green-500/30 font-medium"
                 >
                   {tech}
                 </span>
@@ -524,7 +654,8 @@ function Projects() {
 
       {/* Grupo de proyectos: Vanilla JavaScript */}
       <div className="mb-12">
-        <h3 className="my-10 text-2xl text-center text-yellow-600 dark:text-yellow-500 font-semibold">
+        <h3 className="my-10 text-xl text-center font-semibold
+        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
           Vanilla JavaScript
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
@@ -538,7 +669,11 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            border border-neutral-200 dark:border-neutral-800 
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -567,7 +702,7 @@ function Projects() {
               {["JavaScript", "HTML5", "CSS3", "LocalStorage"].map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-1 bg-yellow-600/20 text-yellow-400 text-xs rounded-full border border-yellow-500/30"
+                  className="px-2 py-1 bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full border border-yellow-500/30 font-medium"
                 >
                   {tech}
                 </span>
@@ -596,7 +731,11 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            border border-neutral-200 dark:border-neutral-800 
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -625,7 +764,7 @@ function Projects() {
               {["JavaScript", "HTML5", "CSS3", "Audio API"].map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-1 bg-yellow-600/20 text-yellow-400 text-xs rounded-full border border-yellow-500/30"
+                  className="px-2 py-1 bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full border border-yellow-500/30 font-medium"
                 >
                   {tech}
                 </span>
@@ -647,6 +786,7 @@ function Projects() {
           </motion.div>
 
           {/* Proyecto JS 3 - Juego de Plataformas */}
+          {(expandedGroups.js || false) && (
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
@@ -656,7 +796,11 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            border border-neutral-200 dark:border-neutral-800 
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -686,7 +830,7 @@ function Projects() {
                 (tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-yellow-600/20 text-yellow-400 text-xs rounded-full border border-yellow-500/30"
+                    className="px-2 py-1 bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full border border-yellow-500/30 font-medium"
                   >
                     {tech}
                   </span>
@@ -707,8 +851,10 @@ function Projects() {
               </button>
             </div>
           </motion.div>
+          )}
 
           {/* Proyecto JS 4 - RPG Interactivo */}
+          {(expandedGroups.js || false) && (
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
@@ -718,7 +864,11 @@ function Projects() {
               boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-yellow-500/40 transition-all duration-300"
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            border border-neutral-200 dark:border-neutral-800 
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -747,7 +897,7 @@ function Projects() {
               {["JavaScript", "Game Logic", "HTML5", "CSS3"].map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-1 bg-yellow-600/20 text-yellow-400 text-xs rounded-full border border-yellow-500/30"
+                  className="px-2 py-1 bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full border border-yellow-500/30 font-medium"
                 >
                   {tech}
                 </span>
@@ -767,7 +917,32 @@ function Projects() {
               </button>
             </div>
           </motion.div>
+          )}
         </div>
+        {!expandedGroups.js && (
+          <div className="text-center mt-6">
+            <button
+              onClick={() => toggleGroup("js")}
+              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
+              dark:bg-neutral-600 dark:hover:bg-neutral-700 
+              text-white rounded-lg transition-colors duration-200"
+            >
+              {t("projects.showMore").replace("{count}", "2")}
+            </button>
+          </div>
+        )}
+        {expandedGroups.js && (
+          <div className="text-center mt-6">
+            <button
+              onClick={() => toggleGroup("js")}
+              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
+              dark:bg-neutral-600 dark:hover:bg-neutral-700 
+              text-white rounded-lg transition-colors duration-200"
+            >
+              {t("projects.showLess")}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

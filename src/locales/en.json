@@ -20,12 +20,15 @@
     "goal": "Focused on delivering clean code, optimized performance and exceptional experiences."
   },
   "projects": {
-    "title": "Featured Projects",
+    "title": "Projects",
+    "mobileAppsTitle": "Mobile App Projects",
     "description": "A selection of my most relevant work",
     "buttonViewProject": "View project",
     "buttonViewFrontCode": "View code (Frontend)",
     "buttonViewBackCode": "View code (Backend)",
     "buttonViewCode": "View code",
+    "showMore": "Show {count} more",
+    "showLess": "Show less",
     "REACT": {
       "library": {
         "title": "Digital Library System",
@@ -75,13 +78,28 @@
         "title": "Interactive RPG",
         "description": "Turn-based combat system and inventory management. Complex game logic in JavaScript."
       }
+    },
+    "MOBILE_APPS": {
+      "mental": {
+        "title": "Mental: Personalized Hypnosis",
+        "description": "Personalized user hypnosis app",
+        "qrText": "Scan QR to download the App"
+      }
     }
   },
   "experience": {
     "title": "Experience",
     "education": "Education",
     "skills": "Skills",
+    "showMore": "Show {count} more",
+    "showLess": "Show less",
     "items": [
+      {
+        "year": "06/2025 - Present",
+        "role": "Mobile/Web Developer",
+        "company": "Mental-Magnet",
+        "description": "At Mental-Magnet, I develop the mobile app for both iOS and Android platforms, as well as the company's web pages. The app is called \"Mental: Personalized Hypnosis\". I work primarily with React Native, MongoDB, Cursor AI, Postman, and TypeScript. I handle the builds for both AppStore and PlayStore."
+      },
       {
         "year": "03/2024 - 01/2025",
         "role": "Full-Stack Developer",
@@ -116,6 +134,8 @@
   },
   "certifications": {
     "title": "Certifications",
+    "showMore": "Show {count} more",
+    "showLess": "Show less",
     "institutions": {
       "bios": "BIOS Institute",
       "freeCodeCamp": "FreeCodeCamp",

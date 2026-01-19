@@ -15,7 +15,7 @@ function Hero() {
   const { t } = useTranslation(); // 🎯 Usamos el hook para obtener la traducción
 
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:mb-35">
+    <div id="hero" className="border-b border-neutral-200 dark:border-neutral-800 pb-12 lg:mb-20">
       <div className="flex flex-wrap">
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col items-center lg:items-start">
@@ -23,30 +23,30 @@ function Hero() {
               variants={container(0)}
               initial="hidden"
               animate="visible"
-              className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
+              className="pb-8 text-5xl font-semibold tracking-tight lg:mt-12 lg:text-7xl
+              text-neutral-900 dark:text-white"
             >
               Agustin Velazquez
             </motion.h1>
 
-            <motion.span
+            <motion.h2
               variants={container(0.5)}
               initial="hidden"
               animate="visible"
-              className="bg-gradient-to-r
-  from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight
-  text-transparent"
+              className="text-2xl font-medium tracking-tight mb-6
+              text-neutral-700 dark:text-neutral-300 lg:text-3xl"
             >
-              {t("hero.title")} {/* 🟢 Traducción del título */}
-            </motion.span>
+              {t("hero.title")}
+            </motion.h2>
 
             <motion.p
               variants={container(1)}
               initial="hidden"
               animate="visible"
-              className="my-2 max-w-xl py-6 font-light tracking-tighter"
+              className="max-w-xl py-4 text-base leading-relaxed
+              text-neutral-600 dark:text-neutral-400 lg:text-lg"
             >
               {t("hero.content")}
-              {/* 🟢 Traducción del contenido */}
             </motion.p>
           </div>
         </div>
@@ -56,10 +56,10 @@ function Hero() {
             <motion.img
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.2 }}
+              transition={{ duration: 0.8, delay: 1 }}
               src={profilePic}
               alt="Agustin Velazquez"
-              className="w-[300px] h-[450px] object-cover"
+              className="w-[280px] h-[420px] object-cover rounded-lg shadow-lg"
             />
           </div>
         </div>

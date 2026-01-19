@@ -14,6 +14,25 @@ export const HERO_CONTENT_KEY = `I'm a full-stack developer from Uruguay with ha
 
 export const EXPERIENCES = [
   {
+    year: "06/2025 - Present",
+    role: "Mobile/Web Developer",
+    company: "Mental-Magnet",
+    description: `At Mental-Magnet, I develop the mobile app for both iOS and Android platforms, as well as the company's web pages. The app is called "Mental: Personalized Hypnosis". I work primarily with React Native, MongoDB, Cursor AI, Postman, and TypeScript. I handle the builds for both AppStore and PlayStore.`,
+    technologies: [
+      "React Native",
+      "MongoDB",
+      "MongoDB Compass",
+      "Cursor AI",
+      "Postman",
+      "TypeScript",
+      "Git",
+      "GitHub",
+      "xCode",
+      "AppStore",
+      "PlayStore",
+    ],
+  },
+  {
     year: "03/2024 - 01/2025",
     role: "Full-Stack Developer with REACT",
     company: "Instituto BIOS.",

@@ -166,9 +166,12 @@ function Technologies() {
   ];
 
   return (
-    <div className="border-b border-neutral-800 pb-24">
+    <div id="technologies" className="border-b border-neutral-800 pb-24">
       {/* Section: Technologies - Layout en 2 columnas principales */}
-      <h2 className="my-20 text-center text-4xl">{t("technologies.title")}</h2>
+      <h2 className="my-16 text-center text-3xl font-semibold
+      text-neutral-900 dark:text-white lg:text-4xl">
+        {t("technologies.title")}
+      </h2>
 
       <div className="grid lg:grid-cols-2 gap-12 max-w-full mx-auto px-4">
         {/* COLUMNA IZQUIERDA */}

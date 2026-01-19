@@ -38,7 +38,6 @@ const IconCard = ({
   const cardVariants = {
     hover: {
       scale: 1.05,
-      boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
       transition: { duration: 0.3, ease: "easeOut" },
     },
   };

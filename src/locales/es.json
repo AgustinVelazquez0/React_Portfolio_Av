@@ -20,12 +20,15 @@
     "goal": "Enfocado en entregar código limpio, performance optimizada y experiencias excepcionales."
   },
   "projects": {
-    "title": "Proyectos destacados",
+    "title": "Proyectos",
+    "mobileAppsTitle": "Proyectos App Mobile",
     "description": "A selection of my most relevant work",
     "buttonViewProject": "Ver proyecto",
     "buttonViewFrontCode": "Ver código (Frontend)",
     "buttonViewBackCode": "Ver código (Backend)",
     "buttonViewCode": "Ver código",
+    "showMore": "Mostrar {count} más",
+    "showLess": "Mostrar menos",
     "REACT": {
       "library": {
         "title": "Sistema de Biblioteca Digital",
@@ -75,6 +78,13 @@
         "title": "RPG Interactivo",
         "description": "Sistema de combate por turnos y gestión de inventario. Lógica de juego compleja en JavaScript."
       }
+    },
+    "MOBILE_APPS": {
+      "mental": {
+        "title": "Mental: Hipnosis personalizada",
+        "description": "App de hipnosis personalizadas de usuarios",
+        "qrText": "Escanea QR para descargar la App"
+      }
     }
   },
 
@@ -82,7 +92,15 @@
     "title": "Experiencia",
     "education": "Educación",
     "skills": "Habilidades",
+    "showMore": "Mostrar {count} más",
+    "showLess": "Mostrar menos",
     "items": [
+      {
+        "year": "06/2025 - Presente",
+        "role": "Desarrollador Mobile/Web",
+        "company": "Mental-Magnet",
+        "description": "En Mental-Magnet me dedico a programar la App mobile tanto iOS como Android, y también las páginas web de la empresa. La app se llama \"Mental: Hipnosis personalizada\". Utilizo principalmente React Native, MongoDB, Cursor AI, Postman y TypeScript. Me encargo de los builds tanto para AppStore como para PlayStore."
+      },
       {
         "year": "03/2024 - 01/2025",
         "role": "Desarrollador Full-Stack",
@@ -117,6 +135,8 @@
   },
   "certifications": {
     "title": "Certificaciones",
+    "showMore": "Mostrar {count} más",
+    "showLess": "Mostrar menos",
     "institutions": {
       "bios": "Instituto BIOS",
       "freeCodeCamp": "FreeCodeCamp",

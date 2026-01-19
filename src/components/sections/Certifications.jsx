@@ -1,32 +1,53 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
+import { useState } from "react";
 
 function Certifications() {
   const { t } = useTranslation();
+  const [expandedAcademies, setExpandedAcademies] = useState({
+    bios: false,
+    freeCodeCamp: false,
+    santander: false,
+  });
+
+  const toggleAcademy = (academy) => {
+    setExpandedAcademies((prev) => ({
+      ...prev,
+      [academy]: !prev[academy],
+    }));
+  };
 
   return (
-    <div className="pb-4 border-b border-neutral-900 dark:border-neutral-700">
+    <div id="certifications" className="pb-4 border-b border-neutral-900 dark:border-neutral-700">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.5 }}
-        className="my-20 text-center text-4xl text-neutral-900 dark:text-white"
+        className="my-16 text-center text-3xl font-semibold
+        text-neutral-900 dark:text-white lg:text-4xl"
       >
         {t("certifications.title")}
       </motion.h2>
 
       {/* BIOS Institute Certifications */}
       <div className="mb-12">
-        <h3 className="text-3xl text-center font-semibold mb-8 text-neutral-900 dark:text-white">
+        <h3 className="text-2xl text-center font-semibold mb-8 
+        text-neutral-800 dark:text-neutral-200">
           BIOS Institute
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
           {/* Certificado 1 (Full Stack Developer) */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://drive.google.com/file/d/1YKgsHIwNC8eGZc2k1cErBzAJJR2tgwSl/view?usp=drive_link"
@@ -53,9 +74,15 @@ function Certifications() {
           {/* Certificado 2 (Digital Skills in the Professional World) */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://drive.google.com/file/d/1FmlQ96_KjTt2A2_-JaCKlljDAejCCyYy/view"
@@ -83,16 +110,23 @@ function Certifications() {
 
       {/* FreeCodeCamp Certifications */}
       <div className="mb-12">
-        <h3 className="text-3xl text-center font-semibold mb-8 text-neutral-900 dark:text-white">
+        <h3 className="text-2xl text-center font-semibold mb-8 
+        text-neutral-800 dark:text-neutral-200">
           FreeCodeCamp
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
           {/* Certificado Back End Development and APIs */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/back-end-development-and-apis"
@@ -119,9 +153,15 @@ function Certifications() {
           {/* Certificado Relational Database */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/relational-database-v8"
@@ -148,11 +188,18 @@ function Certifications() {
           </motion.div>
 
           {/* Certificado JavaScript Algorithms and Data Structures */}
+          {(expandedAcademies.freeCodeCamp || false) && (
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/javascript-algorithms-and-data-structures-v8"
@@ -175,13 +222,21 @@ function Certifications() {
               </p>
             </div>
           </motion.div>
+          )}
 
           {/* Certificado Quality Assurance */}
+          {(expandedAcademies.freeCodeCamp || false) && (
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/quality-assurance-v7"
@@ -204,13 +259,21 @@ function Certifications() {
               </p>
             </div>
           </motion.div>
+          )}
 
           {/* Certificado Data Visualization */}
+          {(expandedAcademies.freeCodeCamp || false) && (
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/data-visualization"
@@ -233,13 +296,21 @@ function Certifications() {
               </p>
             </div>
           </motion.div>
+          )}
 
           {/* Certificado Responsive Web Design */}
+          {(expandedAcademies.freeCodeCamp || false) && (
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/responsive-web-design"
@@ -264,13 +335,21 @@ function Certifications() {
               </p>
             </div>
           </motion.div>
+          )}
 
           {/* Certificado Front End Development Libraries */}
+          {(expandedAcademies.freeCodeCamp || false) && (
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/front-end-development-libraries"
@@ -293,21 +372,53 @@ function Certifications() {
               </p>
             </div>
           </motion.div>
+          )}
         </div>
+        {!expandedAcademies.freeCodeCamp && (
+          <div className="text-center mt-6">
+            <button
+              onClick={() => toggleAcademy("freeCodeCamp")}
+              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
+              dark:bg-neutral-600 dark:hover:bg-neutral-700 
+              text-white rounded-lg transition-colors duration-200"
+            >
+              {t("certifications.showMore").replace("{count}", "5")}
+            </button>
+          </div>
+        )}
+        {expandedAcademies.freeCodeCamp && (
+          <div className="text-center mt-6">
+            <button
+              onClick={() => toggleAcademy("freeCodeCamp")}
+              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
+              dark:bg-neutral-600 dark:hover:bg-neutral-700 
+              text-white rounded-lg transition-colors duration-200"
+            >
+              {t("certifications.showLess")}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Santander Open Academy Certifications */}
       <div className="mb-8">
-        <h3 className="text-3xl text-center font-semibold mb-8 text-neutral-900 dark:text-white">
+        <h3 className="text-2xl text-center font-semibold mb-8 
+        text-neutral-800 dark:text-neutral-200">
           Santander Open Academy
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
           {/* Certificado Introduction to Data Science */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://drive.google.com/file/d/12z8akRooJ2q7XJXj5sp1TANJkpEZTOeo/view"
@@ -334,9 +445,15 @@ function Certifications() {
           {/* Certificado English Essentials for Professional Growth */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://drive.google.com/file/d/1-wnjPOFy7Ujb_G7PwPGAUiqQ_imwr6Dx/view"
@@ -361,11 +478,18 @@ function Certifications() {
           </motion.div>
 
           {/* Certificado Python Programming */}
+          {(expandedAcademies.santander || false) && (
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://drive.google.com/file/d/1ArqH7x6Owqm3Z6Tb3DATVXj9p258XeSJ/view"
@@ -388,13 +512,21 @@ function Certifications() {
               </p>
             </div>
           </motion.div>
+          )}
 
           {/* Certificado ChatGPT */}
+          {(expandedAcademies.santander || false) && (
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 100 }}
-            transition={{ duration: 1 }}
-            className="flex items-center gap-6 bg-neutral-100 dark:bg-neutral-900/30 rounded-lg p-6 hover:bg-neutral-200 dark:hover:bg-neutral-900/50 transition-colors duration-300"
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="flex items-center gap-6 
+            bg-white dark:bg-neutral-900/50 
+            rounded-lg p-6 
+            border border-neutral-200 dark:border-neutral-800
+            hover:border-neutral-300 dark:hover:border-neutral-700
+            shadow-sm hover:shadow-md
+            transition-all duration-200"
           >
             <a
               href="https://drive.google.com/file/d/1HmojqKuGJJPOL6PuTFZmB1cGFd-WACJ7/view"
@@ -417,7 +549,32 @@ function Certifications() {
               </p>
             </div>
           </motion.div>
+          )}
         </div>
+        {!expandedAcademies.santander && (
+          <div className="text-center mt-6">
+            <button
+              onClick={() => toggleAcademy("santander")}
+              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
+              dark:bg-neutral-600 dark:hover:bg-neutral-700 
+              text-white rounded-lg transition-colors duration-200"
+            >
+              {t("certifications.showMore").replace("{count}", "2")}
+            </button>
+          </div>
+        )}
+        {expandedAcademies.santander && (
+          <div className="text-center mt-6">
+            <button
+              onClick={() => toggleAcademy("santander")}
+              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
+              dark:bg-neutral-600 dark:hover:bg-neutral-700 
+              text-white rounded-lg transition-colors duration-200"
+            >
+              {t("certifications.showLess")}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

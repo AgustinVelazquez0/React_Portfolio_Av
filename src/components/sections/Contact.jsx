@@ -29,12 +29,13 @@ function Contact() {
   };
 
   return (
-    <div className="border-b border-neutral-900 pb-20">
+    <div id="contact" className="border-b border-neutral-900 pb-20">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.5 }}
-        className="my-10 text-center text-4xl font-bold bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-transparent"
+        className="my-16 text-center text-3xl font-semibold
+        text-neutral-900 dark:text-white lg:text-4xl"
       >
         {t("contact.title")}
       </motion.h2>
@@ -44,9 +45,13 @@ function Contact() {
         {/* Card Izquierda - Información de Contacto */}
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.6 }}
-          className="bg-neutral-100 dark:bg-neutral-900/30 rounded-2xl p-8 border border-neutral-700 hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+          initial={{ opacity: 0, x: -50 }}
+          transition={{ duration: 1.5, delay: 0.2 }}
+          className="bg-white dark:bg-neutral-900/50 rounded-lg p-8 
+          border border-neutral-200 dark:border-neutral-800
+          hover:border-neutral-300 dark:hover:border-neutral-700
+          shadow-sm hover:shadow-md
+          transition-all duration-200"
         >
           <div className="space-y-6">
             <div className="text-center mb-8">
@@ -179,8 +184,8 @@ function Contact() {
         {/* Card Derecha - Formulario WhatsApp */}
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, x: 50 }}
+          transition={{ duration: 1.5, delay: 0.2 }}
           className="bg-neutral-100 dark:bg-neutral-900/30 rounded-2xl p-8 border border-neutral-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
         >
           <div className="text-center mb-8">
