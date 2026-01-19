@@ -8,6 +8,7 @@ const IconCard = ({
   color,
   duration,
   bgColor = "bg-neutral-900",
+  customImage,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -66,7 +67,17 @@ const IconCard = ({
           initial="initial"
           animate="animate"
         >
-          <IconComponent className={`text-5xl ${color}`} />
+          {customImage ? (
+            <img 
+              src={customImage} 
+              alt={name} 
+              className="w-12 h-12 object-contain"
+            />
+          ) : IconComponent ? (
+            <IconComponent className={`text-5xl ${color}`} />
+          ) : (
+            <DefaultIcon className={`text-5xl ${color}`} />
+          )}
         </motion.div>
 
         {/* Cara trasera (Nombre) */}
@@ -87,11 +98,21 @@ const IconCard = ({
 };
 
 IconCard.propTypes = {
-  icon: PropTypes.elementType.isRequired,
+  icon: PropTypes.elementType,
   name: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   duration: PropTypes.number.isRequired,
   bgColor: PropTypes.string,
+  customImage: PropTypes.string,
 };
+
+// Si no hay icono ni customImage, usar un icono por defecto
+const DefaultIcon = ({ className }) => (
+  <div className={`${className} flex items-center justify-center`}>
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+    </svg>
+  </div>
+);
 
 export default IconCard;

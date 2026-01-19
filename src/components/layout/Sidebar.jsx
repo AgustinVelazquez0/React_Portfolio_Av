@@ -40,13 +40,15 @@ function Sidebar({ onSectionChange }) {
       {/* Botón toggle fijo */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed left-4 top-1/2 -translate-y-1/2 z-50
-        bg-neutral-800 dark:bg-neutral-700
-        text-white p-3 rounded-r-lg
-        shadow-lg hover:shadow-xl
+        className="fixed left-0 top-1/2 -translate-y-1/2 z-50
+        bg-neutral-900 dark:bg-white
+        border border-r border-neutral-800 dark:border-neutral-300
+        text-white dark:text-neutral-900
+        p-3 rounded-r-lg
+        shadow-md hover:shadow-lg
         transition-all duration-200
-        hover:bg-neutral-700 dark:hover:bg-neutral-600"
-        whileHover={{ scale: 1.1 }}
+        hover:bg-neutral-800 dark:hover:bg-neutral-100"
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         aria-label="Toggle menu"
       >
@@ -73,36 +75,44 @@ function Sidebar({ onSectionChange }) {
 
             {/* Panel lateral */}
             <motion.div
-              initial={{ x: -300 }}
+              initial={{ x: -280 }}
               animate={{ x: 0 }}
-              exit={{ x: -300 }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              exit={{ x: -280 }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
               className="fixed left-0 top-0 h-full w-64 z-50
               bg-white dark:bg-neutral-900
-              shadow-2xl
+              border-r border-neutral-200 dark:border-neutral-800
+              shadow-xl
               overflow-y-auto"
             >
               <div className="p-6">
-                <h3 className="text-lg font-semibold mb-6
-                text-neutral-900 dark:text-white
-                border-b border-neutral-200 dark:border-neutral-700 pb-3">
-                  {t("nav.home")}
-                </h3>
+                <div className="mb-6 pb-4 border-b border-neutral-200 dark:border-neutral-800">
+                  <h3 className="text-base font-semibold
+                  text-neutral-900 dark:text-white mb-1">
+                    {t("nav.navigation")}
+                  </h3>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                    {t("nav.sectionsDescription")}
+                  </p>
+                </div>
                 
-                <nav className="space-y-2">
+                <nav className="space-y-1">
                   {sections.map((section, index) => (
                     <motion.button
                       key={section.id}
                       onClick={() => scrollToSection(section.id)}
-                      className="w-full text-left px-4 py-3 rounded-lg
+                      className="w-full text-left px-4 py-2.5 rounded-md
+                      text-sm
                       text-neutral-700 dark:text-neutral-300
                       hover:bg-neutral-100 dark:hover:bg-neutral-800
-                      transition-colors duration-200
+                      active:bg-neutral-200 dark:active:bg-neutral-700
+                      transition-colors duration-150
                       font-medium"
-                      whileHover={{ x: 4 }}
-                      initial={{ opacity: 0, x: -20 }}
+                      whileHover={{ x: 2 }}
+                      whileTap={{ scale: 0.98 }}
+                      initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 }}
+                      transition={{ delay: index * 0.03, duration: 0.2 }}
                     >
                       {section.label}
                     </motion.button>

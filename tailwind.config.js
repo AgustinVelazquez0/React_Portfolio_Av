@@ -15,7 +15,7 @@ export default {
         },
         background: {
           light: "#FFFFFF",
-          dark: "#111827",
+          dark: "#000000",
         },
         text: {
           light: "#1F2937",

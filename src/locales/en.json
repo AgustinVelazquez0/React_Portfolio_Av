@@ -6,7 +6,9 @@
     "experience": "Experience",
     "technologies": "Technologies",
     "certifications": "Certifications",
-    "contact": "Contact"
+    "contact": "Contact",
+    "navigation": "Navigation",
+    "sectionsDescription": "Portfolio sections"
   },
   "hero": {
     "title": "Full Stack Developer",

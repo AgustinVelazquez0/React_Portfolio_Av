@@ -72,7 +72,7 @@ function Contact() {
                 className="flex items-center p-4 bg-neutral-200 dark:bg-neutral-800 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-all duration-300 group cursor-pointer"
                 onClick={() => copyToClipboard(CONTACT.address)}
               >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-full bg-neutral-700 dark:bg-neutral-600 flex items-center justify-center mr-4 group-hover:bg-neutral-600 dark:group-hover:bg-neutral-500 transition-all duration-300">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -109,7 +109,7 @@ function Contact() {
                 className="flex items-center p-4 bg-neutral-200 dark:bg-neutral-800 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-all duration-300 group cursor-pointer"
                 onClick={() => copyToClipboard(CONTACT.phoneNo)}
               >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-full bg-neutral-700 dark:bg-neutral-600 flex items-center justify-center mr-4 group-hover:bg-neutral-600 dark:group-hover:bg-neutral-500 transition-all duration-300">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -140,7 +140,7 @@ function Contact() {
                 className="flex items-center p-4 bg-neutral-200 dark:bg-neutral-800 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-all duration-300 group cursor-pointer"
                 onClick={openEmail}
               >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-full bg-neutral-700 dark:bg-neutral-600 flex items-center justify-center mr-4 group-hover:bg-neutral-600 dark:group-hover:bg-neutral-500 transition-all duration-300">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -171,7 +171,7 @@ function Contact() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={openWhatsApp}
-              className="w-full mt-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-4 px-6 rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-green-500/30"
+              className="w-full mt-6 bg-neutral-700 hover:bg-neutral-800 dark:bg-neutral-600 dark:hover:bg-neutral-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 shadow-md hover:shadow-lg"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
@@ -186,7 +186,11 @@ function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 50 }}
           transition={{ duration: 1.5, delay: 0.2 }}
-          className="bg-neutral-100 dark:bg-neutral-900/30 rounded-2xl p-8 border border-neutral-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
+          className="bg-white dark:bg-neutral-900/50 rounded-lg p-8 
+          border border-neutral-200 dark:border-neutral-800
+          hover:border-neutral-300 dark:hover:border-neutral-700
+          shadow-sm hover:shadow-md
+          transition-all duration-200"
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">
@@ -213,7 +217,7 @@ function Contact() {
                   "Hola! Me interesa saber más sobre tus servicios..."
                 }
                 rows={6}
-                className="w-full px-4 py-3 bg-neutral-200 dark:bg-neutral-800 border border-neutral-600 rounded-lg text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none transition-all duration-300 resize-none"
+                className="w-full px-4 py-3 bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:border-neutral-500 dark:focus:border-neutral-600 focus:ring-2 focus:ring-neutral-400/20 dark:focus:ring-neutral-500/20 focus:outline-none transition-all duration-300 resize-none"
               />
             </div>
 
@@ -223,7 +227,7 @@ function Contact() {
               whileTap={{ scale: 0.98 }}
               onClick={sendMessage}
               disabled={!message.trim()}
-              className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-4 px-6 rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-cyan-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-neutral-700 hover:bg-neutral-800 dark:bg-neutral-600 dark:hover:bg-neutral-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <svg
                 className="w-5 h-5"
@@ -242,10 +246,10 @@ function Contact() {
             </motion.button>
 
             {/* Información adicional */}
-            <div className="mt-6 p-4 bg-neutral-800 rounded-lg border-l-4 border-cyan-500">
+            <div className="mt-6 p-4 bg-neutral-200 dark:bg-neutral-800 rounded-lg border-l-4 border-neutral-400 dark:border-neutral-600">
               <div className="flex items-start">
                 <svg
-                  className="w-5 h-5 text-cyan-500 mt-0.5 mr-3 flex-shrink-0"
+                  className="w-5 h-5 text-neutral-600 dark:text-neutral-400 mt-0.5 mr-3 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -258,11 +262,11 @@ function Contact() {
                   />
                 </svg>
                 <div>
-                  <p className="text-sm text-neutral-300">
+                  <p className="text-sm text-neutral-700 dark:text-neutral-300">
                     {t("contact.responseTime") ||
                       "Tiempo de respuesta: 2-4 horas"}
                   </p>
-                  <p className="text-xs text-neutral-400 mt-1">
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
                     {t("contact.workingHours") ||
                       "Horario de atención: Lun-Vie 9:00-18:00 (GMT-3)"}
                   </p>

@@ -28,6 +28,8 @@ import {
   SiApachenetbeanside,
   SiReact,
   SiNginx,
+  SiExpo,
+  SiGoogle,
 } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
 
@@ -145,6 +147,14 @@ function Technologies() {
     { icon: SiPostman, name: "Postman", color: "text-orange-500", duration: 4 },
     { icon: SiRender, name: "Render", color: "text-purple-700", duration: 4.8 },
     { icon: SiGlitch, name: "Glitch", color: "text-blue-600", duration: 4.2 },
+    { icon: SiExpo, name: "EAS", color: "text-indigo-500", duration: 4.5 },
+    { 
+      icon: null, 
+      name: "Rork", 
+      color: "text-cyan-400", 
+      duration: 4.7,
+      customImage: "https://www.rork.app/favicon.ico"
+    },
   ];
 
   // Configuración de herramientas - Productivity & Design
@@ -157,6 +167,7 @@ function Technologies() {
     },
     { icon: SiCanva, name: "Canva", color: "text-purple-500", duration: 3.4 },
     { icon: SiOpenai, name: "OpenAI", color: "text-gray-500", duration: 5 },
+    { icon: SiGoogle, name: "Google AI Studio", color: "text-blue-600", duration: 4.3 },
     {
       icon: SiWetransfer,
       name: "WeTransfer",
@@ -340,6 +351,7 @@ function Technologies() {
                   name={tool.name}
                   color={tool.color}
                   duration={tool.duration}
+                  customImage={tool.customImage}
                 />
               ))}
             </div>
