@@ -50,7 +50,7 @@ function App() {
     const element = document.getElementById(sectionId);
     if (element) {
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - 70;
+      const offsetPosition = elementPosition + window.pageYOffset - 140;
       
       window.scrollTo({
         top: offsetPosition,
@@ -111,8 +111,8 @@ function App() {
             bg-background-dark/90 dark:bg-black"
           ></div>
         </div>
+        <Navbar />
         <div className="container mx-auto px-8">
-          <Navbar />
           <Hero />
           <Suspense fallback={<Loading />}>
             <Technologies />

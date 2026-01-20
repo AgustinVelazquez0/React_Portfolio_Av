@@ -10,6 +10,50 @@ function Experience() {
   const remainingCount = EXPERIENCES.length - initialCount;
   const displayedExperiences = showAll ? EXPERIENCES : EXPERIENCES.slice(0, initialCount);
 
+  // Función para obtener el color de cada tecnología
+  const getTechColor = (techName) => {
+    const techColorMap = {
+      // Frontend
+      "HTML5": "rgb(220, 38, 38)", // red-600
+      "CSS3": "rgb(37, 99, 235)", // blue-600
+      "JavaScript": "rgb(250, 204, 21)", // yellow-400
+      "TypeScript": "rgb(37, 99, 235)", // blue-600
+      "React": "rgb(34, 211, 238)", // cyan-400
+      "React Native": "rgb(103, 232, 249)", // cyan-300
+      "Tailwind CSS": "rgb(96, 165, 250)", // blue-400
+      
+      // Backend
+      "Node.js": "rgb(22, 163, 74)", // green-600
+      "Express.js": "rgb(156, 163, 175)", // gray-400
+      "API": "rgb(79, 70, 229)", // indigo-600
+      
+      // Databases
+      "PostgreSQL": "rgb(96, 165, 250)", // blue-400
+      "MongoDB": "rgb(34, 197, 94)", // green-500
+      "MongoDB Compass": "rgb(21, 128, 61)", // green-700
+      
+      // Tools
+      "Git": "rgb(234, 88, 12)", // orange-600
+      "GitHub": "rgb(107, 114, 128)", // gray-500
+      "Docker": "rgb(59, 130, 246)", // blue-500
+      "Postman": "rgb(249, 115, 22)", // orange-500
+      "Ubuntu": "rgb(249, 115, 22)", // orange-500
+      "Linux-Ubuntu": "rgb(249, 115, 22)", // orange-500
+      "DBeaver": "rgb(29, 78, 216)", // blue-700
+      "EAS": "rgb(99, 102, 241)", // indigo-500
+      "xCode": "rgb(37, 99, 235)", // blue-600
+      "AppStore": "rgb(107, 114, 128)", // gray-500
+      "PlayStore": "rgb(34, 197, 94)", // green-500
+      "Cursor AI": "rgb(34, 211, 238)", // cyan-400
+      "Google AI Studio": "rgb(37, 99, 235)", // blue-600
+      "Rork": "rgb(34, 211, 238)", // cyan-400
+      "Render": "rgb(126, 34, 206)", // purple-700
+      "Glitch": "rgb(37, 99, 235)", // blue-600
+    };
+    
+    return techColorMap[techName] || "rgb(34, 211, 238)"; // Default cyan
+  };
+
   return (
     <div id="experience" className="border-b border-neutral-900 pb-4">
       <motion.h2
@@ -51,17 +95,23 @@ function Experience() {
                 {t(`experience.items.${index}.description`)}
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                {experience.technologies.map((tech, techIndex) => (
-                  <span
-                    key={techIndex}
-                    className="rounded-md bg-neutral-100 dark:bg-neutral-800 
-                    border border-neutral-200 dark:border-neutral-700
-                    px-3 py-1.5 text-sm font-medium 
-                    text-neutral-700 dark:text-neutral-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {experience.technologies.map((tech, techIndex) => {
+                  const techColor = getTechColor(tech);
+                  return (
+                    <span
+                      key={techIndex}
+                      className="rounded-md bg-black dark:bg-black 
+                      border-2 px-3 py-1.5 text-sm font-medium"
+                      style={{
+                        borderColor: techColor,
+                        color: techColor,
+                        boxShadow: `0 0 10px ${techColor}40`,
+                      }}
+                    >
+                      {tech}
+                    </span>
+                  );
+                })}
               </div>
             </motion.div>
           </div>

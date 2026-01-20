@@ -48,9 +48,8 @@ function Contact() {
           initial={{ opacity: 0, x: -50 }}
           transition={{ duration: 1.5, delay: 0.2 }}
           className="bg-white dark:bg-neutral-900/50 rounded-lg p-8 
-          border border-neutral-200 dark:border-neutral-800
-          hover:border-neutral-300 dark:hover:border-neutral-700
-          shadow-sm hover:shadow-md
+          border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.5)]
+          hover:shadow-[0_0_20px_rgba(34,211,238,0.7)]
           transition-all duration-200"
         >
           <div className="space-y-6">
@@ -187,9 +186,8 @@ function Contact() {
           initial={{ opacity: 0, x: 50 }}
           transition={{ duration: 1.5, delay: 0.2 }}
           className="bg-white dark:bg-neutral-900/50 rounded-lg p-8 
-          border border-neutral-200 dark:border-neutral-800
-          hover:border-neutral-300 dark:hover:border-neutral-700
-          shadow-sm hover:shadow-md
+          border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.5)]
+          hover:shadow-[0_0_20px_rgba(34,211,238,0.7)]
           transition-all duration-200"
         >
           <div className="text-center mb-8">

@@ -2,6 +2,70 @@ import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
 import { useState } from "react";
 
+// Función para obtener el color de cada tecnología (misma que en Experience)
+const getTechColor = (techName) => {
+  const techColorMap = {
+    // Frontend
+    "HTML5": "rgb(220, 38, 38)",
+    "HTML": "rgb(220, 38, 38)",
+    "CSS3": "rgb(37, 99, 235)",
+    "CSS": "rgb(37, 99, 235)",
+    "SCSS": "rgb(207, 102, 121)",
+    "JavaScript": "rgb(250, 204, 21)",
+    "TypeScript": "rgb(37, 99, 235)",
+    "React": "rgb(34, 211, 238)",
+    "React Native": "rgb(103, 232, 249)",
+    "ReactJs": "rgb(34, 211, 238)",
+    "Tailwind CSS": "rgb(96, 165, 250)",
+    "Hooks": "rgb(34, 211, 238)",
+    
+    // Backend
+    "Node.js": "rgb(22, 163, 74)",
+    "Express.js": "rgb(156, 163, 175)",
+    "API": "rgb(79, 70, 229)",
+    "API REST": "rgb(79, 70, 229)",
+    "JWT": "rgb(168, 85, 247)",
+    
+    // Databases
+    "PostgreSQL": "rgb(96, 165, 250)",
+    "MongoDB": "rgb(34, 197, 94)",
+    "MongoDB Compass": "rgb(21, 128, 61)",
+    
+    // Tools
+    "Git": "rgb(234, 88, 12)",
+    "GitHub": "rgb(107, 114, 128)",
+    "Docker": "rgb(59, 130, 246)",
+    "Postman": "rgb(249, 115, 22)",
+    "Ubuntu": "rgb(249, 115, 22)",
+    "Linux-Ubuntu": "rgb(249, 115, 22)",
+    "DBeaver": "rgb(29, 78, 216)",
+    "EAS": "rgb(99, 102, 241)",
+    "xCode": "rgb(37, 99, 235)",
+    "AppStore": "rgb(107, 114, 128)",
+    "PlayStore": "rgb(34, 197, 94)",
+    "Cursor AI": "rgb(34, 211, 238)",
+    "Google AI Studio": "rgb(37, 99, 235)",
+    "Rork": "rgb(34, 211, 238)",
+    "Render": "rgb(126, 34, 206)",
+    "Glitch": "rgb(37, 99, 235)",
+    "Vite": "rgb(168, 85, 247)",
+    "WSL": "rgb(107, 114, 128)",
+    
+    // Data Visualization
+    "D3.js": "rgb(249, 115, 22)",
+    "SVG": "rgb(34, 211, 238)",
+    "GeoJSON": "rgb(34, 197, 94)",
+    "AJAX": "rgb(250, 204, 21)",
+    
+    // Web APIs
+    "LocalStorage": "rgb(250, 204, 21)",
+    "Audio API": "rgb(250, 204, 21)",
+    "Game Logic": "rgb(250, 204, 21)",
+  };
+  
+  return techColorMap[techName] || "rgb(34, 211, 238)"; // Default cyan
+};
+
 function Projects() {
   const { t } = useTranslation();
   const [expandedGroups, setExpandedGroups] = useState({
@@ -48,9 +112,6 @@ function Projects() {
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
-            border border-neutral-200 dark:border-neutral-800 
-            hover:border-neutral-300 dark:hover:border-neutral-700
-            shadow-sm hover:shadow-md
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -81,14 +142,22 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["React Native", "MongoDB", "MongoDB Compass", "TypeScript", "Postman", "Cursor AI", "xCode", "AppStore", "PlayStore"].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2 py-1 bg-purple-600/20 text-purple-700 dark:text-purple-300 text-xs rounded-full border border-purple-500/30 font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["React Native", "MongoDB", "MongoDB Compass", "TypeScript", "Postman", "Cursor AI", "xCode", "AppStore", "PlayStore"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
           </motion.div>
         </div>
@@ -112,9 +181,6 @@ function Projects() {
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
-            border border-neutral-200 dark:border-neutral-800 
-            hover:border-neutral-300 dark:hover:border-neutral-700
-            shadow-sm hover:shadow-md
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -142,14 +208,22 @@ function Projects() {
 
             <div className="flex flex-wrap gap-2 mb-4">
               {["React", "Node.js", "Express.js", "MongoDB", "JWT"].map(
-                (tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full border border-blue-500/30 font-medium"
-                  >
-                    {tech}
-                  </span>
-                )
+                (tech) => {
+                  const techColor = getTechColor(tech);
+                  return (
+                    <span
+                      key={tech}
+                      className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                      style={{
+                        borderColor: techColor,
+                        color: techColor,
+                        boxShadow: `0 0 10px ${techColor}40`,
+                      }}
+                    >
+                      {tech}
+                    </span>
+                  );
+                }
               )}
             </div>
 
@@ -196,9 +270,6 @@ function Projects() {
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
-            border border-neutral-200 dark:border-neutral-800 
-            hover:border-neutral-300 dark:hover:border-neutral-700
-            shadow-sm hover:shadow-md
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -226,14 +297,22 @@ function Projects() {
 
             <div className="flex flex-wrap gap-2 mb-4">
               {["React", "Node.js", "PostgreSQL", "MongoDB", "Docker"].map(
-                (tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full border border-blue-500/30 font-medium"
-                  >
-                    {tech}
-                  </span>
-                )
+                (tech) => {
+                  const techColor = getTechColor(tech);
+                  return (
+                    <span
+                      key={tech}
+                      className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                      style={{
+                        borderColor: techColor,
+                        color: techColor,
+                        boxShadow: `0 0 10px ${techColor}40`,
+                      }}
+                    >
+                      {tech}
+                    </span>
+                  );
+                }
               )}
             </div>
 
@@ -281,9 +360,6 @@ function Projects() {
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
-            border border-neutral-200 dark:border-neutral-800 
-            hover:border-neutral-300 dark:hover:border-neutral-700
-            shadow-sm hover:shadow-md
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -310,14 +386,22 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["React", "MongoDB", "Express.js", "Node.js"].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2 py-1 bg-blue-600/20 text-blue-400 text-xs rounded-full border border-blue-500/30"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["React", "MongoDB", "Express.js", "Node.js"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -357,9 +441,6 @@ function Projects() {
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
-            border border-neutral-200 dark:border-neutral-800 
-            hover:border-neutral-300 dark:hover:border-neutral-700
-            shadow-sm hover:shadow-md
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -386,14 +467,22 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["React", "API REST", "CSS3", "JavaScript"].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2 py-1 bg-blue-600/20 text-blue-400 text-xs rounded-full border border-blue-500/30"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["React", "API REST", "CSS3", "JavaScript"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -423,9 +512,6 @@ function Projects() {
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
-            border border-neutral-200 dark:border-neutral-800 
-            hover:border-neutral-300 dark:hover:border-neutral-700
-            shadow-sm hover:shadow-md
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -452,14 +538,22 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["React", "Hooks", "CSS3", "JavaScript"].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2 py-1 bg-blue-600/20 text-blue-400 text-xs rounded-full border border-blue-500/30"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["React", "Hooks", "CSS3", "JavaScript"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -554,14 +648,22 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["D3.js", "SVG", "JavaScript", "CSS3", "AJAX"].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2 py-1 bg-green-600/20 text-green-700 dark:text-green-300 text-xs rounded-full border border-green-500/30 font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["D3.js", "SVG", "JavaScript", "CSS3", "AJAX"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -618,14 +720,22 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["D3.js", "SVG", "GeoJSON", "CSS3", "AJAX"].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2 py-1 bg-green-600/20 text-green-700 dark:text-green-300 text-xs rounded-full border border-green-500/30 font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["D3.js", "SVG", "GeoJSON", "CSS3", "AJAX"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -670,9 +780,6 @@ function Projects() {
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
-            border border-neutral-200 dark:border-neutral-800 
-            hover:border-neutral-300 dark:hover:border-neutral-700
-            shadow-sm hover:shadow-md
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -699,14 +806,22 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["JavaScript", "HTML5", "CSS3", "LocalStorage"].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2 py-1 bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full border border-yellow-500/30 font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["JavaScript", "HTML5", "CSS3", "LocalStorage"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -732,9 +847,6 @@ function Projects() {
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
-            border border-neutral-200 dark:border-neutral-800 
-            hover:border-neutral-300 dark:hover:border-neutral-700
-            shadow-sm hover:shadow-md
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -761,14 +873,22 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["JavaScript", "HTML5", "CSS3", "Audio API"].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2 py-1 bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full border border-yellow-500/30 font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["JavaScript", "HTML5", "CSS3", "Audio API"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -797,9 +917,6 @@ function Projects() {
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
-            border border-neutral-200 dark:border-neutral-800 
-            hover:border-neutral-300 dark:hover:border-neutral-700
-            shadow-sm hover:shadow-md
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -865,9 +982,6 @@ function Projects() {
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
-            border border-neutral-200 dark:border-neutral-800 
-            hover:border-neutral-300 dark:hover:border-neutral-700
-            shadow-sm hover:shadow-md
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -894,14 +1008,22 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["JavaScript", "Game Logic", "HTML5", "CSS3"].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2 py-1 bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full border border-yellow-500/30 font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["JavaScript", "Game Logic", "HTML5", "CSS3"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
 
             <div className="flex flex-wrap gap-2">
