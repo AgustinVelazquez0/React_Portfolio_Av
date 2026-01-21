@@ -11,10 +11,10 @@ const LanguageToggle = () => {
   return (
     <button
       onClick={toggleLanguage}
-      className="flex items-center gap-2 p-2 rounded-full transition-colors bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
+      className="flex items-center gap-2 p-1 rounded-md transition-colors bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
       aria-label={language === "es" ? "Switch to English" : "Cambiar a Español"}
     >
-      <span className="font-semibold text-sm">
+      <span className="font-semibold">
         {language === "es" ? "EN" : "ES"}
       </span>
       <svg

@@ -1,10 +1,12 @@
 import { EXPERIENCES } from "../../constants";
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
+import { useTheme } from "../../context/ThemeContext";
 import { useState } from "react";
 
 function Experience() {
   const { t } = useTranslation();
+  const { isDarkMode } = useTheme();
   const [showAll, setShowAll] = useState(false);
   const initialCount = 2;
   const remainingCount = EXPERIENCES.length - initialCount;
@@ -125,9 +127,11 @@ function Experience() {
         <div className="text-center mt-8">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
-            dark:bg-neutral-600 dark:hover:bg-neutral-700 
-            text-white rounded-lg transition-colors duration-200"
+            className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
+              isDarkMode
+                ? "bg-white hover:bg-neutral-200 text-black"
+                : "bg-black hover:bg-neutral-800 text-white"
+            }`}
           >
             {showAll
               ? t("experience.showLess")

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
+import { useTheme } from "../../context/ThemeContext";
 import { useState } from "react";
 
 // Función para obtener el color de cada tecnología
@@ -184,6 +185,7 @@ const parseTechnologies = (description) => {
 
 function Certifications() {
   const { t } = useTranslation();
+  const { isDarkMode } = useTheme();
   const [expandedAcademies, setExpandedAcademies] = useState({
     bios: false,
     freeCodeCamp: false,
@@ -223,7 +225,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -272,7 +274,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -330,7 +332,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -379,7 +381,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -429,7 +431,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -480,7 +482,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -531,7 +533,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -582,7 +584,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -633,7 +635,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -680,9 +682,11 @@ function Certifications() {
           <div className="text-center mt-6">
             <button
               onClick={() => toggleAcademy("freeCodeCamp")}
-              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
-              dark:bg-neutral-600 dark:hover:bg-neutral-700 
-              text-white rounded-lg transition-colors duration-200"
+              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
+                isDarkMode
+                  ? "bg-white hover:bg-neutral-200 text-black"
+                  : "bg-black hover:bg-neutral-800 text-white"
+              }`}
             >
               {t("certifications.showMore").replace("{count}", "5")}
             </button>
@@ -692,9 +696,11 @@ function Certifications() {
           <div className="text-center mt-6">
             <button
               onClick={() => toggleAcademy("freeCodeCamp")}
-              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
-              dark:bg-neutral-600 dark:hover:bg-neutral-700 
-              text-white rounded-lg transition-colors duration-200"
+              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
+                isDarkMode
+                  ? "bg-white hover:bg-neutral-200 text-black"
+                  : "bg-black hover:bg-neutral-800 text-white"
+              }`}
             >
               {t("certifications.showLess")}
             </button>
@@ -716,7 +722,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -765,7 +771,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -815,7 +821,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -866,7 +872,7 @@ function Certifications() {
             transition={{ duration: 1.5, delay: 0.2 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
-            rounded-lg p-6 
+            rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
             transition-all duration-200"
@@ -913,9 +919,11 @@ function Certifications() {
           <div className="text-center mt-6">
             <button
               onClick={() => toggleAcademy("santander")}
-              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
-              dark:bg-neutral-600 dark:hover:bg-neutral-700 
-              text-white rounded-lg transition-colors duration-200"
+              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
+                isDarkMode
+                  ? "bg-white hover:bg-neutral-200 text-black"
+                  : "bg-black hover:bg-neutral-800 text-white"
+              }`}
             >
               {t("certifications.showMore").replace("{count}", "2")}
             </button>
@@ -925,9 +933,11 @@ function Certifications() {
           <div className="text-center mt-6">
             <button
               onClick={() => toggleAcademy("santander")}
-              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
-              dark:bg-neutral-600 dark:hover:bg-neutral-700 
-              text-white rounded-lg transition-colors duration-200"
+              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
+                isDarkMode
+                  ? "bg-white hover:bg-neutral-200 text-black"
+                  : "bg-black hover:bg-neutral-800 text-white"
+              }`}
             >
               {t("certifications.showLess")}
             </button>

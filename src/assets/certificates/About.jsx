@@ -19,7 +19,7 @@ function About() {
         >
           <div className="flex items-center justify-center">
             <img
-              className="w-[300px] h-[450px] object-cover rounded-2xl"
+              className="w-[300px] h-[450px] object-cover rounded-md"
               src={aboutImg}
               alt="about"
             />

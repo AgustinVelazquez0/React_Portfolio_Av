@@ -59,7 +59,7 @@ body {
 
 .scrollbar-thumb-neutral-500\/50::-webkit-scrollbar-thumb {
   background-color: rgba(115, 115, 115, 0.5);
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .scrollbar-track-transparent::-webkit-scrollbar-track {
@@ -86,4 +86,13 @@ body {
   50% {
     background-position: 100% 50%;
   }
+}
+
+/* Estilo global para botones: tipografía seria, moderna, cursiva, menos espaciado */
+button, [role="button"], .btn {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  word-spacing: -0.05em;
 }

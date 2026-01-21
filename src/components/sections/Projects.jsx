@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
+import { useTheme } from "../../context/ThemeContext";
 import { useState } from "react";
 
 // Función para obtener el color de cada tecnología (misma que en Experience)
@@ -72,6 +73,7 @@ const getTechColor = (techName) => {
 
 function Projects() {
   const { t } = useTranslation();
+  const { isDarkMode } = useTheme();
   const [expandedGroups, setExpandedGroups] = useState({
     react: false,
     d3: false,
@@ -110,7 +112,7 @@ function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg border-0
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-0
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] dark:hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]
             transition-all duration-200"
@@ -125,7 +127,7 @@ function Projects() {
                   <img
                     src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fwww.mental.app%2Fdescarga"
                     alt="QR Code - Mental App"
-                    className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
                 <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-2 text-center">
@@ -148,7 +150,7 @@ function Projects() {
                 return (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
                     style={{
                       borderColor: techColor,
                       color: techColor,
@@ -176,7 +178,7 @@ function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg border-0
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-0
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
             transition-all duration-200"
@@ -191,7 +193,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project24_library.png"
                   alt="Sistema de Biblioteca Digital"
-                  className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
               <div className="flex-1">
@@ -211,7 +213,7 @@ function Projects() {
                   return (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                      className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
                       style={{
                         borderColor: techColor,
                         color: techColor,
@@ -230,7 +232,7 @@ function Projects() {
                 onClick={() =>
                   window.open("https://corner-books-log.onrender.com/register")
                 }
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors duration-200"
+                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
               >
                 {t("projects.buttonViewProject")}
               </button>
@@ -240,7 +242,7 @@ function Projects() {
                     "https://github.com/AgustinVelazquez0/library-front-end"
                   )
                 }
-                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white text-sm rounded-lg transition-colors duration-200"
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewFrontCode")}
               </button>
@@ -250,7 +252,7 @@ function Projects() {
                     "https://github.com/AgustinVelazquez0/library-back-end"
                   )
                 }
-                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white text-sm rounded-lg transition-colors duration-200"
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewBackCode")}
               </button>
@@ -262,7 +264,7 @@ function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
             transition-all duration-200"
@@ -277,7 +279,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project7.png"
                   alt="Task Manager Avanzado"
-                  className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
               <div className="flex-1">
@@ -297,7 +299,7 @@ function Projects() {
                   return (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                      className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
                       style={{
                         borderColor: techColor,
                         color: techColor,
@@ -316,7 +318,7 @@ function Projects() {
                 onClick={() =>
                   window.open("https://todo-list-front-yvrl.onrender.com/login")
                 }
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors duration-200"
+                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
               >
                 {t("projects.buttonViewProject")}
               </button>
@@ -326,7 +328,7 @@ function Projects() {
                     "https://github.com/AgustinVelazquez0/Todo_List_Front"
                   )
                 }
-                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white text-sm rounded-lg transition-colors duration-200"
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewFrontCode")}
               </button>
@@ -336,7 +338,7 @@ function Projects() {
                     "https://github.com/AgustinVelazquez0/Todo_List_Back"
                   )
                 }
-                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white text-sm rounded-lg transition-colors duration-200"
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewBackCode")}
               </button>
@@ -349,7 +351,7 @@ function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
             transition-all duration-200"
@@ -364,7 +366,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project5.png"
                   alt="Sistema de Pedidos Online"
-                  className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
               <div className="flex-1">
@@ -383,7 +385,7 @@ function Projects() {
                 return (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
                     style={{
                       borderColor: techColor,
                       color: techColor,
@@ -403,7 +405,7 @@ function Projects() {
                     "https://github.com/AgustinVelazquez0/Food_List_Front"
                   )
                 }
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors duration-200"
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewFrontCode")}
               </button>
@@ -413,7 +415,7 @@ function Projects() {
                     "https://github.com/AgustinVelazquez0/Food_List_Back"
                   )
                 }
-                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white text-sm rounded-lg transition-colors duration-200"
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewBackCode")}
               </button>
@@ -427,7 +429,7 @@ function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
             transition-all duration-200"
@@ -442,7 +444,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project4.png"
                   alt="Explorador Rick & Morty"
-                  className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
               <div className="flex-1">
@@ -461,7 +463,7 @@ function Projects() {
                 return (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
                     style={{
                       borderColor: techColor,
                       color: techColor,
@@ -481,7 +483,7 @@ function Projects() {
                     "https://github.com/AgustinVelazquez0/Rick_and_Morty"
                   )
                 }
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors duration-200"
+                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
               >
                 {t("projects.buttonViewProject")}
               </button>
@@ -495,7 +497,7 @@ function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
             transition-all duration-200"
@@ -510,7 +512,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project16_calculator.png"
                   alt="Calculadora Científica"
-                  className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
               <div className="flex-1">
@@ -529,7 +531,7 @@ function Projects() {
                 return (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
                     style={{
                       borderColor: techColor,
                       color: techColor,
@@ -549,7 +551,7 @@ function Projects() {
                     "https://calculator-agustins-projects-569e7477.vercel.app/"
                   )
                 }
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors duration-200"
+                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
               >
                 {t("projects.buttonViewProject")}
               </button>
@@ -557,7 +559,7 @@ function Projects() {
                 onClick={() =>
                   window.open("https://github.com/AgustinVelazquez0/Calculator")
                 }
-                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white text-sm rounded-lg transition-colors duration-200"
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewCode")}
               </button>
@@ -569,9 +571,11 @@ function Projects() {
           <div className="text-center mt-6">
             <button
               onClick={() => toggleGroup("react")}
-              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
-              dark:bg-neutral-600 dark:hover:bg-neutral-700 
-              text-white rounded-lg transition-colors duration-200"
+              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
+                isDarkMode
+                  ? "bg-white hover:bg-neutral-200 text-black"
+                  : "bg-black hover:bg-neutral-800 text-white"
+              }`}
             >
               {t("projects.showMore").replace("{count}", "3")}
             </button>
@@ -581,167 +585,16 @@ function Projects() {
           <div className="text-center mt-6">
             <button
               onClick={() => toggleGroup("react")}
-              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
-              dark:bg-neutral-600 dark:hover:bg-neutral-700 
-              text-white rounded-lg transition-colors duration-200"
+              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
+                isDarkMode
+                  ? "bg-white hover:bg-neutral-200 text-black"
+                  : "bg-black hover:bg-neutral-800 text-white"
+              }`}
             >
               {t("projects.showLess")}
             </button>
           </div>
         )}
-      </div>
-
-      {/* Grupo de proyectos: D3.js & Data Visualization */}
-      <div className="mb-16">
-        <h3 className="my-10 text-xl text-center font-semibold
-        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
-          D3.js & Data Visualization
-        </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
-          {/* Proyecto D3.js 1 - TreeMap Interactiva */}
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-green-500/40
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] dark:hover:shadow-[0_0_15px_rgba(249,115,22,0.4)]
-            transition-all duration-300"
-          >
-            <div className="flex gap-6 mb-4">
-              <a
-                href="https://github.com/AgustinVelazquez0/TreeMap-FreeCodeCamp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0"
-              >
-                <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/data_visualization/project20_treemap.png"
-                  alt="TreeMap Interactiva"
-                  className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </a>
-              <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.SVG_3D.treemap.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.SVG_3D.treemap.description")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["D3.js", "SVG", "JavaScript", "CSS3", "AJAX"].map((tech) => {
-                const techColor = getTechColor(tech);
-                return (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
-                    style={{
-                      borderColor: techColor,
-                      color: techColor,
-                      boxShadow: `0 0 10px ${techColor}40`,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                );
-              })}
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => window.open("https://tree-map-mu.vercel.app/")}
-                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm rounded-lg transition-colors duration-200"
-              >
-                {t("projects.buttonViewProject")}
-              </button>
-              <button
-                onClick={() =>
-                  window.open("https://github.com/AgustinVelazquez0/tree-map")
-                }
-                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white text-sm rounded-lg transition-colors duration-200"
-              >
-                {t("projects.buttonViewCode")}
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Proyecto D3.js 2 - Mapa Coroplético */}
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-green-500/40
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] dark:hover:shadow-[0_0_15px_rgba(249,115,22,0.4)]
-            transition-all duration-300"
-          >
-            <div className="flex gap-6 mb-4">
-              <a
-                href="https://github.com/AgustinVelazquez0/Choropleth-Map-FreeCodeCamp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0"
-              >
-                <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/data_visualization/project21_choropleth.png"
-                  alt="Mapa Coroplético"
-                  className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </a>
-              <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.SVG_3D.choropleth.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.SVG_3D.choropleth.description")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["D3.js", "SVG", "GeoJSON", "CSS3", "AJAX"].map((tech) => {
-                const techColor = getTechColor(tech);
-                return (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
-                    style={{
-                      borderColor: techColor,
-                      color: techColor,
-                      boxShadow: `0 0 10px ${techColor}40`,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                );
-              })}
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() =>
-                  window.open("https://choropleth-map-mauve.vercel.app/")
-                }
-                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm rounded-lg transition-colors duration-200"
-              >
-                {t("projects.buttonViewProject")}
-              </button>
-              <button
-                onClick={() =>
-                  window.open(
-                    "https://github.com/AgustinVelazquez0/choropleth-map"
-                  )
-                }
-                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-white text-sm rounded-lg transition-colors duration-200"
-              >
-                {t("projects.buttonViewCode")}
-              </button>
-            </div>
-          </motion.div>
-        </div>
       </div>
 
       {/* Grupo de proyectos: Vanilla JavaScript */}
@@ -756,7 +609,7 @@ function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]
             transition-all duration-200"
@@ -771,7 +624,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project1.png"
                   alt="Todo App Vanilla JS"
-                  className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
               <div className="flex-1">
@@ -790,7 +643,7 @@ function Projects() {
                 return (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
                     style={{
                       borderColor: techColor,
                       color: techColor,
@@ -808,7 +661,7 @@ function Projects() {
                 onClick={() =>
                   window.open("https://github.com/AgustinVelazquez0/TO-DO-LIST")
                 }
-                className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-sm rounded-lg transition-colors duration-200"
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewCode")}
               </button>
@@ -820,7 +673,7 @@ function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:!shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:!shadow-[0_0_15px_rgba(250,204,21,0.4)]
             transition-all duration-200"
@@ -835,7 +688,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project15_music_player.png"
                   alt="Reproductor Musical Web"
-                  className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
               <div className="flex-1">
@@ -854,7 +707,7 @@ function Projects() {
                 return (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
                     style={{
                       borderColor: techColor,
                       color: techColor,
@@ -874,7 +727,7 @@ function Projects() {
                     "https://github.com/AgustinVelazquez0/Music-Player"
                   )
                 }
-                className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-sm rounded-lg transition-colors duration-200"
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewCode")}
               </button>
@@ -887,7 +740,7 @@ function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]
             transition-all duration-200"
@@ -902,7 +755,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project8_platformer_game.png"
                   alt="Juego de Plataformas 2D"
-                  className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
               <div className="flex-1">
@@ -920,7 +773,7 @@ function Projects() {
                 (tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full border border-yellow-500/30 font-medium"
+                    className="px-2 py-1 bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-md border border-yellow-500/30 font-medium"
                   >
                     {tech}
                   </span>
@@ -935,7 +788,7 @@ function Projects() {
                     "https://github.com/AgustinVelazquez0/Platformer-Game"
                   )
                 }
-                className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-sm rounded-lg transition-colors duration-200"
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewCode")}
               </button>
@@ -949,7 +802,7 @@ function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]
             transition-all duration-200"
@@ -964,7 +817,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project10_role_playing_game.png"
                   alt="RPG Interactivo"
-                  className="w-20 h-20 rounded-lg object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
               <div className="flex-1">
@@ -983,7 +836,7 @@ function Projects() {
                 return (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-full border-2 font-medium"
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
                     style={{
                       borderColor: techColor,
                       color: techColor,
@@ -1003,7 +856,7 @@ function Projects() {
                     "https://github.com/AgustinVelazquez0/Role-Playing-Game"
                   )
                 }
-                className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-sm rounded-lg transition-colors duration-200"
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewCode")}
               </button>
@@ -1015,9 +868,11 @@ function Projects() {
           <div className="text-center mt-6">
             <button
               onClick={() => toggleGroup("js")}
-              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
-              dark:bg-neutral-600 dark:hover:bg-neutral-700 
-              text-white rounded-lg transition-colors duration-200"
+              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
+                isDarkMode
+                  ? "bg-white hover:bg-neutral-200 text-black"
+                  : "bg-black hover:bg-neutral-800 text-white"
+              }`}
             >
               {t("projects.showMore").replace("{count}", "2")}
             </button>
@@ -1027,9 +882,11 @@ function Projects() {
           <div className="text-center mt-6">
             <button
               onClick={() => toggleGroup("js")}
-              className="px-6 py-2 bg-neutral-700 hover:bg-neutral-800 
-              dark:bg-neutral-600 dark:hover:bg-neutral-700 
-              text-white rounded-lg transition-colors duration-200"
+              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
+                isDarkMode
+                  ? "bg-white hover:bg-neutral-200 text-black"
+                  : "bg-black hover:bg-neutral-800 text-white"
+              }`}
             >
               {t("projects.showLess")}
             </button>

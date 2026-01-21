@@ -66,12 +66,12 @@ function Hero() {
               className="relative"
             >
               {/* Efecto de brillo alrededor de la imagen */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-lg blur-2xl -z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-md blur-2xl -z-10" />
               
               <motion.img
                 src={profilePic}
                 alt="Agustin Velazquez"
-                className="w-[280px] h-[420px] object-cover rounded-lg shadow-2xl
+                className="w-[280px] h-[420px] object-cover rounded-md shadow-2xl
                 border-2 border-cyan-400/50"
                 whileHover={{ 
                   scale: 1.05,

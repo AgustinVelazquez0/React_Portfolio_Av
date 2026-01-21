@@ -114,7 +114,7 @@ function Sidebar({ onSectionChange }) {
         className="fixed left-4 top-20 z-50
         bg-neutral-900 dark:bg-white
         text-white dark:text-neutral-900
-        p-3 rounded-xl
+        p-3 rounded-md
         backdrop-blur-sm
         border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.5)]
         overflow-hidden
@@ -316,7 +316,7 @@ function Sidebar({ onSectionChange }) {
                         <motion.button
                           key={section.id}
                           onClick={() => scrollToSection(section.id)}
-                          className="w-full text-left px-5 py-4 rounded-xl
+                          className="w-full text-left px-3 py-2 rounded-md
                           text-base font-medium
                           text-neutral-700 dark:text-neutral-300
                           relative overflow-hidden
@@ -389,7 +389,7 @@ function Sidebar({ onSectionChange }) {
                           {/* Indicador de selección */}
                           <motion.div
                             className="absolute left-0 top-1/2 -translate-y-1/2
-                            w-1 h-0 rounded-r-full
+                            w-1 h-0 rounded-r
                             bg-neutral-900 dark:bg-white
                             group-hover:h-full
                             transition-all duration-300"

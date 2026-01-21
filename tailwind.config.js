@@ -25,6 +25,7 @@ export default {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         heading: ["Poppins", "sans-serif"],
+        btn: ["Cormorant Garamond", "Georgia", "Times New Roman", "serif"],
       },
     },
   },

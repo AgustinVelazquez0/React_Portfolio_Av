@@ -17,7 +17,7 @@ const AccessibleCard = ({ title, description, imageSrc, altText, link }) => {
   return (
     <div
       ref={cardRef}
-      className={`group relative overflow-hidden rounded-lg transition-all duration-300 
+      className={`group relative overflow-hidden rounded-md transition-all duration-300 
         bg-white dark:bg-gray-800 shadow-md hover:shadow-xl
         ${isFocused ? "ring-2 ring-primary-light dark:ring-primary-dark" : ""}`}
       tabIndex="0"

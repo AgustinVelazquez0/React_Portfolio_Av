@@ -47,7 +47,7 @@ function NavBar() {
                 href="https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300"
+                className="btn p-1 rounded-md bg-neutral-100 dark:bg-neutral-800 text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="LinkedIn"
@@ -59,7 +59,7 @@ function NavBar() {
                 href="https://github.com/AgustinVelazquez0"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white hover:bg-neutral-900 dark:hover:bg-neutral-700 hover:text-white transition-all duration-300"
+                className="btn p-1 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white hover:bg-neutral-900 dark:hover:bg-neutral-700 hover:text-white transition-all duration-300"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="GitHub"

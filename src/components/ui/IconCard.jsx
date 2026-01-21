@@ -96,7 +96,7 @@ const IconCard = ({
       >
         {/* Cara frontal (Icono) */}
         <motion.div
-          className={`absolute inset-0 rounded-2xl border-4 p-4 flex items-center justify-center ${bgColor}`}
+          className={`absolute inset-0 rounded-md border-4 p-4 flex items-center justify-center ${bgColor}`}
           style={{ 
             backfaceVisibility: "hidden",
             borderColor: borderColors.border,
@@ -118,7 +118,7 @@ const IconCard = ({
 
         {/* Cara trasera (Nombre) */}
         <motion.div
-          className={`absolute inset-0 rounded-2xl border-4 p-4 flex items-center justify-center ${bgColor}`}
+          className={`absolute inset-0 rounded-md border-4 p-4 flex items-center justify-center ${bgColor}`}
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
