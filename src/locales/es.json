@@ -101,7 +101,7 @@
         "year": "06/2025 - Presente",
         "role": "Desarrollador Mobile/Web",
         "company": "Mental-Magnet",
-        "description": "En Mental-Magnet me dedico a programar la App mobile tanto iOS como Android, y también las páginas web de la empresa. La app se llama \"Mental: Hipnosis personalizada\". Utilizo principalmente React Native, MongoDB, Cursor AI, Postman y TypeScript. Me encargo de los builds tanto para AppStore como para PlayStore."
+        "description": "En Mental-Magnet me dedico a programar la App mobile tanto iOS como Android, y también las páginas web de la empresa. La app se llama \"Mental: Hipnosis personalizada\". Utilizo principalmente React Native, MongoDB, Cursor AI, Postman y TypeScript. Configuro y gestiono los builds usando EAS (Expo Application Services) con perfiles personalizados en eas.json para producción, preview y desarrollo. Me encargo del proceso completo de build y despliegue para AppStore y PlayStore, incluyendo gestión de versiones, firma y distribución. Utilizo App Store Connect y Google Play Console para la gestión y envío de aplicaciones, TestFlight para pruebas beta en iOS, y Sentry para el seguimiento de errores y monitoreo en producción."
       },
       {
         "year": "03/2024 - 01/2025",

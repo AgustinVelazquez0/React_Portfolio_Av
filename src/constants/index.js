@@ -17,7 +17,7 @@ export const EXPERIENCES = [
     year: "06/2025 - Present",
     role: "Mobile/Web Developer",
     company: "Mental-Magnet",
-    description: `At Mental-Magnet, I develop the mobile app for both iOS and Android platforms, as well as the company's web pages. The app is called "Mental: Personalized Hypnosis". I work primarily with React Native, MongoDB, Cursor AI, Postman, and TypeScript. I handle the builds for both AppStore and PlayStore.`,
+    description: `At Mental-Magnet, I develop the mobile app for both iOS and Android platforms, as well as the company's web pages. The app is called "Mental: Personalized Hypnosis". I work primarily with React Native, MongoDB, Cursor AI, Postman, and TypeScript. I configure and manage builds using EAS (Expo Application Services) with custom eas.json profiles for production, preview, and development environments. I handle the complete build and deployment process for both AppStore and PlayStore, including version management, signing, and distribution. I use App Store Connect and Google Play Console for app submission and management, TestFlight for iOS beta testing, and Sentry for error tracking and monitoring in production.`,
     technologies: [
       "React Native",
       "MongoDB",
@@ -33,6 +33,10 @@ export const EXPERIENCES = [
       "xCode",
       "AppStore",
       "PlayStore",
+      "App Store Connect",
+      "Google Play Console",
+      "TestFlight",
+      "Sentry",
     ],
   },
   {

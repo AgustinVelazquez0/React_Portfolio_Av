@@ -46,15 +46,15 @@ const IconCard = ({
     front: {
       rotateY: 0,
       y: [10, -10],
-      transition: { 
+      transition: {
         rotateY: { duration: 0.6, ease: "easeOut" },
         y: {
-          duration: duration,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "reverse",
-        },
+        duration: duration,
+        ease: "linear",
+        repeat: Infinity,
+        repeatType: "reverse",
       },
+    },
     },
     back: {
       rotateY: 180,

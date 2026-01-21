@@ -43,6 +43,10 @@ const getTechColor = (techName) => {
     "xCode": "rgb(37, 99, 235)",
     "AppStore": "rgb(107, 114, 128)",
     "PlayStore": "rgb(34, 197, 94)",
+    "App Store Connect": "rgb(0, 122, 255)",
+    "Google Play Console": "rgb(66, 133, 244)",
+    "TestFlight": "rgb(0, 122, 255)",
+    "Sentry": "rgb(255, 82, 82)",
     "Cursor AI": "rgb(34, 211, 238)",
     "Google AI Studio": "rgb(37, 99, 235)",
     "Rork": "rgb(34, 211, 238)",
@@ -103,15 +107,12 @@ function Projects() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
           {/* Proyecto Mobile - Mental: Hipnosis personalizada */}
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(168, 85, 247, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg border-0
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] dark:hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -142,7 +143,7 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["React Native", "MongoDB", "MongoDB Compass", "TypeScript", "Postman", "Cursor AI", "xCode", "AppStore", "PlayStore"].map((tech) => {
+              {["React Native", "MongoDB", "MongoDB Compass", "TypeScript", "Postman", "Cursor AI", "xCode", "EAS", "AppStore", "PlayStore", "App Store Connect", "Google Play Console", "TestFlight", "Sentry"].map((tech) => {
                 const techColor = getTechColor(tech);
                 return (
                   <span
@@ -172,15 +173,12 @@ function Projects() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
           {/* Proyecto React 1 - Sistema de Biblioteca Digital */}
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg border-0
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -261,15 +259,12 @@ function Projects() {
 
           {/* Proyecto React 2 - Task Manager Avanzado */}
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -351,15 +346,12 @@ function Projects() {
           {/* Proyecto React 3 - Sistema de Pedidos Online */}
           {(expandedGroups.react || false) && (
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -432,15 +424,12 @@ function Projects() {
           {/* Proyecto React 4 - Explorador Rick & Morty */}
           {(expandedGroups.react || false) && (
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -503,15 +492,12 @@ function Projects() {
           {/* Proyecto React 5 - Calculadora Científica */}
           {(expandedGroups.react || false) && (
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -614,15 +600,13 @@ function Projects() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
           {/* Proyecto D3.js 1 - TreeMap Interactiva */}
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(34, 197, 94, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-green-500/40 transition-all duration-300"
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-green-500/40
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] dark:hover:shadow-[0_0_15px_rgba(249,115,22,0.4)]
+            transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -686,15 +670,13 @@ function Projects() {
 
           {/* Proyecto D3.js 2 - Mapa Coroplético */}
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(34, 197, 94, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-green-500/40 transition-all duration-300"
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="bg-neutral-100 dark:bg-neutral-900/30 p-6 rounded-xl border border-neutral-700/50 hover:border-green-500/40
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] dark:hover:shadow-[0_0_15px_rgba(249,115,22,0.4)]
+            transition-all duration-300"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -771,15 +753,12 @@ function Projects() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
           {/* Proyecto JS 1 - Todo App Vanilla */}
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -838,15 +817,12 @@ function Projects() {
 
           {/* Proyecto JS 2 - Reproductor Musical */}
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:!shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:!shadow-[0_0_15px_rgba(250,204,21,0.4)]
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -908,15 +884,12 @@ function Projects() {
           {/* Proyecto JS 3 - Juego de Plataformas */}
           {(expandedGroups.js || false) && (
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
@@ -973,15 +946,12 @@ function Projects() {
           {/* Proyecto JS 4 - RPG Interactivo */}
           {(expandedGroups.js || false) && (
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 10px 30px rgba(234, 179, 8, 0.3)",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-lg 
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]
             transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">

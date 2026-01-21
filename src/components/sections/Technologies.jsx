@@ -5,6 +5,7 @@ import {
   FaNodeJs,
   FaGithub,
   FaGit,
+  FaPaperPlane,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -154,6 +155,33 @@ function Technologies() {
       color: "text-cyan-400", 
       duration: 4.7,
       customImage: "https://www.rork.app/favicon.ico"
+    },
+    { 
+      icon: null, 
+      name: "Sentry", 
+      color: "text-red-500", 
+      duration: 4.3,
+      customImage: "https://simpleicons.org/icons/sentry.svg"
+    },
+    { 
+      icon: null, 
+      name: "App Store Connect", 
+      color: "text-blue-600", 
+      duration: 4.6,
+      customImage: "https://simpleicons.org/icons/appstore.svg"
+    },
+    { 
+      icon: null, 
+      name: "Google Play Console", 
+      color: "text-green-600", 
+      duration: 4.4,
+      customImage: "https://simpleicons.org/icons/googleplay.svg"
+    },
+    { 
+      icon: FaPaperPlane, 
+      name: "TestFlight", 
+      color: "text-blue-500", 
+      duration: 4.2,
     },
   ];
 

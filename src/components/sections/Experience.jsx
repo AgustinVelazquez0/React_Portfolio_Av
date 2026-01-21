@@ -44,6 +44,10 @@ function Experience() {
       "xCode": "rgb(37, 99, 235)", // blue-600
       "AppStore": "rgb(107, 114, 128)", // gray-500
       "PlayStore": "rgb(34, 197, 94)", // green-500
+      "App Store Connect": "rgb(0, 122, 255)", // iOS blue
+      "Google Play Console": "rgb(66, 133, 244)", // Google blue
+      "TestFlight": "rgb(0, 122, 255)", // iOS blue
+      "Sentry": "rgb(255, 82, 82)", // Sentry red
       "Cursor AI": "rgb(34, 211, 238)", // cyan-400
       "Google AI Studio": "rgb(37, 99, 235)", // blue-600
       "Rork": "rgb(34, 211, 238)", // cyan-400
@@ -98,8 +102,8 @@ function Experience() {
                 {experience.technologies.map((tech, techIndex) => {
                   const techColor = getTechColor(tech);
                   return (
-                    <span
-                      key={techIndex}
+                  <span
+                    key={techIndex}
                       className="rounded-md bg-black dark:bg-black 
                       border-2 px-3 py-1.5 text-sm font-medium"
                       style={{
@@ -107,9 +111,9 @@ function Experience() {
                         color: techColor,
                         boxShadow: `0 0 10px ${techColor}40`,
                       }}
-                    >
-                      {tech}
-                    </span>
+                  >
+                    {tech}
+                  </span>
                   );
                 })}
               </div>
