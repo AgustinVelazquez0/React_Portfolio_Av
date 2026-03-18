@@ -1,5 +1,6 @@
 {
   "nav": {
+    "status": "Open to opportunities",
     "home": "Home",
     "about": "About",
     "projects": "Projects",
@@ -12,7 +13,9 @@
   },
   "hero": {
     "title": "Full Stack Developer",
-    "content": "Full-stack and mobile developer from Uruguay, specialized in MERN Stack and React Native. Currently developing cross-platform mobile applications at Mental-Magnet. Certified by BIOS Institute and FreeCodeCamp with expertise in React, Node.js, TypeScript, MongoDB, PostgreSQL, and cloud deployment. I've built and deployed +15 production-ready projects, from full-stack web applications to mobile apps available on AppStore and PlayStore. Passionate about creating scalable solutions, clean code, and exceptional user experiences."
+    "content": "Full-stack and mobile developer from Uruguay, specialized in MERN Stack and React Native. Currently developing cross-platform mobile applications at Mental-Magnet. Certified by BIOS Institute and FreeCodeCamp with expertise in React, Node.js, TypeScript, MongoDB, PostgreSQL, and cloud deployment. I've built and deployed +15 production-ready projects, from full-stack web applications to mobile apps available on AppStore and PlayStore. Passionate about creating scalable solutions, clean code, and exceptional user experiences.",
+    "ctaProjects": "View projects",
+    "ctaCV": "Download CV"
   },
   "about": {
     "title": "About me",
@@ -24,6 +27,7 @@
   "projects": {
     "title": "Projects",
     "mobileAppsTitle": "Mobile App Projects",
+    "nextjsSaasTitle": "Next.js & SaaS",
     "description": "A selection of my most relevant work",
     "buttonViewProject": "View project",
     "buttonViewFrontCode": "View code (Frontend)",
@@ -32,6 +36,10 @@
     "showMore": "Show {count} more",
     "showLess": "Show less",
     "REACT": {
+      "mentalWeb": {
+        "title": "Mental — Web Platform",
+        "description": "Web version with advanced audio player, background playback and offline downloads (Service Workers). Subscriptions with RevenueCat, push notifications with OneSignal, monitoring with Sentry and i18n with i18next."
+      },
       "library": {
         "title": "Digital Library System",
         "description": "Full-stack app with authentication, profile management and review system. MERN Stack + JWT authentication."
@@ -84,8 +92,14 @@
     "MOBILE_APPS": {
       "mental": {
         "title": "Mental: Personalized Hypnosis",
-        "description": "Personalized user hypnosis app",
+        "description": "Cross-platform mobile app for personalized hypnosis, available on App Store. Animations with Reanimated and responsive UI. API management and testing with Postman and MongoDB Compass.",
         "qrText": "Scan QR to download the App"
+      }
+    },
+    "NEXTJS_SAAS": {
+      "whatsappAI": {
+        "title": "WhatsApp AI SaaS",
+        "description": "Complete SaaS to automate WhatsApp Business conversations with GPT-4: webhook, AI engine, templates and human handoff. Dashboard with NextAuth.js, analytics, business hours and multi-business support. Deployed on Vercel."
       }
     }
   },
@@ -98,9 +112,9 @@
     "items": [
       {
         "year": "06/2025 - Present",
-        "role": "Mobile/Web Developer",
-        "company": "Mental-Magnet",
-        "description": "At Mental-Magnet, I develop the mobile app for both iOS and Android platforms, as well as the company's web pages. The app is called \"Mental: Personalized Hypnosis\". I work primarily with React Native, MongoDB, Cursor AI, Postman, and TypeScript. I configure and manage builds using EAS (Expo Application Services) with custom eas.json profiles for production, preview, and development environments. I handle the complete build and deployment process for both AppStore and PlayStore, including version management, signing, and distribution. I use App Store Connect and Google Play Console for app submission and management, TestFlight for iOS beta testing, and Sentry for error tracking and monitoring in production."
+        "role": "Full-Stack Developer",
+        "company": "Mental",
+        "description": "Development and maintenance of the personalized hypnosis mobile app (React Native / Expo), published on App Store. Development of the web platform (React Native Web / Next.js) with advanced audio player, offline downloads and subscriptions with RevenueCat. Integration of OneSignal, Sentry, i18next and JWT authentication. State management with Zustand + TanStack Query. Continuous deployment on Vercel."
       },
       {
         "year": "03/2024 - 01/2025",
@@ -216,6 +230,7 @@
   },
   "footer": {
     "copyright": "© 2025 Agustín. All rights reserved.",
-    "madeWith": "Made with React and Tailwind CSS"
+    "madeWith": "Made with React and Tailwind CSS",
+    "links": "Links"
   }
 }

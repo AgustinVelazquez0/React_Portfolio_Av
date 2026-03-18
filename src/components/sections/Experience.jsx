@@ -55,6 +55,17 @@ function Experience() {
       "Rork": "rgb(34, 211, 238)", // cyan-400
       "Render": "rgb(126, 34, 206)", // purple-700
       "Glitch": "rgb(37, 99, 235)", // blue-600
+      "Next.js": "rgb(107, 114, 128)",
+      "React Native Web": "rgb(103, 232, 249)",
+      "Expo": "rgb(107, 114, 128)",
+      "RevenueCat": "rgb(34, 197, 94)",
+      "OneSignal": "rgb(34, 197, 94)",
+      "i18next": "rgb(34, 197, 94)",
+      "Zustand": "rgb(249, 115, 22)",
+      "TanStack Query": "rgb(255, 82, 82)",
+      "JWT": "rgb(168, 85, 247)",
+      "Vercel": "rgb(200, 200, 200)",
+      "Android Studio": "rgb(61, 220, 132)",
     };
     
     return techColorMap[techName] || "rgb(34, 211, 238)"; // Default cyan
@@ -66,7 +77,7 @@ function Experience() {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.5 }}
-        className="my-16 text-center text-3xl font-semibold
+        className="my-10 text-center text-3xl font-semibold
         text-neutral-900 dark:text-white lg:text-4xl"
       >
         {t("experience.title")}

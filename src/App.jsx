@@ -1,6 +1,7 @@
 import { lazy, Suspense, useState, useEffect } from "react";
 import Navbar from "./components/layout/Navbar.jsx";
 import Sidebar from "./components/layout/Sidebar.jsx";
+import Footer from "./components/layout/Footer.jsx";
 import Hero from "./components/sections/Hero";
 import { LanguageProvider } from "./context/LenguageContext.jsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -65,8 +66,24 @@ function App() {
     }, 500);
   };
 
+  const [scrollProgress, setScrollProgress] = useState(0);
+  useEffect(() => {
+    const handleScrollProgress = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0);
+    };
+    window.addEventListener("scroll", handleScrollProgress);
+    handleScrollProgress();
+    return () => window.removeEventListener("scroll", handleScrollProgress);
+  }, []);
+
   return (
     <LanguageProvider>
+      {/* Scroll progress bar */}
+      <div
+        className="fixed top-0 left-0 right-0 h-0.5 bg-cyan-500/30 z-[60] origin-left"
+        style={{ transform: `scaleX(${scrollProgress / 100})` }}
+      />
       <div
         className="overflow-x-hidden antialiased
         selection:bg-cyan-300 selection:text-cyan-900
@@ -74,7 +91,7 @@ function App() {
         bg-background-light dark:bg-black
         min-h-screen relative"
       >
-        <Sidebar onSectionChange={handleSectionChange} />
+        <Sidebar onSectionChange={handleSectionChange} currentSection={currentSection} />
         
         {/* Animación de cambio de página tipo libro - suave y elegante */}
         <AnimatePresence>
@@ -120,6 +137,7 @@ function App() {
             <Certifications />
             <Projects />
             <Contact />
+            <Footer />
           </Suspense>
         </div>
       </div>

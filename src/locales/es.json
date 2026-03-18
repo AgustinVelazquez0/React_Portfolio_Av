@@ -1,5 +1,6 @@
 {
   "nav": {
+    "status": "Abierto a oportunidades",
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
@@ -12,7 +13,9 @@
   },
   "hero": {
     "title": "Desarrollador Full Stack",
-    "content": "Desarrollador full-stack y mobile desde Uruguay, especializado en MERN Stack y React Native. Actualmente desarrollando aplicaciones móviles multiplataforma en Mental-Magnet. Certificado por BIOS Institute y FreeCodeCamp con expertise en React, Node.js, TypeScript, MongoDB, PostgreSQL y despliegue en la nube. He construido y desplegado +15 proyectos listos para producción, desde aplicaciones web full-stack hasta apps móviles disponibles en AppStore y PlayStore. Apasionado por crear soluciones escalables, código limpio y experiencias de usuario excepcionales."
+    "content": "Desarrollador full-stack y mobile desde Uruguay, especializado en MERN Stack y React Native. Actualmente desarrollando aplicaciones móviles multiplataforma en Mental-Magnet. Certificado por BIOS Institute y FreeCodeCamp con expertise en React, Node.js, TypeScript, MongoDB, PostgreSQL y despliegue en la nube. He construido y desplegado +15 proyectos listos para producción, desde aplicaciones web full-stack hasta apps móviles disponibles en AppStore y PlayStore. Apasionado por crear soluciones escalables, código limpio y experiencias de usuario excepcionales.",
+    "ctaProjects": "Ver proyectos",
+    "ctaCV": "Descargar CV"
   },
   "about": {
     "title": "Sobre mí",
@@ -24,6 +27,7 @@
   "projects": {
     "title": "Proyectos",
     "mobileAppsTitle": "Proyectos App Mobile",
+    "nextjsSaasTitle": "Next.js & SaaS",
     "description": "A selection of my most relevant work",
     "buttonViewProject": "Ver proyecto",
     "buttonViewFrontCode": "Ver código (Frontend)",
@@ -32,6 +36,10 @@
     "showMore": "Mostrar {count} más",
     "showLess": "Mostrar menos",
     "REACT": {
+      "mentalWeb": {
+        "title": "Mental — Plataforma Web",
+        "description": "Versión web con reproductor de audio avanzado, reproducción en segundo plano y descargas offline (Service Workers). Suscripciones con RevenueCat, push notifications con OneSignal, monitoreo con Sentry e i18n con i18next."
+      },
       "library": {
         "title": "Sistema de Biblioteca Digital",
         "description": "App full-stack con autenticación, gestión de perfiles y sistema de reseñas. MERN Stack + autenticación JWT."
@@ -84,8 +92,14 @@
     "MOBILE_APPS": {
       "mental": {
         "title": "Mental: Hipnosis personalizada",
-        "description": "App de hipnosis personalizadas de usuarios",
+        "description": "App móvil cross-platform de hipnosis personalizada, disponible en App Store. Animaciones con Reanimated y UI responsive. Gestión y pruebas de API con Postman y MongoDB Compass.",
         "qrText": "Escanea QR para descargar la App"
+      }
+    },
+    "NEXTJS_SAAS": {
+      "whatsappAI": {
+        "title": "WhatsApp AI SaaS",
+        "description": "SaaS completo para automatizar conversaciones de WhatsApp Business con GPT-4: webhook, motor de IA, plantillas y escalamiento a humano. Dashboard con NextAuth.js, analytics, horarios de atención y soporte multi-negocio. Deploy en Vercel."
       }
     }
   },
@@ -99,9 +113,9 @@
     "items": [
       {
         "year": "06/2025 - Presente",
-        "role": "Desarrollador Mobile/Web",
-        "company": "Mental-Magnet",
-        "description": "En Mental-Magnet me dedico a programar la App mobile tanto iOS como Android, y también las páginas web de la empresa. La app se llama \"Mental: Hipnosis personalizada\". Utilizo principalmente React Native, MongoDB, Cursor AI, Postman y TypeScript. Configuro y gestiono los builds usando EAS (Expo Application Services) con perfiles personalizados en eas.json para producción, preview y desarrollo. Me encargo del proceso completo de build y despliegue para AppStore y PlayStore, incluyendo gestión de versiones, firma y distribución. Utilizo App Store Connect y Google Play Console para la gestión y envío de aplicaciones, TestFlight para pruebas beta en iOS, y Sentry para el seguimiento de errores y monitoreo en producción."
+        "role": "Desarrollador Full-Stack",
+        "company": "Mental",
+        "description": "Desarrollo y mantenimiento de la app mobile de hipnosis personalizada (React Native / Expo), publicada en App Store. Desarrollo de la plataforma web (React Native Web / Next.js) con reproductor de audio avanzado, descargas offline y suscripciones con RevenueCat. Integración de OneSignal, Sentry, i18next y autenticación JWT. Estado con Zustand + TanStack Query. Deploy continuo en Vercel."
       },
       {
         "year": "03/2024 - 01/2025",
@@ -217,6 +231,7 @@
   },
   "footer": {
     "copyright": "© 2025 Agustín. Todos los derechos reservados.",
-    "madeWith": "Hecho con React y Tailwind CSS"
+    "madeWith": "Hecho con React y Tailwind CSS",
+    "links": "Enlaces"
   }
 }

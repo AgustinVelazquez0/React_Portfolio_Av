@@ -23,8 +23,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        heading: ["Poppins", "sans-serif"],
+        sans: ["DM Sans", "system-ui", "sans-serif"],
+        display: ["Space Grotesk", "sans-serif"],
+        heading: ["Space Grotesk", "sans-serif"],
         btn: ["Cormorant Garamond", "Georgia", "Times New Roman", "serif"],
       },
     },

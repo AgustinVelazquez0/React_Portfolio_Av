@@ -205,7 +205,7 @@ function Certifications() {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.5 }}
-        className="my-16 text-center text-3xl font-semibold
+        className="my-10 text-center text-3xl font-semibold
         text-neutral-900 dark:text-white lg:text-4xl"
       >
         {t("certifications.title")}

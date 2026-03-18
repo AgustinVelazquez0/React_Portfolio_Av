@@ -15,28 +15,36 @@ export const HERO_CONTENT_KEY = `I'm a full-stack developer from Uruguay with ha
 export const EXPERIENCES = [
   {
     year: "06/2025 - Present",
-    role: "Mobile/Web Developer",
-    company: "Mental-Magnet",
-    description: `At Mental-Magnet, I develop the mobile app for both iOS and Android platforms, as well as the company's web pages. The app is called "Mental: Personalized Hypnosis". I work primarily with React Native, MongoDB, Cursor AI, Postman, and TypeScript. I configure and manage builds using EAS (Expo Application Services) with custom eas.json profiles for production, preview, and development environments. I handle the complete build and deployment process for both AppStore and PlayStore, including version management, signing, and distribution. I use App Store Connect and Google Play Console for app submission and management, TestFlight for iOS beta testing, and Sentry for error tracking and monitoring in production.`,
+    role: "Full-Stack Developer",
+    company: "Mental",
+    description: `Development and maintenance of the personalized hypnosis mobile app (React Native / Expo), published on App Store. Development of the web platform (React Native Web / Next.js) with advanced audio player, offline downloads and subscriptions with RevenueCat. Integration of OneSignal, Sentry, i18next and JWT authentication. State management with Zustand + TanStack Query. Continuous deployment on Vercel.`,
     technologies: [
       "React Native",
+      "React Native Web",
+      "Next.js",
+      "Expo",
+      "TypeScript",
       "MongoDB",
       "MongoDB Compass",
-      "Cursor AI",
-      "Google AI Studio",
-      "Rork",
+      "RevenueCat",
+      "OneSignal",
+      "Sentry",
+      "i18next",
+      "Zustand",
+      "TanStack Query",
+      "JWT",
+      "Vercel",
       "Postman",
-      "TypeScript",
-      "Git",
-      "GitHub",
       "EAS",
       "xCode",
+      "Android Studio",
       "AppStore",
       "PlayStore",
       "App Store Connect",
       "Google Play Console",
       "TestFlight",
-      "Sentry",
+      "Git",
+      "GitHub",
     ],
   },
   {
@@ -284,3 +292,6 @@ export const CONTACT = {
   phoneNo: "+598 98661715 ",
   email: "agubolso2@gmail.com",
 };
+
+// URL del CV - actualizar con enlace público (ej: Google Drive, Dropbox) o dejar LinkedIn
+export const CV_URL = "https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/";

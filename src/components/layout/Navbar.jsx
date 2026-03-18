@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import ThemeToggle from "../features/ThemeToggle";
 import LanguageToggle from "../features/LenguageToggle";
 import { useState, useEffect } from "react";
+import { useTranslation } from "../../hooks/useTranslation";
 
 function NavBar() {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -28,43 +30,47 @@ function NavBar() {
     >
       <div className="container mx-auto px-8">
         <div className="flex items-center justify-between py-4">
-          {/* Logo a la izquierda */}
+          {/* Logo y status badge */}
           <motion.div
             className="flex items-center gap-3"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center shadow-lg">
               <span className="text-white font-bold text-lg">AV</span>
             </div>
+            <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium
+              bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              {t("nav.status")}
+            </span>
           </motion.div>
 
-          {/* Iconos sociales y controles a la derecha */}
+          {/* Iconos sociales - más grandes en desktop */}
           <div className="flex items-center gap-4">
-            {/* Iconos sociales con mejor diseño */}
             <div className="flex items-center gap-3">
               <motion.a
                 href="https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn p-1 rounded-md bg-neutral-100 dark:bg-neutral-800 text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300"
-                whileHover={{ scale: 1.1, rotate: 5 }}
+                className="btn p-2 rounded-md bg-neutral-100 dark:bg-neutral-800 text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300 lg:p-2.5"
+                whileHover={{ scale: 1.08, rotate: 3 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="LinkedIn"
               >
-                <FaLinkedin className="text-xl" />
+                <FaLinkedin className="text-xl lg:text-2xl" />
               </motion.a>
 
               <motion.a
                 href="https://github.com/AgustinVelazquez0"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn p-1 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white hover:bg-neutral-900 dark:hover:bg-neutral-700 hover:text-white transition-all duration-300"
-                whileHover={{ scale: 1.1, rotate: -5 }}
+                className="btn p-2 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white hover:bg-neutral-900 dark:hover:bg-neutral-700 hover:text-white transition-all duration-300 lg:p-2.5"
+                whileHover={{ scale: 1.08, rotate: -3 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="GitHub"
               >
-                <FaGithub className="text-xl" />
+                <FaGithub className="text-xl lg:text-2xl" />
               </motion.a>
             </div>
 

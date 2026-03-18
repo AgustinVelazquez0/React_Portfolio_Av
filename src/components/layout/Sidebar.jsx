@@ -12,7 +12,7 @@ import {
   FaEnvelope 
 } from "react-icons/fa";
 
-function Sidebar({ onSectionChange }) {
+function Sidebar({ onSectionChange, currentSection = "hero" }) {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -108,24 +108,22 @@ function Sidebar({ onSectionChange }) {
 
   return (
     <>
-      {/* Botón toggle mejorado con efecto 3D - ahora en esquina superior izquierda */}
+      {/* Botón toggle minimalista - integrado con el diseño */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed left-4 top-20 z-50
-        bg-neutral-900 dark:bg-white
-        text-white dark:text-neutral-900
-        p-3 rounded-md
+        p-2.5 rounded-lg
+        bg-white/90 dark:bg-neutral-800/90
+        text-neutral-600 dark:text-neutral-300
+        border border-neutral-300 dark:border-neutral-600
+        hover:bg-neutral-100 dark:hover:bg-neutral-700
+        hover:text-neutral-900 dark:hover:text-white
+        hover:border-neutral-400 dark:hover:border-neutral-500
         backdrop-blur-sm
-        border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.5)]
-        overflow-hidden
+        transition-all duration-200
         group"
-        whileHover={{ 
-          scale: 1.1,
-          rotateY: 5,
-          rotateX: -5,
-          boxShadow: "0 0 25px rgba(34,211,238,0.7)",
-        }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ 
@@ -134,30 +132,17 @@ function Sidebar({ onSectionChange }) {
           damping: 20,
           delay: 0.3
         }}
-        style={{ perspective: 1000 }}
         aria-label="Toggle menu"
       >
-        {/* Efecto de brillo animado */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-neutral-900/20 to-transparent"
-          animate={{
-            x: ["-100%", "200%"],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 3,
-            ease: "linear",
-          }}
-        />
-        
-        <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          animate={{ rotate: isOpen ? 90 : 0 }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+          className="flex items-center justify-center"
         >
           {isOpen ? (
-            <FaTimes className="w-5 h-5 relative z-10" />
+            <FaTimes className="w-5 h-5 group-hover:text-cyan-400 transition-colors" />
           ) : (
-            <FaBars className="w-5 h-5 relative z-10" />
+            <FaBars className="w-5 h-5 group-hover:text-cyan-400 transition-colors" />
           )}
         </motion.div>
       </motion.button>
@@ -316,15 +301,16 @@ function Sidebar({ onSectionChange }) {
                         <motion.button
                           key={section.id}
                           onClick={() => scrollToSection(section.id)}
-                          className="w-full text-left px-3 py-2 rounded-md
+                          className={`w-full text-left px-3 py-2 rounded-md
                           text-base font-medium
-                          text-neutral-700 dark:text-neutral-300
                           relative overflow-hidden
                           group
                           backdrop-blur-sm
-                          border border-transparent
-                          hover:border-neutral-400 dark:hover:border-neutral-600
-                          transition-all duration-300"
+                          border transition-all duration-300
+                          ${currentSection === section.id
+                            ? "text-cyan-600 dark:text-cyan-400 border-cyan-400/50 bg-cyan-500/10 dark:bg-cyan-500/10"
+                            : "text-neutral-700 dark:text-neutral-300 border-transparent hover:border-neutral-400 dark:hover:border-neutral-600"
+                          }`}
                           whileHover={{ 
                             x: 8,
                             scale: 1.02,

@@ -1,6 +1,7 @@
 import profilePic from "../../assets/Agustin.png";
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
+import { CV_URL } from "../../constants";
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -12,15 +13,20 @@ const container = (delay) => ({
 });
 
 function Hero() {
-  const { t } = useTranslation(); // 🎯 Usamos el hook para obtener la traducción
+  const { t } = useTranslation();
+
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
-    <div id="hero" className="pt-24 pb-12 lg:pb-20 lg:mb-20 min-h-screen flex items-center">
+    <div id="hero" className="pt-24 pb-8 lg:pb-12 lg:mb-8 min-h-[85vh] flex items-center">
       <div className="flex flex-wrap w-full">
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col items-center lg:items-start">
-            {/* Efecto de gradiente de fondo sutil */}
-            <div className="absolute left-0 top-0 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/5 rounded-full blur-3xl -z-10" />
+            {/* Gradiente de fondo más visible */}
+            <div className="absolute left-0 top-0 w-96 h-96 bg-cyan-500/15 dark:bg-cyan-500/8 rounded-full blur-3xl -z-10" />
+            <div className="absolute right-1/4 top-1/3 w-64 h-64 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl -z-10" />
             
             <motion.h1
               variants={container(0)}
@@ -30,7 +36,7 @@ function Hero() {
               text-neutral-900 dark:text-white
               bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900
               dark:from-white dark:via-neutral-200 dark:to-white
-              bg-clip-text text-transparent"
+              bg-clip-text text-transparent font-display"
             >
               Agustin Velazquez
             </motion.h1>
@@ -39,7 +45,7 @@ function Hero() {
               variants={container(0.5)}
               initial="hidden"
               animate="visible"
-              className="text-2xl font-semibold tracking-tight mb-6
+              className="text-2xl font-semibold tracking-tight mb-4
               text-cyan-600 dark:text-cyan-400 lg:text-3xl"
             >
               {t("hero.title")}
@@ -49,11 +55,42 @@ function Hero() {
               variants={container(1)}
               initial="hidden"
               animate="visible"
-              className="max-w-xl py-4 text-base leading-relaxed
+              className="max-w-xl py-4 text-base leading-snug
               text-neutral-600 dark:text-neutral-400 lg:text-lg"
             >
               {t("hero.content")}
             </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              variants={container(1.2)}
+              initial="hidden"
+              animate="visible"
+              className="flex flex-wrap gap-4 mt-4"
+            >
+              <motion.button
+                onClick={() => scrollToSection("projects")}
+                className="px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400
+                text-white font-semibold shadow-lg hover:shadow-cyan-500/30
+                transition-all duration-200"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {t("hero.ctaProjects")}
+              </motion.button>
+              <motion.a
+                href={CV_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-lg border-2 border-cyan-500
+                text-cyan-500 hover:bg-cyan-500/10 font-semibold
+                transition-all duration-200"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {t("hero.ctaCV")}
+              </motion.a>
+            </motion.div>
           </div>
         </div>
 
@@ -65,13 +102,13 @@ function Hero() {
               transition={{ duration: 0.8, delay: 1 }}
               className="relative"
             >
-              {/* Efecto de brillo alrededor de la imagen */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-md blur-2xl -z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-2xl blur-2xl -z-10" />
               
               <motion.img
                 src={profilePic}
                 alt="Agustin Velazquez"
-                className="w-[280px] h-[420px] object-cover rounded-md shadow-2xl
+                loading="eager"
+                className="w-[280px] h-[420px] object-cover rounded-2xl shadow-2xl
                 border-2 border-cyan-400/50"
                 whileHover={{ 
                   scale: 1.05,

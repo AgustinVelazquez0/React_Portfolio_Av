@@ -6,6 +6,10 @@ import {
   FaGithub,
   FaGit,
   FaPaperPlane,
+  FaLayerGroup,
+  FaBell,
+  FaKey,
+  FaChartLine,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -31,6 +35,11 @@ import {
   SiNginx,
   SiExpo,
   SiGoogle,
+  SiNextdotjs,
+  SiPrisma,
+  SiVercel,
+  SiReactquery,
+  SiI18Next,
 } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
 
@@ -72,6 +81,19 @@ function Technologies() {
       duration: 2.8,
     },
     {
+      icon: SiNextdotjs,
+      name: "Next.js",
+      color: "text-gray-700 dark:text-gray-300",
+      duration: 2.6,
+    },
+    {
+      icon: null,
+      name: "React Native Web",
+      color: "text-cyan-300",
+      duration: 2.9,
+      customImage: "https://cdn.simpleicons.org/react/61DAFB",
+    },
+    {
       icon: SiTailwindcss,
       name: "Tailwind CSS",
       color: "text-blue-400",
@@ -87,6 +109,12 @@ function Technologies() {
       name: "Express.js",
       color: "text-gray-400",
       duration: 4,
+    },
+    {
+      icon: SiPrisma,
+      name: "Prisma ORM",
+      color: "text-slate-500",
+      duration: 3.2,
     },
     {
       icon: SiApachenetbeanside,
@@ -148,6 +176,7 @@ function Technologies() {
     { icon: SiPostman, name: "Postman", color: "text-orange-500", duration: 4 },
     { icon: SiRender, name: "Render", color: "text-purple-700", duration: 4.8 },
     { icon: SiGlitch, name: "Glitch", color: "text-blue-600", duration: 4.2 },
+    { icon: SiVercel, name: "Vercel", color: "text-gray-600", duration: 4.1 },
     { icon: SiExpo, name: "EAS", color: "text-indigo-500", duration: 4.5 },
     { 
       icon: null, 
@@ -202,19 +231,55 @@ function Technologies() {
       color: "text-blue-500",
       duration: 3.2,
     },
+    {
+      icon: FaLayerGroup,
+      name: "Zustand",
+      color: "text-orange-500",
+      duration: 3.8,
+    },
+    {
+      icon: SiReactquery,
+      name: "TanStack Query",
+      color: "text-red-500",
+      duration: 3.9,
+    },
+    {
+      icon: FaChartLine,
+      name: "RevenueCat",
+      color: "text-green-600",
+      duration: 4.0,
+    },
+    {
+      icon: FaBell,
+      name: "OneSignal",
+      color: "text-green-600",
+      duration: 3.7,
+    },
+    {
+      icon: FaKey,
+      name: "NextAuth.js",
+      color: "text-green-600",
+      duration: 4.2,
+    },
+    {
+      icon: SiI18Next,
+      name: "i18next",
+      color: "text-green-600",
+      duration: 3.5,
+    },
   ];
 
   return (
-    <div id="technologies" className="border-b border-neutral-800 pb-24">
+    <div id="technologies" className="border-b border-neutral-800 pb-12">
       {/* Section: Technologies - Layout en 2 columnas principales */}
-      <h2 className="my-16 text-center text-3xl font-semibold
+      <h2 className="my-10 text-center text-3xl font-semibold
       text-neutral-900 dark:text-white lg:text-4xl">
         {t("technologies.title")}
       </h2>
 
       <div className="grid lg:grid-cols-2 gap-12 max-w-full mx-auto px-4">
         {/* COLUMNA IZQUIERDA */}
-        <div className="space-y-16">
+        <div className="space-y-10">
           {/* Frontend Technologies */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
@@ -300,7 +365,7 @@ function Technologies() {
         </div>
 
         {/* COLUMNA DERECHA */}
-        <div className="space-y-16">
+        <div className="space-y-10">
           {/* Backend & System Tools */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}

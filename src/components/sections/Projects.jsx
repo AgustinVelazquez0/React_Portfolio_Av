@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
 import { useTheme } from "../../context/ThemeContext";
 import { useState } from "react";
+import mentalWebImg from "../../assets/Mental-web.png";
+import whatsappSaasImg from "../../assets/whatsappSaas.png";
 
 // Función para obtener el color de cada tecnología (misma que en Experience)
 const getTechColor = (techName) => {
@@ -55,6 +57,19 @@ const getTechColor = (techName) => {
     "Glitch": "rgb(37, 99, 235)",
     "Vite": "rgb(168, 85, 247)",
     "WSL": "rgb(107, 114, 128)",
+    "Next.js": "rgb(107, 114, 128)",
+    "React Native Web": "rgb(103, 232, 249)",
+    "Zustand": "rgb(249, 115, 22)",
+    "TanStack Query": "rgb(255, 82, 82)",
+    "RevenueCat": "rgb(34, 197, 94)",
+    "OneSignal": "rgb(34, 197, 94)",
+    "Prisma ORM": "rgb(148, 163, 184)",
+    "NextAuth.js": "rgb(34, 197, 94)",
+    "OpenAI API": "rgb(16, 185, 129)",
+    "i18next": "rgb(34, 197, 94)",
+    "Vercel": "rgb(200, 200, 200)",
+    "Expo": "rgb(107, 114, 128)",
+    "Reanimated": "rgb(168, 85, 247)",
     
     // Data Visualization
     "D3.js": "rgb(249, 115, 22)",
@@ -94,15 +109,15 @@ function Projects() {
         initial={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="my-16 text-center text-3xl font-semibold
+        className="my-10 text-center text-3xl font-semibold
         text-neutral-900 dark:text-white lg:text-4xl"
       >
         {t("projects.title")}
       </motion.h2>
 
       {/* Grupo de proyectos: Mobile Apps */}
-      <div className="mb-12">
-        <h3 className="my-10 text-xl text-center font-semibold
+      <div className="mb-8">
+        <h3 className="my-6 text-xl text-center font-semibold
         text-neutral-800 dark:text-neutral-200 lg:text-2xl">
           {t("projects.mobileAppsTitle")}
         </h3>
@@ -112,10 +127,11 @@ function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-0
+            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] dark:hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]
-            transition-all duration-200"
+            hover:shadow-[0_8px_25px_rgba(168,85,247,0.35)] dark:hover:shadow-[0_8px_25px_rgba(168,85,247,0.35)]
+            hover:border-cyan-400/30 transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
               <div className="flex-shrink-0 flex flex-col items-center">
@@ -145,7 +161,7 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["React Native", "MongoDB", "MongoDB Compass", "TypeScript", "Postman", "Cursor AI", "xCode", "EAS", "AppStore", "PlayStore", "App Store Connect", "Google Play Console", "TestFlight", "Sentry"].map((tech) => {
+              {["React Native", "Expo", "TypeScript", "MongoDB", "Reanimated", "Postman", "MongoDB Compass", "EAS", "xCode", "Android Studio", "AppStore", "PlayStore", "App Store Connect", "Google Play Console", "TestFlight", "Sentry"].map((tech) => {
                 const techColor = getTechColor(tech);
                 return (
                   <span
@@ -162,26 +178,177 @@ function Projects() {
                 );
               })}
             </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => window.open("https://apps.apple.com/us/app/mental-hipnosis-personalizada/id6740008581")}
+                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
+              >
+                {t("projects.buttonViewProject")}
+              </button>
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+
+      {/* Grupo de proyectos: Next.js / SaaS */}
+      <div className="mb-8">
+        <h3 className="my-6 text-xl text-center font-semibold
+        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
+          {t("projects.nextjsSaasTitle")}
+        </h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
+          {/* Proyecto WhatsApp AI SaaS */}
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_8px_25px_rgba(16,185,129,0.35)] dark:hover:shadow-[0_8px_25px_rgba(16,185,129,0.35)]
+            hover:border-cyan-400/30 transition-all duration-200"
+          >
+            <div className="flex gap-6 mb-4">
+              <a
+                href="https://whatsapp-ai-saas-1zya.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0"
+              >
+                <img
+                  src={whatsappSaasImg}
+                  alt="WhatsApp AI SaaS"
+                  loading="lazy"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <div className="flex-1">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
+                  {t("projects.NEXTJS_SAAS.whatsappAI.title")}
+                </h4>
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+                  {t("projects.NEXTJS_SAAS.whatsappAI.description")}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {["Next.js", "React", "TypeScript", "PostgreSQL", "Prisma ORM", "OpenAI API", "NextAuth.js", "Tailwind CSS", "Vercel"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => window.open("https://whatsapp-ai-saas-1zya.vercel.app")}
+                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
+              >
+                {t("projects.buttonViewProject")}
+              </button>
+              <button
+                onClick={() => window.open("https://github.com/AgustinVelazquez0/whatsapp-ai-saas")}
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
+              >
+                {t("projects.buttonViewCode")}
+              </button>
+            </div>
           </motion.div>
         </div>
       </div>
 
       {/* Grupo de proyectos: REACT */}
-      <div className="mb-16">
-        <h3 className="my-10 text-xl text-center font-semibold
+      <div className="mb-10">
+        <h3 className="my-6 text-xl text-center font-semibold
         text-neutral-800 dark:text-neutral-200 lg:text-2xl">
           React
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
-          {/* Proyecto React 1 - Sistema de Biblioteca Digital */}
+          {/* Proyecto React 1 - Mental Web Platform */}
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)] dark:hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)]
+            hover:border-cyan-400/30 transition-all duration-200"
+          >
+            <div className="flex gap-6 mb-4">
+              <a
+                href="https://mental-web-three.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0"
+              >
+                <img
+                  src={mentalWebImg}
+                  alt="Mental Web Platform"
+                  loading="lazy"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <div className="flex-1">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
+                  {t("projects.REACT.mentalWeb.title")}
+                </h4>
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+                  {t("projects.REACT.mentalWeb.description")}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {["React Native Web", "Expo", "TypeScript", "Zustand", "TanStack Query", "RevenueCat", "OneSignal", "Sentry", "i18next", "Vercel"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => window.open("https://mental-web-three.vercel.app")}
+                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
+              >
+                {t("projects.buttonViewProject")}
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Proyecto React 2 - Sistema de Biblioteca Digital */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 50 }}
             transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-0
+            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
-            transition-all duration-200"
+            hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)] dark:hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)]
+            hover:border-cyan-400/30 transition-all duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -193,6 +360,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project24_library.png"
                   alt="Sistema de Biblioteca Digital"
+                  loading="lazy"
                   className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
@@ -279,6 +447,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project7.png"
                   alt="Task Manager Avanzado"
+                  loading="lazy"
                   className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
@@ -366,6 +535,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project5.png"
                   alt="Sistema de Pedidos Online"
+                  loading="lazy"
                   className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
@@ -444,6 +614,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project4.png"
                   alt="Explorador Rick & Morty"
+                  loading="lazy"
                   className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
@@ -512,6 +683,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project16_calculator.png"
                   alt="Calculadora Científica"
+                  loading="lazy"
                   className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
@@ -598,8 +770,8 @@ function Projects() {
       </div>
 
       {/* Grupo de proyectos: Vanilla JavaScript */}
-      <div className="mb-12">
-        <h3 className="my-10 text-xl text-center font-semibold
+      <div className="mb-8">
+        <h3 className="my-6 text-xl text-center font-semibold
         text-neutral-800 dark:text-neutral-200 lg:text-2xl">
           Vanilla JavaScript
         </h3>
@@ -624,6 +796,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project1.png"
                   alt="Todo App Vanilla JS"
+                  loading="lazy"
                   className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
@@ -688,6 +861,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project15_music_player.png"
                   alt="Reproductor Musical Web"
+                  loading="lazy"
                   className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
@@ -755,6 +929,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project8_platformer_game.png"
                   alt="Juego de Plataformas 2D"
+                  loading="lazy"
                   className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>
@@ -817,6 +992,7 @@ function Projects() {
                 <img
                   src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project10_role_playing_game.png"
                   alt="RPG Interactivo"
+                  loading="lazy"
                   className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />
               </a>

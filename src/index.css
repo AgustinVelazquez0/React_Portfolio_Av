@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: "Inter", sans-serif;
+  font-family: "DM Sans", system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
 }
 
 /* Mejoras profesionales y formales */
@@ -86,6 +87,15 @@ body {
   50% {
     background-position: 100% 50%;
   }
+}
+
+/* Hover elevado para cards de proyectos */
+.project-card-hover {
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.project-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(34, 211, 238, 0.25);
 }
 
 /* Estilo global para botones: tipografía seria, moderna, cursiva, menos espaciado */
