@@ -4,6 +4,9 @@ import { useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
 import { useTheme } from "../../context/ThemeContext";
 
+// Mismas animaciones que Experience
+const contactTransition = { type: "spring", stiffness: 400, damping: 30 };
+
 function Contact() {
   const { t } = useTranslation();
   const { isDarkMode } = useTheme();
@@ -35,7 +38,7 @@ function Contact() {
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5 }}
+        transition={contactTransition}
         className="my-10 text-center text-3xl font-semibold
         text-neutral-900 dark:text-white lg:text-4xl"
       >
@@ -47,9 +50,9 @@ function Contact() {
         {/* Card Izquierda - Información de Contacto */}
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -50 }}
-          transition={{ duration: 1.5, delay: 0.2 }}
-          className={`rounded-md p-8 border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.5)] hover:shadow-[0_0_20px_rgba(34,211,238,0.7)] transition-all duration-200 ${isDarkMode ? "bg-black" : "bg-white"}`}
+          initial={{ opacity: 0, x: -100 }}
+          transition={contactTransition}
+          className={`rounded-md p-8 border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.5)] hover:shadow-[0_0_20px_rgba(34,211,238,0.7)] transition-[box-shadow] duration-200 ${isDarkMode ? "bg-black" : "bg-white"}`}
         >
           <div className="space-y-6">
             <div className="text-center mb-8">
@@ -186,12 +189,12 @@ function Contact() {
         {/* Card Derecha - Formulario WhatsApp */}
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 50 }}
-          transition={{ duration: 1.5, delay: 0.2 }}
+          initial={{ opacity: 0, x: 100 }}
+          transition={contactTransition}
           className="bg-white dark:bg-neutral-900/50 rounded-md p-8 
           border-2 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.5)]
           hover:shadow-[0_0_20px_rgba(34,211,238,0.7)]
-          transition-all duration-200"
+          transition-[box-shadow] duration-200"
         >
           <div className="text-center mb-8">
             <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? "text-white" : "text-neutral-900"}`}>

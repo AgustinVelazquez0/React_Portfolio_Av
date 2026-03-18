@@ -76,7 +76,7 @@ function Experience() {
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5 }}
+        transition={{ type: "spring", stiffness: 400, damping: 30 }}
         className="my-10 text-center text-3xl font-semibold
         text-neutral-900 dark:text-white lg:text-4xl"
       >
@@ -88,7 +88,7 @@ function Experience() {
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.6 }}
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
               className="w-full lg:w-1/4 mb-4 lg:mb-0"
             >
               <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
@@ -99,7 +99,7 @@ function Experience() {
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 100 }}
-              transition={{ duration: 0.6 }}
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
               className="w-full max-w-2xl lg:w-3/4"
             >
               <h6 className="mb-2 text-lg font-semibold text-neutral-900 dark:text-white">

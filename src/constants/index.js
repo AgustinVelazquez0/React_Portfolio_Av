@@ -293,5 +293,6 @@ export const CONTACT = {
   email: "agubolso2@gmail.com",
 };
 
-// URL del CV - actualizar con enlace público (ej: Google Drive, Dropbox) o dejar LinkedIn
-export const CV_URL = "https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/";
+// URLs de los CV (archivos en public/)
+export const CV_URL_ES = "/Agustin_Velazquez_CV_ES.pdf";
+export const CV_URL_EN = "/Agustin_Velazquez_CV_EN.pdf";

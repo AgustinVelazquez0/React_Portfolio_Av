@@ -1,19 +1,20 @@
 import profilePic from "../../assets/Agustin.png";
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
-import { CV_URL } from "../../constants";
+import { CV_URL_ES, CV_URL_EN } from "../../constants";
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: delay },
+    transition: { type: "spring", stiffness: 400, damping: 30, delay },
   },
 });
 
 function Hero() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const cvUrl = language === "es" ? CV_URL_ES : CV_URL_EN;
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -79,9 +80,10 @@ function Hero() {
                 {t("hero.ctaProjects")}
               </motion.button>
               <motion.a
-                href={CV_URL}
+                href={cvUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                download
                 className="px-6 py-3 rounded-lg border-2 border-cyan-500
                 text-cyan-500 hover:bg-cyan-500/10 font-semibold
                 transition-all duration-200"
@@ -99,7 +101,7 @@ function Hero() {
             <motion.div
               initial={{ x: 100, opacity: 0, scale: 0.8 }}
               animate={{ x: 0, opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1 }}
+              transition={{ type: "spring", stiffness: 350, damping: 28, delay: 0.3 }}
               className="relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-2xl blur-2xl -z-10" />
@@ -114,7 +116,7 @@ function Hero() {
                   scale: 1.05,
                   boxShadow: "0 20px 40px rgba(34,211,238,0.3)"
                 }}
-                transition={{ duration: 0.3 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
               />
             </motion.div>
           </div>

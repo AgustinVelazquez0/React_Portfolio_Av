@@ -1,9 +1,22 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
 import { useTheme } from "../../context/ThemeContext";
 import { useState } from "react";
 import mentalWebImg from "../../assets/Mental-web.png";
 import whatsappSaasImg from "../../assets/whatsappSaas.png";
+
+// Mismas animaciones que Experience
+const expTransition = { type: "spring", stiffness: 400, damping: 30 };
+const cardVariantsLeft = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: -50, transition: { duration: 0.25, ease: [0.4, 0, 0.2, 1] } },
+};
+const cardVariantsRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 50, transition: { duration: 0.25, ease: [0.4, 0, 0.2, 1] } },
+};
 
 // Función para obtener el color de cada tecnología (misma que en Experience)
 const getTechColor = (techName) => {
@@ -104,11 +117,10 @@ function Projects() {
 
   return (
     <div id="projects" className="border-b border-neutral-900 pb-4">
-      <motion.h2
+        <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, y: -100 }}
+        transition={expTransition}
         className="my-10 text-center text-3xl font-semibold
         text-neutral-900 dark:text-white lg:text-4xl"
       >
@@ -125,13 +137,13 @@ function Projects() {
           {/* Proyecto Mobile - Mental: Hipnosis personalizada */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={expTransition}
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_8px_25px_rgba(168,85,247,0.35)] dark:hover:shadow-[0_8px_25px_rgba(168,85,247,0.35)]
-            hover:border-cyan-400/30 transition-all duration-200"
+            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <div className="flex-shrink-0 flex flex-col items-center">
@@ -201,13 +213,13 @@ function Projects() {
           {/* Proyecto WhatsApp AI SaaS */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={expTransition}
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_8px_25px_rgba(16,185,129,0.35)] dark:hover:shadow-[0_8px_25px_rgba(16,185,129,0.35)]
-            hover:border-cyan-400/30 transition-all duration-200"
+            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -279,13 +291,13 @@ function Projects() {
           {/* Proyecto React 1 - Mental Web Platform */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={expTransition}
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)] dark:hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)]
-            hover:border-cyan-400/30 transition-all duration-200"
+            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -342,13 +354,13 @@ function Projects() {
           {/* Proyecto React 2 - Sistema de Biblioteca Digital */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            initial={{ opacity: 0, x: 100 }}
+            transition={expTransition}
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)] dark:hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)]
-            hover:border-cyan-400/30 transition-all duration-200"
+            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -430,12 +442,13 @@ function Projects() {
           {/* Proyecto React 2 - Task Manager Avanzado */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
+            initial={{ opacity: 0, x: -100 }}
+            transition={expTransition}
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -515,15 +528,19 @@ function Projects() {
           </motion.div>
 
           {/* Proyecto React 3 - Sistema de Pedidos Online */}
+          <AnimatePresence mode="sync">
           {(expandedGroups.react || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="react-food"
+            variants={cardVariantsLeft}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={expTransition}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -596,13 +613,16 @@ function Projects() {
           {/* Proyecto React 4 - Explorador Rick & Morty */}
           {(expandedGroups.react || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="react-rick"
+            variants={cardVariantsRight}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={expTransition}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -665,13 +685,16 @@ function Projects() {
           {/* Proyecto React 5 - Calculadora Científica */}
           {(expandedGroups.react || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="react-calc"
+            variants={cardVariantsLeft}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={expTransition}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -738,6 +761,7 @@ function Projects() {
             </div>
           </motion.div>
           )}
+          </AnimatePresence>
         </div>
         {!expandedGroups.react && (
           <div className="text-center mt-6">
@@ -779,12 +803,13 @@ function Projects() {
           {/* Proyecto JS 1 - Todo App Vanilla */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
+            initial={{ opacity: 0, x: -100 }}
+            transition={expTransition}
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]
-            transition-all duration-200"
+            hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)] dark:hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)]
+            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -844,12 +869,13 @@ function Projects() {
           {/* Proyecto JS 2 - Reproductor Musical */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
+            initial={{ opacity: 0, x: 100 }}
+            transition={expTransition}
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:!shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:!shadow-[0_0_15px_rgba(250,204,21,0.4)]
-            transition-all duration-200"
+            hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)] dark:hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)]
+            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -909,15 +935,19 @@ function Projects() {
           </motion.div>
 
           {/* Proyecto JS 3 - Juego de Plataformas */}
+          <AnimatePresence mode="sync">
           {(expandedGroups.js || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="js-platformer"
+            variants={cardVariantsLeft}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={expTransition}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -974,13 +1004,16 @@ function Projects() {
           {/* Proyecto JS 4 - RPG Interactivo */}
           {(expandedGroups.js || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="js-rpg"
+            variants={cardVariantsRight}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={expTransition}
             className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -1039,6 +1072,7 @@ function Projects() {
             </div>
           </motion.div>
           )}
+          </AnimatePresence>
         </div>
         {!expandedGroups.js && (
           <div className="text-center mt-6">

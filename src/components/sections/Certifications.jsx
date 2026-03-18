@@ -1,7 +1,20 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
 import { useTheme } from "../../context/ThemeContext";
 import { useState } from "react";
+
+const certCardVariantsLeft = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: -50, transition: { duration: 0.25, ease: [0.4, 0, 0.2, 1] } },
+};
+const certCardVariantsRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 50, transition: { duration: 0.25, ease: [0.4, 0, 0.2, 1] } },
+};
+
+const smoothTransition = { type: "spring", stiffness: 400, damping: 30 };
 
 // Función para obtener el color de cada tecnología
 const getTechColor = (techName) => {
@@ -204,7 +217,7 @@ function Certifications() {
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5 }}
+        transition={{ type: "spring", stiffness: 400, damping: 30 }}
         className="my-10 text-center text-3xl font-semibold
         text-neutral-900 dark:text-white lg:text-4xl"
       >
@@ -221,14 +234,14 @@ function Certifications() {
           {/* Certificado 1 (Full Stack Developer) */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://drive.google.com/file/d/1YKgsHIwNC8eGZc2k1cErBzAJJR2tgwSl/view?usp=drive_link"
@@ -270,14 +283,14 @@ function Certifications() {
           {/* Certificado 2 (Digital Skills in the Professional World) */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            initial={{ opacity: 0, x: 100 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://drive.google.com/file/d/1FmlQ96_KjTt2A2_-JaCKlljDAejCCyYy/view"
@@ -328,14 +341,14 @@ function Certifications() {
           {/* Certificado Back End Development and APIs */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/back-end-development-and-apis"
@@ -377,14 +390,14 @@ function Certifications() {
           {/* Certificado Relational Database */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            initial={{ opacity: 0, x: 100 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/relational-database-v8"
@@ -424,17 +437,21 @@ function Certifications() {
           </motion.div>
 
           {/* Certificado JavaScript Algorithms and Data Structures */}
+          <AnimatePresence mode="sync">
           {(expandedAcademies.freeCodeCamp || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="fc-js"
+            variants={certCardVariantsLeft}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={smoothTransition}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/javascript-algorithms-and-data-structures-v8"
@@ -474,18 +491,20 @@ function Certifications() {
           </motion.div>
           )}
 
-          {/* Certificado Quality Assurance */}
           {(expandedAcademies.freeCodeCamp || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="fc-qa"
+            variants={certCardVariantsRight}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={smoothTransition}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/quality-assurance-v7"
@@ -525,18 +544,20 @@ function Certifications() {
           </motion.div>
           )}
 
-          {/* Certificado Data Visualization */}
           {(expandedAcademies.freeCodeCamp || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="fc-dv"
+            variants={certCardVariantsLeft}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={smoothTransition}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/data-visualization"
@@ -576,18 +597,20 @@ function Certifications() {
           </motion.div>
           )}
 
-          {/* Certificado Responsive Web Design */}
           {(expandedAcademies.freeCodeCamp || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="fc-rwd"
+            variants={certCardVariantsRight}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={smoothTransition}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/responsive-web-design"
@@ -627,18 +650,20 @@ function Certifications() {
           </motion.div>
           )}
 
-          {/* Certificado Front End Development Libraries */}
           {(expandedAcademies.freeCodeCamp || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="fc-fed"
+            variants={certCardVariantsLeft}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={smoothTransition}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://www.freecodecamp.org/certification/AgustinVelazquez/front-end-development-libraries"
@@ -677,6 +702,7 @@ function Certifications() {
             </div>
           </motion.div>
           )}
+          </AnimatePresence>
         </div>
         {!expandedAcademies.freeCodeCamp && (
           <div className="text-center mt-6">
@@ -718,14 +744,14 @@ function Certifications() {
           {/* Certificado Introduction to Data Science */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://drive.google.com/file/d/12z8akRooJ2q7XJXj5sp1TANJkpEZTOeo/view"
@@ -767,14 +793,14 @@ function Certifications() {
           {/* Certificado English Essentials for Professional Growth */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            initial={{ opacity: 0, x: 100 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://drive.google.com/file/d/1-wnjPOFy7Ujb_G7PwPGAUiqQ_imwr6Dx/view"
@@ -814,17 +840,21 @@ function Certifications() {
           </motion.div>
 
           {/* Certificado Python Programming */}
+          <AnimatePresence mode="sync">
           {(expandedAcademies.santander || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="sant-python"
+            variants={certCardVariantsLeft}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={smoothTransition}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://drive.google.com/file/d/1ArqH7x6Owqm3Z6Tb3DATVXj9p258XeSJ/view"
@@ -864,18 +894,20 @@ function Certifications() {
           </motion.div>
           )}
 
-          {/* Certificado ChatGPT */}
           {(expandedAcademies.santander || false) && (
           <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            key="sant-chatgpt"
+            variants={certCardVariantsRight}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={smoothTransition}
             className="flex items-center gap-6 
             bg-white dark:bg-neutral-900/50 
             rounded-md p-6 
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]
-            transition-all duration-200"
+            transition-[box-shadow] duration-200"
           >
             <a
               href="https://drive.google.com/file/d/1HmojqKuGJJPOL6PuTFZmB1cGFd-WACJ7/view"
@@ -914,6 +946,7 @@ function Certifications() {
             </div>
           </motion.div>
           )}
+          </AnimatePresence>
         </div>
         {!expandedAcademies.santander && (
           <div className="text-center mt-6">

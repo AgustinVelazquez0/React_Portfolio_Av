@@ -284,7 +284,7 @@ function Technologies() {
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex flex-col items-center"
           >
             <h3
@@ -311,7 +311,7 @@ function Technologies() {
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.4 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex flex-col items-center"
           >
             <h3
@@ -338,7 +338,7 @@ function Technologies() {
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -50 }}
-            transition={{ duration: 1.5, delay: 0.6 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex flex-col items-center"
           >
             <h3
@@ -370,7 +370,7 @@ function Technologies() {
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.3 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex flex-col items-center"
           >
             <h3
@@ -399,7 +399,7 @@ function Technologies() {
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex flex-col items-center"
           >
             <h3
@@ -426,7 +426,7 @@ function Technologies() {
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 50 }}
-            transition={{ duration: 1.5, delay: 0.7 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="flex flex-col items-center"
           >
             <h3
