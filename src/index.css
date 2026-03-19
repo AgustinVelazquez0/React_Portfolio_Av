@@ -79,6 +79,16 @@ body {
   }
 }
 
+/* Animación de flotación para iconos - usa GPU, no se pausa al scrollear */
+@keyframes icon-float {
+  0%, 100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 /* Gradientes animados para el sidebar */
 @keyframes gradient-shift {
   0%, 100% {

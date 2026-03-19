@@ -48,29 +48,11 @@ const IconCard = ({
   const flipVariants = {
     front: {
       rotateY: 0,
-      y: [10, -10],
-      transition: {
-        rotateY: { duration: 0.6, ease: "easeOut" },
-        y: {
-        duration: duration,
-        ease: "linear",
-        repeat: Infinity,
-        repeatType: "reverse",
-      },
-    },
+      transition: { rotateY: { duration: 0.6, ease: "easeOut" } },
     },
     back: {
       rotateY: 180,
-      y: [10, -10],
-      transition: { 
-        rotateY: { duration: 0.6, ease: "easeOut" },
-        y: {
-          duration: duration,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "reverse",
-        },
-      },
+      transition: { rotateY: { duration: 0.6, ease: "easeOut" } },
     },
   };
 
@@ -90,13 +72,20 @@ const IconCard = ({
       onHoverStart={() => setIsFlipped(true)}
       onHoverEnd={() => setIsFlipped(false)}
     >
-      {/* Contenedor de la carta */}
-      <motion.div
-        className="w-full h-full relative"
-        style={{ transformStyle: "preserve-3d" }}
-        variants={flipVariants}
-        animate={isFlipped ? "back" : "front"}
+      {/* Wrapper con animación CSS (GPU) - no se pausa al scrollear */}
+      <div
+        className="w-full h-full"
+        style={{
+          animation: `icon-float ${duration}s linear infinite`,
+        }}
       >
+        {/* Contenedor de la carta */}
+        <motion.div
+          className="w-full h-full relative"
+          style={{ transformStyle: "preserve-3d" }}
+          variants={flipVariants}
+          animate={isFlipped ? "back" : "front"}
+        >
         {/* Cara frontal (Icono) */}
         <motion.div
           className={`absolute inset-0 rounded-md border-4 p-4 flex items-center justify-center ${bgColor}`}
@@ -136,7 +125,8 @@ const IconCard = ({
             {name}
           </span>
         </motion.div>
-      </motion.div>
+        </motion.div>
+      </div>
     </motion.div>
   );
 };
