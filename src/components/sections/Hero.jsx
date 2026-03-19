@@ -62,6 +62,28 @@ function Hero() {
               {t("hero.content")}
             </motion.p>
 
+            {/* Métricas rápidas */}
+            <motion.div
+              variants={container(1.1)}
+              initial="hidden"
+              animate="visible"
+              className="flex flex-wrap gap-6 py-4 text-sm font-medium
+              text-neutral-600 dark:text-neutral-400"
+            >
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-cyan-500" />
+                {t("hero.stats.projects")}
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-cyan-500" />
+                {t("hero.stats.apps")}
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-cyan-500" />
+                {t("hero.stats.stack")}
+              </span>
+            </motion.div>
+
             {/* CTA Buttons */}
             <motion.div
               variants={container(1.2)}
@@ -70,9 +92,19 @@ function Hero() {
               className="flex flex-wrap gap-4 mt-4"
             >
               <motion.button
-                onClick={() => scrollToSection("projects")}
+                onClick={() => scrollToSection("contact")}
                 className="px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400
                 text-white font-semibold shadow-lg hover:shadow-cyan-500/30
+                transition-all duration-200"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {t("hero.ctaHire")}
+              </motion.button>
+              <motion.button
+                onClick={() => scrollToSection("projects")}
+                className="px-6 py-3 rounded-lg border-2 border-cyan-500
+                text-cyan-500 hover:bg-cyan-500/10 font-semibold
                 transition-all duration-200"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
@@ -84,9 +116,9 @@ function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 download
-                className="px-6 py-3 rounded-lg border-2 border-cyan-500
-                text-cyan-500 hover:bg-cyan-500/10 font-semibold
-                transition-all duration-200"
+                className="px-6 py-3 rounded-lg border-2 border-neutral-400
+                text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100
+                dark:hover:bg-neutral-800 font-semibold transition-all duration-200"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >

@@ -291,6 +291,8 @@ export const CONTACT = {
   address: "Uruguay, Montevideo ",
   phoneNo: "+598 98661715 ",
   email: "agubolso2@gmail.com",
+  linkedin: "https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/",
+  github: "https://github.com/AgustinVelazquez0",
 };
 
 // URLs de los CV (archivos en public/)

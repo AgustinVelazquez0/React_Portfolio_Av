@@ -1,8 +1,9 @@
 import { CONTACT } from "../../constants";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
 import { useTheme } from "../../context/ThemeContext";
+import { FaLinkedin } from "react-icons/fa";
 
 // Mismas animaciones que Experience
 const contactTransition = { type: "spring", stiffness: 400, damping: 30 };
@@ -11,6 +12,7 @@ function Contact() {
   const { t } = useTranslation();
   const { isDarkMode } = useTheme();
   const [message, setMessage] = useState("");
+  const [copiedField, setCopiedField] = useState(null);
 
   const sendMessage = () => {
     const phoneNumber = "+59898661715";
@@ -28,13 +30,30 @@ function Contact() {
     window.open(`mailto:${CONTACT.email}`, "_blank");
   };
 
-  const copyToClipboard = (text) => {
+  const copyToClipboard = (text, field) => {
     navigator.clipboard.writeText(text);
-    // Aquí podrías agregar una notificación de "copiado"
+    setCopiedField(field);
+    setTimeout(() => setCopiedField(null), 2000);
   };
 
   return (
-    <div id="contact" className="border-b border-neutral-900 pb-12">
+    <div id="contact" className="border-b border-neutral-900 pb-12 relative">
+      {/* Toast "Copiado" */}
+      <AnimatePresence>
+        {copiedField && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="fixed top-24 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-lg
+            bg-emerald-500 text-white font-medium shadow-lg"
+          >
+            {t("contact.copied")}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -71,7 +90,7 @@ function Contact() {
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 className={`flex items-center p-4 rounded-md transition-all duration-300 group cursor-pointer ${isDarkMode ? "bg-black hover:bg-neutral-900" : "bg-white hover:bg-neutral-100 border border-neutral-200"}`}
-                onClick={() => copyToClipboard(CONTACT.address)}
+                onClick={() => copyToClipboard(CONTACT.address, "address")}
               >
                 <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 transition-all duration-300 ${isDarkMode ? "bg-neutral-800 group-hover:bg-neutral-700" : "bg-neutral-600 group-hover:bg-neutral-500"}`}>
                   <svg
@@ -108,7 +127,7 @@ function Contact() {
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 className={`flex items-center p-4 rounded-md transition-all duration-300 group cursor-pointer ${isDarkMode ? "bg-black hover:bg-neutral-900" : "bg-white hover:bg-neutral-100 border border-neutral-200"}`}
-                onClick={() => copyToClipboard(CONTACT.phoneNo)}
+                onClick={() => copyToClipboard(CONTACT.phoneNo, "phone")}
               >
                 <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 transition-all duration-300 ${isDarkMode ? "bg-neutral-800 group-hover:bg-neutral-700" : "bg-neutral-600 group-hover:bg-neutral-500"}`}>
                   <svg
@@ -165,6 +184,27 @@ function Contact() {
                   </p>
                 </div>
               </motion.div>
+
+              {/* LinkedIn - destacado para recruiters */}
+              <motion.a
+                href={CONTACT.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                className={`flex items-center p-4 rounded-md transition-all duration-300 group cursor-pointer border-2 border-[#0A66C2]/30 hover:border-[#0A66C2] ${isDarkMode ? "bg-black hover:bg-neutral-900" : "bg-white hover:bg-neutral-50 border-neutral-200"}`}
+              >
+                <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 bg-[#0A66C2] group-hover:bg-[#004182] transition-all duration-300">
+                  <FaLinkedin className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className={`font-semibold ${isDarkMode ? "text-white" : "text-neutral-900"}`}>
+                    LinkedIn
+                  </p>
+                  <p className="text-[#0A66C2] text-sm">
+                    {t("contact.linkedin")}
+                  </p>
+                </div>
+              </motion.a>
             </div>
 
             {/* Botón WhatsApp Principal */}

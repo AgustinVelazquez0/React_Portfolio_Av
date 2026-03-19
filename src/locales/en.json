@@ -1,6 +1,7 @@
 {
   "nav": {
     "status": "Open to opportunities",
+    "availability": "Available immediately",
     "home": "Home",
     "about": "About",
     "projects": "Projects",
@@ -15,7 +16,13 @@
     "title": "Full Stack Developer",
     "content": "Full-stack and mobile developer from Uruguay, specialized in MERN Stack and React Native. Currently developing cross-platform mobile applications at Mental-Magnet. Certified by BIOS Institute and FreeCodeCamp with expertise in React, Node.js, TypeScript, MongoDB, PostgreSQL, and cloud deployment. I've built and deployed +15 production-ready projects, from full-stack web applications to mobile apps available on AppStore and PlayStore. Passionate about creating scalable solutions, clean code, and exceptional user experiences.",
     "ctaProjects": "View projects",
-    "ctaCV": "Download CV"
+    "ctaCV": "Download CV",
+    "ctaHire": "Looking for a developer?",
+    "stats": {
+      "projects": "+15 projects",
+      "apps": "App Store & Play Store",
+      "stack": "MERN & React Native"
+    }
   },
   "about": {
     "title": "About me",
@@ -99,7 +106,7 @@
     "NEXTJS_SAAS": {
       "whatsappAI": {
         "title": "WhatsApp AI SaaS",
-        "description": "Complete SaaS to automate WhatsApp Business conversations with GPT-4: webhook, AI engine, templates and human handoff. Dashboard with NextAuth.js, analytics, business hours and multi-business support. Deployed on Vercel."
+        "description": "Complete SaaS to automate WhatsApp Business conversations with GPT-4: webhook, AI engine, templates and human handoff. App and business setup in Meta for Developers (WhatsApp Business API). Dashboard with NextAuth.js, analytics, business hours and multi-business support. Deployed on Vercel."
       }
     }
   },
@@ -226,7 +233,9 @@
     "emailMe": "Send a message to WhatsApp",
     "placeholder": "Hello! I'm interested in learning more about your services...",
     "responseTime": "Response time: 2-4 hours",
-    "workingHours": "Working hours: Mon-Fri 9:00-18:00 (GMT-3)"
+    "workingHours": "Working hours: Mon-Fri 9:00-18:00 (GMT-3)",
+    "copied": "Copied!",
+    "linkedin": "View LinkedIn profile"
   },
   "footer": {
     "copyright": "© 2025 Agustín. All rights reserved.",

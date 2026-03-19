@@ -42,7 +42,7 @@ function NavBar() {
             <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium
               bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              {t("nav.status")}
+              {t("nav.availability")}
             </span>
           </motion.div>
 
