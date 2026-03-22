@@ -12,17 +12,6 @@ import {
   FaEnvelope 
 } from "react-icons/fa";
 
-// Partículas más abajo para no tapar el texto (nav ocupa ~250px arriba)
-const PARTICLES = Array.from({ length: 50 }, (_, i) => ({
-  id: i,
-  x: (i * 7.3) % 300,
-  y: 320 + (i * 11.7) % 500,
-  size: 10 + (i % 4) * 5,
-  duration: 10 + (i % 6),
-  delay: (i * 0.7) % 5,
-  cyan: i % 5 === 0,
-}));
-
 function Sidebar({ onSectionChange, currentSection = "hero" }) {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -119,8 +108,8 @@ function Sidebar({ onSectionChange, currentSection = "hero" }) {
 
   return (
     <>
-      {/* Botón toggle minimalista - integrado con el diseño */}
-      <motion.button
+      {/* Botón toggle - animaciones en CSS para no pausar al scrollear */}
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed left-4 top-20 z-50
         p-2.5 rounded-lg
@@ -130,33 +119,22 @@ function Sidebar({ onSectionChange, currentSection = "hero" }) {
         hover:bg-neutral-100 dark:hover:bg-neutral-700
         hover:text-neutral-900 dark:hover:text-white
         hover:border-neutral-400 dark:hover:border-neutral-500
+        hover:scale-[1.02] active:scale-[0.98]
         backdrop-blur-sm
-        transition-all duration-200
-        group"
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        initial={{ x: -50, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ 
-          type: "spring",
-          stiffness: 300,
-          damping: 20,
-          delay: 0.3
-        }}
+        transition-transform duration-200 ease-out
+        group animate-sidebar-btn-entrance"
         aria-label="Toggle menu"
       >
-        <motion.div
-          animate={{ rotate: isOpen ? 90 : 0 }}
-          transition={{ duration: 0.2, ease: "easeInOut" }}
-          className="flex items-center justify-center"
+        <div
+          className={`flex items-center justify-center transition-transform duration-200 ease-out ${isOpen ? "rotate-90" : ""}`}
         >
           {isOpen ? (
             <FaTimes className="w-5 h-5 group-hover:text-cyan-400 transition-colors" />
           ) : (
             <FaBars className="w-5 h-5 group-hover:text-cyan-400 transition-colors" />
           )}
-        </motion.div>
-      </motion.button>
+        </div>
+      </button>
 
       {/* Sidebar con efectos 3D */}
       <AnimatePresence>
@@ -208,36 +186,11 @@ function Sidebar({ onSectionChange, currentSection = "hero" }) {
                 border-r border-neutral-200 dark:border-neutral-700
                 shadow-2xl">
                 
-                {/* Efecto de partículas - visibles con glow sutil y flotación */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                  {PARTICLES.map((p) => (
-                    <motion.div
-                      key={p.id}
-                      className={`absolute rounded-full blur-[0.5px]
-                        ${p.cyan 
-                          ? "bg-cyan-400/60 dark:bg-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.6)]" 
-                          : "bg-neutral-400/55 dark:bg-white/50 shadow-[0_0_10px_rgba(255,255,255,0.4)]"
-                        }`}
-                      style={{
-                        width: p.size,
-                        height: p.size,
-                        left: p.x,
-                        top: p.y,
-                      }}
-                      animate={{
-                        y: [0, -80, 0],
-                        x: [0, ((p.id % 3) - 1) * 12, 0],
-                        opacity: [0.5, 0.9, 0.5],
-                      }}
-                      transition={{
-                        duration: p.duration,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: p.delay,
-                      }}
-                    />
-                  ))}
-                </div>
+                {/* Acento formal: gradiente sutil en el borde derecho */}
+                <div className="absolute right-0 top-0 bottom-0 w-24 
+                  bg-gradient-to-l from-cyan-500/[0.06] via-transparent to-transparent 
+                  dark:from-cyan-400/[0.08] dark:via-transparent dark:to-transparent 
+                  pointer-events-none" />
 
                 {/* Contenido del sidebar */}
                 <div className="relative h-full overflow-y-auto
@@ -260,25 +213,21 @@ function Sidebar({ onSectionChange, currentSection = "hero" }) {
                       </p>
                     </motion.div>
                     
-                    {/* Navegación compacta */}
+                    {/* Navegación compacta - CSS para animaciones sin pausa */}
                     <nav className="space-y-1">
                       {sections.map((section, index) => (
-                        <motion.button
+                        <button
                           key={section.id}
                           onClick={() => scrollToSection(section.id)}
                           className={`w-full text-left px-3 py-2 rounded-lg
                           text-sm font-medium font-sans
                           relative overflow-hidden group
-                          transition-all duration-200
+                          transition-all duration-200 ease-out
+                          hover:translate-x-1 active:scale-[0.99]
                           ${currentSection === section.id
                             ? "text-cyan-600 dark:text-cyan-400 bg-cyan-500/15 dark:bg-cyan-500/15 shadow-sm"
                             : "text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800/50 hover:text-neutral-900 dark:hover:text-white"
                           }`}
-                          whileHover={{ x: 4 }}
-                          whileTap={{ scale: 0.99 }}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.05 + 0.2, duration: 0.25 }}
                         >
                           {/* Indicador activo - barra izquierda */}
                           {currentSection === section.id && (
@@ -290,7 +239,7 @@ function Sidebar({ onSectionChange, currentSection = "hero" }) {
                             </span>
                             <span>{section.label}</span>
                           </div>
-                        </motion.button>
+                        </button>
                       ))}
                     </nav>
                   </div>
