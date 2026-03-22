@@ -12,6 +12,17 @@ import {
   FaEnvelope 
 } from "react-icons/fa";
 
+// Partículas más abajo para no tapar el texto (nav ocupa ~250px arriba)
+const PARTICLES = Array.from({ length: 50 }, (_, i) => ({
+  id: i,
+  x: (i * 7.3) % 300,
+  y: 320 + (i * 11.7) % 500,
+  size: 10 + (i % 4) * 5,
+  duration: 10 + (i % 6),
+  delay: (i * 0.7) % 5,
+  cyan: i % 5 === 0,
+}));
+
 function Sidebar({ onSectionChange, currentSection = "hero" }) {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -197,33 +208,32 @@ function Sidebar({ onSectionChange, currentSection = "hero" }) {
                 border-r border-neutral-200 dark:border-neutral-700
                 shadow-2xl">
                 
-                {/* Efecto de partículas animadas de fondo */}
-                <div className="absolute inset-0 overflow-hidden">
-                  {[...Array(50)].map((_, i) => (
+                {/* Efecto de partículas - visibles con glow sutil y flotación */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  {PARTICLES.map((p) => (
                     <motion.div
-                      key={i}
-                      className="absolute rounded-full
-                      bg-black/30 dark:bg-white/20"
+                      key={p.id}
+                      className={`absolute rounded-full blur-[0.5px]
+                        ${p.cyan 
+                          ? "bg-cyan-400/60 dark:bg-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.6)]" 
+                          : "bg-neutral-400/55 dark:bg-white/50 shadow-[0_0_10px_rgba(255,255,255,0.4)]"
+                        }`}
                       style={{
-                        width: `${Math.random() * 12 + 6}px`,
-                        height: `${Math.random() * 12 + 6}px`,
-                      }}
-                      initial={{
-                        x: Math.random() * 320,
-                        y: Math.random() * window.innerHeight,
-                        scale: Math.random() * 0.5 + 0.5,
+                        width: p.size,
+                        height: p.size,
+                        left: p.x,
+                        top: p.y,
                       }}
                       animate={{
-                        y: [null, Math.random() * window.innerHeight],
-                        x: [null, Math.random() * 320],
-                        opacity: [0.2, 0.6, 0.2],
-                        scale: [null, Math.random() * 1.5 + 0.5],
+                        y: [0, -80, 0],
+                        x: [0, ((p.id % 3) - 1) * 12, 0],
+                        opacity: [0.5, 0.9, 0.5],
                       }}
                       transition={{
-                        duration: Math.random() * 10 + 10,
+                        duration: p.duration,
                         repeat: Infinity,
-                        ease: "linear",
-                        delay: Math.random() * 5,
+                        ease: "easeInOut",
+                        delay: p.delay,
                       }}
                     />
                   ))}
@@ -232,154 +242,54 @@ function Sidebar({ onSectionChange, currentSection = "hero" }) {
                 {/* Contenido del sidebar */}
                 <div className="relative h-full overflow-y-auto
                   scrollbar-thin scrollbar-thumb-neutral-500/50 scrollbar-track-transparent">
-                  <div className="p-8">
-                    {/* Header mejorado */}
+                  <div className="p-6">
+                    {/* Header compacto */}
                     <motion.div 
-                      className="mb-8 pb-6 relative"
-                      initial={{ opacity: 0, y: -20 }}
-                      animate={{ 
-                        opacity: 1, 
-                        y: 0,
-                      }}
+                      className="mb-4 pb-4 relative"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
                     >
-                      {/* Borde */}
                       <div className="absolute bottom-0 left-0 right-0 h-px
                         bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-600 to-transparent" />
-                      
-                      <div className="absolute inset-0 bg-gradient-to-r 
-                        from-neutral-200/10 dark:from-neutral-700/10
-                        blur-xl" />
-                      
-                      {/* Título con animación de levitación palabra por palabra */}
-                      <h3 className="text-2xl font-bold
-                        text-neutral-900 dark:text-white mb-2 relative z-10">
-                        {t("nav.navigation").split(" ").map((word, index, array) => (
-                          <motion.span
-                            key={index}
-                            className="inline-block"
-                            animate={{
-                              y: [0, -3, 0],
-                            }}
-                            transition={{
-                              duration: 3,
-                              repeat: Infinity,
-                              ease: "easeInOut",
-                              delay: index * 0.2,
-                            }}
-                          >
-                            {word}{index < array.length - 1 && "\u00A0"}
-                          </motion.span>
-                        ))}
+                      <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-0.5">
+                        {t("nav.navigation")}
                       </h3>
-                      
-                      {/* Subtítulo con animación de levitación palabra por palabra */}
-                      <p className="text-sm text-neutral-600 dark:text-neutral-400 relative z-10">
-                        {t("nav.sectionsDescription").split(" ").map((word, index, array) => (
-                          <motion.span
-                            key={index}
-                            className="inline-block"
-                            animate={{
-                              y: [0, -2, 0],
-                            }}
-                            transition={{
-                              duration: 3.5,
-                              repeat: Infinity,
-                              ease: "easeInOut",
-                              delay: index * 0.15 + 0.3,
-                            }}
-                          >
-                            {word}{index < array.length - 1 && "\u00A0"}
-                          </motion.span>
-                        ))}
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                        {t("nav.sectionsDescription")}
                       </p>
                     </motion.div>
                     
-                    {/* Navegación con efectos 3D */}
-                    <nav className="space-y-2">
+                    {/* Navegación compacta */}
+                    <nav className="space-y-1">
                       {sections.map((section, index) => (
                         <motion.button
                           key={section.id}
                           onClick={() => scrollToSection(section.id)}
-                          className={`w-full text-left px-3 py-2 rounded-md
-                          text-base font-medium
-                          relative overflow-hidden
-                          group
-                          backdrop-blur-sm
-                          border transition-all duration-300
+                          className={`w-full text-left px-3 py-2 rounded-lg
+                          text-sm font-medium font-sans
+                          relative overflow-hidden group
+                          transition-all duration-200
                           ${currentSection === section.id
-                            ? "text-cyan-600 dark:text-cyan-400 border-cyan-400/50 bg-cyan-500/10 dark:bg-cyan-500/10"
-                            : "text-neutral-700 dark:text-neutral-300 border-transparent hover:border-neutral-400 dark:hover:border-neutral-600"
+                            ? "text-cyan-600 dark:text-cyan-400 bg-cyan-500/15 dark:bg-cyan-500/15 shadow-sm"
+                            : "text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800/50 hover:text-neutral-900 dark:hover:text-white"
                           }`}
-                          whileHover={{ 
-                            x: 8,
-                            scale: 1.02,
-                            rotateY: 2,
-                          }}
-                          whileTap={{ scale: 0.98 }}
-                          initial={{ 
-                            opacity: 0, 
-                            x: -30,
-                            rotateY: -10,
-                          }}
-                          animate={{ 
-                            opacity: 1, 
-                            x: 0,
-                            rotateY: 0,
-                          }}
-                          transition={{ 
-                            delay: index * 0.08 + 0.3,
-                            type: "spring",
-                            stiffness: 200,
-                            damping: 20
-                          }}
+                          whileHover={{ x: 4 }}
+                          whileTap={{ scale: 0.99 }}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05 + 0.2, duration: 0.25 }}
                         >
-                          {/* Fondo con gradiente animado */}
-                          <motion.div
-                            className="absolute inset-0
-                            bg-neutral-100/0 dark:bg-black/0
-                            group-hover:bg-neutral-100/50 dark:group-hover:bg-black/30
-                            transition-all duration-300"
-                          />
-                          
-                          {/* Efecto de brillo al hover */}
-                          <motion.div
-                            className="absolute inset-0 bg-gradient-to-r 
-                            from-transparent via-white/30 dark:via-neutral-700/30 to-transparent
-                            -translate-x-full group-hover:translate-x-full
-                            transition-transform duration-700"
-                          />
-                          
-                          {/* Contenido del botón */}
-                          <div className="relative z-10 flex items-center gap-3">
-                            <motion.div
-                              className="text-xl text-cyan-400 dark:text-cyan-400"
-                              animate={{
-                                rotate: [0, 5, -5, 0],
-                              }}
-                              transition={{
-                                duration: 2,
-                                repeat: Infinity,
-                                repeatDelay: 3,
-                                ease: "easeInOut",
-                              }}
-                            >
+                          {/* Indicador activo - barra izquierda */}
+                          {currentSection === section.id && (
+                            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 rounded-r-full bg-cyan-500" />
+                          )}
+                          <div className="relative z-10 flex items-center gap-2.5">
+                            <span className={`text-base ${currentSection === section.id ? "text-cyan-500" : "text-neutral-400 group-hover:text-cyan-400"}`}>
                               {section.icon && <section.icon />}
-                            </motion.div>
-                            <span className="group-hover:text-neutral-900 dark:group-hover:text-white
-                              transition-all duration-300">
-                              {section.label}
                             </span>
+                            <span>{section.label}</span>
                           </div>
-                          
-                          {/* Indicador de selección */}
-                          <motion.div
-                            className="absolute left-0 top-1/2 -translate-y-1/2
-                            w-1 h-0 rounded-r
-                            bg-neutral-900 dark:bg-white
-                            group-hover:h-full
-                            transition-all duration-300"
-                          />
                         </motion.button>
                       ))}
                     </nav>

@@ -47,11 +47,12 @@ function App() {
   const handleSectionChange = (sectionId) => {
     setIsTransitioning(true);
     
-    // Scroll suave con offset
+    // Scroll suave: offset para navbar. Si la sección queda cortada arriba, aumentar valor.
     const element = document.getElementById(sectionId);
     if (element) {
+      const navbarOffset = 120;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - 140;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarOffset;
       
       window.scrollTo({
         top: offsetPosition,
