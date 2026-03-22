@@ -3,6 +3,7 @@ import { useTranslation } from "../../hooks/useTranslation";
 import { useTheme } from "../../context/ThemeContext";
 import { useState } from "react";
 import mentalWebImg from "../../assets/Mental-web.png";
+import mentalLogoImg from "../../assets/mental-logo.png";
 import whatsappSaasImg from "../../assets/whatsappSaas.png";
 
 // Mismas animaciones que Experience
@@ -146,23 +147,29 @@ function Projects() {
             hover:border-cyan-400/30 transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
-              <div className="flex-shrink-0 flex flex-col items-center">
+              <div className="flex-shrink-0 flex items-start gap-4">
+                <img
+                  src={mentalLogoImg}
+                  alt="Mental App logo"
+                  className="w-16 h-16 rounded-xl object-contain"
+                />
                 <a
                   href="https://www.mental.app/descarga"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex flex-col items-center"
                 >
                   <img
-                    src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fwww.mental.app%2Fdescarga"
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fwww.mental.app%2Fdescarga"
                     alt="QR Code - Mental App"
-                    className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-14 h-14 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                   />
+                  <p className="text-[10px] text-neutral-500 dark:text-neutral-500 mt-1 text-center leading-tight w-16">
+                    {t("projects.MOBILE_APPS.mental.qrText")}
+                  </p>
                 </a>
-                <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-2 text-center">
-                  {t("projects.MOBILE_APPS.mental.qrText")}
-                </p>
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.MOBILE_APPS.mental.title")}
                 </h4>
