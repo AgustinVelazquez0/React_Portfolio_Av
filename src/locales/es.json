@@ -37,6 +37,8 @@
     "nextjsSaasTitle": "Next.js & SaaS",
     "description": "A selection of my most relevant work",
     "buttonViewProject": "Ver proyecto",
+    "buttonAppStore": "App Store",
+    "buttonPlayStore": "Play Store",
     "buttonViewFrontCode": "Ver código (Frontend)",
     "buttonViewBackCode": "Ver código (Backend)",
     "buttonViewCode": "Ver código",
@@ -99,7 +101,7 @@
     "MOBILE_APPS": {
       "mental": {
         "title": "Mental: Hipnosis personalizada",
-        "description": "App móvil cross-platform de hipnosis personalizada, disponible en App Store. Animaciones con Reanimated y UI responsive. Gestión y pruebas de API con Postman y MongoDB Compass.",
+        "description": "App móvil cross-platform de hipnosis personalizada, disponible en App Store y Google Play. Animaciones con Reanimated y UI responsive. Me encargo de la publicación en las tiendas, pruebas con TestFlight y gestión de APIs con Postman y MongoDB Compass.",
         "qrText": "Escanea QR para descargar la App"
       }
     },

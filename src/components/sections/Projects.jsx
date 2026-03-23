@@ -128,89 +128,7 @@ function Projects() {
         {t("projects.title")}
       </motion.h2>
 
-      {/* Grupo de proyectos: Mobile Apps */}
-      <div className="mb-8">
-        <h3 className="my-6 text-xl text-center font-semibold
-        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
-          {t("projects.mobileAppsTitle")}
-        </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
-          {/* Proyecto Mobile - Mental: Hipnosis personalizada */}
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={expTransition}
-            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_8px_25px_rgba(168,85,247,0.35)] dark:hover:shadow-[0_8px_25px_rgba(168,85,247,0.35)]
-            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
-          >
-            <div className="flex gap-6 mb-4">
-              <div className="flex-shrink-0 flex items-start gap-4">
-                <img
-                  src={mentalLogoImg}
-                  alt="Mental App logo"
-                  className="w-16 h-16 rounded-xl object-contain"
-                />
-                <a
-                  href="https://www.mental.app/descarga"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center"
-                >
-                  <img
-                    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fwww.mental.app%2Fdescarga"
-                    alt="QR Code - Mental App"
-                    className="w-14 h-14 rounded-md object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                  <p className="text-[10px] text-neutral-500 dark:text-neutral-500 mt-1 text-center leading-tight w-16">
-                    {t("projects.MOBILE_APPS.mental.qrText")}
-                  </p>
-                </a>
-              </div>
-              <div className="flex-1 min-w-0">
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.MOBILE_APPS.mental.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.MOBILE_APPS.mental.description")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["React Native", "Expo", "TypeScript", "MongoDB", "Reanimated", "Postman", "MongoDB Compass", "EAS", "xCode", "Android Studio", "AppStore", "PlayStore", "App Store Connect", "Google Play Console", "TestFlight", "Sentry"].map((tech) => {
-                const techColor = getTechColor(tech);
-                return (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
-                    style={{
-                      borderColor: techColor,
-                      color: techColor,
-                      boxShadow: `0 0 10px ${techColor}40`,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                );
-              })}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => window.open("https://apps.apple.com/us/app/mental-hipnosis-personalizada/id6740008581")}
-                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
-              >
-                {t("projects.buttonViewProject")}
-              </button>
-            </div>
-          </motion.div>
-
-        </div>
-      </div>
-
-      {/* Grupo de proyectos: Next.js / SaaS */}
+      {/* Grupo de proyectos: Next.js & SaaS (Web) */}
       <div className="mb-8">
         <h3 className="my-6 text-xl text-center font-semibold
         text-neutral-800 dark:text-neutral-200 lg:text-2xl">
@@ -285,6 +203,94 @@ function Projects() {
               </button>
             </div>
           </motion.div>
+        </div>
+      </div>
+
+      {/* Grupo de proyectos: Mobile Apps */}
+      <div className="mb-8">
+        <h3 className="my-6 text-xl text-center font-semibold
+        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
+          {t("projects.mobileAppsTitle")}
+        </h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
+          {/* Proyecto Mobile - Mental: Hipnosis personalizada */}
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={expTransition}
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_8px_25px_rgba(168,85,247,0.35)] dark:hover:shadow-[0_8px_25px_rgba(168,85,247,0.35)]
+            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
+          >
+            <div className="flex gap-6 mb-4">
+              <div className="flex-shrink-0 flex items-start gap-4">
+                <img
+                  src={mentalLogoImg}
+                  alt="Mental App logo"
+                  className="w-16 h-16 rounded-xl object-contain"
+                />
+                <a
+                  href="https://www.mental.app/descarga"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center"
+                >
+                  <img
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fwww.mental.app%2Fdescarga"
+                    alt="QR Code - Mental App"
+                    className="w-14 h-14 rounded-md object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                  <p className="text-[10px] text-neutral-500 dark:text-neutral-500 mt-1 text-center leading-tight w-16">
+                    {t("projects.MOBILE_APPS.mental.qrText")}
+                  </p>
+                </a>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
+                  {t("projects.MOBILE_APPS.mental.title")}
+                </h4>
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+                  {t("projects.MOBILE_APPS.mental.description")}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {["React Native", "Expo", "TypeScript", "MongoDB", "Reanimated", "Postman", "MongoDB Compass", "EAS", "xCode", "Android Studio", "AppStore", "PlayStore", "App Store Connect", "Google Play Console", "TestFlight", "Sentry"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => window.open("https://apps.apple.com/us/app/mental-hipnosis-personalizada/id6740008581")}
+                className="px-2 py-1 bg-neutral-700 hover:bg-neutral-600 text-white rounded transition-colors duration-200"
+              >
+                {t("projects.buttonAppStore")}
+              </button>
+              <button
+                onClick={() => window.open("https://play.google.com/store/apps/details?id=com.mentalmagnet.mentalMagnetApp")}
+                className="px-2 py-1 bg-green-600 hover:bg-green-700 text-white rounded transition-colors duration-200"
+              >
+                {t("projects.buttonPlayStore")}
+              </button>
+            </div>
+          </motion.div>
+
         </div>
       </div>
 
