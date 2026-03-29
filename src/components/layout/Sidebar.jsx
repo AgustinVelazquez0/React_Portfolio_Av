@@ -1,21 +1,17 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
-import { 
-  FaBars, 
-  FaTimes, 
-  FaHome, 
-  FaCode, 
-  FaBriefcase, 
-  FaGraduationCap, 
-  FaRocket, 
-  FaEnvelope 
+import {
+  FaHome,
+  FaCode,
+  FaBriefcase,
+  FaGraduationCap,
+  FaRocket,
+  FaEnvelope,
 } from "react-icons/fa";
 
-function Sidebar({ onSectionChange, currentSection = "hero" }) {
+function Sidebar({ isOpen, setIsOpen, onSectionChange, currentSection = "hero" }) {
   const { t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const sections = [
     { id: "hero", label: t("nav.home"), icon: FaHome },
@@ -108,34 +104,7 @@ function Sidebar({ onSectionChange, currentSection = "hero" }) {
 
   return (
     <>
-      {/* Botón toggle - animaciones en CSS para no pausar al scrollear */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed left-4 top-20 z-50
-        p-2.5 rounded-lg
-        bg-white/90 dark:bg-neutral-800/90
-        text-neutral-600 dark:text-neutral-300
-        border border-neutral-300 dark:border-neutral-600
-        hover:bg-neutral-100 dark:hover:bg-neutral-700
-        hover:text-neutral-900 dark:hover:text-white
-        hover:border-neutral-400 dark:hover:border-neutral-500
-        hover:scale-[1.02] active:scale-[0.98]
-        backdrop-blur-sm
-        transition-transform duration-200 ease-out
-        group animate-sidebar-btn-entrance"
-        aria-label="Toggle menu"
-      >
-        <div
-          className={`flex items-center justify-center transition-transform duration-200 ease-out ${isOpen ? "rotate-90" : ""}`}
-        >
-          {isOpen ? (
-            <FaTimes className="w-5 h-5 group-hover:text-cyan-400 transition-colors" />
-          ) : (
-            <FaBars className="w-5 h-5 group-hover:text-cyan-400 transition-colors" />
-          )}
-        </div>
-      </button>
-
+      {/* Toggle del menú vive en Navbar (izquierda del logo AV) */}
       {/* Sidebar con efectos 3D */}
       <AnimatePresence>
         {isOpen && (
@@ -152,6 +121,7 @@ function Sidebar({ onSectionChange, currentSection = "hero" }) {
 
             {/* Panel lateral con efecto de hinchado */}
             <motion.div
+              id="portfolio-sections-menu"
               data-sidebar
               initial={{ 
                 x: -400,
@@ -171,8 +141,9 @@ function Sidebar({ onSectionChange, currentSection = "hero" }) {
                 stiffness: 200,
                 mass: 0.8
               }}
-              className="fixed left-0 top-0 h-full w-80 z-50
-              overflow-hidden"
+              className="fixed left-0 top-[4.5rem] h-[calc(100dvh-4.5rem)] w-80 max-w-[min(100vw,20rem)] z-[45]
+              overflow-hidden rounded-tr-xl border-t border-r border-neutral-200 dark:border-neutral-700
+              shadow-2xl"
               style={{
                 transformOrigin: "left center",
                 scaleX: scaleXSpring,
@@ -180,11 +151,9 @@ function Sidebar({ onSectionChange, currentSection = "hero" }) {
               }}
             >
               {/* Fondo con glassmorphism */}
-              <div className="absolute inset-0
+              <div className="absolute inset-0 rounded-tr-xl
                 bg-white/95 dark:bg-black/95
-                backdrop-blur-xl
-                border-r border-neutral-200 dark:border-neutral-700
-                shadow-2xl">
+                backdrop-blur-xl">
                 
                 {/* Acento formal: gradiente sutil en el borde derecho */}
                 <div className="absolute right-0 top-0 bottom-0 w-24 

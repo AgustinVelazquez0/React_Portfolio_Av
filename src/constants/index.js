@@ -24,6 +24,7 @@ export const EXPERIENCES = [
       "Next.js",
       "Expo",
       "TypeScript",
+      "ElevenLabs",
       "MongoDB",
       "MongoDB Compass",
       "RevenueCat",

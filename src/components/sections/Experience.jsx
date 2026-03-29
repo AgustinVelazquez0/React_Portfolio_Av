@@ -66,6 +66,7 @@ function Experience() {
       "JWT": "rgb(168, 85, 247)",
       "Vercel": "rgb(200, 200, 200)",
       "Android Studio": "rgb(61, 220, 132)",
+      "ElevenLabs": "rgb(196, 181, 253)",
     };
     
     return techColorMap[techName] || "rgb(34, 211, 238)"; // Default cyan

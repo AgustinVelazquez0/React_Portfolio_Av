@@ -22,6 +22,7 @@ const Loading = () => (
 
 function App() {
   const [currentSection, setCurrentSection] = useState("hero");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
@@ -92,7 +93,12 @@ function App() {
         bg-background-light dark:bg-black
         min-h-screen relative"
       >
-        <Sidebar onSectionChange={handleSectionChange} currentSection={currentSection} />
+        <Sidebar
+          isOpen={sidebarOpen}
+          setIsOpen={setSidebarOpen}
+          onSectionChange={handleSectionChange}
+          currentSection={currentSection}
+        />
         
         {/* Animación de cambio de página tipo libro - suave y elegante */}
         <AnimatePresence>
@@ -129,7 +135,7 @@ function App() {
             bg-background-dark/90 dark:bg-black"
           ></div>
         </div>
-        <Navbar />
+        <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         <div className="container mx-auto px-8">
           <Hero />
           <Suspense fallback={<Loading />}>

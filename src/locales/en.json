@@ -10,7 +10,8 @@
     "certifications": "Certifications",
     "contact": "Contact",
     "navigation": "Navigation",
-    "sectionsDescription": "Portfolio sections"
+    "sectionsDescription": "Portfolio sections",
+    "menuToggle": "Open or close sections menu"
   },
   "hero": {
     "title": "Full Stack Developer",
@@ -147,6 +148,8 @@
   },
   "technologies": {
     "title": "Technologies",
+    "aiTitle": "Artificial Intelligence",
+    "aiSubtitle": "LLMs, APIs, and AI-native tools from my projects and certifications",
     "frontend": "Frontend",
     "backend": "Backend",
     "systemBuild": "System & Build",
@@ -155,6 +158,7 @@
     "versionControl": "Version Control",
     "devopsInfra": "DevOps & Infrastructure",
     "apiTesting": "API Testing & Deployment",
+    "monitoring": "Monitoring & observability",
     "productivity": "Productivity & Design"
   },
   "certifications": {

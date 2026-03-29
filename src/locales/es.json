@@ -10,7 +10,8 @@
     "certifications": "Certificaciones",
     "contact": "Contacto",
     "navigation": "Navegación",
-    "sectionsDescription": "Secciones del portafolio"
+    "sectionsDescription": "Secciones del portafolio",
+    "menuToggle": "Abrir o cerrar menú de secciones"
   },
   "hero": {
     "title": "Desarrollador Full Stack",
@@ -148,6 +149,8 @@
   },
   "technologies": {
     "title": "Tecnologías",
+    "aiTitle": "Inteligencia artificial",
+    "aiSubtitle": "LLMs, APIs y herramientas con IA de mis proyectos y certificaciones",
     "frontend": "Frontend",
     "backend": "Backend",
     "systemBuild": "Sistema y Build",
@@ -156,6 +159,7 @@
     "versionControl": "Control de Versiones",
     "devopsInfra": "DevOps e Infraestructura",
     "apiTesting": "APIs y Despliegue",
+    "monitoring": "Monitoreo y observabilidad",
     "productivity": "Productividad y Diseño"
   },
   "certifications": {

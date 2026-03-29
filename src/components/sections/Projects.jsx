@@ -80,6 +80,7 @@ const getTechColor = (techName) => {
     "Prisma ORM": "rgb(148, 163, 184)",
     "NextAuth.js": "rgb(34, 197, 94)",
     "OpenAI API": "rgb(16, 185, 129)",
+    "ElevenLabs": "rgb(196, 181, 253)",
     "i18next": "rgb(34, 197, 94)",
     "Vercel": "rgb(200, 200, 200)",
     "Expo": "rgb(107, 114, 128)",
@@ -258,7 +259,7 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["React Native", "Expo", "TypeScript", "MongoDB", "Reanimated", "Postman", "MongoDB Compass", "EAS", "xCode", "Android Studio", "AppStore", "PlayStore", "App Store Connect", "Google Play Console", "TestFlight", "Sentry"].map((tech) => {
+              {["React Native", "Expo", "TypeScript", "MongoDB", "ElevenLabs", "Reanimated", "Postman", "MongoDB Compass", "EAS", "xCode", "Android Studio", "AppStore", "PlayStore", "App Store Connect", "Google Play Console", "TestFlight", "Sentry"].map((tech) => {
                 const techColor = getTechColor(tech);
                 return (
                   <span
@@ -337,7 +338,7 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["React Native Web", "Expo", "TypeScript", "Zustand", "TanStack Query", "RevenueCat", "OneSignal", "Sentry", "i18next", "Vercel"].map((tech) => {
+              {["React Native Web", "Expo", "TypeScript", "ElevenLabs", "Zustand", "TanStack Query", "RevenueCat", "OneSignal", "Sentry", "i18next", "Vercel"].map((tech) => {
                 const techColor = getTechColor(tech);
                 return (
                   <span
