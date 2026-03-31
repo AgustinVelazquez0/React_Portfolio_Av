@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
 import PropTypes from "prop-types";
 
 const IconCard = ({
@@ -10,11 +8,7 @@ const IconCard = ({
   bgColor = "bg-neutral-900",
   customImage,
 }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  // Función para obtener el color de borde y sombra en formato RGB
   const getBorderColor = (colorClass) => {
-    // Mapeo completo de colores Tailwind a RGB
     const colorMap = {
       "text-red-600": { border: "rgb(220, 38, 38)", shadow: "rgba(220,38,38,0.5)" },
       "text-blue-600": { border: "rgb(37, 99, 235)", shadow: "rgba(37,99,235,0.5)" },
@@ -48,89 +42,46 @@ const IconCard = ({
 
   const borderColors = getBorderColor(color);
 
-  const flipVariants = {
-    front: {
-      rotateY: 0,
-      transition: { rotateY: { duration: 0.6, ease: "easeOut" } },
-    },
-    back: {
-      rotateY: 180,
-      transition: { rotateY: { duration: 0.6, ease: "easeOut" } },
-    },
-  };
-
-  const cardVariants = {
-    hover: {
-      scale: 1.05,
-      transition: { duration: 0.3, ease: "easeOut" },
-    },
-  };
-
   return (
-    <motion.div
-      className="relative w-28 h-28 cursor-pointer"
-      style={{ perspective: "1000px" }}
-      variants={cardVariants}
-      whileHover="hover"
-      onHoverStart={() => setIsFlipped(true)}
-      onHoverEnd={() => setIsFlipped(false)}
-    >
-      {/* Wrapper con animación CSS (GPU) - no se pausa al scrollear */}
+    <div className="icon-card-root relative h-28 w-28">
       <div
-        className="w-full h-full"
-        style={{
-          animation: `icon-float ${duration}s linear infinite`,
-        }}
+        className="icon-card-float h-full w-full"
+        style={{ "--icon-float-duration": `${duration}s` }}
       >
-        {/* Contenedor de la carta */}
-        <motion.div
-          className="w-full h-full relative"
-          style={{ transformStyle: "preserve-3d" }}
-          variants={flipVariants}
-          animate={isFlipped ? "back" : "front"}
-        >
-        {/* Cara frontal (Icono) */}
-        <motion.div
-          className={`absolute inset-0 rounded-md border-4 p-4 flex items-center justify-center ${bgColor}`}
-          style={{ 
-            backfaceVisibility: "hidden",
-            borderColor: borderColors.border,
-            boxShadow: `0 0 15px ${borderColors.shadow}`,
-          }}
-        >
-          {customImage ? (
-            <img 
-              src={customImage} 
-              alt={name} 
-              className="w-12 h-12 object-contain"
-            />
-          ) : IconComponent ? (
-          <IconComponent className={`text-5xl ${color}`} />
-          ) : (
-            <DefaultIcon className={`text-5xl ${color}`} />
-          )}
-        </motion.div>
-
-        {/* Cara trasera (Nombre) */}
-        <motion.div
-          className={`absolute inset-0 rounded-md border-4 p-4 flex items-center justify-center ${bgColor}`}
-          style={{
-            backfaceVisibility: "hidden",
-            transform: "rotateY(180deg)",
-            borderColor: borderColors.border,
-            boxShadow: `0 0 15px ${borderColors.shadow}`,
-          }}
-        >
-          <span 
-            className="text-sm font-semibold text-center leading-tight"
-            style={{ color: borderColors.border }}
+        <div className="icon-card-flip relative h-full w-full">
+          <div
+            className={`icon-card-face absolute inset-0 flex items-center justify-center rounded-md border-4 p-4 ${bgColor}`}
+            style={{
+              borderColor: borderColors.border,
+              boxShadow: `0 0 15px ${borderColors.shadow}`,
+            }}
           >
-            {name}
-          </span>
-        </motion.div>
-        </motion.div>
+            {customImage ? (
+              <img src={customImage} alt={name} className="h-12 w-12 object-contain" />
+            ) : IconComponent ? (
+              <IconComponent className={`text-5xl ${color}`} />
+            ) : (
+              <DefaultIcon className={`text-5xl ${color}`} />
+            )}
+          </div>
+
+          <div
+            className={`icon-card-face icon-card-face--back absolute inset-0 flex items-center justify-center rounded-md border-4 p-4 ${bgColor}`}
+            style={{
+              borderColor: borderColors.border,
+              boxShadow: `0 0 15px ${borderColors.shadow}`,
+            }}
+          >
+            <span
+              className="text-center text-sm font-semibold leading-tight"
+              style={{ color: borderColors.border }}
+            >
+              {name}
+            </span>
+          </div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -143,10 +94,9 @@ IconCard.propTypes = {
   customImage: PropTypes.string,
 };
 
-// Si no hay icono ni customImage, usar un icono por defecto
 const DefaultIcon = ({ className }) => (
   <div className={`${className} flex items-center justify-center`}>
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full">
       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
     </svg>
   </div>

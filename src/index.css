@@ -94,14 +94,54 @@ body {
   animation: sidebar-btn-entrance 0.5s ease-out 0.3s both;
 }
 
-/* Animación de flotación para iconos - usa GPU, no se pausa al scrollear */
+/* Animación de flotación para iconos - solo CSS (compositor), no depende de Framer ni del scroll */
 @keyframes icon-float {
   0%, 100% {
-    transform: translateY(10px);
+    transform: translate3d(0, 10px, 0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translate3d(0, -10px, 0);
   }
+}
+
+/* IconCard: hover scale + flip 3D sin motion/react — evita pausas al hacer scroll */
+.icon-card-root {
+  perspective: 1000px;
+  transition: transform 0.3s ease-out;
+}
+
+.icon-card-root:hover {
+  transform: scale(1.05);
+}
+
+.icon-card-float {
+  height: 100%;
+  width: 100%;
+  animation-name: icon-float;
+  animation-duration: var(--icon-float-duration, 4s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* Capa propia: el motor sigue interpolando durante scroll */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.icon-card-flip {
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-out;
+}
+
+.icon-card-root:hover .icon-card-flip {
+  transform: rotateY(180deg);
+}
+
+.icon-card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.icon-card-face--back {
+  transform: rotateY(180deg);
 }
 
 /* Gradientes animados para el sidebar */
