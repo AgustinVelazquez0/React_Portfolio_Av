@@ -5,6 +5,7 @@ import { useState } from "react";
 import mentalWebImg from "../../assets/Mental-web.png";
 import mentalLogoImg from "../../assets/mental-logo.png";
 import whatsappSaasImg from "../../assets/whatsappSaas.png";
+import arbibuyImg from "../../assets/arbibuy.png";
 
 // Mismas animaciones que Experience
 const expTransition = { type: "spring", stiffness: 400, damping: 30 };
@@ -85,6 +86,11 @@ const getTechColor = (techName) => {
     "Vercel": "rgb(200, 200, 200)",
     "Expo": "rgb(107, 114, 128)",
     "Reanimated": "rgb(168, 85, 247)",
+    "Supabase": "rgb(62, 207, 142)",
+    "shadcn/ui": "rgb(200, 200, 200)",
+    "Recharts": "rgb(255, 130, 130)",
+    "Cheerio": "rgb(234, 88, 12)",
+    "Google Trends": "rgb(96, 165, 250)",
     
     // Data Visualization
     "D3.js": "rgb(249, 115, 22)",
@@ -198,6 +204,75 @@ function Projects() {
               </button>
               <button
                 onClick={() => window.open("https://github.com/AgustinVelazquez0/whatsapp-ai-saas")}
+                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
+              >
+                {t("projects.buttonViewCode")}
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Proyecto ArbiBuy - Plataforma de Arbitraje E-commerce */}
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 100 }}
+            transition={expTransition}
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
+            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_8px_25px_rgba(62,207,142,0.35)] dark:hover:shadow-[0_8px_25px_rgba(62,207,142,0.35)]
+            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
+          >
+            <div className="flex gap-6 mb-4">
+              <a
+                href="https://arbibuy.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0"
+              >
+                <img
+                  src={arbibuyImg}
+                  alt="ArbiBuy - Plataforma de Arbitraje E-commerce"
+                  loading="lazy"
+                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <div className="flex-1">
+                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
+                  {t("projects.NEXTJS_SAAS.arbibuy.title")}
+                </h4>
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+                  {t("projects.NEXTJS_SAAS.arbibuy.description")}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Supabase", "PostgreSQL", "Recharts", "Cheerio", "Google Trends", "Vercel"].map((tech) => {
+                const techColor = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
+                    style={{
+                      borderColor: techColor,
+                      color: techColor,
+                      boxShadow: `0 0 10px ${techColor}40`,
+                    }}
+                  >
+                    {tech}
+                  </span>
+                );
+              })}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => window.open("https://arbibuy.vercel.app")}
+                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
+              >
+                {t("projects.buttonViewProject")}
+              </button>
+              <button
+                onClick={() => window.open("https://github.com/AgustinVelazquez0/arbibuy")}
                 className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
               >
                 {t("projects.buttonViewCode")}

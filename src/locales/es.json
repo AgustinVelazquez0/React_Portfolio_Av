@@ -110,6 +110,10 @@
       "whatsappAI": {
         "title": "WhatsApp AI SaaS",
         "description": "SaaS completo para automatizar conversaciones de WhatsApp Business con GPT-4: webhook, motor de IA, plantillas y escalamiento a humano. Configuración de apps y negocios en Meta for Developers (WhatsApp Business API). Dashboard con NextAuth.js, analytics, horarios de atención y soporte multi-negocio. Deploy en Vercel."
+      },
+      "arbibuy": {
+        "title": "ArbiBuy — Plataforma de Arbitraje E-commerce",
+        "description": "SaaS para detectar oportunidades de arbitraje entre Alibaba (mayorista) y Amazon FBA. Búsqueda multi-fuente en 5 plataformas chinas con scrapers tolerantes a fallos, calculadora de rentabilidad multi-marketplace (US, ES, MX, JP, DE, UK, FR, IT, BR) con fees de FBA, cupones y cashback. Análisis de tendencias con Google Trends, alertas automáticas, watchlist, bulk scans y tracker de inversiones. Auth con Supabase + RLS, 4 cron jobs en Vercel y modo educativo con glosario."
       }
     }
   },
