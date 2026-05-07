@@ -739,19 +739,15 @@ function Projects() {
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
           {/* Proyecto JS 3 - Juego de Plataformas */}
-          <AnimatePresence mode="sync">
-          {(expandedGroups.js || false) && (
           <motion.div
-            key="js-platformer"
-            variants={cardVariantsLeft}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
             transition={expTransition}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]
-            transition-[box-shadow] duration-200"
+            hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)] dark:hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)]
+            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -803,21 +799,17 @@ function Projects() {
               </button>
             </div>
           </motion.div>
-          )}
 
           {/* Proyecto JS 4 - RPG Interactivo */}
-          {(expandedGroups.js || false) && (
           <motion.div
-            key="js-rpg"
-            variants={cardVariantsRight}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 100 }}
             transition={expTransition}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
+            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
             shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] dark:hover:shadow-[0_0_15px_rgba(250,204,21,0.4)]
-            transition-[box-shadow] duration-200"
+            hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)] dark:hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)]
+            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
           >
             <div className="flex gap-6 mb-4">
               <a
@@ -875,37 +867,7 @@ function Projects() {
               </button>
             </div>
           </motion.div>
-          )}
-          </AnimatePresence>
         </div>
-        {!expandedGroups.js && (
-          <div className="text-center mt-6">
-            <button
-              onClick={() => toggleGroup("js")}
-              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
-                isDarkMode
-                  ? "bg-white hover:bg-neutral-200 text-black"
-                  : "bg-black hover:bg-neutral-800 text-white"
-              }`}
-            >
-              {t("projects.showMore").replace("{count}", "2")}
-            </button>
-          </div>
-        )}
-        {expandedGroups.js && (
-          <div className="text-center mt-6">
-            <button
-              onClick={() => toggleGroup("js")}
-              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
-                isDarkMode
-                  ? "bg-white hover:bg-neutral-200 text-black"
-                  : "bg-black hover:bg-neutral-800 text-white"
-              }`}
-            >
-              {t("projects.showLess")}
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );
