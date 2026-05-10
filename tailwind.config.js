@@ -5,17 +5,26 @@ export default {
   theme: {
     extend: {
       colors: {
+        // AV brand palette — see /public/brand/README.md
+        brand: {
+          cyan: "#22D3EE",
+          void: "#0A0A0A",
+          charcoal: "#1A1A1A",
+          steel: "#404040",
+          amber: "#F59E0B",
+          pure: "#FFFFFF",
+        },
         primary: {
-          light: "#3B82F6",
-          dark: "#60A5FA", // Azul más brillante para tema dark
+          light: "#22D3EE",
+          dark: "#22D3EE",
         },
         secondary: {
-          light: "#10B981", // Verde para tema light
-          dark: "#34D399", // Verde más brillante para tema dark
+          light: "#10B981",
+          dark: "#34D399",
         },
         background: {
           light: "#FFFFFF",
-          dark: "#000000",
+          dark: "#0A0A0A",
         },
         text: {
           light: "#1F2937",
@@ -23,9 +32,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["DM Sans", "system-ui", "sans-serif"],
-        display: ["Space Grotesk", "sans-serif"],
-        heading: ["Space Grotesk", "sans-serif"],
+        sans: ["Geist Sans", "Geist", "Inter", "system-ui", "sans-serif"],
+        display: ["Geist Sans", "Geist", "Inter", "system-ui", "sans-serif"],
+        heading: ["Geist Sans", "Geist", "Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
         btn: ["Cormorant Garamond", "Georgia", "Times New Roman", "serif"],
       },
     },

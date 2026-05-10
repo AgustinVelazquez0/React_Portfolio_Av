@@ -1,0 +1,12 @@
+<svg viewBox="0 0 480 80" xmlns="http://www.w3.org/2000/svg" fill="none" role="img" aria-label="AV  Agustin Velazquez">
+  <path
+    d="M5 75 L32 5 L59 75 M61 5 L88 75 L115 5"
+    stroke="#22D3EE"
+    stroke-width="11"
+    stroke-linejoin="miter"
+    stroke-linecap="square"
+  />
+  <line x1="135" y1="15" x2="135" y2="65" stroke="currentColor" stroke-width="2" stroke-opacity="0.25"/>
+  <text x="155" y="42" fill="currentColor" font-family="Geist, Inter, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.01em">Agustin Velazquez</text>
+  <text x="155" y="62" fill="currentColor" fill-opacity="0.55" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" letter-spacing="0.2em">FULL-STACK ENGINEER</text>
+</svg>

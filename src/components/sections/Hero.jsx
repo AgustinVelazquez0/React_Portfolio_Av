@@ -1,7 +1,9 @@
 import profilePic from "../../assets/Agustin.png";
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
-import { CV_URL_ES, CV_URL_EN } from "../../constants";
+
+const CV_URL_ES = "/cv.html";
+const CV_URL_EN = "/cv-en.html";
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -29,11 +31,20 @@ function Hero() {
             <div className="absolute left-0 top-0 w-96 h-96 bg-cyan-500/15 dark:bg-cyan-500/8 rounded-full blur-3xl -z-10" />
             <div className="absolute right-1/4 top-1/3 w-64 h-64 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl -z-10" />
             
-            <motion.h1
+            <motion.span
               variants={container(0)}
               initial="hidden"
               animate="visible"
-              className="pb-4 text-5xl font-bold tracking-tight lg:text-7xl
+              className="font-mono text-[11px] uppercase tracking-[0.25em] text-cyan-600 dark:text-cyan-400 mb-3"
+            >
+              AV — Full-Stack Engineer
+            </motion.span>
+
+            <motion.h1
+              variants={container(0.1)}
+              initial="hidden"
+              animate="visible"
+              className="pb-2 text-5xl font-bold tracking-tight lg:text-7xl
               text-neutral-900 dark:text-white
               bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900
               dark:from-white dark:via-neutral-200 dark:to-white
@@ -43,14 +54,25 @@ function Hero() {
             </motion.h1>
 
             <motion.h2
-              variants={container(0.5)}
+              variants={container(0.4)}
               initial="hidden"
               animate="visible"
-              className="text-2xl font-semibold tracking-tight mb-4
-              text-cyan-600 dark:text-cyan-400 lg:text-3xl"
+              className="text-xl lg:text-2xl font-medium tracking-tight mb-2 mt-2
+              text-neutral-700 dark:text-neutral-200"
+            >
+              <span className="text-neutral-900 dark:text-white">Full-stack craft.</span>{" "}
+              <span className="text-cyan-600 dark:text-cyan-400">AI-native mindset.</span>
+            </motion.h2>
+
+            <motion.h3
+              variants={container(0.55)}
+              initial="hidden"
+              animate="visible"
+              className="text-base lg:text-lg font-medium tracking-tight mb-4
+              text-neutral-500 dark:text-neutral-400"
             >
               {t("hero.title")}
-            </motion.h2>
+            </motion.h3>
 
             <motion.p
               variants={container(1)}
@@ -115,7 +137,6 @@ function Hero() {
                 href={cvUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                download
                 className="px-6 py-3 rounded-lg border-2 border-neutral-400
                 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100
                 dark:hover:bg-neutral-800 font-semibold transition-all duration-200"

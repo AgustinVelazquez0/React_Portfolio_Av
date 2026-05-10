@@ -4,6 +4,7 @@ import ThemeToggle from "../features/ThemeToggle";
 import LanguageToggle from "../features/LenguageToggle";
 import { useState, useEffect } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
+import AVLogo from "../brand/AVLogo";
 
 function NavBar({ sidebarOpen, setSidebarOpen }) {
   const { t } = useTranslation();
@@ -61,20 +62,20 @@ function NavBar({ sidebarOpen, setSidebarOpen }) {
                 )}
               </span>
             </button>
-            <motion.div
+            <motion.a
+              href="#hero"
               className="flex items-center gap-2 sm:gap-3"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400 }}
+              aria-label="AV — Agustin Velazquez"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">AV</span>
-              </div>
-              <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium
-                bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <AVLogo variant="icon" className="w-10 h-10 shadow-lg rounded-[14px]" />
+              <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono uppercase tracking-[0.18em] font-medium
+                bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 {t("nav.availability")}
               </span>
-            </motion.div>
+            </motion.a>
           </div>
 
           {/* Iconos sociales - más grandes en desktop */}
