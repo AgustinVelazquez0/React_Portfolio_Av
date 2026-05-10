@@ -211,7 +211,7 @@ function Projects() {
             </div>
           </motion.div>
 
-          {/* Proyecto ArbiBuy - Plataforma de Arbitraje E-commerce */}
+          {/* Proyecto Arbix - Plataforma de Arbitraje E-commerce */}
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
@@ -231,7 +231,7 @@ function Projects() {
               >
                 <img
                   src={arbibuyImg}
-                  alt="ArbiBuy - Plataforma de Arbitraje E-commerce"
+                  alt="Arbix - Plataforma de Arbitraje E-commerce"
                   loading="lazy"
                   className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
                 />

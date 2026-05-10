@@ -148,6 +148,12 @@
   /* ===== Experience ===== */
   .xp-item { margin-bottom: 18px; padding-left: 14px; border-left: 2px solid var(--line); }
   .xp-item:last-child { margin-bottom: 0; }
+  .study-item { border-left-color: #d4d4d4; }
+  .study-note {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--muted); margin-bottom: 6px;
+  }
   .xp-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
   .xp-role { font-size: 14px; font-weight: 600; color: var(--void); }
   .xp-company { color: var(--cyan); font-weight: 500; }
@@ -302,7 +308,7 @@
   <section>
     <h2 class="section-title">Resumen profesional</h2>
     <p class="summary">
-      Desarrollador Full-Stack uruguayo especializado en <strong>React, Next.js y React Native</strong>, con foco en <strong>productos AI-native</strong> y SaaS escalables. Actualmente desarrollando aplicaciones móviles cross-platform en <strong>Mental</strong>, con apps publicadas en App Store y Google Play. He construido y desplegado +15 proyectos en producción, integrando OpenAI, sistemas de pagos, autenticación y observabilidad. Apasionado por el código limpio, la performance y los detalles que diferencian un producto bueno de uno excepcional.
+      Desarrollador Full-Stack uruguayo especializado en <strong>React, Next.js y React Native</strong>, con foco en <strong>productos AI-native</strong> y SaaS escalables. <strong>Experiencia laboral actual en Mental</strong> (apps en App Store y Google Play, plataforma web y mobile). Complemento con <strong>estudios en Instituto BIOS y FreeCodeCamp</strong> (ver apartado Estudios; no equivalen a experiencia en empresa). He construido y desplegado +15 proyectos en producción. Apasionado por el código limpio, la performance y los detalles que diferencian un producto bueno de uno excepcional.
     </p>
   </section>
 
@@ -312,7 +318,8 @@
     <div class="col-main">
 
       <section>
-        <h2 class="section-title">Experiencia</h2>
+        <h2 class="section-title">Experiencia laboral</h2>
+        <p class="study-note">Único rol en empresa contratante / producto en producción con equipo.</p>
 
         <div class="xp-item">
           <div class="xp-head">
@@ -328,14 +335,19 @@
             <span>TanStack Query</span><span>JWT</span><span>Vercel</span><span>EAS</span>
           </div>
         </div>
+      </section>
 
-        <div class="xp-item">
+      <section>
+        <h2 class="section-title">Estudios</h2>
+        <p class="study-note">Formación académica y certificaciones. No debe interpretarse como experiencia laboral en esas instituciones.</p>
+
+        <div class="xp-item study-item">
           <div class="xp-head">
-            <div class="xp-role">Full-Stack Developer (MERN) · <span class="xp-company">Instituto BIOS</span></div>
+            <div class="xp-role">Desarrollo Full-Stack (MERN) · <span class="xp-company">Instituto BIOS</span></div>
             <div class="xp-date">03/2024 — 01/2025</div>
           </div>
           <p class="xp-desc">
-            Desarrollo de aplicaciones MERN Stack completas. Implementación de APIs RESTful y bases de datos relacionales (PostgreSQL) y NoSQL (MongoDB). Despliegue en producción con Docker, control de versiones con Git/GitHub y testing de endpoints con Postman.
+            Diplomatura / programa práctico: aplicaciones MERN completas, APIs REST, PostgreSQL y MongoDB, Docker, Git y despliegue. Entregas y proyectos evaluados en el aula.
           </p>
           <div class="xp-tech">
             <span>Node.js</span><span>Express</span><span>React</span><span>MongoDB</span>
@@ -343,23 +355,23 @@
           </div>
         </div>
 
-        <div class="xp-item">
+        <div class="xp-item study-item">
           <div class="xp-head">
-            <div class="xp-role">Habilidades Digitales Profesionales · <span class="xp-company">Instituto BIOS</span></div>
-            <div class="xp-date">09/2024 — 01/2025</div>
-          </div>
-          <p class="xp-desc">
-            Dominio de herramientas Microsoft Office 365 y Google Workspace. Visualización de datos con Power BI. Optimización de flujos de trabajo digitales y colaboración en equipos remotos.
-          </p>
-        </div>
-
-        <div class="xp-item">
-          <div class="xp-head">
-            <div class="xp-role">Certificaciones de Desarrollo Web · <span class="xp-company">FreeCodeCamp</span></div>
+            <div class="xp-role">Certificaciones de desarrollo web · <span class="xp-company">FreeCodeCamp</span></div>
             <div class="xp-date">09/2023 — 01/2024</div>
           </div>
           <p class="xp-desc">
-            Construcción de +10 proyectos full-stack desplegados. Especialización en visualización de datos con D3.js, microservicios con Node.js/Express y bases de datos relacionales con SQL.
+            Proyectos full-stack desplegados, visualización con D3.js, Node/Express y bases de datos con SQL. Trabajo autodidacta con currículum estructurado.
+          </p>
+        </div>
+
+        <div class="xp-item study-item">
+          <div class="xp-head">
+            <div class="xp-role">Habilidades digitales en el ámbito laboral · <span class="xp-company">Instituto BIOS</span></div>
+            <div class="xp-date">09/2024 — 01/2025</div>
+          </div>
+          <p class="xp-desc">
+            Curso transversal: Office 365, Google Workspace, Power BI y productividad digital aplicada al entorno laboral.
           </p>
         </div>
       </section>
@@ -380,7 +392,7 @@
 
         <div class="project">
           <div class="project-head">
-            <span class="project-name">ArbiBuy — Plataforma de Arbitraje E-commerce</span>
+            <span class="project-name">Arbix — Plataforma de Arbitraje E-commerce</span>
             <a class="project-link" href="https://arbibuy.vercel.app">arbibuy.vercel.app ↗</a>
           </div>
           <p class="project-desc">
