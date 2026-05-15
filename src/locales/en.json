@@ -15,14 +15,15 @@
   },
   "hero": {
     "title": "Full Stack Developer",
-    "content": "Full-stack and mobile developer from Uruguay, specialized in MERN Stack and React Native. Currently developing cross-platform mobile applications at Mental-Magnet. Certified by BIOS Institute and FreeCodeCamp with expertise in React, Node.js, TypeScript, MongoDB, PostgreSQL, and cloud deployment. I've built and deployed +15 production-ready projects, from full-stack web applications to mobile apps available on AppStore and PlayStore. Passionate about creating scalable solutions, clean code, and exceptional user experiences.",
+    "content": "Full-stack and mobile developer from Uruguay, specialized in React, Next.js and React Native with a focus on AI-native products. Currently shipping at Mental, with apps live on the App Store and Google Play. I build AI agents with real tool use (not fixed workflows): the AI decides which tools to call, in what order and how many times, running autonomous database queries to solve the problem. I've shipped +15 production projects combining clean code, performance and the details that make the difference.",
     "ctaProjects": "View projects",
     "ctaCV": "Download CV",
     "ctaHire": "Looking for a developer?",
     "stats": {
       "projects": "+15 projects",
       "apps": "App Store & Play Store",
-      "stack": "MERN & React Native"
+      "stack": "MERN & React Native",
+      "agents": "AI Agents with tool use"
     }
   },
   "about": {
@@ -109,7 +110,7 @@
     "NEXTJS_SAAS": {
       "whatsappAI": {
         "title": "WhatsApp AI SaaS",
-        "description": "Complete SaaS to automate WhatsApp Business conversations with GPT-4: webhook, AI engine, templates and human handoff. App and business setup in Meta for Developers (WhatsApp Business API). Dashboard with NextAuth.js, analytics, business hours and multi-business support. Deployed on Vercel."
+        "description": "SaaS with a real AI agent with tools — not a fixed workflow. Key distinction: the agent autonomously decides which tools to call, in what order and how many times based on context, rather than following predetermined steps. Agentic loop up to 10 iterations: queries customer history and bookings from PostgreSQL, searches the business knowledge base, and schedules deferred follow-up messages. Dashboard with NextAuth.js, analytics, business hours and multi-business support. Deployed on Vercel."
       },
       "arbibuy": {
         "title": "Arbix — E-commerce Arbitrage Platform",

@@ -104,6 +104,12 @@ function Hero() {
                 <span className="w-2 h-2 rounded-full bg-cyan-500" />
                 {t("hero.stats.stack")}
               </span>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                <span className="text-cyan-700 dark:text-cyan-300 font-semibold">
+                  {t("hero.stats.agents")}
+                </span>
+              </span>
             </motion.div>
 
             {/* CTA Buttons */}

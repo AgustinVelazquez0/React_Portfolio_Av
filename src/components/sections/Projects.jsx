@@ -81,6 +81,8 @@ const getTechColor = (techName) => {
     "Prisma ORM": "rgb(148, 163, 184)",
     "NextAuth.js": "rgb(34, 197, 94)",
     "OpenAI API": "rgb(16, 185, 129)",
+    "Agentic AI": "rgb(34, 211, 238)",
+    "Tool Use": "rgb(168, 85, 247)",
     "ElevenLabs": "rgb(196, 181, 253)",
     "i18next": "rgb(34, 197, 94)",
     "Vercel": "rgb(200, 200, 200)",
@@ -168,6 +170,13 @@ function Projects() {
                 />
               </a>
               <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-[0.15em] font-semibold
+                    bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border border-cyan-500/40">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
+                    Agentic AI
+                  </span>
+                </div>
                 <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
                   {t("projects.NEXTJS_SAAS.whatsappAI.title")}
                 </h4>
@@ -178,7 +187,7 @@ function Projects() {
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {["Next.js", "React", "TypeScript", "PostgreSQL", "Prisma ORM", "OpenAI API", "NextAuth.js", "Tailwind CSS", "Vercel"].map((tech) => {
+              {["Agentic AI", "Tool Use", "Next.js", "React", "TypeScript", "PostgreSQL", "Prisma ORM", "OpenAI API", "NextAuth.js", "Tailwind CSS", "Vercel"].map((tech) => {
                 const techColor = getTechColor(tech);
                 return (
                   <span

@@ -308,7 +308,7 @@
   <section>
     <h2 class="section-title">Resumen profesional</h2>
     <p class="summary">
-      Desarrollador Full-Stack uruguayo especializado en <strong>React, Next.js y React Native</strong>, con foco en <strong>productos AI-native</strong> y SaaS escalables. <strong>Experiencia laboral actual en Mental</strong> (apps en App Store y Google Play, plataforma web y mobile). Complemento con <strong>estudios en Instituto BIOS y FreeCodeCamp</strong> (ver apartado Estudios; no equivalen a experiencia en empresa). He construido y desplegado +15 proyectos en producción. Apasionado por el código limpio, la performance y los detalles que diferencian un producto bueno de uno excepcional.
+      Desarrollador Full-Stack uruguayo especializado en <strong>React, Next.js y React Native</strong>, con foco en <strong>productos AI-native</strong> y SaaS escalables. <strong>Experiencia laboral actual en Mental</strong> (apps en App Store y Google Play, plataforma web y mobile). He construido y desplegado +15 proyectos en producción, incluyendo sistemas con <strong>arquitectura de agentes IA</strong>, pagos, autenticación y observabilidad. Apasionado por el código limpio, la performance y los detalles que diferencian un producto bueno de uno excepcional.
     </p>
   </section>
 
@@ -385,8 +385,8 @@
             <a class="project-link" href="https://whatsapp-ai-saas-1zya.vercel.app">whatsapp-ai-saas ↗</a>
           </div>
           <p class="project-desc">
-            SaaS para automatizar conversaciones de WhatsApp Business con GPT-4. Webhook, motor de IA, plantillas y escalamiento a humano. Configuración con WhatsApp Business API en Meta for Developers. Dashboard con NextAuth.js, analytics y soporte multi-negocio.
-            <br/><em>Stack: Next.js · TypeScript · PostgreSQL · Prisma · OpenAI API · NextAuth · Vercel</em>
+            SaaS para automatizar conversaciones de WhatsApp Business con un <strong>agente IA con tools</strong> (no un workflow fijo). La diferencia clave: un <em>workflow</em> sigue pasos predeterminados A→B→C; el <em>agente</em> decide autónomamente qué herramientas usar, en qué orden y cuántas veces, según el contexto del mensaje. El agente ejecuta un <strong>agentic loop</strong> (hasta 10 iteraciones) con tres tools reales: consulta historial del cliente y reservas en PostgreSQL, busca en la base de conocimiento del negocio y agenda mensajes diferidos. Dashboard con NextAuth.js, analytics, horarios de atención y soporte multi-negocio.
+            <br/><em>Stack: Next.js · TypeScript · PostgreSQL · Prisma · OpenAI API (tool use) · NextAuth · Vercel</em>
           </p>
         </div>
 
