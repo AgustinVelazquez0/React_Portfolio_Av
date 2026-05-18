@@ -1,157 +1,103 @@
-import { EXPERIENCES } from "../../constants";
-import { motion } from "framer-motion";
-import { useTranslation } from "../../hooks/useTranslation";
-import { useTheme } from "../../context/ThemeContext";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { EXPERIENCES } from "../../constants";
+import { useTranslation } from "../../hooks/useTranslation";
+import { fadeUp, viewport } from "../../lib/motion";
+import Button from "../ui/Button";
+import Tag from "../ui/Tag";
 
+/**
+ * Experience — refactor con sistema de diseño nuevo.
+ * Estructura editorial estilo brittanychiang.com: timeline a la izquierda,
+ * descripción a la derecha. Sin glow neón en los tags.
+ */
 function Experience() {
   const { t } = useTranslation();
-  const { isDarkMode } = useTheme();
   const [showAll, setShowAll] = useState(false);
+
   const initialCount = 2;
   const remainingCount = EXPERIENCES.length - initialCount;
-  const displayedExperiences = showAll ? EXPERIENCES : EXPERIENCES.slice(0, initialCount);
-
-  // Función para obtener el color de cada tecnología
-  const getTechColor = (techName) => {
-    const techColorMap = {
-      // Frontend
-      "HTML5": "rgb(220, 38, 38)", // red-600
-      "CSS3": "rgb(37, 99, 235)", // blue-600
-      "JavaScript": "rgb(250, 204, 21)", // yellow-400
-      "TypeScript": "rgb(37, 99, 235)", // blue-600
-      "React": "rgb(34, 211, 238)", // cyan-400
-      "React Native": "rgb(103, 232, 249)", // cyan-300
-      "Tailwind CSS": "rgb(96, 165, 250)", // blue-400
-      
-      // Backend
-      "Node.js": "rgb(22, 163, 74)", // green-600
-      "Express.js": "rgb(156, 163, 175)", // gray-400
-      "API": "rgb(79, 70, 229)", // indigo-600
-      
-      // Databases
-      "PostgreSQL": "rgb(96, 165, 250)", // blue-400
-      "MongoDB": "rgb(34, 197, 94)", // green-500
-      "MongoDB Compass": "rgb(21, 128, 61)", // green-700
-      
-      // Tools
-      "Git": "rgb(234, 88, 12)", // orange-600
-      "GitHub": "rgb(107, 114, 128)", // gray-500
-      "Docker": "rgb(59, 130, 246)", // blue-500
-      "Postman": "rgb(249, 115, 22)", // orange-500
-      "Ubuntu": "rgb(249, 115, 22)", // orange-500
-      "Linux-Ubuntu": "rgb(249, 115, 22)", // orange-500
-      "DBeaver": "rgb(29, 78, 216)", // blue-700
-      "EAS": "rgb(99, 102, 241)", // indigo-500
-      "xCode": "rgb(37, 99, 235)", // blue-600
-      "AppStore": "rgb(107, 114, 128)", // gray-500
-      "PlayStore": "rgb(34, 197, 94)", // green-500
-      "App Store Connect": "rgb(0, 122, 255)", // iOS blue
-      "Google Play Console": "rgb(66, 133, 244)", // Google blue
-      "TestFlight": "rgb(0, 122, 255)", // iOS blue
-      "Sentry": "rgb(255, 82, 82)", // Sentry red
-      "Cursor AI": "rgb(34, 211, 238)", // cyan-400
-      "Google AI Studio": "rgb(37, 99, 235)", // blue-600
-      "Rork": "rgb(34, 211, 238)", // cyan-400
-      "Render": "rgb(126, 34, 206)", // purple-700
-      "Glitch": "rgb(37, 99, 235)", // blue-600
-      "Next.js": "rgb(107, 114, 128)",
-      "React Native Web": "rgb(103, 232, 249)",
-      "Expo": "rgb(107, 114, 128)",
-      "RevenueCat": "rgb(34, 197, 94)",
-      "OneSignal": "rgb(34, 197, 94)",
-      "i18next": "rgb(34, 197, 94)",
-      "Zustand": "rgb(249, 115, 22)",
-      "TanStack Query": "rgb(255, 82, 82)",
-      "JWT": "rgb(168, 85, 247)",
-      "Vercel": "rgb(200, 200, 200)",
-      "Android Studio": "rgb(61, 220, 132)",
-      "ElevenLabs": "rgb(196, 181, 253)",
-    };
-    
-    return techColorMap[techName] || "rgb(34, 211, 238)"; // Default cyan
-  };
+  const displayedExperiences = showAll
+    ? EXPERIENCES
+    : EXPERIENCES.slice(0, initialCount);
 
   return (
-    <div id="experience" className="border-b border-neutral-900 pb-4">
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ type: "spring", stiffness: 400, damping: 30 }}
-        className="my-10 text-center text-3xl font-semibold
-        text-neutral-900 dark:text-white lg:text-4xl"
-      >
-        {t("experience.title")}
-      </motion.h2>
-      <div>
-        {displayedExperiences.map((experience, index) => (
-          <div key={index} className="mb-10 flex flex-wrap lg:justify-center">
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: -100 }}
-              transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              className="w-full lg:w-1/4 mb-4 lg:mb-0"
-            >
-              <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
-                {t(`experience.items.${index}.year`)}
-              </p>
-            </motion.div>
+    <section
+      id="experience"
+      className="border-t border-line-subtle pt-16 pb-12"
+    >
+      <header className="mb-12">
+        <p className="font-mono text-2xs uppercase tracking-mono text-ink-faint mb-3">
+          02 — {t("experience.title")}
+        </p>
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="font-display text-4xl lg:text-5xl text-ink-primary tracking-tightest leading-none"
+        >
+          {t("experience.title")}
+        </motion.h2>
+      </header>
 
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: 100 }}
-              transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              className="w-full max-w-2xl lg:w-3/4"
-            >
-              <h6 className="mb-2 text-lg font-semibold text-neutral-900 dark:text-white">
-                {t(`experience.items.${index}.role`)} -{" "}
-                <span className="text-base font-medium text-neutral-700 dark:text-neutral-300">
-                  {t(`experience.items.${index}.company`)}
-                </span>
-              </h6>
-              <p className="mb-4 text-neutral-600 dark:text-neutral-400 leading-relaxed">
+      <div className="space-y-12">
+        {displayedExperiences.map((experience, index) => (
+          <motion.article
+            key={index}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8"
+          >
+            {/* Timeline marker */}
+            <div className="lg:col-span-3 flex flex-col gap-1">
+              <span className="font-mono text-2xs uppercase tracking-mono text-ink-faint">
+                {t(`experience.items.${index}.year`)}
+              </span>
+              <span className="text-xs text-ink-muted">
+                {t(`experience.items.${index}.company`)}
+              </span>
+            </div>
+
+            {/* Content */}
+            <div className="lg:col-span-9 max-w-3xl">
+              <h3 className="text-xl lg:text-2xl font-medium text-ink-primary tracking-snug mb-3">
+                {t(`experience.items.${index}.role`)}
+              </h3>
+              <p className="text-base text-ink-secondary leading-relaxed mb-5 whitespace-pre-line">
                 {t(`experience.items.${index}.description`)}
               </p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {experience.technologies.map((tech, techIndex) => {
-                  const techColor = getTechColor(tech);
-                  return (
-                  <span
-                    key={techIndex}
-                      className="rounded-md bg-black dark:bg-black 
-                      border-2 px-3 py-1.5 text-sm font-medium"
-                      style={{
-                        borderColor: techColor,
-                        color: techColor,
-                        boxShadow: `0 0 10px ${techColor}40`,
-                      }}
-                  >
+              <div className="flex flex-wrap gap-1.5">
+                {experience.technologies.map((tech) => (
+                  <Tag key={tech} variant="neutral" size="xs">
                     {tech}
-                  </span>
-                  );
-                })}
+                  </Tag>
+                ))}
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.article>
         ))}
       </div>
-      {EXPERIENCES.length > initialCount && (
-        <div className="text-center mt-8">
-          <button
+
+      {EXPERIENCES.length > initialCount ? (
+        <div className="text-center mt-12">
+          <Button
+            variant="ghost"
+            size="sm"
             onClick={() => setShowAll(!showAll)}
-            className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
-              isDarkMode
-                ? "bg-white hover:bg-neutral-200 text-black"
-                : "bg-black hover:bg-neutral-800 text-white"
-            }`}
           >
             {showAll
               ? t("experience.showLess")
-              : t("experience.showMore").replace("{count}", remainingCount.toString())}
-          </button>
+              : t("experience.showMore").replace(
+                  "{count}",
+                  remainingCount.toString()
+                )}
+          </Button>
         </div>
-      )}
-    </div>
+      ) : null}
+    </section>
   );
 }
 

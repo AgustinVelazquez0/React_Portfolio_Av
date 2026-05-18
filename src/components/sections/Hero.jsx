@@ -1,186 +1,213 @@
-import profilePic from "../../assets/Agustin.png";
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
-
-const CV_URL_ES = "/cv.html";
-const CV_URL_EN = "/cv-en.html";
-
-const container = (delay) => ({
-  hidden: { x: -100, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: { type: "spring", stiffness: 400, damping: 30, delay },
-  },
-});
+import { fadeUp, stagger, transitions } from "../../lib/motion";
+import Button from "../ui/Button";
+import Tag from "../ui/Tag";
+import profilePic from "../../assets/Agustin.png";
+import { CV_URL_ES, CV_URL_EN } from "../../constants";
+import { FaArrowRight, FaGithub } from "react-icons/fa";
 
 function Hero() {
   const { t, language } = useTranslation();
   const cvUrl = language === "es" ? CV_URL_ES : CV_URL_EN;
 
   const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <div id="hero" className="pt-24 pb-8 lg:pb-12 lg:mb-8 min-h-[85vh] flex items-center">
-      <div className="flex flex-wrap w-full">
-        <div className="w-full lg:w-1/2">
-          <div className="flex flex-col items-center lg:items-start">
-            {/* Gradiente de fondo más visible */}
-            <div className="absolute left-0 top-0 w-96 h-96 bg-cyan-500/15 dark:bg-cyan-500/8 rounded-full blur-3xl -z-10" />
-            <div className="absolute right-1/4 top-1/3 w-64 h-64 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl -z-10" />
-            
-            <motion.span
-              variants={container(0)}
-              initial="hidden"
-              animate="visible"
-              className="font-mono text-[11px] uppercase tracking-[0.25em] text-cyan-600 dark:text-cyan-400 mb-3"
-            >
-              AV — Full-Stack Engineer
-            </motion.span>
+    <section
+      id="hero"
+      className="pt-28 pb-16 lg:pb-24 min-h-[88vh] flex items-center"
+    >
+      <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Columna texto — 8/12 (proporción editorial) */}
+        <motion.div
+          variants={stagger(0.05)}
+          initial="hidden"
+          animate="visible"
+          className="lg:col-span-8 flex flex-col items-start"
+        >
+          {/* Eyebrow mono — location + niche */}
+          <motion.div variants={fadeUp} className="mb-6 flex items-center gap-3">
+            <Tag variant="live" size="sm" dot>
+              {t("hero.eyebrowStatus")}
+            </Tag>
+            <span className="font-mono text-2xs uppercase tracking-mono text-ink-muted">
+              {t("hero.eyebrowLocation")}
+            </span>
+          </motion.div>
 
-            <motion.h1
-              variants={container(0.1)}
-              initial="hidden"
-              animate="visible"
-              className="pb-2 text-5xl font-bold tracking-tight lg:text-7xl
-              text-neutral-900 dark:text-white
-              bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900
-              dark:from-white dark:via-neutral-200 dark:to-white
-              bg-clip-text text-transparent font-display"
-            >
-              Agustin Velazquez
-            </motion.h1>
+          {/* Display name — Instrument Serif, jumbo */}
+          <motion.h1
+            variants={fadeUp}
+            className="font-display text-[clamp(3.25rem,8vw,7rem)] leading-none tracking-tightest
+              text-ink-primary mb-6"
+          >
+            Agustin{" "}
+            <span className="italic text-ink-secondary">Velazquez</span>
+          </motion.h1>
 
-            <motion.h2
-              variants={container(0.4)}
-              initial="hidden"
-              animate="visible"
-              className="text-xl lg:text-2xl font-medium tracking-tight mb-2 mt-2
-              text-neutral-700 dark:text-neutral-200"
-            >
-              <span className="text-neutral-900 dark:text-white">Full-stack craft.</span>{" "}
-              <span className="text-cyan-600 dark:text-cyan-400">AI-native mindset.</span>
-            </motion.h2>
+          {/* Subhead with voice — 1 línea con punto de vista */}
+          <motion.p
+            variants={fadeUp}
+            className="text-xl lg:text-2xl font-medium tracking-snug
+              text-ink-secondary max-w-2xl mb-6 leading-snug"
+          >
+            {t("hero.subheadLead")}{" "}
+            <span className="text-ink-primary">{t("hero.subheadAccent")}</span>
+          </motion.p>
 
-            <motion.h3
-              variants={container(0.55)}
-              initial="hidden"
-              animate="visible"
-              className="text-base lg:text-lg font-medium tracking-tight mb-4
-              text-neutral-500 dark:text-neutral-400"
-            >
-              {t("hero.title")}
-            </motion.h3>
+          {/* Body copy — bio corta */}
+          <motion.p
+            variants={fadeUp}
+            className="text-base lg:text-lg max-w-xl text-ink-muted leading-relaxed mb-8"
+          >
+            {t("hero.content")}
+          </motion.p>
 
-            <motion.p
-              variants={container(1)}
-              initial="hidden"
-              animate="visible"
-              className="max-w-xl py-4 text-base leading-snug
-              text-neutral-600 dark:text-neutral-400 lg:text-lg"
-            >
-              {t("hero.content")}
-            </motion.p>
+          {/* Proof bar — métricas reales en mono */}
+          <motion.dl
+            variants={fadeUp}
+            className="flex flex-wrap items-center gap-x-8 gap-y-4 mb-10
+              font-mono text-2xs uppercase tracking-mono text-ink-muted"
+          >
+            <ProofMetric value="3" label={t("hero.proof.stores")} />
+            <span className="hidden sm:inline text-ink-faint">·</span>
+            <ProofMetric value="15+" label={t("hero.proof.projects")} />
+            <span className="hidden sm:inline text-ink-faint">·</span>
+            <ProofMetric value="2yr" label={t("hero.proof.production")} />
+            <span className="hidden sm:inline text-ink-faint">·</span>
+            <ProofMetric
+              value="Mental"
+              label={t("hero.proof.workingAt")}
+              accent
+            />
+          </motion.dl>
 
-            {/* Métricas rápidas */}
-            <motion.div
-              variants={container(1.1)}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-wrap gap-6 py-4 text-sm font-medium
-              text-neutral-600 dark:text-neutral-400"
+          {/* CTA jerárquico — 1 primario, 1 secundario, 1 link */}
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-wrap items-center gap-3"
+          >
+            <Button
+              variant="primary"
+              size="lg"
+              trailingIcon={FaArrowRight}
+              onClick={() => scrollToSection("contact")}
             >
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-cyan-500" />
-                {t("hero.stats.projects")}
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-cyan-500" />
-                {t("hero.stats.apps")}
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-cyan-500" />
-                {t("hero.stats.stack")}
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-                <span className="text-cyan-700 dark:text-cyan-300 font-semibold">
-                  {t("hero.stats.agents")}
-                </span>
-              </span>
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              variants={container(1.2)}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-wrap gap-4 mt-4"
+              {t("hero.ctaPrimary")}
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              onClick={() => scrollToSection("projects")}
             >
-              <motion.button
-                onClick={() => scrollToSection("contact")}
-                className="px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400
-                text-white font-semibold shadow-lg hover:shadow-cyan-500/30
-                transition-all duration-200"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {t("hero.ctaHire")}
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection("projects")}
-                className="px-6 py-3 rounded-lg border-2 border-cyan-500
-                text-cyan-500 hover:bg-cyan-500/10 font-semibold
-                transition-all duration-200"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {t("hero.ctaProjects")}
-              </motion.button>
-              <motion.a
+              {t("hero.ctaSecondary")}
+            </Button>
+            <div className="flex items-center gap-1 ml-2">
+              <Button
+                variant="link"
+                size="md"
+                as="a"
                 href={cvUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-lg border-2 border-neutral-400
-                text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100
-                dark:hover:bg-neutral-800 font-semibold transition-all duration-200"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
+                download={`Agustin-Velazquez-CV-${language.toUpperCase()}.pdf`}
               >
                 {t("hero.ctaCV")}
-              </motion.a>
-            </motion.div>
-          </div>
-        </div>
+              </Button>
+              <span className="text-ink-faint">·</span>
+              <Button
+                variant="link"
+                size="md"
+                as="a"
+                href="https://github.com/AgustinVelazquez0"
+                target="_blank"
+                rel="noopener noreferrer"
+                leadingIcon={FaGithub}
+              >
+                GitHub
+              </Button>
+            </div>
+          </motion.div>
 
-        <div className="w-full lg:w-1/2 lg:p-8 mt-8 lg:mt-0">
-          <div className="flex justify-center">
-            <motion.div
-              initial={{ x: 100, opacity: 0, scale: 0.8 }}
-              animate={{ x: 0, opacity: 1, scale: 1 }}
-              transition={{ type: "spring", stiffness: 350, damping: 28, delay: 0.3 }}
-              className="relative"
+          {/* Hint de command palette — pista signature */}
+          <motion.p
+            variants={fadeUp}
+            transition={{ ...transitions.standard, delay: 0.4 }}
+            className="mt-12 font-mono text-2xs uppercase tracking-mono text-ink-faint"
+          >
+            {t("hero.cmdkHint")}{" "}
+            <kbd
+              className="ml-1 inline-flex items-center px-1.5 h-5 rounded
+              border border-line-DEFAULT bg-surface-1 text-ink-secondary
+              font-mono text-[10px] tracking-normal"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-2xl blur-2xl -z-10" />
-              
-              <motion.img
+              ⌘K
+            </kbd>
+          </motion.p>
+        </motion.div>
+
+        {/* Columna imagen — 4/12 — sin glow, con marco editorial */}
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ ...transitions.enter, delay: 0.2 }}
+          className="lg:col-span-4 flex justify-center lg:justify-end"
+        >
+          <figure className="relative">
+            <div className="relative overflow-hidden rounded-xl border border-line-DEFAULT bg-surface-1">
+              <img
                 src={profilePic}
-                alt="Agustin Velazquez"
+                alt="Agustin Velazquez — Full-Stack Engineer"
                 loading="eager"
-                className="w-[280px] h-[420px] object-cover rounded-2xl shadow-2xl
-                border-2 border-cyan-400/50"
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(34,211,238,0.3)"
-                }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                width="320"
+                height="440"
+                className="w-[280px] lg:w-[320px] h-[400px] lg:h-[440px] object-cover
+                  grayscale-[15%] hover:grayscale-0
+                  transition-all duration-slow ease-standard"
               />
-            </motion.div>
-          </div>
-        </div>
+              {/* Marca de agua editorial inferior */}
+              <div className="absolute bottom-0 inset-x-0 px-4 py-3
+                bg-gradient-to-t from-black/60 to-transparent
+                flex items-center justify-between">
+                <span className="font-mono text-[10px] uppercase tracking-mono text-white/80">
+                  AV — 2026
+                </span>
+                <span className="font-mono text-[10px] uppercase tracking-mono text-accent">
+                  ● en vivo
+                </span>
+              </div>
+            </div>
+            {/* Etiqueta lateral tipo editorial */}
+            <figcaption
+              className="absolute -right-3 top-6 rotate-90 origin-top-right
+              font-mono text-[10px] uppercase tracking-mono text-ink-faint
+              hidden lg:block"
+            >
+              Portrait — Montevideo, UY
+            </figcaption>
+          </figure>
+        </motion.div>
       </div>
+    </section>
+  );
+}
+
+function ProofMetric({ value, label, accent = false }) {
+  return (
+    <div className="flex items-baseline gap-2">
+      <span
+        className={`font-display text-lg lowercase tracking-snug ${
+          accent ? "text-accent" : "text-ink-primary"
+        }`}
+      >
+        {value}
+      </span>
+      <span className="text-ink-muted">{label}</span>
     </div>
   );
 }

@@ -1,116 +1,126 @@
-import { FaLinkedin, FaGithub, FaBars, FaTimes } from "react-icons/fa";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FaLinkedin, FaGithub, FaBars, FaXmark } from "react-icons/fa6";
+import { useTranslation } from "../../hooks/useTranslation";
+import { transitions } from "../../lib/motion";
 import ThemeToggle from "../features/ThemeToggle";
 import LanguageToggle from "../features/LenguageToggle";
-import { useState, useEffect } from "react";
-import { useTranslation } from "../../hooks/useTranslation";
 import AVLogo from "../brand/AVLogo";
+import Tag from "../ui/Tag";
 
-function NavBar({ sidebarOpen, setSidebarOpen }) {
+function NavBar({ sidebarOpen, setSidebarOpen, onOpenPalette }) {
   const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 32);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
+      initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      transition={transitions.slow}
+      className={[
+        "fixed top-0 left-0 right-0 z-50",
+        "transition-colors duration-base ease-standard",
         scrolled
-          ? "bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl shadow-lg border-b border-neutral-200 dark:border-neutral-800"
-          : "bg-transparent"
-      }`}
+          ? "bg-surface-overlay backdrop-blur-xl border-b border-line-subtle"
+          : "bg-transparent",
+      ].join(" ")}
     >
-      <div className="container mx-auto px-8">
-        <div className="flex items-center justify-between py-4">
-          {/* Menú secciones a la izquierda del logo AV */}
-          <div className="flex items-center gap-2 sm:gap-3">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between py-3.5">
+          {/* Left: menu + logo */}
+          <div className="flex items-center gap-3">
             <button
               type="button"
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg
-              bg-white/90 dark:bg-neutral-800/90
-              text-neutral-600 dark:text-neutral-300
-              border border-neutral-300 dark:border-neutral-600
-              hover:bg-neutral-100 dark:hover:bg-neutral-700
-              hover:text-neutral-900 dark:hover:text-white
-              hover:border-neutral-400 dark:hover:border-neutral-500
-              hover:scale-[1.02] active:scale-[0.98]
-              backdrop-blur-sm
-              transition-transform duration-200 ease-out
-              group animate-sidebar-btn-entrance"
+              className="h-9 w-9 inline-flex items-center justify-center rounded-md
+                bg-surface-1 border border-line-subtle
+                text-ink-secondary hover:text-ink-primary hover:border-line-DEFAULT
+                transition-colors duration-fast
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               aria-expanded={sidebarOpen}
               aria-controls="portfolio-sections-menu"
               aria-label={t("nav.menuToggle")}
             >
-              <span
-                className={`flex items-center justify-center transition-transform duration-200 ease-out ${sidebarOpen ? "rotate-90" : ""}`}
-                aria-hidden
-              >
-                {sidebarOpen ? (
-                  <FaTimes className="w-5 h-5 group-hover:text-cyan-400 transition-colors" />
-                ) : (
-                  <FaBars className="w-5 h-5 group-hover:text-cyan-400 transition-colors" />
-                )}
-              </span>
+              {sidebarOpen ? (
+                <FaXmark className="w-4 h-4" />
+              ) : (
+                <FaBars className="w-4 h-4" />
+              )}
             </button>
-            <motion.a
+
+            <a
               href="#hero"
-              className="flex items-center gap-2 sm:gap-3"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 400 }}
+              className="flex items-center gap-2.5 group"
               aria-label="AV — Agustin Velazquez"
             >
-              <AVLogo variant="icon" className="w-10 h-10 shadow-lg rounded-[14px]" />
-              <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono uppercase tracking-[0.18em] font-medium
-                bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                {t("nav.availability")}
+              <AVLogo
+                variant="icon"
+                className="w-9 h-9 rounded-lg"
+              />
+              <span className="hidden sm:flex">
+                <Tag variant="live" size="xs" dot>
+                  {t("nav.availability")}
+                </Tag>
               </span>
-            </motion.a>
+            </a>
           </div>
 
-          {/* Iconos sociales - más grandes en desktop */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3">
-              <motion.a
+          {/* Right: command k + socials + toggles */}
+          <div className="flex items-center gap-2 lg:gap-3">
+            {/* CMD+K trigger */}
+            {onOpenPalette ? (
+              <button
+                type="button"
+                onClick={onOpenPalette}
+                className="hidden md:inline-flex items-center gap-2 h-9 pl-3 pr-1.5 rounded-md
+                  bg-surface-1 border border-line-subtle
+                  text-ink-muted hover:text-ink-primary hover:border-line-DEFAULT
+                  transition-colors duration-fast
+                  text-sm"
+                aria-label="Open command palette"
+              >
+                <span>Buscar…</span>
+                <kbd className="font-mono text-2xs px-1.5 h-5 inline-flex items-center
+                  rounded border border-line-DEFAULT bg-surface-0 text-ink-faint">
+                  ⌘K
+                </kbd>
+              </button>
+            ) : null}
+
+            <div className="flex items-center gap-1.5">
+              <a
                 href="https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn p-2 rounded-md bg-neutral-100 dark:bg-neutral-800 text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300 lg:p-2.5"
-                whileHover={{ scale: 1.08, rotate: 3 }}
-                whileTap={{ scale: 0.95 }}
                 aria-label="LinkedIn"
+                className="w-9 h-9 inline-flex items-center justify-center rounded-md
+                  text-ink-secondary hover:text-ink-primary hover:bg-surface-1
+                  transition-colors duration-fast"
               >
-                <FaLinkedin className="text-xl lg:text-2xl" />
-              </motion.a>
-
-              <motion.a
+                <FaLinkedin className="text-base" />
+              </a>
+              <a
                 href="https://github.com/AgustinVelazquez0"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn p-2 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white hover:bg-neutral-900 dark:hover:bg-neutral-700 hover:text-white transition-all duration-300 lg:p-2.5"
-                whileHover={{ scale: 1.08, rotate: -3 }}
-                whileTap={{ scale: 0.95 }}
                 aria-label="GitHub"
+                className="w-9 h-9 inline-flex items-center justify-center rounded-md
+                  text-ink-secondary hover:text-ink-primary hover:bg-surface-1
+                  transition-colors duration-fast"
               >
-                <FaGithub className="text-xl lg:text-2xl" />
-              </motion.a>
+                <FaGithub className="text-base" />
+              </a>
             </div>
 
-            {/* Separador */}
-            <div className="h-8 w-px bg-neutral-300 dark:bg-neutral-700" />
+            <div className="h-6 w-px bg-line-DEFAULT mx-1" aria-hidden />
 
-            {/* Toggles */}
-            <div className="flex gap-3 items-center">
+            <div className="flex items-center gap-1.5">
               <ThemeToggle />
               <LanguageToggle />
             </div>

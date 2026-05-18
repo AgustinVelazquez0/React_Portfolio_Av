@@ -1,154 +1,123 @@
-import { lazy, Suspense, useState, useEffect } from "react";
-import Navbar from "./components/layout/Navbar.jsx";
-import Sidebar from "./components/layout/Sidebar.jsx";
-import Footer from "./components/layout/Footer.jsx";
-import Hero from "./components/sections/Hero";
-import { LanguageProvider } from "./context/LenguageContext.jsx";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 
-const Technologies = lazy(() => import("./components/sections/Technologies"));
-const Experience = lazy(() => import("./components/sections/Experience"));
-const Projects = lazy(() => import("./components/sections/Projects"));
-const Contact = lazy(() => import("./components/sections/Contact"));
-const Certifications = lazy(() =>
-  import("./components/sections/Certifications.jsx")
-);
-
-const Loading = () => (
-  <div className="flex justify-center items-center py-12">
-    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-500"></div>
-  </div>
-);
+const NowPage = lazy(() => import("./pages/NowPage"));
+const UsesPage = lazy(() => import("./pages/UsesPage"));
+const ChangelogPage = lazy(() => import("./pages/ChangelogPage"));
 
 function App() {
-  const [currentSection, setCurrentSection] = useState("hero");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["hero", "technologies", "experience", "certifications", "projects", "contact"];
-      const scrollPosition = window.scrollY + 200;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const element = document.getElementById(sections[i]);
-        if (element && element.offsetTop <= scrollPosition) {
-          if (currentSection !== sections[i]) {
-            setCurrentSection(sections[i]);
-          }
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [currentSection]);
-
-  const handleSectionChange = (sectionId) => {
-    setIsTransitioning(true);
-    
-    // Scroll suave: offset para navbar. Si la sección queda cortada arriba, aumentar valor.
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const navbarOffset = 120;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarOffset;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-      setCurrentSection(sectionId);
-    }
-    
-    // Duración de la animación
-    setTimeout(() => {
-      setIsTransitioning(false);
-    }, 500);
-  };
-
+  const [paletteOpen, setPaletteOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+
   useEffect(() => {
     const handleScrollProgress = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress(totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0);
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(
+        totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0
+      );
     };
-    window.addEventListener("scroll", handleScrollProgress);
+    window.addEventListener("scroll", handleScrollProgress, { passive: true });
     handleScrollProgress();
     return () => window.removeEventListener("scroll", handleScrollProgress);
   }, []);
 
+  // ⌘K → open command palette (global)
+  useEffect(() => {
+    const handler = (e) => {
+      const isCmd = e.metaKey || e.ctrlKey;
+      if (isCmd && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
+  // Easter egg: console branding (Tier 5)
+  useEffect(() => {
+    const styles = {
+      title:
+        "font-family: monospace; font-size: 14px; padding: 8px 12px; background: #09090b; color: #fbbf24; border-radius: 4px;",
+      body: "font-family: monospace; font-size: 12px; color: #a1a1aa; line-height: 1.6;",
+    };
+    console.log("%cAV — Agustin Velazquez", styles.title);
+    console.log(
+      "%cFull-Stack Engineer · Montevideo, UY\n" +
+        "Looking under the hood? Press ⌘K for the command palette.\n" +
+        "Get in touch: agubolso2@gmail.com",
+      styles.body
+    );
+    if (typeof window !== "undefined") {
+      window.av = {
+        name: "Agustin Velazquez",
+        role: "Full-Stack Engineer",
+        location: "Montevideo, UY",
+        email: "agubolso2@gmail.com",
+        github: "https://github.com/AgustinVelazquez0",
+        linkedin: "https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/",
+        stack: [
+          "React",
+          "Next.js",
+          "React Native",
+          "Node",
+          "PostgreSQL",
+          "AI Agents",
+        ],
+        builtWith: "Vite + React + Tailwind + Framer Motion",
+      };
+    }
+  }, []);
+
   return (
-    <LanguageProvider>
+    <>
       {/* Scroll progress bar */}
       <div
-        className="fixed top-0 left-0 right-0 h-0.5 bg-cyan-500/30 z-[60] origin-left"
+        aria-hidden
+        className="fixed top-0 left-0 right-0 h-[2px] bg-accent z-[60] origin-left
+          transition-transform duration-fast ease-decel"
         style={{ transform: `scaleX(${scrollProgress / 100})` }}
       />
-      <div
-        className="overflow-x-hidden antialiased
-        selection:bg-cyan-300 selection:text-cyan-900
-        text-text-light dark:text-text-dark
-        bg-background-light dark:bg-black
-        min-h-screen relative"
-      >
-        <Sidebar
-          isOpen={sidebarOpen}
-          setIsOpen={setSidebarOpen}
-          onSectionChange={handleSectionChange}
-          currentSection={currentSection}
-        />
-        
-        {/* Animación de cambio de página tipo libro - suave y elegante */}
-        <AnimatePresence>
-          {isTransitioning && (
-            <motion.div
-              initial={{ 
-                opacity: 0
-              }}
-              animate={{ 
-                opacity: 0.7
-              }}
-              exit={{ 
-                opacity: 0
-              }}
-              transition={{ 
-                duration: 0.4,
-                ease: [0.25, 0.46, 0.45, 0.94]
-              }}
-              className="fixed inset-0 z-[100] pointer-events-none
-              bg-white dark:bg-neutral-900
-              backdrop-blur-[2px]"
-            >
-              {/* Efecto de sombra sutil en el borde derecho */}
-              <div className="absolute right-0 top-0 bottom-0 w-2
-              bg-gradient-to-r from-black/10 via-black/5 to-transparent
-              dark:from-white/5 dark:via-white/2 dark:to-transparent" />
-            </motion.div>
-          )}
-        </AnimatePresence>
 
-        <div className="fixed top-0 -z-10 h-full w-full">
-          <div
-            className="absolute top-0 z-[-2] h-screen w-screen
-            bg-background-dark/90 dark:bg-black"
-          ></div>
-        </div>
-        <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-        <div className="container mx-auto px-8">
-          <Hero />
-          <Suspense fallback={<Loading />}>
-            <Technologies />
-            <Experience />
-            <Certifications />
-            <Projects />
-            <Contact />
-            <Footer />
-          </Suspense>
-        </div>
+      {/* Skip-link accesible */}
+      <a
+        href="#hero"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100]
+          focus:px-3 focus:py-2 focus:rounded focus:bg-accent focus:text-accent-ink focus:font-medium"
+      >
+        Skip to content
+      </a>
+
+      <div className="overflow-x-hidden antialiased min-h-screen relative bg-surface-0 text-ink-primary">
+        <Suspense fallback={<div className="h-24" />}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage
+                  paletteOpen={paletteOpen}
+                  setPaletteOpen={setPaletteOpen}
+                />
+              }
+            />
+            <Route path="/now" element={<NowPage />} />
+            <Route path="/uses" element={<UsesPage />} />
+            <Route path="/changelog" element={<ChangelogPage />} />
+            <Route
+              path="*"
+              element={
+                <HomePage
+                  paletteOpen={paletteOpen}
+                  setPaletteOpen={setPaletteOpen}
+                />
+              }
+            />
+          </Routes>
+        </Suspense>
       </div>
-    </LanguageProvider>
+    </>
   );
 }
 

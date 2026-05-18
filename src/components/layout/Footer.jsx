@@ -1,74 +1,98 @@
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa6";
 import { useTranslation } from "../../hooks/useTranslation";
 import { CONTACT } from "../../constants";
 import AVLogo from "../brand/AVLogo";
 
+const FOOTER_LINKS = [
+  { to: "/now", label: "/now" },
+  { to: "/uses", label: "/uses" },
+  { to: "/changelog", label: "/changelog" },
+];
+
 function Footer() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-neutral-200 dark:border-neutral-800 py-10 mt-8">
-      <div className="container mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-          {/* Brand */}
-          <div className="flex flex-col gap-3">
-            <div className="text-cyan-500 dark:text-cyan-400">
-              <AVLogo variant="monogram" className="w-12 h-auto" />
-            </div>
-            <p className="font-display text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-xs">
-              <span className="text-neutral-900 dark:text-white">Code is the medium.</span>{" "}
-              <span className="text-cyan-600 dark:text-cyan-400">Detail is the difference.</span>
-            </p>
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-500">
-              AV — Agustin Velazquez
-            </p>
+    <footer className="border-t border-line-DEFAULT py-12 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+        {/* Brand + tagline */}
+        <div className="flex flex-col gap-3">
+          <div className="text-ink-primary">
+            <AVLogo variant="monogram" className="w-10 h-auto" />
           </div>
+          <p className="font-display text-base text-ink-secondary leading-snug max-w-xs italic">
+            Code is the medium. Detail is the difference.
+          </p>
+          <p className="font-mono text-2xs uppercase tracking-mono text-ink-faint mt-1">
+            AV — Agustin Velazquez · Montevideo, UY
+          </p>
+        </div>
 
-          {/* Copyright */}
-          <div className="flex flex-col gap-1 md:items-center text-center">
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              {t("footer.copyright")}
-            </p>
-            <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-1">
-              {t("footer.madeWith")}
-            </p>
-          </div>
+        {/* Links pages */}
+        <div className="flex flex-col gap-2 md:items-center">
+          <span className="font-mono text-2xs uppercase tracking-mono text-ink-faint mb-2">
+            {language === "es" ? "Páginas" : "Pages"}
+          </span>
+          {FOOTER_LINKS.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              className="text-sm text-ink-secondary hover:text-ink-primary transition-colors"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </div>
 
-          {/* Links */}
-          <div className="flex flex-col items-start md:items-end gap-2">
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-500">
-              {t("footer.links")}
-            </span>
-            <div className="flex gap-4">
-              <a
-                href="https://github.com/AgustinVelazquez0"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-neutral-600 dark:text-neutral-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
-                aria-label="GitHub"
-              >
-                <FaGithub className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-neutral-600 dark:text-neutral-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin className="w-5 h-5" />
-              </a>
-              <a
-                href={`mailto:${CONTACT.email}`}
-                className="text-neutral-600 dark:text-neutral-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
-                aria-label="Email"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </a>
-            </div>
+        {/* Social + copyright */}
+        <div className="flex flex-col gap-3 md:items-end">
+          <span className="font-mono text-2xs uppercase tracking-mono text-ink-faint mb-1">
+            {t("footer.links")}
+          </span>
+          <div className="flex items-center gap-3">
+            <a
+              href={CONTACT.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="w-9 h-9 rounded-md inline-flex items-center justify-center
+                border border-line-subtle text-ink-secondary
+                hover:border-line-DEFAULT hover:text-ink-primary
+                transition-colors duration-fast"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href={CONTACT.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="w-9 h-9 rounded-md inline-flex items-center justify-center
+                border border-line-subtle text-ink-secondary
+                hover:border-line-DEFAULT hover:text-ink-primary
+                transition-colors duration-fast"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href={`mailto:${CONTACT.email}`}
+              aria-label="Email"
+              className="w-9 h-9 rounded-md inline-flex items-center justify-center
+                border border-line-subtle text-ink-secondary
+                hover:border-line-DEFAULT hover:text-ink-primary
+                transition-colors duration-fast"
+            >
+              <FaEnvelope />
+            </a>
           </div>
+          <p className="text-xs text-ink-muted mt-2">
+            © {year} Agustin Velazquez.
+          </p>
+          <p className="font-mono text-2xs uppercase tracking-mono text-ink-faint">
+            Built with React · Vite · Tailwind
+          </p>
         </div>
       </div>
     </footer>

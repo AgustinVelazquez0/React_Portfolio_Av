@@ -8,123 +8,90 @@
 @import "@fontsource/jetbrains-mono/500.css";
 @import "@fontsource/jetbrains-mono/600.css";
 
+/* Design tokens — single source of truth */
+@import "./styles/tokens.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   font-family: "Geist Sans", "Geist", "Inter", system-ui, sans-serif;
-  --font-display: "Geist Sans", "Geist", "Inter", sans-serif;
+  --font-display: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --brand-cyan: #22d3ee;
-  --brand-void: #0a0a0a;
 }
 
-/* Mejoras profesionales y formales */
 html {
   scroll-behavior: smooth;
+  color-scheme: light dark;
 }
 
-/* Mejor legibilidad */
 body {
+  background-color: var(--surface-0);
+  color: var(--ink-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "calt" 1;
+  letter-spacing: var(--tracking-normal);
+  transition: background-color var(--duration-base) var(--ease-standard);
 }
 
-/* Selección de texto profesional */
+/* Editorial selection — accent amber sin saturar */
 ::selection {
-  background: rgba(59, 130, 246, 0.2);
-  color: inherit;
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 
-/* Espaciado al hacer scroll a las secciones */
+/* Scroll-margin para anclas con navbar fijo */
 #hero,
 #technologies,
 #experience,
 #certifications,
 #projects,
-#contact {
-  scroll-margin-top: 120px;
+#contact,
+#bento,
+#case-studies {
+  scroll-margin-top: 96px;
 }
 
-/* Animación de cambio de página tipo libro - mejorada */
-@keyframes pageFlip {
-  0% {
-    transform: perspective(2000px) rotateY(0deg) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: perspective(2000px) rotateY(-90deg) scale(0.98);
-    opacity: 0.4;
-  }
-  100% {
-    transform: perspective(2000px) rotateY(-180deg) scale(0.98);
-    opacity: 0.3;
-  }
-}
-
-/* Estilos para scrollbar personalizado */
+/* Scrollbar refinado */
 .scrollbar-thin {
   scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
 }
-
-.scrollbar-thumb-neutral-500\/50::-webkit-scrollbar-thumb {
-  background-color: rgba(115, 115, 115, 0.5);
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--border-strong);
   border-radius: 4px;
 }
-
-.scrollbar-track-transparent::-webkit-scrollbar-track {
+.scrollbar-thin::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.scrollbar-thin::-webkit-scrollbar {
-  width: 6px;
-}
-
-/* Efectos 3D mejorados */
-@supports (backdrop-filter: blur(10px)) {
-  .backdrop-blur-xl {
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-  }
-}
-
-/* Entrada del botón sidebar - CSS para no pausar al scrollear */
-@keyframes sidebar-btn-entrance {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-.animate-sidebar-btn-entrance {
-  animation: sidebar-btn-entrance 0.5s ease-out 0.3s both;
-}
-
-/* Animación de flotación para iconos - solo CSS (compositor), no depende de Framer ni del scroll */
+/* ============================================================
+   IconCard (preservar comportamiento existente, simplificar shadows)
+   ============================================================ */
 @keyframes icon-float {
-  0%, 100% {
-    transform: translate3d(0, 10px, 0);
+  0%,
+  100% {
+    transform: translate3d(0, 8px, 0);
   }
   50% {
-    transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -8px, 0);
   }
 }
 
-/* IconCard: hover scale + flip 3D sin motion/react — evita pausas al hacer scroll */
 .icon-card-root {
   perspective: 1000px;
-  transition: transform 0.3s ease-out;
+  transition: transform var(--duration-base) var(--ease-standard);
 }
-
 .icon-card-root:hover {
   transform: scale(1.05);
 }
-
 .icon-card-float {
   height: 100%;
   width: 100%;
@@ -132,53 +99,55 @@ body {
   animation-duration: var(--icon-float-duration, 4s);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  /* Capa propia: el motor sigue interpolando durante scroll */
   will-change: transform;
   transform: translateZ(0);
 }
-
 .icon-card-flip {
   transform-style: preserve-3d;
   transition: transform 0.6s ease-out;
 }
-
 .icon-card-root:hover .icon-card-flip {
   transform: rotateY(180deg);
 }
-
 .icon-card-face {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
-
 .icon-card-face--back {
   transform: rotateY(180deg);
 }
 
-/* Gradientes animados para el sidebar */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
+/* Sidebar entrance — sin glow, simple desliz */
+@keyframes sidebar-btn-entrance {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
   }
-  50% {
-    background-position: 100% 50%;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
+.animate-sidebar-btn-entrance {
+  animation: sidebar-btn-entrance var(--duration-slow) var(--ease-decel) both;
 }
 
-/* Hover elevado para cards de proyectos */
-.project-card-hover {
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-.project-card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(34, 211, 238, 0.25);
+/* ============================================================
+   Editorial display number (para hero, case studies)
+   ============================================================ */
+.display-numeral {
+  font-family: var(--font-display);
+  font-feature-settings: "tnum" 1, "lnum" 1, "ss01" 1;
+  letter-spacing: var(--tracking-tight);
 }
 
-/* Estilo global para botones: tipografía seria, moderna, cursiva, menos espaciado */
-button, [role="button"], .btn {
-  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-size: 1rem;
-  letter-spacing: -0.02em;
-  word-spacing: -0.05em;
+/* Print stylesheet base — preparado para Tier 5 */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
 }

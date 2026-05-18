@@ -5,38 +5,96 @@ export default {
   theme: {
     extend: {
       colors: {
-        // AV brand palette — see /public/brand/README.md
+        // Sistema de tokens via CSS vars (single source of truth: src/styles/tokens.css)
+        surface: {
+          0: "var(--surface-0)",
+          1: "var(--surface-1)",
+          2: "var(--surface-2)",
+          3: "var(--surface-3)",
+          overlay: "var(--surface-overlay)",
+        },
+        ink: {
+          primary: "var(--ink-primary)",
+          secondary: "var(--ink-secondary)",
+          muted: "var(--ink-muted)",
+          faint: "var(--ink-faint)",
+        },
+        line: {
+          subtle: "var(--border-subtle)",
+          DEFAULT: "var(--border-default)",
+          strong: "var(--border-strong)",
+        },
+        accent: {
+          DEFAULT: "var(--accent)",
+          soft: "var(--accent-soft)",
+          deep: "var(--accent-deep)",
+          ink: "var(--accent-ink)",
+        },
+        signal: {
+          success: "var(--signal-success)",
+          warning: "var(--signal-warning)",
+          danger: "var(--signal-danger)",
+          info: "var(--signal-info)",
+        },
+        // Legacy aliases (compat con código no migrado todavía)
         brand: {
           cyan: "#22D3EE",
-          void: "#0A0A0A",
-          charcoal: "#1A1A1A",
-          steel: "#404040",
+          void: "#09090B",
+          charcoal: "#18181B",
+          steel: "#3F3F46",
           amber: "#F59E0B",
-          pure: "#FFFFFF",
+          pure: "#FAFAF9",
         },
         primary: {
-          light: "#22D3EE",
-          dark: "#22D3EE",
-        },
-        secondary: {
-          light: "#10B981",
-          dark: "#34D399",
+          light: "var(--accent)",
+          dark: "var(--accent)",
         },
         background: {
-          light: "#FFFFFF",
-          dark: "#0A0A0A",
+          light: "var(--surface-0)",
+          dark: "var(--surface-0)",
         },
         text: {
-          light: "#1F2937",
-          dark: "#F9FAFB",
+          light: "var(--ink-primary)",
+          dark: "var(--ink-primary)",
         },
       },
       fontFamily: {
         sans: ["Geist Sans", "Geist", "Inter", "system-ui", "sans-serif"],
-        display: ["Geist Sans", "Geist", "Inter", "system-ui", "sans-serif"],
+        display: [
+          "Instrument Serif",
+          "Cormorant Garamond",
+          "Georgia",
+          "serif",
+        ],
         heading: ["Geist Sans", "Geist", "Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "ui-monospace", "monospace"],
-        btn: ["Cormorant Garamond", "Georgia", "Times New Roman", "serif"],
+      },
+      fontSize: {
+        "2xs": ["var(--type-2xs)", { lineHeight: "var(--leading-normal)" }],
+      },
+      letterSpacing: {
+        tightest: "var(--tracking-tight)",
+        snug: "var(--tracking-snug)",
+        mono: "var(--tracking-mono)",
+      },
+      transitionTimingFunction: {
+        emphasized: "var(--ease-emphasized)",
+        standard: "var(--ease-standard)",
+        decel: "var(--ease-decel)",
+      },
+      transitionDuration: {
+        fast: "120ms",
+        base: "180ms",
+        slow: "280ms",
+      },
+      boxShadow: {
+        soft: "var(--shadow-sm)",
+        medium: "var(--shadow-md)",
+        elevated: "var(--shadow-lg)",
+        ring: "var(--shadow-ring)",
+      },
+      borderRadius: {
+        DEFAULT: "var(--radius-md)",
       },
     },
   },

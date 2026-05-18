@@ -11,14 +11,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --cyan: #22d3ee;
-    --void: #0a0a0a;
-    --charcoal: #1a1a1a;
-    --steel: #404040;
-    --ink: #111;
-    --muted: #666;
-    --line: #e5e5e5;
+    /* AV brand 2.0 — amber editorial accent (matches main portfolio) */
+    --cyan: #b45309; /* legacy var name kept for compat; now amber-deep */
+    --accent: #b45309;
+    --accent-ink: #422006;
+    --void: #09090b;
+    --charcoal: #18181b;
+    --steel: #3f3f46;
+    --ink: #09090b;
+    --muted: #71717a;
+    --line: #e4e4e7;
     --paper: #ffffff;
+    --paper-soft: #fafaf9;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
@@ -239,13 +243,58 @@
   /* ===== Print ===== */
   @page { size: A4; margin: 12mm; }
   @media print {
-    body { background: #fff; }
-    .toolbar { display: none; }
-    .page { box-shadow: none; margin: 0; padding: 0; max-width: 100%; border-radius: 0; }
-    a { color: var(--ink); border: none; }
-    .xp-tech span, .stack-list { color: #333; }
-    .key-metric { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .av-mark, .toolbar-brand .mark, .brand-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    @page {
+      size: A4;
+      margin: 12mm 14mm;
+    }
+    body {
+      background: #fff;
+      font-size: 10pt;
+      line-height: 1.4;
+    }
+    html, body { color: #09090b !important; }
+    .toolbar { display: none !important; }
+    .page {
+      box-shadow: none;
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      border-radius: 0;
+    }
+    a {
+      color: inherit;
+      border: none;
+      text-decoration: none;
+    }
+    .xp-tech span, .stack-list {
+      color: #18181b;
+    }
+    /* Preserve brand color on print where intentional (badges, marks) */
+    .key-metric,
+    .av-mark,
+    .toolbar-brand .mark,
+    .brand-bar,
+    .section-title,
+    .section-title::before,
+    .xp-company,
+    .project,
+    .cert-org,
+    .lang-list .level,
+    .stat-num,
+    footer.cv-footer .statement .accent {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    /* Avoid awkward page-breaks */
+    .xp-item, .project, .cert-card {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    header.cv-header,
+    section,
+    footer.cv-footer {
+      page-break-inside: avoid;
+    }
   }
 
   @media (max-width: 720px) {

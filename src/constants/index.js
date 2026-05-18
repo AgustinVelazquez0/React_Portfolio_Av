@@ -296,6 +296,8 @@ export const CONTACT = {
   github: "https://github.com/AgustinVelazquez0",
 };
 
-// URLs de los CV (archivos en public/)
-export const CV_URL_ES = "/Agustin_Velazquez_CV_ES.pdf";
-export const CV_URL_EN = "/Agustin_Velazquez_CV_EN.pdf";
+// URLs de los CV (PDFs estáticos en public/cv/).
+// Actualizar el nombre del archivo cuando se genere una nueva versión
+// — el sistema busca por path exacto.
+export const CV_URL_ES = "/cv/Agustin-Velazquez-CV-ES.pdf";
+export const CV_URL_EN = "/cv/Agustin-Velazquez-CV-EN.pdf";

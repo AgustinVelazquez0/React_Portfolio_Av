@@ -1,884 +1,130 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useMemo } from "react";
+import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
-import { useTheme } from "../../context/ThemeContext";
-import { useState } from "react";
-import mentalWebImg from "../../assets/Mental-web.png";
-import mentalLogoImg from "../../assets/mental-logo.png";
-import whatsappSaasImg from "../../assets/whatsappSaas.png";
-import arbibuyImg from "../../assets/arbibuy.png";
+import { PROJECTS, PROJECT_GROUPS } from "../../data/projects";
+import { CASE_STUDIES } from "../../data/caseStudies";
+import { fadeUp, viewport } from "../../lib/motion";
+import ProjectCard from "../ui/ProjectCard";
+import Button from "../ui/Button";
 
-// Mismas animaciones que Experience
-const expTransition = { type: "spring", stiffness: 400, damping: 30 };
-const cardVariantsLeft = {
-  hidden: { opacity: 0, x: -100 },
-  visible: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: -50, transition: { duration: 0.25, ease: [0.4, 0, 0.2, 1] } },
-};
-const cardVariantsRight = {
-  hidden: { opacity: 0, x: 100 },
-  visible: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: 50, transition: { duration: 0.25, ease: [0.4, 0, 0.2, 1] } },
-};
-
-// Función para obtener el color de cada tecnología (misma que en Experience)
-const getTechColor = (techName) => {
-  const techColorMap = {
-    // Frontend
-    "HTML5": "rgb(220, 38, 38)",
-    "HTML": "rgb(220, 38, 38)",
-    "CSS3": "rgb(37, 99, 235)",
-    "CSS": "rgb(37, 99, 235)",
-    "SCSS": "rgb(207, 102, 121)",
-    "JavaScript": "rgb(250, 204, 21)",
-    "TypeScript": "rgb(37, 99, 235)",
-    "React": "rgb(34, 211, 238)",
-    "React Native": "rgb(103, 232, 249)",
-    "ReactJs": "rgb(34, 211, 238)",
-    "Tailwind CSS": "rgb(96, 165, 250)",
-    "Hooks": "rgb(34, 211, 238)",
-    
-    // Backend
-    "Node.js": "rgb(22, 163, 74)",
-    "Express.js": "rgb(156, 163, 175)",
-    "API": "rgb(79, 70, 229)",
-    "API REST": "rgb(79, 70, 229)",
-    "JWT": "rgb(168, 85, 247)",
-    
-    // Databases
-    "PostgreSQL": "rgb(96, 165, 250)",
-    "MongoDB": "rgb(34, 197, 94)",
-    "MongoDB Compass": "rgb(21, 128, 61)",
-    
-    // Tools
-    "Git": "rgb(234, 88, 12)",
-    "GitHub": "rgb(107, 114, 128)",
-    "Docker": "rgb(59, 130, 246)",
-    "Postman": "rgb(249, 115, 22)",
-    "Ubuntu": "rgb(249, 115, 22)",
-    "Linux-Ubuntu": "rgb(249, 115, 22)",
-    "DBeaver": "rgb(29, 78, 216)",
-    "EAS": "rgb(99, 102, 241)",
-    "xCode": "rgb(37, 99, 235)",
-    "AppStore": "rgb(107, 114, 128)",
-    "PlayStore": "rgb(34, 197, 94)",
-    "App Store Connect": "rgb(0, 122, 255)",
-    "Google Play Console": "rgb(66, 133, 244)",
-    "TestFlight": "rgb(0, 122, 255)",
-    "Sentry": "rgb(255, 82, 82)",
-    "Cursor AI": "rgb(34, 211, 238)",
-    "Google AI Studio": "rgb(37, 99, 235)",
-    "Rork": "rgb(34, 211, 238)",
-    "Render": "rgb(126, 34, 206)",
-    "Glitch": "rgb(37, 99, 235)",
-    "Vite": "rgb(168, 85, 247)",
-    "WSL": "rgb(107, 114, 128)",
-    "Next.js": "rgb(107, 114, 128)",
-    "React Native Web": "rgb(103, 232, 249)",
-    "Zustand": "rgb(249, 115, 22)",
-    "TanStack Query": "rgb(255, 82, 82)",
-    "RevenueCat": "rgb(34, 197, 94)",
-    "OneSignal": "rgb(34, 197, 94)",
-    "Prisma ORM": "rgb(148, 163, 184)",
-    "NextAuth.js": "rgb(34, 197, 94)",
-    "OpenAI API": "rgb(16, 185, 129)",
-    "Agentic AI": "rgb(34, 211, 238)",
-    "Tool Use": "rgb(168, 85, 247)",
-    "ElevenLabs": "rgb(196, 181, 253)",
-    "i18next": "rgb(34, 197, 94)",
-    "Vercel": "rgb(200, 200, 200)",
-    "Expo": "rgb(107, 114, 128)",
-    "Reanimated": "rgb(168, 85, 247)",
-    "Supabase": "rgb(62, 207, 142)",
-    "shadcn/ui": "rgb(200, 200, 200)",
-    "Recharts": "rgb(255, 130, 130)",
-    "Cheerio": "rgb(234, 88, 12)",
-    "Google Trends": "rgb(96, 165, 250)",
-    
-    // Data Visualization
-    "D3.js": "rgb(249, 115, 22)",
-    "SVG": "rgb(34, 211, 238)",
-    "GeoJSON": "rgb(34, 197, 94)",
-    "AJAX": "rgb(250, 204, 21)",
-    
-    // Web APIs
-    "LocalStorage": "rgb(250, 204, 21)",
-    "Audio API": "rgb(250, 204, 21)",
-    "Game Logic": "rgb(250, 204, 21)",
-  };
-  
-  return techColorMap[techName] || "rgb(34, 211, 238)"; // Default cyan
-};
-
+/**
+ * Projects — refactor data-driven.
+ * Pasó de ~880 líneas con duplicación a este componente compacto.
+ * Ahora cada card vive en src/data/projects.js.
+ */
 function Projects() {
   const { t } = useTranslation();
-  const { isDarkMode } = useTheme();
-  const [expandedGroups, setExpandedGroups] = useState({
-    react: false,
-    d3: false,
-    js: false,
-  });
+  const [expandedGroups, setExpandedGroups] = useState({});
 
-  const toggleGroup = (group) => {
-    setExpandedGroups((prev) => ({
-      ...prev,
-      [group]: !prev[group],
-    }));
+  const caseSlugs = useMemo(
+    () => new Set(CASE_STUDIES.map((cs) => cs.slug)),
+    []
+  );
+
+  const grouped = useMemo(() => {
+    const map = new Map(PROJECT_GROUPS.map((g) => [g.id, []]));
+    for (const p of PROJECTS) {
+      if (!map.has(p.group)) map.set(p.group, []);
+      map.get(p.group).push(p);
+    }
+    return map;
+  }, []);
+
+  const toggleGroup = (groupId) =>
+    setExpandedGroups((prev) => ({ ...prev, [groupId]: !prev[groupId] }));
+
+  const openCaseStudy = (slug) => {
+    requestAnimationFrame(() => {
+      document
+        .getElementById("case-studies")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.dispatchEvent(
+        new CustomEvent("av:open-case-study", { detail: { slug } })
+      );
+    });
   };
 
   return (
-    <div id="projects" className="border-b border-neutral-900 pb-4">
-        <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={expTransition}
-        className="my-10 text-center text-3xl font-semibold
-        text-neutral-900 dark:text-white lg:text-4xl"
-      >
-        {t("projects.title")}
-      </motion.h2>
-
-      {/* Grupo de proyectos: Next.js & SaaS (Web) */}
-      <div className="mb-8">
-        <h3 className="my-6 text-xl text-center font-semibold
-        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
-          {t("projects.nextjsSaasTitle")}
-        </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
-          {/* Proyecto WhatsApp AI SaaS */}
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={expTransition}
-            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_8px_25px_rgba(16,185,129,0.35)] dark:hover:shadow-[0_8px_25px_rgba(16,185,129,0.35)]
-            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
-          >
-            <div className="flex gap-6 mb-4">
-              <a
-                href="https://whatsapp-ai-saas-1zya.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0"
-              >
-                <img
-                  src={whatsappSaasImg}
-                  alt="WhatsApp AI SaaS"
-                  loading="lazy"
-                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </a>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2 flex-wrap">
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-[0.15em] font-semibold
-                    bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border border-cyan-500/40">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
-                    Agentic AI
-                  </span>
-                </div>
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.NEXTJS_SAAS.whatsappAI.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.NEXTJS_SAAS.whatsappAI.description")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["Agentic AI", "Tool Use", "Next.js", "React", "TypeScript", "PostgreSQL", "Prisma ORM", "OpenAI API", "NextAuth.js", "Tailwind CSS", "Vercel"].map((tech) => {
-                const techColor = getTechColor(tech);
-                return (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
-                    style={{
-                      borderColor: techColor,
-                      color: techColor,
-                      boxShadow: `0 0 10px ${techColor}40`,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                );
-              })}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => window.open("https://whatsapp-ai-saas-1zya.vercel.app")}
-                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
-              >
-                {t("projects.buttonViewProject")}
-              </button>
-              <button
-                onClick={() => window.open("https://github.com/AgustinVelazquez0/whatsapp-ai-saas")}
-                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
-              >
-                {t("projects.buttonViewCode")}
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Proyecto Arbix - Plataforma de Arbitraje E-commerce */}
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 100 }}
-            transition={expTransition}
-            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_8px_25px_rgba(62,207,142,0.35)] dark:hover:shadow-[0_8px_25px_rgba(62,207,142,0.35)]
-            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
-          >
-            <div className="flex gap-6 mb-4">
-              <a
-                href="https://arbibuy.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0"
-              >
-                <img
-                  src={arbibuyImg}
-                  alt="Arbix - Plataforma de Arbitraje E-commerce"
-                  loading="lazy"
-                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </a>
-              <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.NEXTJS_SAAS.arbibuy.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.NEXTJS_SAAS.arbibuy.description")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Supabase", "PostgreSQL", "Recharts", "Cheerio", "Google Trends", "Vercel"].map((tech) => {
-                const techColor = getTechColor(tech);
-                return (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
-                    style={{
-                      borderColor: techColor,
-                      color: techColor,
-                      boxShadow: `0 0 10px ${techColor}40`,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                );
-              })}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => window.open("https://arbibuy.vercel.app")}
-                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
-              >
-                {t("projects.buttonViewProject")}
-              </button>
-              <button
-                onClick={() => window.open("https://github.com/AgustinVelazquez0/arbibuy")}
-                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
-              >
-                {t("projects.buttonViewCode")}
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Grupo de proyectos: Mobile Apps */}
-      <div className="mb-8">
-        <h3 className="my-6 text-xl text-center font-semibold
-        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
-          {t("projects.mobileAppsTitle")}
-        </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
-          {/* Proyecto Mobile - Mental: Hipnosis personalizada */}
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={expTransition}
-            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_8px_25px_rgba(168,85,247,0.35)] dark:hover:shadow-[0_8px_25px_rgba(168,85,247,0.35)]
-            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
-          >
-            <div className="flex gap-6 mb-4">
-              <div className="flex-shrink-0 flex items-start gap-4">
-                <img
-                  src={mentalLogoImg}
-                  alt="Mental App logo"
-                  className="w-16 h-16 rounded-xl object-contain"
-                />
-                <a
-                  href="https://www.mental.app/descarga"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center"
-                >
-                  <img
-                    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fwww.mental.app%2Fdescarga"
-                    alt="QR Code - Mental App"
-                    className="w-14 h-14 rounded-md object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                  <p className="text-[10px] text-neutral-500 dark:text-neutral-500 mt-1 text-center leading-tight w-16">
-                    {t("projects.MOBILE_APPS.mental.qrText")}
-                  </p>
-                </a>
-              </div>
-              <div className="flex-1 min-w-0">
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.MOBILE_APPS.mental.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.MOBILE_APPS.mental.description")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["React Native", "Expo", "TypeScript", "MongoDB", "ElevenLabs", "Reanimated", "Postman", "MongoDB Compass", "EAS", "xCode", "Android Studio", "AppStore", "PlayStore", "App Store Connect", "Google Play Console", "TestFlight", "Sentry"].map((tech) => {
-                const techColor = getTechColor(tech);
-                return (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
-                    style={{
-                      borderColor: techColor,
-                      color: techColor,
-                      boxShadow: `0 0 10px ${techColor}40`,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                );
-              })}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => window.open("https://apps.apple.com/us/app/mental-hipnosis-personalizada/id6740008581")}
-                className="px-2 py-1 bg-neutral-700 hover:bg-neutral-600 text-white rounded transition-colors duration-200"
-              >
-                {t("projects.buttonAppStore")}
-              </button>
-              <button
-                onClick={() => window.open("https://play.google.com/store/apps/details?id=com.mentalmagnet.mentalMagnetApp")}
-                className="px-2 py-1 bg-green-600 hover:bg-green-700 text-white rounded transition-colors duration-200"
-              >
-                {t("projects.buttonPlayStore")}
-              </button>
-            </div>
-          </motion.div>
-
-        </div>
-      </div>
-
-      {/* Grupo de proyectos: REACT */}
-      <div className="mb-10">
-        <h3 className="my-6 text-xl text-center font-semibold
-        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
-          React
-        </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
-          {/* Proyecto React 1 - Mental Web Platform */}
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={expTransition}
-            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)] dark:hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)]
-            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
-          >
-            <div className="flex gap-6 mb-4">
-              <a
-                href="https://mental-web-three.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0"
-              >
-                <img
-                  src={mentalWebImg}
-                  alt="Mental Web Platform"
-                  loading="lazy"
-                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </a>
-              <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.REACT.mentalWeb.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.REACT.mentalWeb.description")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["React Native Web", "Expo", "TypeScript", "ElevenLabs", "Zustand", "TanStack Query", "RevenueCat", "OneSignal", "Sentry", "i18next", "Vercel"].map((tech) => {
-                const techColor = getTechColor(tech);
-                return (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
-                    style={{
-                      borderColor: techColor,
-                      color: techColor,
-                      boxShadow: `0 0 10px ${techColor}40`,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                );
-              })}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => window.open("https://mental-web-three.vercel.app")}
-                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
-              >
-                {t("projects.buttonViewProject")}
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Proyecto React 2 - Sistema de Biblioteca Digital */}
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 100 }}
-            transition={expTransition}
-            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)] dark:hover:shadow-[0_8px_25px_rgba(34,211,238,0.3)]
-            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
-          >
-            <div className="flex gap-6 mb-4">
-              <a
-                href="https://corner-books-log.onrender.com/register"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0"
-              >
-                <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project24_library.png"
-                  alt="Sistema de Biblioteca Digital"
-                  loading="lazy"
-                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </a>
-              <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.REACT.library.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.REACT.library.description")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["React", "Node.js", "Express.js", "MongoDB", "JWT"].map(
-                (tech) => {
-                  const techColor = getTechColor(tech);
-                  return (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
-                      style={{
-                        borderColor: techColor,
-                        color: techColor,
-                        boxShadow: `0 0 10px ${techColor}40`,
-                      }}
-                    >
-                      {tech}
-                    </span>
-                  );
-                }
-              )}
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() =>
-                  window.open("https://corner-books-log.onrender.com/register")
-                }
-                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
-              >
-                {t("projects.buttonViewProject")}
-              </button>
-              <button
-                onClick={() =>
-                  window.open(
-                    "https://github.com/AgustinVelazquez0/library-front-end"
-                  )
-                }
-                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
-              >
-                {t("projects.buttonViewFrontCode")}
-              </button>
-              <button
-                onClick={() =>
-                  window.open(
-                    "https://github.com/AgustinVelazquez0/library-back-end"
-                  )
-                }
-                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
-              >
-                {t("projects.buttonViewBackCode")}
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Proyecto React 2 - Task Manager Avanzado */}
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={expTransition}
-            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent 
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
-            transition-[box-shadow] duration-200"
-          >
-            <div className="flex gap-6 mb-4">
-              <a
-                href="https://todo-list-front-yvrl.onrender.com/login"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0"
-              >
-                <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project7.png"
-                  alt="Task Manager Avanzado"
-                  loading="lazy"
-                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </a>
-              <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.REACT.todo.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.REACT.todo.description")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["React", "Node.js", "PostgreSQL", "MongoDB", "Docker"].map(
-                (tech) => {
-                  const techColor = getTechColor(tech);
-                  return (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
-                      style={{
-                        borderColor: techColor,
-                        color: techColor,
-                        boxShadow: `0 0 10px ${techColor}40`,
-                      }}
-                    >
-                      {tech}
-                    </span>
-                  );
-                }
-              )}
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() =>
-                  window.open("https://todo-list-front-yvrl.onrender.com/login")
-                }
-                className="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors duration-200"
-              >
-                {t("projects.buttonViewProject")}
-              </button>
-              <button
-                onClick={() =>
-                  window.open(
-                    "https://github.com/AgustinVelazquez0/Todo_List_Front"
-                  )
-                }
-                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
-              >
-                {t("projects.buttonViewFrontCode")}
-              </button>
-              <button
-                onClick={() =>
-                  window.open(
-                    "https://github.com/AgustinVelazquez0/Todo_List_Back"
-                  )
-                }
-                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
-              >
-                {t("projects.buttonViewBackCode")}
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Proyecto React 3 - Sistema de Pedidos Online */}
-          <AnimatePresence mode="sync">
-          {(expandedGroups.react || false) && (
-          <motion.div
-            key="react-food"
-            variants={cardVariantsLeft}
+    <section
+      id="projects"
+      className="border-t border-line-subtle pt-16 pb-12"
+    >
+      {/* Section header — editorial */}
+      <header className="mb-12 flex items-end justify-between gap-6 flex-wrap">
+        <div>
+          <p className="font-mono text-2xs uppercase tracking-mono text-ink-faint mb-3">
+            04 — {t("projects.eyebrow")}
+          </p>
+          <motion.h2
+            variants={fadeUp}
             initial="hidden"
-            animate="visible"
-            exit="exit"
-            transition={expTransition}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md 
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]
-            transition-[box-shadow] duration-200"
+            whileInView="visible"
+            viewport={viewport}
+            className="font-display text-4xl lg:text-5xl text-ink-primary tracking-tightest leading-none"
           >
-            <div className="flex gap-6 mb-4">
-              <a
-                href="https://github.com/AgustinVelazquez0/Food_List_Front"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0"
-              >
-                <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project5.png"
-                  alt="Sistema de Pedidos Online"
-                  loading="lazy"
-                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </a>
-              <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.REACT.food.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.REACT.food.description")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["React", "MongoDB", "Express.js", "Node.js"].map((tech) => {
-                const techColor = getTechColor(tech);
-                return (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
-                    style={{
-                      borderColor: techColor,
-                      color: techColor,
-                      boxShadow: `0 0 10px ${techColor}40`,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                );
-              })}
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() =>
-                  window.open(
-                    "https://github.com/AgustinVelazquez0/Food_List_Front"
-                  )
-                }
-                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
-              >
-                {t("projects.buttonViewFrontCode")}
-              </button>
-              <button
-                onClick={() =>
-                  window.open(
-                    "https://github.com/AgustinVelazquez0/Food_List_Back"
-                  )
-                }
-                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
-              >
-                {t("projects.buttonViewBackCode")}
-              </button>
-            </div>
-          </motion.div>
-          )}
-
-          </AnimatePresence>
+            {t("projects.title")}
+          </motion.h2>
         </div>
-        {!expandedGroups.react && (
-          <div className="text-center mt-6">
-            <button
-              onClick={() => toggleGroup("react")}
-              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
-                isDarkMode
-                  ? "bg-white hover:bg-neutral-200 text-black"
-                  : "bg-black hover:bg-neutral-800 text-white"
-              }`}
-            >
-              {t("projects.showMore").replace("{count}", "1")}
-            </button>
-          </div>
-        )}
-        {expandedGroups.react && (
-          <div className="text-center mt-6">
-            <button
-              onClick={() => toggleGroup("react")}
-              className={`text-lg px-2.5 py-1 rounded transition-colors duration-200 ${
-                isDarkMode
-                  ? "bg-white hover:bg-neutral-200 text-black"
-                  : "bg-black hover:bg-neutral-800 text-white"
-              }`}
-            >
-              {t("projects.showLess")}
-            </button>
-          </div>
-        )}
-      </div>
+        <p className="max-w-md text-sm text-ink-muted leading-relaxed">
+          {t("projects.description")}
+        </p>
+      </header>
 
-      {/* Grupo de proyectos: Vanilla JavaScript */}
-      <div className="mb-8">
-        <h3 className="my-6 text-xl text-center font-semibold
-        text-neutral-800 dark:text-neutral-200 lg:text-2xl">
-          Vanilla JavaScript
-        </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
-          {/* Proyecto JS 3 - Juego de Plataformas */}
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={expTransition}
-            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)] dark:hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)]
-            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
-          >
-            <div className="flex gap-6 mb-4">
-              <a
-                href="https://github.com/AgustinVelazquez0/Platformer-Game"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0"
-              >
-                <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project8_platformer_game.png"
-                  alt="Juego de Plataformas 2D"
-                  loading="lazy"
-                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </a>
-              <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.JS.PlataformerGame.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.JS.PlataformerGame.description")}
-                </p>
+      <div className="space-y-16">
+        {PROJECT_GROUPS.map((group) => {
+          const items = grouped.get(group.id) || [];
+          if (items.length === 0) return null;
+
+          const collapsedItems = items.filter((p) => p.collapsed);
+          const visibleItems = items.filter((p) => !p.collapsed);
+          const isExpanded = expandedGroups[group.id];
+          const showItems = isExpanded
+            ? [...visibleItems, ...collapsedItems]
+            : visibleItems;
+
+          return (
+            <div key={group.id}>
+              <h3 className="mb-6 flex items-center gap-3 text-ink-secondary">
+                <span className="h-px flex-1 bg-line-DEFAULT" />
+                <span className="font-mono text-2xs uppercase tracking-mono text-ink-muted">
+                  {t(group.titleKey)}
+                </span>
+                <span className="h-px flex-1 bg-line-DEFAULT" />
+              </h3>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {showItems.map((project) => (
+                  <ProjectCard
+                    key={project.slug}
+                    project={project}
+                    onOpenCaseStudy={
+                      caseSlugs.has(project.slug) ? openCaseStudy : undefined
+                    }
+                  />
+                ))}
               </div>
-            </div>
 
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["JavaScript", "Canvas API", "Game Physics", "CSS3"].map(
-                (tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-md border border-yellow-500/30 font-medium"
+              {collapsedItems.length > 0 ? (
+                <div className="text-center mt-6">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => toggleGroup(group.id)}
                   >
-                    {tech}
-                  </span>
-                )
-              )}
+                    {isExpanded
+                      ? t("projects.showLess")
+                      : t("projects.showMore").replace(
+                          "{count}",
+                          String(collapsedItems.length)
+                        )}
+                  </Button>
+                </div>
+              ) : null}
             </div>
-
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() =>
-                  window.open(
-                    "https://github.com/AgustinVelazquez0/Platformer-Game"
-                  )
-                }
-                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
-              >
-                {t("projects.buttonViewCode")}
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Proyecto JS 4 - RPG Interactivo */}
-          <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 100 }}
-            transition={expTransition}
-            whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] } }}
-            className="bg-white dark:bg-neutral-900/50 p-6 rounded-md border-2 border-transparent
-            shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)] dark:hover:shadow-[0_8px_25px_rgba(250,204,21,0.3)]
-            hover:border-cyan-400/30 transition-[box-shadow] duration-200"
-          >
-            <div className="flex gap-6 mb-4">
-              <a
-                href="https://github.com/AgustinVelazquez0/Role-Playing-Game"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0"
-              >
-                <img
-                  src="https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project10_role_playing_game.png"
-                  alt="RPG Interactivo"
-                  loading="lazy"
-                  className="w-20 h-20 rounded-md object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </a>
-              <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-2 text-neutral-900 dark:text-white">
-                  {t("projects.JS.RolePlayingGame.title")}
-                </h4>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                  {t("projects.JS.RolePlayingGame.description")}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["JavaScript", "Game Logic", "HTML5", "CSS3"].map((tech) => {
-                const techColor = getTechColor(tech);
-                return (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 bg-black dark:bg-black text-xs rounded-md border-2 font-medium"
-                    style={{
-                      borderColor: techColor,
-                      color: techColor,
-                      boxShadow: `0 0 10px ${techColor}40`,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                );
-              })}
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() =>
-                  window.open(
-                    "https://github.com/AgustinVelazquez0/Role-Playing-Game"
-                  )
-                }
-                className={`px-2 py-1 rounded transition-colors duration-200 ${isDarkMode ? "bg-white hover:bg-neutral-200 text-black" : "bg-black hover:bg-neutral-800 text-white"}`}
-              >
-                {t("projects.buttonViewCode")}
-              </button>
-            </div>
-          </motion.div>
-        </div>
+          );
+        })}
       </div>
-    </div>
+    </section>
   );
 }
 

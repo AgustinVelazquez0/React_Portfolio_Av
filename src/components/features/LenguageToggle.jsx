@@ -1,41 +1,22 @@
-import { useContext } from "react";
-import { LanguageContext } from "../../context/LenguageContext";
+import { useTranslation } from "../../hooks/useTranslation";
 
-const LanguageToggle = () => {
-  const { language, setLanguage } = useContext(LanguageContext);
-
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "es" ? "en" : "es"));
-  };
+export default function LanguageToggle() {
+  const { language, toggleLanguage } = useTranslation();
+  const other = language === "es" ? "EN" : "ES";
 
   return (
     <button
       onClick={toggleLanguage}
-      className="flex items-center gap-2 px-2 py-1 rounded-md transition-colors bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
+      className="inline-flex items-center gap-1.5 h-9 px-2.5 rounded-md
+        text-ink-secondary hover:text-ink-primary hover:bg-surface-1
+        font-mono text-2xs uppercase tracking-mono
+        transition-colors duration-fast
+        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       aria-label={language === "es" ? "Switch to English" : "Cambiar a Español"}
     >
-      <span className="font-semibold text-sm">
-        {language === "es" ? "ES" : "EN"}
-        <span className="text-gray-500 dark:text-gray-400 mx-1">|</span>
-        {language === "es" ? "EN" : "ES"}
-      </span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="2" y1="12" x2="22" y2="12"></line>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-      </svg>
+      <span className="text-ink-primary">{language.toUpperCase()}</span>
+      <span className="text-ink-faint">/</span>
+      <span>{other}</span>
     </button>
   );
-};
-
-export default LanguageToggle;
+}

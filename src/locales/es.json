@@ -15,10 +15,23 @@
   },
   "hero": {
     "title": "Desarrollador Full Stack",
-    "content": "Desarrollador full-stack y mobile desde Uruguay, especializado en React, Next.js y React Native con foco en productos AI-native. Actualmente trabajando en Mental, con apps publicadas en App Store y Google Play. Construyo agentes IA con tool use real (no workflows fijos): la IA decide qué herramientas llamar, en qué orden y cuántas veces, ejecutando consultas autónomas a la base de datos para resolver el problema. He desplegado +15 proyectos en producción combinando código limpio, performance y los detalles que hacen la diferencia.",
-    "ctaProjects": "Ver proyectos",
+    "eyebrowStatus": "Disponible",
+    "eyebrowLocation": "Montevideo · UY → Remoto global",
+    "subheadLead": "Construyo producto con IA agéntica.",
+    "subheadAccent": "Tool use real, no chatbots de marketing.",
+    "content": "Full-stack y mobile. Llevo apps publicadas a App Store y Play Store, y agentes IA donde la propia LLM decide qué herramientas llamar y en qué orden — no workflows fijos. Me obsesiona la diferencia entre algo que funciona y algo que se siente correcto.",
+    "ctaPrimary": "Trabajemos juntos",
+    "ctaSecondary": "Ver case studies",
     "ctaCV": "Descargar CV",
+    "ctaProjects": "Ver proyectos",
     "ctaHire": "¿Buscás desarrollador?",
+    "cmdkHint": "Tip — abre la paleta de comandos con",
+    "proof": {
+      "stores": "apps en stores",
+      "projects": "proyectos en prod",
+      "production": "en producción",
+      "workingAt": "shipping en"
+    },
     "stats": {
       "projects": "+15 proyectos",
       "apps": "App Store & Play Store",
@@ -35,9 +48,18 @@
   },
   "projects": {
     "title": "Proyectos",
-    "mobileAppsTitle": "Proyectos App Mobile",
+    "eyebrow": "Selected work",
+    "reactTitle": "React",
+    "jsTitle": "Vanilla JavaScript",
+    "mobileAppsTitle": "Mobile",
     "nextjsSaasTitle": "Next.js & SaaS",
-    "description": "A selection of my most relevant work",
+    "description": "Una selección curada — desde agentes IA en producción hasta apps publicadas en App Store y Google Play. Cada uno con métrica real, no demo.",
+    "viewCaseStudy": "Ver case study →",
+    "metric": {
+      "agentic": "max iteraciones por mensaje",
+      "marketplaces": "países soportados",
+      "stores": "tiendas en vivo"
+    },
     "buttonViewProject": "Ver proyecto",
     "buttonAppStore": "App Store",
     "buttonPlayStore": "Play Store",
