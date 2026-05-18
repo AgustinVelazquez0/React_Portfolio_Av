@@ -74,9 +74,9 @@ function Hero() {
             className="flex flex-wrap items-center gap-x-8 gap-y-4 mb-10
               font-mono text-2xs uppercase tracking-mono text-ink-muted"
           >
-            <ProofMetric value="3" label={t("hero.proof.stores")} />
+            <ProofMetric value="1" label={t("hero.proof.stores")} />
             <span className="hidden sm:inline text-ink-faint">·</span>
-            <ProofMetric value="15+" label={t("hero.proof.projects")} />
+            <ProofMetric value="5+" label={t("hero.proof.projects")} />
             <span className="hidden sm:inline text-ink-faint">·</span>
             <ProofMetric value="2yr" label={t("hero.proof.production")} />
             <span className="hidden sm:inline text-ink-faint">·</span>
