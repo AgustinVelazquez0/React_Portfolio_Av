@@ -3,7 +3,6 @@ import { useTranslation } from "../../hooks/useTranslation";
 import { fadeUp, stagger, transitions } from "../../lib/motion";
 import Button from "../ui/Button";
 import Tag from "../ui/Tag";
-import profilePic from "../../assets/Agustin.png";
 import { CV_URL_ES, CV_URL_EN } from "../../constants";
 import { FaArrowRight, FaGithub } from "react-icons/fa";
 
@@ -22,13 +21,12 @@ function Hero() {
       id="hero"
       className="pt-28 pb-16 lg:pb-24 min-h-[88vh] flex items-center"
     >
-      <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* Columna texto — 8/12 (proporción editorial) */}
+      <div className="w-full max-w-4xl">
         <motion.div
           variants={stagger(0.05)}
           initial="hidden"
           animate="visible"
-          className="lg:col-span-8 flex flex-col items-start"
+          className="flex flex-col items-start"
         >
           {/* Eyebrow mono — location + niche */}
           <motion.div variants={fadeUp} className="mb-6 flex items-center gap-3">
@@ -149,48 +147,6 @@ function Hero() {
               ⌘K
             </kbd>
           </motion.p>
-        </motion.div>
-
-        {/* Columna imagen — 4/12 — sin glow, con marco editorial */}
-        <motion.div
-          initial={{ opacity: 0, x: 24 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ ...transitions.enter, delay: 0.2 }}
-          className="lg:col-span-4 flex justify-center lg:justify-end"
-        >
-          <figure className="relative">
-            <div className="relative overflow-hidden rounded-xl border border-line-DEFAULT bg-surface-1">
-              <img
-                src={profilePic}
-                alt="Agustin Velazquez — Full-Stack Engineer"
-                loading="eager"
-                width="320"
-                height="440"
-                className="w-[280px] lg:w-[320px] h-[400px] lg:h-[440px] object-cover
-                  grayscale-[15%] hover:grayscale-0
-                  transition-all duration-slow ease-standard"
-              />
-              {/* Marca de agua editorial inferior */}
-              <div className="absolute bottom-0 inset-x-0 px-4 py-3
-                bg-gradient-to-t from-black/60 to-transparent
-                flex items-center justify-between">
-                <span className="font-mono text-[10px] uppercase tracking-mono text-white/80">
-                  AV — 2026
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-mono text-accent">
-                  ● en vivo
-                </span>
-              </div>
-            </div>
-            {/* Etiqueta lateral tipo editorial */}
-            <figcaption
-              className="absolute -right-3 top-6 rotate-90 origin-top-right
-              font-mono text-[10px] uppercase tracking-mono text-ink-faint
-              hidden lg:block"
-            >
-              Portrait — Montevideo, UY
-            </figcaption>
-          </figure>
         </motion.div>
       </div>
     </section>
