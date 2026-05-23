@@ -7,6 +7,7 @@ import { connectDb, isDbConnected } from "./db.js";
 import contactRoutes from "./routes/contact.js";
 import guestbookRoutes from "./routes/guestbook.js";
 import askRoutes from "./routes/ask.js";
+import githubRoutes from "./routes/github.js";
 
 // Middleware que bloquea rutas Mongo-dependientes si la DB no conectó.
 // Permite que /api/ask y /api/health funcionen sin Mongo.
@@ -49,9 +50,10 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// /api/ask se monta PRIMERO para que el middleware requireDb
-// (necesario solo para contact/guestbook) no bloquee al agente AI.
+// /api/ask y /api/github-contributions se montan PRIMERO para que el
+// middleware requireDb (necesario solo para contact/guestbook) no los bloquee.
 app.use("/api", askRoutes);
+app.use("/api", githubRoutes);
 app.use("/api", requireDb, contactRoutes);
 app.use("/api", requireDb, guestbookRoutes);
 
