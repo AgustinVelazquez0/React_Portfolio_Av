@@ -238,7 +238,7 @@ export default function CommandPalette({ open, onOpenChange, onSectionChange }) 
               </Item>
               <Item
                 icon={FaRocket}
-                onSelect={() => openExternal("https://arbibuy.vercel.app")}
+                onSelect={() => openExternal("https://getarbix.com")}
               >
                 Demo · Arbix
                 <FaArrowUpRightFromSquare className="ml-auto text-ink-faint text-[10px]" />

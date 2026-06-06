@@ -19,29 +19,29 @@ export const CASE_STUDIES = [
     metrics: [
       { value: "10", label: { es: "tool calls / loop", en: "tool calls / loop" } },
       { value: "<2s", label: { es: "respuesta P50", en: "P50 response" } },
-      { value: "100%", label: { es: "autonomía decisional", en: "decision autonomy" } },
+      { value: "HMAC", label: { es: "webhook firmado", en: "signed webhook" } },
     ],
     title: {
       es: "WhatsApp AI SaaS — agentes con tool use real",
       en: "WhatsApp AI SaaS — agents with real tool use",
     },
     summary: {
-      es: "Plataforma SaaS donde el agente IA decide autónomamente qué herramientas llamar (consulta historial, busca en knowledge base, agenda mensajes) en lugar de seguir un workflow fijo. Hasta 10 iteraciones por mensaje.",
-      en: "SaaS where the AI agent autonomously decides which tools to call (query history, search knowledge base, schedule messages) instead of following a fixed workflow. Up to 10 iterations per message.",
+      es: "SaaS production-grade donde el agente IA decide autónomamente qué herramientas llamar en lugar de seguir un workflow fijo. Hasta 10 iteraciones por mensaje, evals automatizadas, webhook HMAC-SHA256, idempotencia, pagos duales Stripe + MercadoPago y stack moderno tRPC v11 / NextAuth v5.",
+      en: "Production-grade SaaS where the AI agent autonomously decides which tools to call instead of following a fixed workflow. Up to 10 iterations per message, automated evals, HMAC-SHA256 webhook, idempotency, dual Stripe + MercadoPago payments and a modern tRPC v11 / NextAuth v5 stack.",
     },
     sections: [
       {
         heading: { es: "Contexto", en: "Context" },
         body: {
-          es: "Negocios pequeños (restaurantes, spas, talleres) responden WhatsApps repetitivos manualmente. Necesitaban automatizar reservas y atención sin perder calidad ni contexto entre mensajes — y sin perder ventas porque el agente respondiera mal a algo no anticipado.",
-          en: "Small businesses (restaurants, spas, workshops) reply repetitive WhatsApps by hand. They needed to automate bookings and support without losing quality or cross-message context — and without losing sales because the agent mishandled something unforeseen.",
+          es: "Negocios pequeños (restaurantes, spas, talleres) responden WhatsApps repetitivos manualmente. Necesitaban automatizar reservas y atención sin perder calidad ni contexto entre mensajes — y sin perder ventas porque el agente respondiera mal a algo no anticipado. Además debía ser cobrable: pagos para Uruguay/LATAM (MercadoPago) y global (Stripe).",
+          en: "Small businesses (restaurants, spas, workshops) reply repetitive WhatsApps by hand. They needed to automate bookings and support without losing quality or cross-message context — and without losing sales because the agent mishandled something unforeseen. It also had to be billable: payments for Uruguay/LATAM (MercadoPago) and global (Stripe).",
         },
       },
       {
         heading: { es: "Mi rol", en: "My role" },
         body: {
-          es: "End-to-end: arquitectura del agente, schema de Prisma, integración con OpenAI tool calls, webhook de WhatsApp Business, dashboard NextAuth y deploy en Vercel. Solo developer.",
-          en: "End-to-end: agent architecture, Prisma schema, OpenAI tool-call integration, WhatsApp Business webhook, NextAuth dashboard and Vercel deploy. Solo developer.",
+          es: "End-to-end como solo developer: arquitectura del agente, schema Prisma multi-tenant, capa tRPC v11 type-safe, integración OpenAI tool calls, webhook de WhatsApp Business con validación HMAC, sistema de evals propio, billing dual Stripe + MercadoPago, dashboard NextAuth v5, suite de tests con Jest (16 tests) y deploy en Vercel.",
+          en: "End-to-end as solo developer: agent architecture, multi-tenant Prisma schema, type-safe tRPC v11 layer, OpenAI tool-call integration, HMAC-validated WhatsApp Business webhook, custom evals system, dual Stripe + MercadoPago billing, NextAuth v5 dashboard, Jest test suite (16 tests) and Vercel deploy.",
         },
       },
       {
@@ -60,16 +60,32 @@ export const CASE_STUDIES = [
             en: "Multi-tenant via single Prisma schema + business_id on every row. Cheaper than schema-per-tenant at this volume.",
           },
           {
-            es: "Mensajes diferidos via cron job de Vercel cada 5 min en lugar de queue. Una dependencia menos, performance suficiente para reservas no críticas.",
-            en: "Deferred messages via Vercel cron every 5 min instead of a queue. One fewer dependency, sufficient performance for non-critical bookings.",
+            es: "Webhook HMAC SHA-256 + idempotencia con Upstash Redis. El webhook de Meta puede reintentar; si no deduplicás por messageId terminás respondiendo 3 veces al mismo cliente.",
+            en: "HMAC SHA-256 webhook + idempotency with Upstash Redis. Meta's webhook can retry; without dedup-by-messageId you end up replying 3 times to the same customer.",
+          },
+          {
+            es: "tRPC v11 end-to-end en lugar de REST. Tipos del backend llegan al frontend sin un generador OpenAPI intermedio; refactor sin miedo.",
+            en: "tRPC v11 end-to-end instead of REST. Backend types reach the frontend without an intermediate OpenAPI generator; refactor without fear.",
+          },
+          {
+            es: "Pagos duales: Stripe para internacional + MercadoPago para Uruguay/LATAM. Sin esto perdés el 60% del mercado regional que no tiene tarjeta internacional.",
+            en: "Dual payments: Stripe for international + MercadoPago for Uruguay/LATAM. Without it you lose 60% of the regional market that has no international card.",
+          },
+          {
+            es: "QStash para jobs diferidos (recordatorios, follow-ups) en vez de cron simple. Retries automáticos y exactly-once delivery sin levantar infra propia.",
+            en: "QStash for deferred jobs (reminders, follow-ups) instead of plain cron. Auto-retries and exactly-once delivery without standing up own infra.",
+          },
+          {
+            es: "Sistema de evals propio (npm run evals). Cada trayectoria del agente se guarda y replaya contra una suite de prompts de regresión. Sin esto, los tool-use agents fallan creativamente en producción.",
+            en: "Custom evals system (npm run evals). Every agent trajectory is saved and replayed against a regression prompt suite. Without it, tool-use agents fail creatively in production.",
           },
         ],
       },
       {
         heading: { es: "Lo que aprendí", en: "What I learned" },
         body: {
-          es: "Los tool-use agents fallan distinto que los workflows: cuando fallan, fallan creativamente. Hace falta evals continuas, no QA manual de happy paths. Empecé a guardar todas las trayectorias del agente para poder hacer 'replays' cuando un cliente reporta un caso raro.",
-          en: "Tool-use agents fail differently than workflows: when they fail, they fail creatively. You need continuous evals, not manual happy-path QA. I started saving every agent trajectory so I can 'replay' edge cases customers report.",
+          es: "Los tool-use agents fallan distinto que los workflows: cuando fallan, fallan creativamente. Hace falta evals continuas, no QA manual de happy paths. La segunda lección: en LATAM, integrar MercadoPago no es opcional — es la diferencia entre cobrar y no cobrar.",
+          en: "Tool-use agents fail differently than workflows: when they fail, they fail creatively. You need continuous evals, not manual happy-path QA. Second lesson: in LATAM, integrating MercadoPago is not optional — it's the difference between getting paid and not.",
         },
       },
     ],
@@ -78,13 +94,21 @@ export const CASE_STUDIES = [
       code: "https://github.com/AgustinVelazquez0/whatsapp-ai-saas",
     },
     stack: [
-      "Next.js",
-      "React",
+      "Next.js 16",
+      "React 19",
       "TypeScript",
-      "PostgreSQL",
+      "tRPC v11",
       "Prisma ORM",
+      "PostgreSQL",
       "OpenAI API",
-      "NextAuth.js",
+      "NextAuth v5",
+      "Stripe",
+      "MercadoPago",
+      "Upstash Redis",
+      "QStash",
+      "Resend",
+      "Zod",
+      "Jest",
       "Tailwind CSS",
       "Vercel",
     ],
@@ -182,29 +206,29 @@ export const CASE_STUDIES = [
     metrics: [
       { value: "9", label: { es: "marketplaces", en: "marketplaces" } },
       { value: "5", label: { es: "scrapers tolerantes", en: "fault-tolerant scrapers" } },
-      { value: "4", label: { es: "cron jobs", en: "cron jobs" } },
+      { value: "3", label: { es: "planes monetizados", en: "monetized tiers" } },
     ],
     title: {
       es: "Arbix — plataforma de arbitraje Alibaba ↔ Amazon",
       en: "Arbix — Alibaba ↔ Amazon arbitrage platform",
     },
     summary: {
-      es: "SaaS que detecta oportunidades de arbitraje entre Alibaba y Amazon FBA. Búsqueda multi-fuente, calculadora multi-marketplace con fees y cashback, análisis de tendencias con Google Trends, alertas automáticas.",
-      en: "SaaS that detects arbitrage opportunities between Alibaba and Amazon FBA. Multi-source search, multi-marketplace calculator with fees and cashback, trend analysis with Google Trends, automated alerts.",
+      es: "SaaS con dominio propio (getarbix.com) que detecta oportunidades de arbitraje entre Alibaba y Amazon FBA. Calculadora multi-marketplace, scrapers tolerantes a fallos cacheados con Upstash Redis, Listing Studio con generación de imágenes IA, sistema de feedback con votación + dedup, y planes Free / Pro 99 USD / Elite 199 USD.",
+      en: "SaaS on its own domain (getarbix.com) that detects arbitrage opportunities between Alibaba and Amazon FBA. Multi-marketplace calculator, fault-tolerant scrapers cached with Upstash Redis, Listing Studio with AI image generation, feedback system with voting + dedup, and tiers Free / Pro $99 / Elite $199.",
     },
     sections: [
       {
         heading: { es: "Contexto", en: "Context" },
         body: {
-          es: "Comprar al por mayor en Alibaba y vender en Amazon es un negocio real, pero calcular la rentabilidad real (FBA fees por país, aranceles, cupones, cashback, cambio de moneda) es tedioso y error-prone.",
-          en: "Wholesale-on-Alibaba/sell-on-Amazon is a real business, but computing true profitability (FBA fees per country, tariffs, coupons, cashback, FX) is tedious and error-prone.",
+          es: "Comprar al por mayor en Alibaba y vender en Amazon es un negocio real, pero calcular la rentabilidad (FBA fees por país, aranceles, cupones, cashback, cambio de moneda) es tedioso y error-prone. Los sellers además necesitan onboarding asistido, listing optimizado y un canal claro de feedback al producto.",
+          en: "Wholesale-on-Alibaba/sell-on-Amazon is a real business, but computing true profitability (FBA fees per country, tariffs, coupons, cashback, FX) is tedious and error-prone. Sellers also need guided onboarding, optimized listings, and a clear feedback channel into the product.",
         },
       },
       {
         heading: { es: "Mi rol", en: "My role" },
         body: {
-          es: "Solo developer. Diseño de schema en Supabase + RLS, scrapers de 5 fuentes con manejo de bloqueos, calculadora multi-marketplace (9 países), integración con Google Trends, cron jobs en Vercel.",
-          en: "Solo developer. Schema design on Supabase + RLS, scrapers for 5 sources with anti-blocking, multi-marketplace calculator (9 countries), Google Trends integration, Vercel cron jobs.",
+          es: "Solo developer + product. Diseño del schema en Supabase + RLS, scrapers de 5 fuentes con cache Redis y retry/backoff, calculadora multi-marketplace (9 países), integración con Google Trends, 4 cron jobs en Vercel, Listing Studio con generación de imágenes IA, sistema de feedback con votación y dedup por similitud (70%), onboarding guiado con driver.js, emails transaccionales con Resend.",
+          en: "Solo developer + product. Supabase + RLS schema design, scrapers for 5 sources with Redis cache and retry/backoff, multi-marketplace calculator (9 countries), Google Trends integration, 4 Vercel cron jobs, Listing Studio with AI image generation, feedback system with voting and similarity dedup (70%), guided onboarding with driver.js, transactional emails with Resend.",
         },
       },
       {
@@ -215,41 +239,61 @@ export const CASE_STUDIES = [
             en: "Supabase + RLS instead of NextAuth + Prisma: business is multi-tenant, RLS solves authorization at the DB level and eliminates whole bug classes.",
           },
           {
-            es: "Scrapers tolerantes a fallos con Cheerio + retry/backoff. Si un sitio bloquea, los demás siguen sirviendo resultados.",
-            en: "Fault-tolerant scrapers with Cheerio + retry/backoff. If one site blocks, the others keep serving results.",
+            es: "Scrapers tolerantes con Cheerio + retry/backoff + cache en Upstash Redis. Si Amazon bloquea, los demás siguen sirviendo resultados; lo cacheado responde en <100ms.",
+            en: "Fault-tolerant scrapers with Cheerio + retry/backoff + Upstash Redis cache. If Amazon blocks, others keep serving; cached hits answer in <100ms.",
           },
           {
-            es: "4 cron jobs separados en Vercel: scraping, alertas, refresh de trends y limpieza. Cada uno con su límite de tiempo y SLA propio.",
-            en: "4 separate Vercel cron jobs: scraping, alerts, trends refresh, cleanup. Each with its own timeout and SLA.",
+            es: "4 cron jobs separados en Vercel: scraping, alertas, refresh de trends y daily pick con dedup de ASINs de 7 días. Cada uno con su SLA propio.",
+            en: "4 separate Vercel cron jobs: scraping, alerts, trends refresh, and daily pick with 7-day ASIN dedup. Each with its own SLA.",
           },
           {
-            es: "Modo educativo con glosario: la calculadora explica de dónde sale cada número. Aumenta la confianza del usuario.",
-            en: "Educational mode with glossary: the calculator explains where each number comes from. Increases user trust.",
+            es: "Listing Studio con generación de imágenes IA y prompt detection por tipo de producto (Blender, Fan, Phone Case, etc.). Una licuadora portátil deja de aparecer como una de cocina industrial.",
+            en: "Listing Studio with AI image generation and per-product-type prompt detection (Blender, Fan, Phone Case, etc.). A portable blender stops looking like an industrial kitchen one.",
+          },
+          {
+            es: "Sistema de feedback con votación, detección de duplicados por similitud (Jaccard 70%), usernames anónimos determinísticos (seller_a4b2f1) y notificación a admins al alcanzar 15 votos. Construyo el producto en público con los usuarios.",
+            en: "Feedback system with voting, similarity-based dedup (Jaccard 70%), deterministic anonymous usernames (seller_a4b2f1) and admin notifications at 15 votes. Building the product in public with users.",
+          },
+          {
+            es: "Onboarding guiado con driver.js + tours por sección. Reduce el TTFV (time-to-first-value) de minutos a segundos para sellers no técnicos.",
+            en: "Guided onboarding with driver.js + per-section tours. Reduces TTFV (time-to-first-value) from minutes to seconds for non-technical sellers.",
+          },
+          {
+            es: "Planes monetizados Free / Pro 99 USD / Elite 199 USD. Free no puede crear sugerencias (solo votar); Elite incluye multi-usuario, API completa, bulk scanning y webhooks.",
+            en: "Monetized tiers Free / Pro $99 / Elite $199. Free can't post suggestions (only vote); Elite includes multi-user, full API access, bulk scanning and webhooks.",
+          },
+          {
+            es: "Modo educativo con glosario: la calculadora explica de dónde sale cada número. Aumenta la confianza del usuario al invertir capital real.",
+            en: "Educational mode with glossary: the calculator explains where each number comes from. Builds user trust when investing real capital.",
           },
         ],
       },
       {
         heading: { es: "Lo que aprendí", en: "What I learned" },
         body: {
-          es: "Empecé con un único cron job 'do everything every 10 min' y se me cayó. Dividir por responsabilidad + observabilidad por job fue clave. La lección: cron jobs son microservicios disfrazados.",
-          en: "I started with a single 'do everything every 10 min' cron job and it fell over. Splitting by responsibility + per-job observability was key. Lesson: cron jobs are microservices in disguise.",
+          es: "Empecé con un único cron job 'do everything every 10 min' y se me cayó. Dividir por responsabilidad + observabilidad por job fue clave: cron jobs son microservicios disfrazados. El otro aprendizaje fue el sistema de feedback: tener un loop directo usuario → producto sin pasar por email cambia la velocidad de iteración.",
+          en: "I started with a single 'do everything every 10 min' cron job and it fell over. Splitting by responsibility + per-job observability was key: cron jobs are microservices in disguise. The other lesson was the feedback system: a direct user-to-product loop without going through email changes iteration velocity.",
         },
       },
     ],
     links: {
-      demo: "https://arbibuy.vercel.app",
+      demo: "https://getarbix.com",
       code: "https://github.com/AgustinVelazquez0/arbibuy",
     },
     stack: [
-      "Next.js",
-      "React",
+      "Next.js 16",
+      "React 19",
       "TypeScript",
       "Supabase",
-      "PostgreSQL",
-      "shadcn/ui",
+      "PostgreSQL + RLS",
+      "shadcn/ui v4",
+      "base-ui/react",
+      "Upstash Redis",
       "Recharts",
       "Cheerio",
       "Google Trends",
+      "Resend",
+      "driver.js",
       "Vercel",
     ],
   },

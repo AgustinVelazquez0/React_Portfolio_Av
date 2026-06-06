@@ -379,19 +379,19 @@
             <a class="project-link" href="https://whatsapp-ai-saas-1zya.vercel.app">whatsapp-ai-saas ↗</a>
           </div>
           <p class="project-desc">
-            SaaS to automate WhatsApp Business conversations using an <strong>AI agent with tools</strong> — not a fixed workflow. Key distinction: a <em>workflow</em> follows predetermined steps A→B→C; an <em>agent</em> autonomously decides which tools to call, in what order, and how many times, based on message context. The agent runs an <strong>agentic loop</strong> (up to 10 iterations) with three real tools: queries customer history and bookings from PostgreSQL, searches the business knowledge base, and schedules deferred follow-up messages. Dashboard with NextAuth.js, analytics, business hours and multi-business support.
-            <br/><em>Stack: Next.js · TypeScript · PostgreSQL · Prisma · OpenAI API (tool use) · NextAuth · Vercel</em>
+            <strong>Production-grade</strong> SaaS to automate WhatsApp Business conversations with a real <strong>AI agent with tools</strong> — not a fixed workflow. The <em>agent</em> autonomously decides which tools to call, in what order, and how many times, based on context. It runs an <strong>agentic loop</strong> (up to 10 iterations) with real tools: queries customer history and bookings from PostgreSQL, searches the business knowledge base, and schedules deferred follow-ups. Webhook with <strong>HMAC-SHA256</strong> validation, message <strong>idempotency</strong> on Upstash Redis, <strong>dual Stripe + MercadoPago payments</strong> (Uruguay/LATAM coverage), custom <strong>evals</strong> system for agent regression, deferred jobs with QStash, emails with Resend, Jest test suite. Multi-tenant, NextAuth v5 dashboard, analytics and business hours.
+            <br/><em>Stack: Next.js 16 · React 19 · TypeScript · tRPC v11 · Prisma · PostgreSQL · OpenAI (tool use) · NextAuth v5 · Stripe + MercadoPago · Upstash Redis + QStash · Resend · Zod · Jest · Vercel</em>
           </p>
         </div>
 
         <div class="project">
           <div class="project-head">
             <span class="project-name">Arbix — E-commerce Arbitrage Platform</span>
-            <a class="project-link" href="https://arbibuy.vercel.app">arbibuy.vercel.app ↗</a>
+            <a class="project-link" href="https://getarbix.com">getarbix.com ↗</a>
           </div>
           <p class="project-desc">
-            SaaS to detect arbitrage opportunities between Alibaba and Amazon FBA. Fault-tolerant scrapers across 5 platforms, multi-marketplace calculator (US/ES/MX/JP/DE/UK/FR/IT/BR) with fees, alerts and bulk scans. Auth with Supabase + RLS, 4 cron jobs on Vercel.
-            <br/><em>Stack: Next.js · TypeScript · Supabase · Recharts · Cheerio · Google Trends · Vercel</em>
+            SaaS on its <strong>own domain</strong> to detect arbitrage opportunities between Alibaba and Amazon FBA. Fault-tolerant scrapers across 5 platforms <strong>cached on Upstash Redis</strong>, multi-marketplace calculator (US/ES/MX/JP/DE/UK/FR/IT/BR) with fees, coupons and cashback. <strong>Listing Studio with AI image generation</strong> and per-product-type prompt detection, daily pick with 7-day dedup, alerts and bulk scans. <strong>Feedback system</strong> with voting, similarity dedup (Jaccard 70%) and admin notifications. Guided onboarding with driver.js, educational mode with glossary, <strong>Free / Pro $99 / Elite $199</strong> plans. Auth with Supabase + RLS, 4 Vercel cron jobs.
+            <br/><em>Stack: Next.js 16 · React 19 · TypeScript · Supabase + RLS · shadcn/ui v4 · base-ui/react · Upstash Redis · Recharts · Cheerio · Google Trends · Resend · driver.js · Vercel Cron</em>
           </p>
         </div>
 

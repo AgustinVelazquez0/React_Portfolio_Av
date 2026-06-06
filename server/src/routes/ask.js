@@ -82,7 +82,7 @@ function providerOpenAI() {
   };
 }
 
-// ---- CV knowledge (mantener sincronizado con src/data/cvKnowledge.js) ----
+// ---- CV knowledge (mantener sincronizado con src/data/cvKnowledge.js y api/ask.js) ----
 const CV_KNOWLEDGE = `
 Agustin Velazquez — Full-Stack Engineer, Montevideo, Uruguay.
 Email: agubolso2@gmail.com. LinkedIn: agustin-velazquez-dev.
@@ -96,28 +96,46 @@ CURRENT WORK (since 06/2025):
 
 SIGNATURE PROJECTS:
 1) WhatsApp AI SaaS (https://whatsapp-ai-saas-1zya.vercel.app):
-   SaaS with real AI tool use (not fixed workflow). Up to 10 iterations per
-   message, LLM autonomously decides which tools to call (DB queries,
-   knowledge base, schedule messages). Multi-tenant via single Prisma schema
-   + business_id. Stack: Next.js, TypeScript, PostgreSQL, Prisma, OpenAI,
-   NextAuth, Vercel.
+   Production-grade SaaS with real AI tool use (not fixed workflow). Up to
+   10 iterations per message, LLM autonomously decides which tools to call
+   (DB queries, knowledge base, schedule messages). Multi-tenant via single
+   Prisma schema + business_id.
+   - Stack: Next.js 16, React 19, TypeScript, tRPC v11, Prisma, PostgreSQL,
+     OpenAI, NextAuth v5, Stripe + MercadoPago (LATAM), Upstash Redis,
+     QStash, Resend, Zod, Jest, Vercel.
+   - Production hardening: HMAC-SHA256 webhook validation, message
+     idempotency in Upstash Redis, dual payments for Uruguay/LATAM coverage,
+     custom evals system to regression-test agent trajectories, 16 Jest
+     tests, env var validation at boot.
 
-2) Arbix (https://arbibuy.vercel.app):
-   Alibaba <-> Amazon FBA arbitrage SaaS. 5 fault-tolerant scrapers,
-   multi-marketplace calculator (9 countries), 4 Vercel cron jobs,
-   educational mode with glossary. Stack: Next.js, Supabase + RLS,
-   shadcn/ui, Cheerio, Recharts.
+2) Arbix (https://getarbix.com — own domain):
+   Alibaba <-> Amazon FBA arbitrage SaaS. 5 fault-tolerant scrapers cached
+   in Upstash Redis, multi-marketplace calculator (9 countries), 4 Vercel
+   cron jobs (scraping, alerts, trends, daily pick with 7-day dedup),
+   Listing Studio with AI image generation + per-product-type prompts and
+   name suggestions, feedback system with voting + similarity-based
+   deduplication (Jaccard 70%) + admin notifications at 15 votes,
+   guided onboarding with driver.js, educational mode with glossary.
+   Monetized tiers: Free / Pro $99 / Elite $199.
+   - Stack: Next.js 16, React 19, TypeScript, Supabase + RLS, shadcn/ui v4,
+     base-ui/react, Tailwind v4, Upstash Redis, Cheerio, Recharts,
+     Google Trends, Resend, driver.js, Vercel Cron.
 
 3) Mental (https://mental-web-three.vercel.app):
    Cross-platform hypnosis app with dynamic AI voice (ElevenLabs),
    offline audio, subscriptions. iOS + Android.
 
 STACK:
-- Frontend: React, Next.js 14/15, React Native, TypeScript, Tailwind, shadcn/ui.
-- Backend: Node, Express, Prisma, NextAuth, PostgreSQL, MongoDB, Supabase.
-- AI: OpenAI tool use, agentic loops, ElevenLabs, prompt engineering.
+- Frontend: React 19, Next.js 16, React Native, TypeScript, Tailwind v4,
+  shadcn/ui v4, base-ui/react.
+- Backend: Node, Express, tRPC v11, Prisma, NextAuth v5, PostgreSQL,
+  MongoDB, Supabase + RLS.
+- AI: OpenAI tool use, agentic loops, ElevenLabs, prompt engineering,
+  custom evals systems.
+- Payments: Stripe, MercadoPago, RevenueCat.
+- Infra: Upstash Redis, Upstash QStash, Resend, Vercel Cron, HMAC webhooks.
 - Mobile: Expo, EAS, App Store Connect, Google Play Console, TestFlight.
-- Ops: Vercel, Sentry, Render, Docker, Git.
+- Ops: Vercel, Sentry, Render, Docker, Git, Jest.
 
 EDUCATION:
 - Instituto BIOS — Full-Stack MERN diploma (2024-2025).

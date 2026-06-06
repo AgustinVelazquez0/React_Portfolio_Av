@@ -132,11 +132,11 @@
     "NEXTJS_SAAS": {
       "whatsappAI": {
         "title": "WhatsApp AI SaaS",
-        "description": "SaaS con un agente IA con tools reales (no un workflow fijo). Diferencia clave: el agente decide autónomamente qué herramientas llamar, en qué orden y cuántas veces según el contexto — no sigue pasos predeterminados. Agentic loop de hasta 10 iteraciones: consulta historial y reservas en PostgreSQL, busca en la knowledge base del negocio y agenda mensajes diferidos. Dashboard con NextAuth.js, analytics, horarios de atención y soporte multi-negocio. Deploy en Vercel."
+        "description": "SaaS production-grade con un agente IA con tools reales (no un workflow fijo). El agente decide autónomamente qué herramientas llamar, en qué orden y cuántas veces — agentic loop de hasta 10 iteraciones que consulta historial y reservas, busca en la knowledge base del negocio y agenda mensajes diferidos. Stack moderno: Next.js 16 + React 19 + tRPC v11 + NextAuth v5. Webhook de WhatsApp con validación HMAC-SHA256 e idempotencia en Upstash Redis. Pagos duales Stripe + MercadoPago (Uruguay/LATAM). Jobs diferidos con QStash, emails con Resend. Sistema de evals propio para regresión de agentes y suite de tests con Jest. Multi-tenant, dashboard, analytics y soporte multi-negocio."
       },
       "arbibuy": {
         "title": "Arbix — Plataforma de Arbitraje E-commerce",
-        "description": "SaaS para detectar oportunidades de arbitraje entre Alibaba (mayorista) y Amazon FBA. Búsqueda multi-fuente en 5 plataformas chinas con scrapers tolerantes a fallos, calculadora de rentabilidad multi-marketplace (US, ES, MX, JP, DE, UK, FR, IT, BR) con fees de FBA, cupones y cashback. Análisis de tendencias con Google Trends, alertas automáticas, watchlist, bulk scans y tracker de inversiones. Auth con Supabase + RLS, 4 cron jobs en Vercel y modo educativo con glosario."
+        "description": "SaaS con dominio propio (getarbix.com) para detectar oportunidades de arbitraje entre Alibaba (mayorista) y Amazon FBA. Búsqueda multi-fuente en 5 plataformas chinas con scrapers tolerantes a fallos cacheados con Upstash Redis, calculadora de rentabilidad multi-marketplace (US, ES, MX, JP, DE, UK, FR, IT, BR) con fees de FBA, cupones y cashback. Listing Studio con generación de imágenes IA y sugerencias de nombre, análisis de tendencias con Google Trends, daily pick con dedup de 7 días, watchlist, bulk scans y tracker de inversiones. Onboarding guiado con driver.js. Sistema de feedback con votación, dedup por similitud (70%) y notificación a admins. Planes Free / Pro 99 USD / Elite 199 USD. Auth con Supabase + RLS, 4 cron jobs en Vercel."
       }
     }
   },

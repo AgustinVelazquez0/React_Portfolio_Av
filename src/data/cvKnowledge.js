@@ -29,15 +29,15 @@ export const CV_FACTS = {
   signatureProjects: [
     {
       name: "WhatsApp AI SaaS",
-      what: "SaaS con agente IA con tool use real (no workflow). Hasta 10 iteraciones por mensaje, decisiones autónomas, multi-tenant.",
-      stack: "Next.js · TypeScript · PostgreSQL · Prisma · OpenAI · NextAuth · Vercel",
+      what: "SaaS production-grade con agente IA con tool use real (no workflow). Hasta 10 iteraciones por mensaje, evals automatizadas, webhook HMAC-SHA256, idempotencia con Upstash Redis, pagos duales Stripe + MercadoPago, multi-tenant. Test suite con Jest.",
+      stack: "Next.js 16 · React 19 · tRPC v11 · NextAuth v5 · Prisma · PostgreSQL · OpenAI · Stripe · MercadoPago · Upstash Redis · QStash · Resend · Zod · Jest · Vercel",
       url: "https://whatsapp-ai-saas-1zya.vercel.app",
     },
     {
       name: "Arbix",
-      what: "Plataforma de arbitraje Alibaba ↔ Amazon FBA. 5 scrapers tolerantes a fallos, calculadora multi-marketplace (9 países), 4 cron jobs.",
-      stack: "Next.js · Supabase + RLS · shadcn/ui · Cheerio · Recharts · Vercel",
-      url: "https://arbibuy.vercel.app",
+      what: "Plataforma de arbitraje Alibaba ↔ Amazon FBA con dominio propio. 5 scrapers tolerantes con cache Redis, calculadora multi-marketplace (9 países), 4 cron jobs, Listing Studio con generación de imágenes IA, sistema de feedback con votación + dedup por similitud, onboarding guiado con driver.js, planes Free/Pro 99/Elite 199.",
+      stack: "Next.js 16 · React 19 · Supabase + RLS · shadcn/ui v4 · base-ui/react · Upstash Redis · Cheerio · Recharts · Google Trends · Resend · driver.js · Vercel Cron",
+      url: "https://getarbix.com",
     },
     {
       name: "Mental",
@@ -47,11 +47,13 @@ export const CV_FACTS = {
     },
   ],
   stack: {
-    frontend: ["React", "Next.js 14/15", "React Native", "TypeScript", "Tailwind CSS", "shadcn/ui"],
-    backend: ["Node.js", "Express", "Prisma ORM", "NextAuth.js", "PostgreSQL", "MongoDB", "Supabase"],
-    ai: ["OpenAI tool use", "Agentic loops", "ElevenLabs voice", "prompt engineering", "Vercel AI SDK"],
+    frontend: ["React 19", "Next.js 16", "React Native", "TypeScript", "Tailwind v4", "shadcn/ui v4", "base-ui/react"],
+    backend: ["Node.js", "Express", "tRPC v11", "Prisma ORM", "NextAuth v5", "PostgreSQL", "MongoDB", "Supabase + RLS"],
+    ai: ["OpenAI tool use", "Agentic loops", "ElevenLabs voice", "prompt engineering", "Vercel AI SDK", "Evals propios"],
+    payments: ["Stripe", "MercadoPago", "RevenueCat"],
+    infra: ["Upstash Redis", "Upstash QStash", "Resend", "Vercel Cron", "Webhooks HMAC"],
     mobile: ["Expo", "EAS", "App Store Connect", "Google Play Console", "TestFlight"],
-    ops: ["Vercel", "Sentry", "Render", "Docker", "Git/GitHub"],
+    ops: ["Vercel", "Sentry", "Render", "Docker", "Git/GitHub", "Jest"],
   },
   education: [
     "Instituto BIOS — Diplomado Full-Stack MERN (2024-2025)",
@@ -119,9 +121,10 @@ export function localAnswer(question, lang = "es") {
   }
 
   if (/(stack|tech|tecnolog)/i.test(q)) {
+    const s = CV_FACTS.stack;
     return isEs
-      ? `Frontend: ${CV_FACTS.stack.frontend.join(", ")}. Backend: ${CV_FACTS.stack.backend.join(", ")}. AI: ${CV_FACTS.stack.ai.join(", ")}. Mobile: ${CV_FACTS.stack.mobile.join(", ")}.`
-      : `Frontend: ${CV_FACTS.stack.frontend.join(", ")}. Backend: ${CV_FACTS.stack.backend.join(", ")}. AI: ${CV_FACTS.stack.ai.join(", ")}. Mobile: ${CV_FACTS.stack.mobile.join(", ")}.`;
+      ? `Frontend: ${s.frontend.join(", ")}. Backend: ${s.backend.join(", ")}. AI: ${s.ai.join(", ")}. Pagos: ${s.payments.join(", ")}. Infra: ${s.infra.join(", ")}. Mobile: ${s.mobile.join(", ")}.`
+      : `Frontend: ${s.frontend.join(", ")}. Backend: ${s.backend.join(", ")}. AI: ${s.ai.join(", ")}. Payments: ${s.payments.join(", ")}. Infra: ${s.infra.join(", ")}. Mobile: ${s.mobile.join(", ")}.`;
   }
 
   if (/(philosoph|filosof|enfoque|principi)/i.test(q)) {
