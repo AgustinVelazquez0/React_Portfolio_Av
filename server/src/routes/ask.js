@@ -143,9 +143,10 @@ EDUCATION:
 - Santander Open Academy — several certifications.
 
 PHILOSOPHY:
-"Code is the medium. Detail is the difference." Builds agentic AI products,
-not marketing chatbots. Obsessed with the gap between something that works
-and something that feels right.
+"Code is the medium. Detail is the difference." Builds full-stack products
+end-to-end — web, mobile, SaaS — and reaches for agentic AI when the
+problem calls for it, not as marketing. Obsessed with the gap between
+something that works and something that feels right.
 `.trim();
 
 router.post("/ask", async (req, res) => {

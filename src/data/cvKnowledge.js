@@ -61,7 +61,7 @@ export const CV_FACTS = {
     "Santander Open Academy — varias certificaciones",
   ],
   philosophy:
-    "Construyo producto con IA agéntica real, no chatbots de marketing. Me obsesiona la diferencia entre algo que funciona y algo que se siente correcto.",
+    "Construyo productos full-stack que llegan a producción: web, mobile y SaaS. Uso IA agéntica con tool use real cuando el problema lo pide, no como marketing. Me obsesiona la diferencia entre algo que funciona y algo que se siente correcto.",
 };
 
 export const SUGGESTIONS = {

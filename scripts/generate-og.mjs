@@ -267,10 +267,10 @@ async function main() {
   await render(
     ogTemplate({
       eyebrow: "Selected work · 2026",
-      title: "Build with",
-      italicTail: "agentic AI.",
+      title: "Shipping",
+      italicTail: "to production.",
       subtitle:
-        "Full-stack engineer shipping apps to the App Store, Play Store and the web. Real tool use — not marketing chatbots.",
+        "Full-stack engineer building apps for the App Store, Play Store and the web. Production-grade SaaS — and AI agents when the problem calls for it.",
       badge: "Available",
     }),
     join(outDir, "home.png")
