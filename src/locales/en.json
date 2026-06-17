@@ -124,8 +124,8 @@
     },
     "MOBILE_APPS": {
       "mental": {
-        "title": "Mental: Personalized Hypnosis",
-        "description": "Cross-platform mobile app for personalized hypnosis, available on App Store and Google Play. Animations with Reanimated and responsive UI. I handle store publications, TestFlight testing, and API management with Postman and MongoDB Compass.",
+        "title": "Mental: Wellness & meditation app",
+        "description": "Cross-platform wellness and meditation mobile app, available on App Store and Google Play. Audio player with offline downloads, animations with Reanimated and responsive UI. I handle store publications, TestFlight testing, and API management with Postman and MongoDB Compass.",
         "qrText": "Scan QR to download the App"
       }
     },
@@ -151,7 +151,7 @@
         "year": "06/2025 - Present",
         "role": "Full-Stack Developer",
         "company": "Mental",
-        "description": "Development and maintenance of the personalized hypnosis mobile app (React Native / Expo), published on App Store. Development of the web platform (React Native Web / Next.js) with advanced audio player, offline downloads and subscriptions with RevenueCat. Integration of OneSignal, Sentry, i18next and JWT authentication. State management with Zustand + TanStack Query. Continuous deployment on Vercel."
+        "description": "Development and maintenance of the wellness and meditation mobile app (React Native / Expo), published on App Store and Google Play. Development of the web platform (React Native Web / Next.js) with advanced audio player, offline downloads and subscriptions with RevenueCat. Integration of OneSignal, Sentry, i18next and JWT authentication. State management with Zustand + TanStack Query. Continuous deployment on Vercel."
       },
       {
         "year": "03/2024 - 01/2025",

@@ -324,9 +324,9 @@ async function main() {
       slug: "mental",
       tagLabel: "Mobile · Cross-platform",
       title: "Mental —",
-      italic: "cross-platform hypnosis",
+      italic: "cross-platform wellness",
       subtitle:
-        "React Native + React Native Web with dynamic AI voice (ElevenLabs), offline audio, subscriptions. Live on App Store and Play Store.",
+        "React Native + React Native Web with advanced audio player, offline downloads and subscriptions. Live on App Store and Play Store.",
       badge: "2 stores",
     },
     {

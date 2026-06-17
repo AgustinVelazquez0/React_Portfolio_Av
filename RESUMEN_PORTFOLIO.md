@@ -41,7 +41,7 @@ Portfolio web personal desarrollado con React, Vite y Tailwind CSS. Incluye sopo
 ## Proyectos
 
 ### App Mobile
-- **Mental: Hipnosis personalizada** — App cross-platform (React Native, Expo, TypeScript)
+- **Mental: App de bienestar y meditación** — App cross-platform (React Native, Expo, TypeScript)
 - **Mental — Plataforma Web** — Versión web con audio, offline y suscripciones (React Native Web, RevenueCat, OneSignal)
 
 ### Next.js & SaaS

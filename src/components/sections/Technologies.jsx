@@ -66,7 +66,7 @@ const STACK_GROUPS = {
       items: [
         ["OpenAI · Groq · Gemini", "LLMs con tool use real"],
         ["Loops agénticos", "hasta 10 iteraciones autónomas por mensaje"],
-        ["ElevenLabs", "síntesis de voz dinámica"],
+        ["ElevenLabs", "API en producción"],
         ["Prompt engineering", "system design para producción"],
         ["Vercel AI SDK", "streaming, tools, multi-step"],
       ],
@@ -125,7 +125,7 @@ const STACK_GROUPS = {
       items: [
         ["OpenAI · Groq · Gemini", "LLMs with real tool use"],
         ["Agentic loops", "up to 10 autonomous iterations per message"],
-        ["ElevenLabs", "dynamic voice synthesis"],
+        ["ElevenLabs", "API in production"],
         ["Prompt engineering", "system design for production"],
         ["Vercel AI SDK", "streaming, tools, multi-step"],
       ],

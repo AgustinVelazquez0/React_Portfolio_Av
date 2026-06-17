@@ -122,8 +122,8 @@ SIGNATURE PROJECTS:
      Google Trends, Resend, driver.js, Vercel Cron.
 
 3) Mental (https://mental-web-three.vercel.app):
-   Cross-platform hypnosis app with dynamic AI voice (ElevenLabs),
-   offline audio, subscriptions. iOS + Android.
+   Cross-platform wellness and meditation app with advanced audio player,
+   offline downloads and subscriptions. iOS + Android, published in stores.
 
 STACK:
 - Frontend: React 19, Next.js 16, React Native, TypeScript, Tailwind v4,

@@ -17,7 +17,7 @@ export const EXPERIENCES = [
     year: "06/2025 - Present",
     role: "Full-Stack Developer",
     company: "Mental",
-    description: `Development and maintenance of the personalized hypnosis mobile app (React Native / Expo), published on App Store. Development of the web platform (React Native Web / Next.js) with advanced audio player, offline downloads and subscriptions with RevenueCat. Integration of OneSignal, Sentry, i18next and JWT authentication. State management with Zustand + TanStack Query. Continuous deployment on Vercel.`,
+    description: `Development and maintenance of the wellness and meditation mobile app (React Native / Expo), published on App Store and Google Play. Development of the web platform (React Native Web / Next.js) with advanced audio player, offline downloads and subscriptions with RevenueCat. Integration of OneSignal, Sentry, i18next and JWT authentication. State management with Zustand + TanStack Query. Continuous deployment on Vercel.`,
     technologies: [
       "React Native",
       "React Native Web",

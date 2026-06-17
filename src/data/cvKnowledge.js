@@ -41,15 +41,15 @@ export const CV_FACTS = {
     },
     {
       name: "Mental",
-      what: "App cross-platform de hipnosis personalizada con voz AI dinámica (ElevenLabs), audio offline y suscripciones.",
-      stack: "React Native · Expo · TypeScript · ElevenLabs · RevenueCat · Sentry",
+      what: "App cross-platform de bienestar y meditación con reproductor de audio avanzado, descargas offline, suscripciones y publicación en App Store y Google Play.",
+      stack: "React Native · Expo · TypeScript · ElevenLabs · RevenueCat · OneSignal · Sentry",
       url: "https://mental-web-three.vercel.app",
     },
   ],
   stack: {
     frontend: ["React 19", "Next.js 16", "React Native", "TypeScript", "Tailwind v4", "shadcn/ui v4", "base-ui/react"],
     backend: ["Node.js", "Express", "tRPC v11", "Prisma ORM", "NextAuth v5", "PostgreSQL", "MongoDB", "Supabase + RLS"],
-    ai: ["OpenAI tool use", "Agentic loops", "ElevenLabs voice", "prompt engineering", "Vercel AI SDK", "Evals propios"],
+    ai: ["OpenAI tool use", "Agentic loops", "ElevenLabs", "prompt engineering", "Vercel AI SDK", "Evals propios"],
     payments: ["Stripe", "MercadoPago", "RevenueCat"],
     infra: ["Upstash Redis", "Upstash QStash", "Resend", "Vercel Cron", "Webhooks HMAC"],
     mobile: ["Expo", "EAS", "App Store Connect", "Google Play Console", "TestFlight"],

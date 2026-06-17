@@ -122,15 +122,15 @@ export const CASE_STUDIES = [
     metrics: [
       { value: "2", label: { es: "stores publicadas", en: "stores live" } },
       { value: "iOS+Android", label: { es: "release continuo", en: "continuous release" } },
-      { value: "ElevenLabs", label: { es: "voz dinámica", en: "dynamic voice" } },
+      { value: "Offline", label: { es: "audio descargable", en: "downloadable audio" } },
     ],
     title: {
-      es: "Mental — hipnosis personalizada cross-platform",
-      en: "Mental — cross-platform personalized hypnosis",
+      es: "Mental — app de bienestar cross-platform",
+      en: "Mental — cross-platform wellness app",
     },
     summary: {
-      es: "App mobile (React Native / Expo) y plataforma web (React Native Web / Next.js) con reproductor de audio offline, voz AI dinámica (ElevenLabs), suscripciones con RevenueCat y monitoreo Sentry. Publicada en App Store y Google Play.",
-      en: "Mobile app (React Native / Expo) and web platform (React Native Web / Next.js) with offline audio player, dynamic AI voice (ElevenLabs), RevenueCat subscriptions and Sentry monitoring. Live on App Store and Google Play.",
+      es: "App mobile (React Native / Expo) y plataforma web (React Native Web / Next.js) con reproductor de audio avanzado, descargas offline, suscripciones con RevenueCat y monitoreo Sentry. Publicada en App Store y Google Play.",
+      en: "Mobile app (React Native / Expo) and web platform (React Native Web / Next.js) with advanced audio player, offline downloads, RevenueCat subscriptions and Sentry monitoring. Live on App Store and Google Play.",
     },
     sections: [
       {
