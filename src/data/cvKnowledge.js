@@ -35,7 +35,7 @@ export const CV_FACTS = {
     },
     {
       name: "Arbix",
-      what: "Plataforma de arbitraje Alibaba ↔ Amazon FBA con dominio propio. 5 scrapers tolerantes con cache Redis, calculadora multi-marketplace (9 países), 4 cron jobs, Listing Studio con generación de imágenes IA, sistema de feedback con votación + dedup por similitud, onboarding guiado con driver.js, planes Free/Pro 99/Elite 199.",
+      what: "Plataforma de arbitraje multi-marketplace (Amazon, Walmart, Alibaba) con dominio propio. Radar con notificaciones deep-link, motor de scoring de oportunidad, histórico de precios propio, calculadora multi-marketplace (9 países) con fees reales de FBA, cache multi-capa con Redis, cron pipelines, Listing Studio con generación de imágenes IA, i18n EN/ES, planes Free/Pro 99/Elite 199.",
       stack: "Next.js 16 · React 19 · Supabase + RLS · shadcn/ui v4 · base-ui/react · Upstash Redis · Cheerio · Recharts · Google Trends · Resend · driver.js · Vercel Cron",
       url: "https://getarbix.com",
     },

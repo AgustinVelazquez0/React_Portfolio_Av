@@ -27,7 +27,7 @@
     "ctaHire": "Looking for a developer?",
     "cmdkHint": "Tip — open the command palette with",
     "proof": {
-      "stores": "apps in stores",
+      "stores": "app in stores",
       "projects": "projects in prod",
       "production": "in production",
       "workingAt": "shipping at"
@@ -135,8 +135,8 @@
         "description": "Production-grade SaaS with a real AI agent with tools — not a fixed workflow. The agent autonomously decides which tools to call, in what order and how many times — agentic loop up to 10 iterations that queries customer history and bookings, searches the business knowledge base, and schedules deferred follow-ups. Modern stack: Next.js 16 + React 19 + tRPC v11 + NextAuth v5. WhatsApp webhook with HMAC-SHA256 validation and idempotency on Upstash Redis. Dual Stripe + MercadoPago payments (Uruguay/LATAM). Deferred jobs with QStash, emails with Resend. Custom evals system for agent regression and Jest test suite. Multi-tenant, dashboard, analytics and multi-business support."
       },
       "arbibuy": {
-        "title": "Arbix — E-commerce Arbitrage Platform",
-        "description": "SaaS on its own domain (getarbix.com) to detect arbitrage opportunities between Alibaba (wholesale) and Amazon FBA. Multi-source search across 5 Chinese platforms with fault-tolerant scrapers cached on Upstash Redis, multi-marketplace profit calculator (US, ES, MX, JP, DE, UK, FR, IT, BR) with FBA fees, coupons and cashback. Listing Studio with AI image generation and name suggestions, trend analysis with Google Trends, daily pick with 7-day dedup, watchlist, bulk scans and investment tracker. Guided onboarding with driver.js. Feedback system with voting, similarity dedup (70%) and admin notifications. Free / Pro $99 / Elite $199 plans. Auth with Supabase + RLS, 4 Vercel cron jobs."
+        "title": "Arbix — Multi-marketplace Arbitrage Platform",
+        "description": "SaaS on its own domain (getarbix.com) that finds resale opportunities across Amazon, Walmart and Alibaba. Product radar with live rankings and deep-link notifications, opportunity scoring engine (margin, competition, price stability), proprietary price-history tracking, multi-marketplace profit calculator (US, ES, MX, JP, DE, UK, FR, IT, BR) with real FBA fees by category and weight. Listing Studio with AI image generation, trend analysis with Google Trends, watchlist, investment tracker and weekly summary emails. Multi-layer caching (client + Upstash Redis) to protect third-party API quotas. Full i18n (EN/ES), Free / Pro $99 / Elite $199 plans, auth with Supabase + RLS and Vercel cron pipelines."
       }
     }
   },

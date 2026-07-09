@@ -1,5 +1,7 @@
-# React + Vite
+# Portfolio — Agustin Velazquez
 
-Hello! You can acces to my PortFolio whith this link: 
+Full-Stack Engineer. Web, mobile and SaaS — from schema to deploy.
 
-- react-portfolio-av.vercel.app
+**Live site:** [react-portfolio-av.vercel.app](https://react-portfolio-av.vercel.app)
+
+Built with React + Vite, Tailwind CSS, Framer Motion and i18next (EN/ES).

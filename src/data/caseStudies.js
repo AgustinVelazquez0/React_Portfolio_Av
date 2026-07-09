@@ -209,12 +209,12 @@ export const CASE_STUDIES = [
       { value: "3", label: { es: "planes monetizados", en: "monetized tiers" } },
     ],
     title: {
-      es: "Arbix — plataforma de arbitraje Alibaba ↔ Amazon",
-      en: "Arbix — Alibaba ↔ Amazon arbitrage platform",
+      es: "Arbix — plataforma de arbitraje multi-marketplace",
+      en: "Arbix — multi-marketplace arbitrage platform",
     },
     summary: {
-      es: "SaaS con dominio propio (getarbix.com) que detecta oportunidades de arbitraje entre Alibaba y Amazon FBA. Calculadora multi-marketplace, scrapers tolerantes a fallos cacheados con Upstash Redis, Listing Studio con generación de imágenes IA, sistema de feedback con votación + dedup, y planes Free / Pro 99 USD / Elite 199 USD.",
-      en: "SaaS on its own domain (getarbix.com) that detects arbitrage opportunities between Alibaba and Amazon FBA. Multi-marketplace calculator, fault-tolerant scrapers cached with Upstash Redis, Listing Studio with AI image generation, feedback system with voting + dedup, and tiers Free / Pro $99 / Elite $199.",
+      es: "SaaS con dominio propio (getarbix.com) que detecta oportunidades de reventa entre Amazon, Walmart y Alibaba. Radar con notificaciones deep-link, motor de scoring de oportunidad, histórico de precios propio, calculadora con fees reales de FBA, cache multi-capa con Upstash Redis y planes Free / Pro 99 USD / Elite 199 USD.",
+      en: "SaaS on its own domain (getarbix.com) that finds resale opportunities across Amazon, Walmart and Alibaba. Product radar with deep-link notifications, opportunity scoring engine, proprietary price history, calculator with real FBA fees, multi-layer caching with Upstash Redis and tiers Free / Pro $99 / Elite $199.",
     },
     sections: [
       {
