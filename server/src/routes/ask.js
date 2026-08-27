@@ -95,7 +95,7 @@ CURRENT WORK (since 06/2025):
 - State: Zustand + TanStack Query.
 
 SIGNATURE PROJECTS:
-1) WhatsApp AI SaaS (https://whatsapp-ai-saas-1zya.vercel.app):
+1) WhatsApp AI SaaS (https://turniagenda.com):
    Production-grade SaaS with real AI tool use (not fixed workflow). Up to
    10 iterations per message, LLM autonomously decides which tools to call
    (DB queries, knowledge base, schedule messages). Multi-tenant via single

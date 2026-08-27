@@ -4,25 +4,21 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Agustin Velazquez — CV · Full-Stack Engineer</title>
-<meta name="description" content="CV de Agustin Velazquez — Full-Stack Engineer. React, Next.js, React Native, AI integration. +5 proyectos en producción." />
+<meta name="description" content="CV de Agustin Velazquez — Full-Stack Engineer. React, Next.js, React Native. Apps de suscripción publicadas en App Store y Google Play." />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    /* AV brand 2.0 — amber editorial accent (matches main portfolio) */
     --cyan: #b45309; /* legacy var name kept for compat; now amber-deep */
     --accent: #b45309;
-    --accent-ink: #422006;
     --void: #09090b;
-    --charcoal: #18181b;
     --steel: #3f3f46;
     --ink: #09090b;
     --muted: #71717a;
     --line: #e4e4e7;
     --paper: #ffffff;
-    --paper-soft: #fafaf9;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
@@ -31,7 +27,7 @@
     background: #f4f4f5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.45;
+    line-height: 1.4;
   }
   .toolbar {
     position: sticky; top: 0; z-index: 10;
@@ -46,10 +42,8 @@
   .toolbar-brand .mark svg { width: 18px; }
   .toolbar-brand .label {
     font-family: "JetBrains Mono", monospace;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #a3a3a3;
+    font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #a3a3a3;
   }
   .toolbar-actions { display: flex; gap: 8px; flex-wrap: wrap; }
   .btn {
@@ -62,246 +56,157 @@
     transition: opacity 0.15s ease;
   }
   .btn:hover { opacity: 0.85; }
-  .btn-ghost {
-    background: transparent; color: #fff; border: 1px solid #333;
-  }
+  .btn-ghost { background: transparent; color: #fff; border: 1px solid #333; }
   .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
 
   .page {
-    max-width: 880px;
-    margin: 24px auto;
+    max-width: 880px; margin: 24px auto;
     background: var(--paper);
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    padding: 48px 56px;
-    border-radius: 4px;
+    padding: 40px 46px; border-radius: 4px;
   }
 
   /* ===== Header ===== */
   header.cv-header {
     display: flex; gap: 24px; align-items: flex-start; justify-content: space-between;
-    padding-bottom: 24px; border-bottom: 2px solid var(--void);
-    margin-bottom: 28px;
+    padding-bottom: 14px; border-bottom: 2px solid var(--void);
+    margin-bottom: 14px;
   }
-  .identity { display: flex; gap: 18px; align-items: center; }
+  .identity { display: flex; gap: 16px; align-items: center; }
   .identity .av-mark {
-    width: 56px; height: 56px;
-    background: var(--cyan); border-radius: 12px;
+    width: 46px; height: 46px;
+    background: var(--cyan); border-radius: 10px;
     display: grid; place-items: center; flex-shrink: 0;
   }
-  .identity .av-mark svg { width: 38px; height: auto; }
-  .identity h1 {
-    font-size: 30px; font-weight: 700;
-    letter-spacing: -0.02em; color: var(--void);
-    line-height: 1.05;
-  }
-  .identity .role {
-    font-size: 15px; color: var(--steel);
-    font-weight: 500; margin-top: 2px;
-  }
+  .identity .av-mark svg { width: 31px; height: auto; }
+  .identity h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; color: var(--void); line-height: 1.05; }
+  .identity .role { font-size: 13.5px; color: var(--steel); font-weight: 500; margin-top: 2px; }
   .identity .role strong { color: var(--cyan); font-weight: 600; }
-  .contact-block {
-    text-align: right;
-    font-size: 12px; color: var(--steel);
-    line-height: 1.7;
-  }
-  .contact-block a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--steel); }
-  .contact-block a:hover { color: var(--cyan); border-color: var(--cyan); }
+  .contact-block { text-align: right; font-size: 11px; color: var(--steel); line-height: 1.65; }
+  .contact-block a { color: var(--ink); text-decoration: none; }
+  .contact-block a:hover { color: var(--cyan); }
   .contact-block .label {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 9px; text-transform: uppercase;
-    letter-spacing: 0.2em; color: var(--muted);
-    margin-right: 8px;
+    font-family: "JetBrains Mono", monospace; font-size: 8.5px;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--muted); margin-right: 7px;
   }
+  .contact-block .eligibility { color: var(--cyan); font-weight: 600; }
 
-  /* ===== Brand bar ===== */
-  .brand-bar {
-    display: flex; justify-content: space-between; align-items: center;
-    margin: -8px 0 28px; padding: 10px 14px;
-    background: var(--void); color: #fff;
-    border-radius: 4px;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em;
-  }
-  .brand-bar .accent { color: var(--cyan); }
+  /* ===== Summary ===== */
+  .summary { font-size: 12px; color: var(--ink); line-height: 1.5; margin-bottom: 16px; }
+  .summary strong { font-weight: 600; }
 
   /* ===== Sections ===== */
-  section { margin-bottom: 26px; }
+  section { margin-bottom: 15px; }
   h2.section-title {
-    font-size: 11px; font-family: "JetBrains Mono", monospace;
-    text-transform: uppercase; letter-spacing: 0.25em;
-    color: var(--cyan); padding-bottom: 6px;
+    font-size: 9.5px; font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase; letter-spacing: 0.22em;
+    color: var(--cyan); padding-bottom: 5px;
     border-bottom: 1px solid var(--line);
-    margin-bottom: 14px;
-    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 7px;
   }
   h2.section-title::before {
     content: ""; display: inline-block;
-    width: 6px; height: 6px; background: var(--cyan);
-    border-radius: 1px;
+    width: 5px; height: 5px; background: var(--cyan); border-radius: 1px;
   }
 
-  /* ===== Two-column layout ===== */
-  .grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 36px; }
+  .grid { display: grid; grid-template-columns: 2.25fr 1fr; gap: 30px; }
   .col-main section:last-child, .col-side section:last-child { margin-bottom: 0; }
 
-  /* ===== Summary ===== */
-  .summary {
-    font-size: 13.5px; color: var(--ink); line-height: 1.6;
+  /* ===== Roles ===== */
+  .role-item { margin-bottom: 13px; padding-left: 12px; border-left: 2px solid var(--cyan); }
+  .role-item:last-child { margin-bottom: 0; }
+  .role-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+  .role-title { font-size: 13px; font-weight: 600; color: var(--void); }
+  .role-title .at { color: var(--cyan); }
+  .role-date { font-family: "JetBrains Mono", monospace; font-size: 9.5px; color: var(--muted); white-space: nowrap; }
+  .role-note { font-size: 10.5px; color: var(--muted); margin-top: 1px; }
+
+  /* Separación por plataforma */
+  .split { margin-top: 6px; }
+  .split-row { display: flex; gap: 9px; margin-bottom: 5px; }
+  .split-row:last-child { margin-bottom: 0; }
+  .split-tag {
+    font-family: "JetBrains Mono", monospace; font-size: 8px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--cyan); flex-shrink: 0; width: 42px; padding-top: 2px; font-weight: 600;
+  }
+  .split-txt { font-size: 11.5px; color: var(--steel); line-height: 1.45; }
+  .split-txt b { color: var(--ink); font-weight: 600; }
+
+  /* Estado */
+  .status {
+    font-family: "JetBrains Mono", monospace; font-size: 8px;
+    text-transform: uppercase; letter-spacing: 0.13em;
+    padding: 2px 6px; border: 1px solid var(--line); color: var(--muted);
+    white-space: nowrap;
+  }
+  .status.live { border-color: var(--cyan); color: var(--cyan); }
+  a.status { text-decoration: none; }
+
+  /* ===== Proyectos ===== */
+  .proj { margin-bottom: 9px; padding-left: 12px; border-left: 2px solid var(--line); }
+  .proj:last-child { margin-bottom: 0; }
+  .proj-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .proj-name { font-weight: 600; font-size: 12px; color: var(--void); }
+  .proj-name a { color: var(--muted); text-decoration: none; font-family: "JetBrains Mono", monospace; font-size: 9px; margin-left: 5px; font-weight: 400; }
+  .proj-desc { font-size: 11.5px; color: var(--steel); margin-top: 3px; line-height: 1.45; }
+  .proj-desc b { color: var(--ink); font-weight: 600; }
+
+  /* ===== Estudios ===== */
+  .edu { font-size: 11.5px; color: var(--steel); line-height: 1.55; }
+  .edu b { color: var(--ink); font-weight: 600; }
+  .edu .d { font-family: "JetBrains Mono", monospace; font-size: 9px; color: var(--muted); }
+
+  /* ===== Columna lateral ===== */
+  .metrics { display: flex; flex-direction: column; gap: 5px; }
+  .metric { display: flex; gap: 8px; align-items: center; padding: 7px 9px; background: var(--void); color: #fff; border-radius: 4px; }
+  .metric .n { font-size: 17px; font-weight: 700; color: var(--cyan); line-height: 1; flex-shrink: 0; }
+  .metric .d {
+    font-family: "JetBrains Mono", monospace; font-size: 8px;
+    text-transform: uppercase; letter-spacing: 0.13em; color: #d4d4d4; line-height: 1.45;
   }
 
-  /* ===== Experience ===== */
-  .xp-item { margin-bottom: 18px; padding-left: 14px; border-left: 2px solid var(--line); }
-  .xp-item:last-child { margin-bottom: 0; }
-  .study-item { border-left-color: #d4d4d4; }
-  .study-note {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 9px; text-transform: uppercase; letter-spacing: 0.15em;
-    color: var(--muted); margin-bottom: 6px;
-  }
-  .xp-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
-  .xp-role { font-size: 14px; font-weight: 600; color: var(--void); }
-  .xp-company { color: var(--cyan); font-weight: 500; }
-  .xp-date { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--muted); white-space: nowrap; }
-  .xp-desc { font-size: 12.5px; color: var(--steel); margin-top: 6px; line-height: 1.55; }
-  .xp-tech { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; }
-  .xp-tech span {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 9.5px; padding: 2px 6px;
-    border: 1px solid var(--line); border-radius: 3px;
-    color: var(--steel); background: #fafafa;
-  }
-
-  /* ===== Projects ===== */
-  .project { margin-bottom: 14px; padding-left: 14px; border-left: 2px solid var(--cyan); }
-  .project:last-child { margin-bottom: 0; }
-  .project-head {
-    display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
-    flex-wrap: wrap;
-  }
-  .project-name { font-weight: 600; font-size: 13.5px; color: var(--void); }
-  .project-link {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 10px; color: var(--muted);
-    text-decoration: none;
-  }
-  .project-link:hover { color: var(--cyan); }
-  .project-desc { font-size: 12px; color: var(--steel); margin-top: 4px; line-height: 1.5; }
-
-  /* ===== Side column ===== */
-  .stack-group { margin-bottom: 14px; }
+  .stack-group { margin-bottom: 9px; }
+  .stack-group:last-child { margin-bottom: 0; }
   .stack-group h3 {
     font-family: "JetBrains Mono", monospace;
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em;
-    color: var(--void); margin-bottom: 6px; font-weight: 600;
+    font-size: 8.5px; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--void); margin-bottom: 3px; font-weight: 600;
   }
-  .stack-list {
-    font-size: 12px; color: var(--steel); line-height: 1.55;
-  }
+  .stack-list { font-size: 11px; color: var(--steel); line-height: 1.45; }
   .stack-list .pri { color: var(--ink); font-weight: 500; }
 
-  .cert-item {
-    margin-bottom: 10px; padding-bottom: 10px;
-    border-bottom: 1px dashed var(--line);
-  }
-  .cert-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .cert-name { font-size: 12.5px; font-weight: 600; color: var(--void); line-height: 1.3; }
-  .cert-org { font-size: 11px; color: var(--cyan); margin-top: 2px; }
-  .cert-meta { font-family: "JetBrains Mono", monospace; font-size: 9.5px; color: var(--muted); margin-top: 2px; }
+  .mini { font-size: 11px; color: var(--steel); line-height: 1.5; }
+  .mini b { color: var(--ink); font-weight: 600; }
+  .mini .org { color: var(--cyan); }
 
-  .lang-list { font-size: 12.5px; color: var(--ink); }
-  .lang-list li { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed var(--line); list-style: none; }
-  .lang-list li:last-child { border-bottom: none; }
-  .lang-list .level { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--cyan); }
+  .lang-list { font-size: 11.5px; color: var(--ink); }
+  .lang-list li { display: flex; justify-content: space-between; padding: 2px 0; list-style: none; }
+  .lang-list .level { font-family: "JetBrains Mono", monospace; font-size: 9.5px; color: var(--cyan); }
 
-  .key-metric {
-    display: flex; gap: 10px; align-items: center;
-    padding: 10px; background: var(--void); color: #fff;
-    border-radius: 6px; margin-bottom: 8px;
-  }
-  .key-metric .num {
-    font-size: 22px; font-weight: 700; color: var(--cyan);
-    font-family: "Geist", system-ui, sans-serif;
-    line-height: 1;
-  }
-  .key-metric .desc {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.18em;
-    color: #d4d4d4;
-  }
-
-  footer.cv-footer {
-    margin-top: 32px; padding-top: 16px;
-    border-top: 1px solid var(--line);
-    display: flex; justify-content: space-between; align-items: center;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 10px; color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.18em;
-  }
-  footer.cv-footer .statement { color: var(--ink); }
-  footer.cv-footer .statement .accent { color: var(--cyan); }
-
-  /* ===== Print ===== */
-  @page { size: A4; margin: 12mm; }
+  @page { size: A4; margin: 11mm 12mm; }
   @media print {
-    @page {
-      size: A4;
-      margin: 12mm 14mm;
-    }
-    body {
-      background: #fff;
-      font-size: 10pt;
-      line-height: 1.4;
-    }
+    body { background: #fff; font-size: 9.5pt; }
     html, body { color: #09090b !important; }
     .toolbar { display: none !important; }
-    .page {
-      box-shadow: none;
-      margin: 0;
-      padding: 0;
-      max-width: 100%;
-      border-radius: 0;
+    .page { box-shadow: none; margin: 0; padding: 0; max-width: 100%; border-radius: 0; }
+    a { color: inherit; text-decoration: none; }
+    .stack-list, .split-txt, .proj-desc { color: #18181b; }
+    .metric, .av-mark, .contact-block .eligibility, .section-title, .section-title::before,
+    .role-title .at, .role-item, .split-tag, .status.live, .lang-list .level, .mini .org {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
     }
-    a {
-      color: inherit;
-      border: none;
-      text-decoration: none;
-    }
-    .xp-tech span, .stack-list {
-      color: #18181b;
-    }
-    /* Preserve brand color on print where intentional (badges, marks) */
-    .key-metric,
-    .av-mark,
-    .toolbar-brand .mark,
-    .brand-bar,
-    .section-title,
-    .section-title::before,
-    .xp-company,
-    .project,
-    .cert-org,
-    .lang-list .level,
-    .stat-num,
-    footer.cv-footer .statement .accent {
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-    /* Avoid awkward page-breaks */
-    .xp-item, .project, .cert-card {
-      page-break-inside: avoid;
-      break-inside: avoid;
-    }
-    header.cv-header,
-    section,
-    footer.cv-footer {
-      page-break-inside: avoid;
-    }
+    .role-item, .proj, .stack-group, .metric { page-break-inside: avoid; break-inside: avoid; }
+    h2.section-title { page-break-after: avoid; }
   }
 
   @media (max-width: 720px) {
-    .page { padding: 28px 24px; }
+    .page { padding: 24px 20px; }
     header.cv-header { flex-direction: column; }
     .contact-block { text-align: left; }
-    .grid { grid-template-columns: 1fr; gap: 24px; }
+    .grid { grid-template-columns: 1fr; gap: 22px; }
   }
 </style>
 </head>
@@ -336,160 +241,138 @@
       </div>
       <div>
         <h1>Agustin Velazquez</h1>
-        <div class="role">Full-Stack Engineer · <strong>AI-Native</strong></div>
+        <div class="role">Full-Stack Engineer · <strong>Mobile &amp; SaaS</strong></div>
       </div>
     </div>
     <div class="contact-block">
+      <div><span class="label">Doc</span><span class="eligibility">Ciudadanía española (UE) y uruguaya</span></div>
+      <div><span class="label">Loc</span>Montevideo · <span class="eligibility">disponible para incorporación en España</span></div>
+      <div><span class="label">Mail</span><a href="mailto:agubolso2@gmail.com">agubolso2@gmail.com</a> · +598 98 661 715</div>
       <div><span class="label">Web</span><a href="https://react-portfolio-av.vercel.app/">react-portfolio-av.vercel.app</a></div>
-      <div><span class="label">Mail</span><a href="mailto:agubolso2@gmail.com">agubolso2@gmail.com</a></div>
-      <div><span class="label">Tel</span>+598 98 661 715</div>
-      <div><span class="label">Loc</span>Montevideo, Uruguay</div>
-      <div><span class="label">Git</span><a href="https://github.com/AgustinVelazquez0">github.com/AgustinVelazquez0</a></div>
-      <div><span class="label">In</span><a href="https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/">linkedin.com/in/agustin-velázquez-dev</a></div>
+      <div><span class="label">Git</span><a href="https://github.com/AgustinVelazquez0">github.com/AgustinVelazquez0</a> · <a href="https://www.linkedin.com/in/agustin-velazquez-dev/">linkedin/agustin-velazquez-dev</a></div>
     </div>
   </header>
 
-  <div class="brand-bar">
-    <span>Full-stack craft. <span class="accent">AI-native mindset.</span></span>
-    <span class="accent">AV / 2025</span>
-  </div>
-
-  <section>
-    <h2 class="section-title">Resumen profesional</h2>
-    <p class="summary">
-      Desarrollador Full-Stack uruguayo especializado en <strong>React, Next.js y React Native</strong>, con foco en <strong>producto end-to-end que llega a producción</strong>: apps móviles, SaaS multi-tenant con pagos y agentes IA con tool use real cuando el problema lo justifica. <strong>Experiencia laboral actual en Mental</strong> (apps en App Store y Google Play, plataforma web y mobile). He construido y desplegado +5 proyectos en producción, incluyendo sistemas con pagos duales Stripe + MercadoPago, autenticación, observabilidad y arquitectura de agentes IA. Apasionado por el código limpio, la performance y los detalles que diferencian un producto bueno de uno excepcional.
-    </p>
-  </section>
+  <p class="summary">
+    Ingeniero Full-Stack con <strong>ciudadanía española (UE) y uruguaya</strong>. Casi 2 años
+    construyendo y desplegando producto de forma independiente, más 1 año en <strong>Mental</strong>:
+    app publicada en App Store y Google Play que llegó a <strong>60.000 usuarios</strong>, cobros reales
+    (RevenueCat, Stripe, MercadoPago) y SaaS propios. También <strong>SOMMOS</strong> para una clienta
+    externa. Disponible para incorporación en España, presencial, híbrida o remota.
+  </p>
 
   <div class="grid">
 
-    <!-- ============ MAIN COLUMN ============ -->
     <div class="col-main">
 
       <section>
-        <h2 class="section-title">Experiencia laboral</h2>
-        <p class="study-note">Único rol en empresa contratante / producto en producción con equipo.</p>
+        <h2 class="section-title">Experiencia</h2>
 
-        <div class="xp-item">
-          <div class="xp-head">
-            <div class="xp-role">Full-Stack Developer · <span class="xp-company">Mental</span></div>
-            <div class="xp-date">06/2025 — Presente</div>
+        <div class="role-item">
+          <div class="role-head">
+            <div class="role-title">Full-Stack Developer · <span class="at">Mental</span></div>
+            <div class="role-date">06/2025 — Presente</div>
           </div>
-          <p class="xp-desc">
-            Desarrollo y mantenimiento de la app mobile de bienestar y meditación (React Native / Expo), publicada en App Store y Google Play. Construcción de la plataforma web (React Native Web / Next.js) con reproductor de audio avanzado, descargas offline y suscripciones con RevenueCat. Integración de OneSignal, Sentry, i18next y autenticación JWT. Estado con Zustand + TanStack Query. Deploy continuo en Vercel.
+          <div class="role-note">Producto de bienestar y meditación · llegó a <strong>60.000 usuarios</strong>. <a class="status live" href="https://www.mental.app/descarga">Publicada · App Store y Google Play ↗</a></div>
+          <div class="split">
+            <div class="split-row">
+              <span class="split-tag">Mobile</span>
+              <span class="split-txt">
+                App <b>React Native / Expo</b> publicada en las dos tiendas. Reproductor de audio con
+                descargas offline, animaciones con Reanimated, suscripciones con <b>RevenueCat</b> y
+                push con OneSignal. Me ocupo del ciclo de release: builds con EAS, TestFlight,
+                revisión de tienda y actualizaciones OTA.
+              </span>
+            </div>
+            <div class="split-row">
+              <span class="split-tag">Web</span>
+              <span class="split-txt">
+                Plataforma en <b>Next.js / React Native Web</b> con reproductor avanzado, reproducción
+                en background y descargas offline mediante <b>Service Workers</b>. Autenticación JWT,
+                i18next, Zustand + TanStack Query y monitoreo de errores con Sentry.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="role-item">
+          <div class="role-head">
+            <div class="role-title">Full-Stack Developer · <span class="at">SOMMOS</span></div>
+            <div class="role-date">08/2026 — Presente</div>
+          </div>
+          <div class="role-note">Freelance, para una clienta externa. <span class="status">En desarrollo · pendiente de publicar</span></div>
+          <div class="split">
+            <div class="split-row">
+              <span class="split-tag">Mobile</span>
+              <span class="split-txt">
+                App en <b>Expo / expo-router</b> con suscripción mensual: catálogo de audio y video,
+                selección del mes y una sección personalizada a partir de un cuestionario. Cobro con
+                <b>RevenueCat</b>, push con OneSignal y backend en Supabase.
+              </span>
+            </div>
+            <div class="split-row">
+              <span class="split-tag">Web</span>
+              <span class="split-txt">
+                Landing en <b>Next.js</b> más un <b>panel privado</b> para que la clienta suba sus
+                propias clases sin depender de nadie. Supabase con seguridad a nivel de fila,
+                desplegado en Vercel.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Proyectos propios seleccionados</h2>
+
+        <div class="proj">
+          <div class="proj-head">
+            <span class="proj-name">WhatsApp AI SaaS <a href="https://turniagenda.com">demo ↗</a></span>
+            <span class="role-date">2025 — 2026 · construido</span>
+          </div>
+          <p class="proj-desc">
+            SaaS multi-tenant con un <b>agente IA con tools reales</b> en lugar de un workflow fijo:
+            un agentic loop de hasta <b>10 iteraciones</b> donde el agente decide qué herramientas usar
+            y en qué orden, consultando reservas en PostgreSQL y una knowledge base. Webhook con
+            <b>HMAC-SHA256</b>, idempotencia de mensajes en Redis y una suite propia de <b>evals</b>
+            para detectar regresiones del agente.
+            <br/><em>Next.js · tRPC · Prisma · PostgreSQL · OpenAI tool use · Stripe + MercadoPago · Upstash · Vitest</em>
           </p>
-          <div class="xp-tech">
-            <span>React Native</span><span>Next.js</span><span>TypeScript</span><span>Expo</span>
-            <span>RevenueCat</span><span>OneSignal</span><span>Sentry</span><span>Zustand</span>
-            <span>TanStack Query</span><span>JWT</span><span>Vercel</span><span>EAS</span>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <span class="proj-name">Arbix <a href="https://getarbix.com">getarbix.com ↗</a></span>
+            <span class="role-date">2026 · construido</span>
           </div>
+          <p class="proj-desc">
+            Detector de arbitraje entre Alibaba y Amazon FBA. <b>Scrapers tolerantes a fallos en 5
+            plataformas</b> cacheados en Redis, calculadora de fees en <b>9 marketplaces</b>, 4 tareas
+            programadas y generación de imágenes con IA para los listings.
+            <br/><em>Next.js · Supabase + RLS · Upstash Redis · Cheerio · Replicate · Vercel Cron</em>
+          </p>
         </div>
       </section>
 
       <section>
         <h2 class="section-title">Estudios</h2>
-        <p class="study-note">Formación académica y certificaciones. No debe interpretarse como experiencia laboral en esas instituciones.</p>
-
-        <div class="xp-item study-item">
-          <div class="xp-head">
-            <div class="xp-role">Desarrollo Full-Stack (MERN) · <span class="xp-company">Instituto BIOS</span></div>
-            <div class="xp-date">03/2024 — 01/2025</div>
-          </div>
-          <p class="xp-desc">
-            Diplomatura / programa práctico: aplicaciones MERN completas, APIs REST, PostgreSQL y MongoDB, Docker, Git y despliegue. Entregas y proyectos evaluados en el aula.
-          </p>
-          <div class="xp-tech">
-            <span>Node.js</span><span>Express</span><span>React</span><span>MongoDB</span>
-            <span>PostgreSQL</span><span>Docker</span><span>Linux</span><span>Postman</span>
-          </div>
-        </div>
-
-        <div class="xp-item study-item">
-          <div class="xp-head">
-            <div class="xp-role">Certificaciones de desarrollo web · <span class="xp-company">FreeCodeCamp</span></div>
-            <div class="xp-date">09/2023 — 01/2024</div>
-          </div>
-          <p class="xp-desc">
-            Proyectos full-stack desplegados, visualización con D3.js, Node/Express y bases de datos con SQL. Trabajo autodidacta con currículum estructurado.
-          </p>
-        </div>
-
-        <div class="xp-item study-item">
-          <div class="xp-head">
-            <div class="xp-role">Habilidades digitales en el ámbito laboral · <span class="xp-company">Instituto BIOS</span></div>
-            <div class="xp-date">09/2024 — 01/2025</div>
-          </div>
-          <p class="xp-desc">
-            Curso transversal: Office 365, Google Workspace, Power BI y productividad digital aplicada al entorno laboral.
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="section-title">Proyectos destacados</h2>
-
-        <div class="project">
-          <div class="project-head">
-            <span class="project-name">WhatsApp AI SaaS</span>
-            <a class="project-link" href="https://whatsapp-ai-saas-1zya.vercel.app">whatsapp-ai-saas ↗</a>
-          </div>
-          <p class="project-desc">
-            SaaS <strong>production-grade</strong> para automatizar conversaciones de WhatsApp Business con un <strong>agente IA con tools reales</strong> (no un workflow fijo). El <em>agente</em> decide autónomamente qué herramientas usar, en qué orden y cuántas veces, según el contexto. Ejecuta un <strong>agentic loop</strong> (hasta 10 iteraciones) con tools reales: consulta historial y reservas en PostgreSQL, busca en la knowledge base del negocio y agenda mensajes diferidos. Webhook con validación <strong>HMAC-SHA256</strong>, <strong>idempotencia</strong> de mensajes en Upstash Redis, <strong>pagos duales Stripe + MercadoPago</strong> (cobertura Uruguay/LATAM), sistema de <strong>evals</strong> propio para regresión de agentes, jobs diferidos con QStash, emails con Resend, suite de tests con Jest. Multi-tenant, dashboard con NextAuth v5, analytics y horarios de atención.
-            <br/><em>Stack: Next.js 16 · React 19 · TypeScript · tRPC v11 · Prisma · PostgreSQL · OpenAI (tool use) · NextAuth v5 · Stripe + MercadoPago · Upstash Redis + QStash · Resend · Zod · Jest · Vercel</em>
-          </p>
-        </div>
-
-        <div class="project">
-          <div class="project-head">
-            <span class="project-name">Arbix — Plataforma de Arbitraje E-commerce</span>
-            <a class="project-link" href="https://getarbix.com">getarbix.com ↗</a>
-          </div>
-          <p class="project-desc">
-            SaaS con <strong>dominio propio</strong> para detectar oportunidades de arbitraje entre Alibaba y Amazon FBA. Scrapers tolerantes a fallos en 5 plataformas <strong>cacheados con Upstash Redis</strong>, calculadora multi-marketplace (US/ES/MX/JP/DE/UK/FR/IT/BR) con fees, cupones y cashback. <strong>Listing Studio con generación de imágenes IA</strong> y prompt detection por tipo de producto, daily pick con dedup de 7 días, alertas y bulk scans. <strong>Sistema de feedback</strong> con votación, dedup por similitud (Jaccard 70%) y notificaciones a admins. Onboarding guiado con driver.js, modo educativo con glosario, planes <strong>Free / Pro 99 USD / Elite 199 USD</strong>. Auth con Supabase + RLS, 4 cron jobs en Vercel.
-            <br/><em>Stack: Next.js 16 · React 19 · TypeScript · Supabase + RLS · shadcn/ui v4 · base-ui/react · Upstash Redis · Recharts · Cheerio · Google Trends · Resend · driver.js · Vercel Cron</em>
-          </p>
-        </div>
-
-        <div class="project">
-          <div class="project-head">
-            <span class="project-name">Mental — App móvil cross-platform</span>
-            <a class="project-link" href="https://www.mental.app/descarga">App Store · Play Store ↗</a>
-          </div>
-          <p class="project-desc">
-            App de bienestar y meditación publicada en App Store y Google Play. Reproductor de audio con descargas offline, animaciones con Reanimated, UI responsive y gestión de APIs con MongoDB.
-            <br/><em>Stack: React Native · Expo · TypeScript · MongoDB · ElevenLabs · EAS · TestFlight · Sentry</em>
-          </p>
-        </div>
-
-        <div class="project">
-          <div class="project-head">
-            <span class="project-name">Mental Web Platform</span>
-            <a class="project-link" href="https://mental-web-three.vercel.app">mental-web ↗</a>
-          </div>
-          <p class="project-desc">
-            Versión web con reproductor de audio avanzado, reproducción en background y descargas offline (Service Workers). Suscripciones con RevenueCat, push con OneSignal, monitoreo con Sentry, i18n.
-            <br/><em>Stack: React Native Web · Expo · TypeScript · Zustand · TanStack Query · Sentry</em>
-          </p>
-        </div>
+        <p class="edu">
+          <b>Desarrollo Full-Stack (MERN)</b> · Instituto BIOS <span class="d">03/2024 — 01/2025</span><br/>
+          Aplicaciones MERN completas, APIs REST, PostgreSQL y MongoDB, Docker, Git y despliegue.<br/>
+          <b>Certificaciones de desarrollo web</b> · FreeCodeCamp <span class="d">09/2023 — 01/2024</span> —
+          proyectos full-stack desplegados, D3.js, Node/Express y SQL.
+        </p>
       </section>
     </div>
 
-    <!-- ============ SIDE COLUMN ============ -->
     <div class="col-side">
 
       <section>
         <h2 class="section-title">Highlights</h2>
-        <div class="key-metric">
-          <span class="num">+5</span>
-          <span class="desc">Proyectos en<br/>producción</span>
-        </div>
-        <div class="key-metric">
-          <span class="num">1</span>
-          <span class="desc">App publicada<br/>App Store · Play Store</span>
-        </div>
-        <div class="key-metric">
-          <span class="num">+10</span>
-          <span class="desc">Certificaciones<br/>técnicas</span>
+        <div class="metrics">
+          <div class="metric"><span class="n">60k</span><span class="d">Pico de usuarios en Mental<br/>App Store · Google Play</span></div>
+          <div class="metric"><span class="n">2</span><span class="d">Tiendas<br/>App Store · Google Play</span></div>
+          <div class="metric"><span class="n">4</span><span class="d">Proveedores de pago<br/>integrados</span></div>
         </div>
       </section>
 
@@ -497,73 +380,57 @@
         <h2 class="section-title">Stack técnico</h2>
 
         <div class="stack-group">
-          <h3>Frontend</h3>
-          <p class="stack-list"><span class="pri">React</span>, <span class="pri">Next.js</span>, <span class="pri">React Native</span>, TypeScript, Tailwind CSS, shadcn/ui, Vite</p>
-        </div>
-
-        <div class="stack-group">
-          <h3>Backend</h3>
-          <p class="stack-list"><span class="pri">Node.js</span>, Express, Prisma ORM, JWT, NextAuth.js, REST APIs</p>
-        </div>
-
-        <div class="stack-group">
-          <h3>Bases de datos</h3>
-          <p class="stack-list"><span class="pri">PostgreSQL</span>, <span class="pri">MongoDB</span>, Supabase (RLS)</p>
-        </div>
-
-        <div class="stack-group">
-          <h3>AI &amp; LLMs</h3>
-          <p class="stack-list"><span class="pri">OpenAI API (GPT-4)</span>, ElevenLabs, Cursor AI, prompt engineering, evals de agentes</p>
-        </div>
-
-        <div class="stack-group">
           <h3>Mobile</h3>
-          <p class="stack-list">Expo, EAS, App Store Connect, Google Play Console, TestFlight, Reanimated</p>
+          <p class="stack-list"><span class="pri">React Native</span>, <span class="pri">Expo</span>, expo-router, Reanimated, EAS, App Store Connect, Google Play Console, TestFlight</p>
         </div>
 
         <div class="stack-group">
-          <h3>DevOps &amp; Observabilidad</h3>
-          <p class="stack-list">Docker, <span class="pri">Vercel</span>, Render, Git/GitHub, Sentry, OneSignal</p>
+          <h3>Web</h3>
+          <p class="stack-list"><span class="pri">React</span>, <span class="pri">Next.js</span>, <span class="pri">TypeScript</span>, Tailwind CSS, shadcn/ui, Zustand, TanStack Query</p>
+        </div>
+
+        <div class="stack-group">
+          <h3>Backend y datos</h3>
+          <p class="stack-list"><span class="pri">Node.js</span>, tRPC, Prisma, <span class="pri">PostgreSQL</span>, MongoDB, <span class="pri">Supabase (RLS)</span>, Redis, REST</p>
+        </div>
+
+        <div class="stack-group">
+          <h3>Pagos</h3>
+          <p class="stack-list"><span class="pri">RevenueCat</span>, IAP de Apple y Google, <span class="pri">Stripe</span>, MercadoPago, Paddle</p>
+        </div>
+
+        <div class="stack-group">
+          <h3>IA</h3>
+          <p class="stack-list"><span class="pri">OpenAI (tool use)</span>, evals de agentes, ElevenLabs, Replicate</p>
+        </div>
+
+        <div class="stack-group">
+          <h3>Calidad y DevOps</h3>
+          <p class="stack-list"><span class="pri">Vitest</span>, <span class="pri">Playwright</span>, GitHub Actions, Zod, Docker, <span class="pri">Vercel</span>, Sentry</p>
         </div>
       </section>
 
       <section>
         <h2 class="section-title">Certificaciones</h2>
-
-        <div class="cert-item">
-          <div class="cert-name">Desarrollador Full-Stack (MERN)</div>
-          <div class="cert-org">Instituto BIOS</div>
-          <div class="cert-meta">2024 — 2025</div>
-        </div>
-
-        <div class="cert-item">
-          <div class="cert-name">+10 Certificaciones Web</div>
-          <div class="cert-org">FreeCodeCamp</div>
-          <div class="cert-meta">D3.js · APIs · Backend · QA · Responsive</div>
-        </div>
-
-        <div class="cert-item">
-          <div class="cert-name">Inglés Profesional B2 · ChatGPT &amp; AI Tools · Python</div>
-          <div class="cert-org">Santander Open Academy</div>
-          <div class="cert-meta">2024</div>
-        </div>
+        <p class="mini">
+          <b>+10 certificaciones web</b><br/>
+          <span class="org">FreeCodeCamp</span> — D3.js, APIs, backend, QA<br/>
+          <b>Inglés Profesional B2 · Python</b><br/>
+          <span class="org">Santander Open Academy</span> — 2024
+        </p>
       </section>
 
       <section>
         <h2 class="section-title">Idiomas</h2>
         <ul class="lang-list">
           <li><span>Español</span><span class="level">Nativo</span></li>
-          <li><span>Inglés</span><span class="level">B2 · Profesional</span></li>
+          <li><span>Inglés</span><span class="level">B2</span></li>
         </ul>
       </section>
     </div>
 
   </div>
 
-  <footer class="cv-footer">
-    <span class="statement">Code is the medium. <span class="accent">Detail is the difference.</span></span>
-    <span>AV / Generated 2025</span>
-  </footer>
 </main>
 
 </body>

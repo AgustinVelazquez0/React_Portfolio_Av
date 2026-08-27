@@ -230,7 +230,7 @@ export default function CommandPalette({ open, onOpenChange, onSectionChange }) 
               <Item
                 icon={FaRocket}
                 onSelect={() =>
-                  openExternal("https://whatsapp-ai-saas-1zya.vercel.app")
+                  openExternal("https://turniagenda.com")
                 }
               >
                 Demo · WhatsApp AI SaaS

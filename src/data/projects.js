@@ -57,7 +57,7 @@ export const PROJECTS = [
       "Vercel",
     ],
     links: {
-      demo: "https://whatsapp-ai-saas-1zya.vercel.app",
+      demo: "https://turniagenda.com",
       code: "https://github.com/AgustinVelazquez0/whatsapp-ai-saas",
     },
   },

@@ -31,7 +31,7 @@ export const CV_FACTS = {
       name: "WhatsApp AI SaaS",
       what: "SaaS production-grade con agente IA con tool use real (no workflow). Hasta 10 iteraciones por mensaje, evals automatizadas, webhook HMAC-SHA256, idempotencia con Upstash Redis, pagos duales Stripe + MercadoPago, multi-tenant. Test suite con Jest.",
       stack: "Next.js 16 · React 19 · tRPC v11 · NextAuth v5 · Prisma · PostgreSQL · OpenAI · Stripe · MercadoPago · Upstash Redis · QStash · Resend · Zod · Jest · Vercel",
-      url: "https://whatsapp-ai-saas-1zya.vercel.app",
+      url: "https://turniagenda.com",
     },
     {
       name: "Arbix",
@@ -88,8 +88,8 @@ export function localAnswer(question, lang = "es") {
   const isEs = lang === "es";
 
   const sayContact = isEs
-    ? `Email: ${CV_FACTS.identity.email}. LinkedIn: https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/. También podés copiar el email con ⌘K.`
-    : `Email: ${CV_FACTS.identity.email}. LinkedIn: https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/. You can also copy the email via ⌘K.`;
+    ? `Email: ${CV_FACTS.identity.email}. LinkedIn: https://www.linkedin.com/in/agustin-velazquez-dev/. También podés copiar el email con ⌘K.`
+    : `Email: ${CV_FACTS.identity.email}. LinkedIn: https://www.linkedin.com/in/agustin-velazquez-dev/. You can also copy the email via ⌘K.`;
 
   if (/(contact|email|reach|escrib|comunic|hablar)/i.test(q)) return sayContact;
 
