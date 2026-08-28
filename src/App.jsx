@@ -57,7 +57,7 @@ function App() {
         location: "Montevideo, UY",
         email: "agubolso2@gmail.com",
         github: "https://github.com/AgustinVelazquez0",
-        linkedin: "https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/",
+        linkedin: "https://www.linkedin.com/in/agustin-velazquez-dev/",
         stack: [
           "React",
           "Next.js",

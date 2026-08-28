@@ -95,7 +95,7 @@ function NavBar({ sidebarOpen, setSidebarOpen, onOpenPalette }) {
 
             <div className="flex items-center gap-1.5">
               <a
-                href="https://www.linkedin.com/in/agustin-vel%C3%A1zquez-dev/"
+                href="https://www.linkedin.com/in/agustin-velazquez-dev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
