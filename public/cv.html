@@ -129,8 +129,19 @@
   .split-row:last-child { margin-bottom: 0; }
   .split-tag {
     font-family: "JetBrains Mono", monospace; font-size: 8px;
-    text-transform: uppercase; letter-spacing: 0.14em;
-    color: var(--cyan); flex-shrink: 0; width: 42px; padding-top: 2px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: #fff; background: var(--cyan);
+    flex-shrink: 0; width: 46px; text-align: center;
+    padding: 2px 0; height: 13px; line-height: 9px;
+    border-radius: 2px; font-weight: 700;
+  }
+  /* Etiqueta de plataforma en los proyectos propios */
+  .plat {
+    font-family: "JetBrains Mono", monospace; font-size: 8px;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: #fff; background: var(--cyan);
+    padding: 2px 5px; border-radius: 2px; font-weight: 700;
+    margin-right: 7px; position: relative; top: -1px;
   }
   .split-txt { font-size: 11.5px; color: var(--steel); line-height: 1.45; }
   .split-txt b { color: var(--ink); font-weight: 600; }
@@ -195,7 +206,7 @@
     a { color: inherit; text-decoration: none; }
     .stack-list, .split-txt, .proj-desc { color: #18181b; }
     .metric, .av-mark, .contact-block .eligibility, .section-title, .section-title::before,
-    .role-title .at, .role-item, .split-tag, .status.live, .lang-list .level, .mini .org {
+    .role-title .at, .role-item, .split-tag, .plat, .status.live, .lang-list .level, .mini .org {
       -webkit-print-color-adjust: exact; print-color-adjust: exact;
     }
     .role-item, .proj, .stack-group, .metric { page-break-inside: avoid; break-inside: avoid; }
@@ -249,7 +260,7 @@
       <div><span class="label">Loc</span>Montevideo · <span class="eligibility">disponible para incorporación en España</span></div>
       <div><span class="label">Mail</span><a href="mailto:agubolso2@gmail.com">agubolso2@gmail.com</a> · +598 98 661 715</div>
       <div><span class="label">Web</span><a href="https://react-portfolio-av.vercel.app/">react-portfolio-av.vercel.app</a></div>
-      <div><span class="label">Git</span><a href="https://github.com/AgustinVelazquez0">github.com/AgustinVelazquez0</a> · <a href="https://www.linkedin.com/in/agustin-velazquez-dev/">linkedin/agustin-velazquez-dev</a></div>
+      <div><span class="label">In</span><a href="https://www.linkedin.com/in/agustin-velazquez-dev/">linkedin.com/in/agustin-velazquez-dev</a></div>
     </div>
   </header>
 
@@ -257,8 +268,8 @@
     Ingeniero Full-Stack con <strong>ciudadanía española (UE) y uruguaya</strong>. Casi 2 años
     construyendo y desplegando producto de forma independiente, más 1 año en <strong>Mental</strong>:
     app publicada en App Store y Google Play que llegó a <strong>60.000 usuarios</strong>, cobros reales
-    (RevenueCat, Stripe, MercadoPago) y SaaS propios. También <strong>SOMMOS</strong> para una clienta
-    externa. Disponible para incorporación en España, presencial, híbrida o remota.
+    con <strong>cinco proveedores de pago</strong> y SaaS propios, incluido un <strong>agente de IA</strong>
+    que gestiona reservas por WhatsApp. Disponible para incorporación en España, presencial, híbrida o remota.
   </p>
 
   <div class="grid">
@@ -327,23 +338,24 @@
 
         <div class="proj">
           <div class="proj-head">
-            <span class="proj-name">WhatsApp AI SaaS <a href="https://turniagenda.com">turniagenda.com ↗</a></span>
-            <span class="role-date">2025 — 2026 · construido</span>
+            <span class="proj-name"><span class="plat">Web · SaaS</span>turnia <a href="https://turniagenda.com">turniagenda.com ↗</a></span>
+            <span class="role-date">2025 — 2026 · en línea</span>
           </div>
           <p class="proj-desc">
-            SaaS multi-tenant con un <b>agente IA con tools reales</b> en lugar de un workflow fijo:
-            un agentic loop de hasta <b>10 iteraciones</b> donde el agente decide qué herramientas usar
-            y en qué orden, consultando reservas en PostgreSQL y una knowledge base. Webhook con
-            <b>HMAC-SHA256</b>, idempotencia de mensajes en Redis y una suite propia de <b>evals</b>
-            para detectar regresiones del agente.
-            <br/><em>Next.js · tRPC · Prisma · PostgreSQL · OpenAI tool use · Stripe + MercadoPago · Upstash · Vitest</em>
+            SaaS multi-tenant con un <b>agente de IA con herramientas reales</b> en lugar de un workflow
+            fijo: <b>11 herramientas, 5 de escritura</b>, así el agente reserva, reagenda y cancela contra
+            el calendario real. Las reglas de negocio (dueño de la reserva, ventana de cancelación,
+            política de seña) se validan <b>en la capa de herramientas, no en el prompt</b>. Webhooks con
+            <b>HMAC-SHA256</b>, idempotencia en Redis, <b>failover entre 3 proveedores de LLM</b> y una
+            suite propia de <b>39 evals</b> contra regresiones del agente.
+            <br/><em>Next.js · tRPC · Prisma · PostgreSQL · Groq / Gemini / OpenAI · MercadoPago + Paddle + Stripe · Upstash · Vitest</em>
           </p>
         </div>
 
         <div class="proj">
           <div class="proj-head">
-            <span class="proj-name">Arbix <a href="https://getarbix.com">getarbix.com ↗</a></span>
-            <span class="role-date">2026 · construido</span>
+            <span class="proj-name"><span class="plat">Web</span>Arbix <a href="https://getarbix.com">getarbix.com ↗</a></span>
+            <span class="role-date">2026 · en línea</span>
           </div>
           <p class="proj-desc">
             Detector de arbitraje entre Alibaba y Amazon FBA. <b>Scrapers tolerantes a fallos en 5
@@ -372,7 +384,7 @@
         <div class="metrics">
           <div class="metric"><span class="n">60k</span><span class="d">Pico de usuarios en Mental<br/>App Store · Google Play</span></div>
           <div class="metric"><span class="n">2</span><span class="d">Tiendas<br/>App Store · Google Play</span></div>
-          <div class="metric"><span class="n">4</span><span class="d">Proveedores de pago<br/>integrados</span></div>
+          <div class="metric"><span class="n">5</span><span class="d">Proveedores de pago<br/>integrados</span></div>
         </div>
       </section>
 
@@ -401,7 +413,7 @@
 
         <div class="stack-group">
           <h3>IA</h3>
-          <p class="stack-list"><span class="pri">OpenAI (tool use)</span>, evals de agentes, ElevenLabs, Replicate</p>
+          <p class="stack-list"><span class="pri">Agentes con tool use</span>, OpenAI, Groq, Gemini, evals de agentes, ElevenLabs, Replicate</p>
         </div>
 
         <div class="stack-group">
