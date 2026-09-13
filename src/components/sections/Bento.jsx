@@ -46,7 +46,7 @@ export default function Bento() {
     >
       <header className="mb-10">
         <p className="font-mono text-2xs uppercase tracking-mono text-ink-faint mb-3">
-          01 — {language === "es" ? "Pruebas" : "Proof"}
+          04 — {language === "es" ? "Pruebas" : "Proof"}
         </p>
         <motion.h2
           variants={fadeUp}

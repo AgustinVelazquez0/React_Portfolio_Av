@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
 import { fadeUp, stagger, viewport } from "../../lib/motion";
@@ -45,8 +46,8 @@ const STACK_GROUPS = {
     {
       label: "Frontend",
       items: [
-        ["React · React Native", "componentes, hooks, perf"],
-        ["Next.js 14 / 15", "App Router, RSC, server actions"],
+        ["React 19 · React Native", "componentes, hooks, perf"],
+        ["Next.js 16", "App Router, RSC, server actions"],
         ["TypeScript", "tipos estrictos en producción"],
         ["Tailwind · shadcn/ui", "design systems escalables"],
         ["React Native Web", "single codebase iOS · Android · Web"],
@@ -55,9 +56,10 @@ const STACK_GROUPS = {
     {
       label: "Backend",
       items: [
-        ["Node.js · Express", "APIs REST, middlewares, rate limit"],
+        ["Node.js · Express · NestJS", "APIs REST, middlewares, rate limit"],
+        ["tRPC · Hono", "contratos type-safe end-to-end"],
         ["Prisma ORM", "schemas, migraciones, type-safe queries"],
-        ["NextAuth.js", "OAuth, sesiones, multi-tenant"],
+        ["NextAuth v5", "OAuth, sesiones, multi-tenant"],
         ["Microservicios", "boundaries claras, escalabilidad horizontal"],
       ],
     },
@@ -82,6 +84,15 @@ const STACK_GROUPS = {
       ],
     },
     {
+      label: "Pagos · Comunicación",
+      items: [
+        ["Stripe · MercadoPago · Paddle", "suscripciones, webhooks idempotentes"],
+        ["Resend · Nodemailer", "email transaccional, dominios verificados"],
+        ["Upstash Redis · QStash", "rate limit, colas, reintentos"],
+        ["WhatsApp Cloud API", "webhooks, plantillas, sesiones de 24 h"],
+      ],
+    },
+    {
       label: "Data",
       items: [
         ["PostgreSQL · Supabase", "RLS, índices, particionado"],
@@ -93,6 +104,7 @@ const STACK_GROUPS = {
       label: "Ops · Tooling",
       items: [
         ["Vercel · Render", "deploys, cron jobs, edge functions"],
+        ["Vitest · Playwright", "unit, e2e, CI en cada push"],
         ["Sentry", "errors, performance, source maps"],
         ["Docker · Linux", "containers, dev parity"],
         ["Git · GitHub", "trunk-based, PR reviews"],
@@ -104,8 +116,8 @@ const STACK_GROUPS = {
     {
       label: "Frontend",
       items: [
-        ["React · React Native", "components, hooks, perf"],
-        ["Next.js 14 / 15", "App Router, RSC, server actions"],
+        ["React 19 · React Native", "components, hooks, perf"],
+        ["Next.js 16", "App Router, RSC, server actions"],
         ["TypeScript", "strict types in production"],
         ["Tailwind · shadcn/ui", "scalable design systems"],
         ["React Native Web", "single codebase iOS · Android · Web"],
@@ -114,9 +126,10 @@ const STACK_GROUPS = {
     {
       label: "Backend",
       items: [
-        ["Node.js · Express", "REST APIs, middlewares, rate limits"],
+        ["Node.js · Express · NestJS", "REST APIs, middlewares, rate limits"],
+        ["tRPC · Hono", "end-to-end type-safe contracts"],
         ["Prisma ORM", "schemas, migrations, type-safe queries"],
-        ["NextAuth.js", "OAuth, sessions, multi-tenant"],
+        ["NextAuth v5", "OAuth, sessions, multi-tenant"],
         ["Microservices", "clear boundaries, horizontal scale"],
       ],
     },
@@ -141,6 +154,15 @@ const STACK_GROUPS = {
       ],
     },
     {
+      label: "Payments · Comms",
+      items: [
+        ["Stripe · MercadoPago · Paddle", "subscriptions, idempotent webhooks"],
+        ["Resend · Nodemailer", "transactional email, verified domains"],
+        ["Upstash Redis · QStash", "rate limits, queues, retries"],
+        ["WhatsApp Cloud API", "webhooks, templates, 24 h sessions"],
+      ],
+    },
+    {
       label: "Data",
       items: [
         ["PostgreSQL · Supabase", "RLS, indexes, partitioning"],
@@ -152,6 +174,7 @@ const STACK_GROUPS = {
       label: "Ops · Tooling",
       items: [
         ["Vercel · Render", "deploys, cron jobs, edge functions"],
+        ["Vitest · Playwright", "unit, e2e, CI on every push"],
         ["Sentry", "errors, performance, source maps"],
         ["Docker · Linux", "containers, dev parity"],
         ["Git · GitHub", "trunk-based, PR reviews"],
@@ -163,7 +186,9 @@ const STACK_GROUPS = {
 
 export default function Technologies() {
   const { language } = useTranslation();
+  const [expanded, setExpanded] = useState(false);
   const groups = STACK_GROUPS[language] || STACK_GROUPS.es;
+  const toolCount = groups.reduce((n, g) => n + g.items.length, 0);
 
   return (
     <section
@@ -227,13 +252,34 @@ export default function Technologies() {
         ))}
       </motion.div>
 
-      {/* Spec sheet — listas editoriales */}
+      {/* Spec sheet — colapsado por defecto: la lista completa es referencia,
+          no argumento de venta. Quien la quiera, la abre. */}
+      <button
+        type="button"
+        onClick={() => setExpanded((v) => !v)}
+        aria-expanded={expanded}
+        aria-controls="stack-spec-sheet"
+        className="font-mono text-2xs uppercase tracking-mono text-ink-muted
+          hover:text-ink-primary border border-line-subtle hover:border-line-DEFAULT
+          rounded-md px-4 py-2.5 transition-colors duration-fast"
+      >
+        {expanded
+          ? language === "es"
+            ? "Ocultar stack completo"
+            : "Hide full stack"
+          : language === "es"
+            ? `Ver stack completo (${toolCount})`
+            : `See full stack (${toolCount})`}
+      </button>
+
+      {expanded && (
       <motion.div
+        id="stack-spec-sheet"
         variants={stagger(0.06)}
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
-        className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12"
+        className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12"
       >
         {groups.map((group) => (
           <motion.div key={group.label} variants={fadeUp}>
@@ -255,6 +301,7 @@ export default function Technologies() {
           </motion.div>
         ))}
       </motion.div>
+      )}
     </section>
   );
 }

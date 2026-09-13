@@ -60,12 +60,7 @@ export default {
       },
       fontFamily: {
         sans: ["Geist Sans", "Geist", "Inter", "system-ui", "sans-serif"],
-        display: [
-          "Instrument Serif",
-          "Cormorant Garamond",
-          "Georgia",
-          "serif",
-        ],
+        display: ["Geist Sans", "Geist", "Inter", "system-ui", "sans-serif"],
         heading: ["Geist Sans", "Geist", "Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "ui-monospace", "monospace"],
       },

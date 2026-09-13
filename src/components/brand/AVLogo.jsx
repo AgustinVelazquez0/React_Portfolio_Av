@@ -4,7 +4,7 @@
  * variants:
  *  - "monogram"   → just the AV mark, uses currentColor (inherits text color)
  *  - "horizontal" → mark + name + role (for navbar, headers)
- *  - "icon"       → cyan square with the dark mark inside (for badges)
+ *  - "icon"       → accent square with the dark mark inside (for badges)
  *
  * Brand spec: see /public/brand/README.md
  */
@@ -24,11 +24,11 @@ function AVLogo({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect width="64" height="64" rx="14" fill="#22D3EE" />
+        <rect width="64" height="64" rx="14" fill="#4A9EFF" />
         <g transform="translate(8, 18)">
           <path
             d="M0 28 L12 0 L24 28 M24 0 L36 28 L48 0"
-            stroke="#0A0A0A"
+            stroke="#141414"
             strokeWidth="5"
             strokeLinejoin="miter"
             strokeLinecap="square"
@@ -43,7 +43,7 @@ function AVLogo({
       <div className={`inline-flex items-center gap-3 ${className}`}>
         <svg
           viewBox="0 0 120 80"
-          className="h-8 w-auto text-cyan-400"
+          className="h-8 w-auto text-accent"
           role="img"
           aria-label={title}
           fill="none"

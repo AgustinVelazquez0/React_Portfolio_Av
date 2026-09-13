@@ -1,34 +1,23 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { EXPERIENCES } from "../../constants";
 import { useTranslation } from "../../hooks/useTranslation";
 import { fadeUp, viewport } from "../../lib/motion";
-import Button from "../ui/Button";
 import Tag from "../ui/Tag";
+import Redacted from "../ui/Redacted";
 
 /**
- * Experience — refactor con sistema de diseño nuevo.
- * Estructura editorial estilo brittanychiang.com: timeline a la izquierda,
- * descripción a la derecha. Sin glow neón en los tags.
+ * Experience — registros de trabajo del expediente.
+ * Solo empleo real: los cursos y diplomas viven en Credenciales y repetirlos
+ * aquí inflaba la sección con formación disfrazada de experiencia.
  */
 function Experience() {
   const { t } = useTranslation();
-  const [showAll, setShowAll] = useState(false);
-
-  const initialCount = 2;
-  const remainingCount = EXPERIENCES.length - initialCount;
-  const displayedExperiences = showAll
-    ? EXPERIENCES
-    : EXPERIENCES.slice(0, initialCount);
 
   return (
-    <section
-      id="experience"
-      className="border-t border-line-subtle pt-16 pb-12"
-    >
+    <section id="experience" className="border-t border-line-subtle pt-16 pb-12">
       <header className="mb-12">
         <p className="font-mono text-2xs uppercase tracking-mono text-ink-faint mb-3">
-          02 — {t("experience.title")}
+          03 — {t("experience.title")}
         </p>
         <motion.h2
           variants={fadeUp}
@@ -42,9 +31,9 @@ function Experience() {
       </header>
 
       <div className="space-y-12">
-        {displayedExperiences.map((experience, index) => (
+        {EXPERIENCES.map((experience, index) => (
           <motion.article
-            key={index}
+            key={experience.company}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -66,6 +55,17 @@ function Experience() {
               <h3 className="text-xl lg:text-2xl font-medium text-ink-primary tracking-snug mb-3">
                 {t(`experience.items.${index}.role`)}
               </h3>
+
+              {experience.redactedClient ? (
+                <p className="mb-3 text-sm text-ink-muted">
+                  <Redacted
+                    width="9ch"
+                    label={t("experience.redacted.client")}
+                    reason={t("experience.redacted.reason")}
+                  />
+                </p>
+              ) : null}
+
               <p className="text-base text-ink-secondary leading-relaxed mb-5 whitespace-pre-line">
                 {t(`experience.items.${index}.description`)}
               </p>
@@ -80,23 +80,6 @@ function Experience() {
           </motion.article>
         ))}
       </div>
-
-      {EXPERIENCES.length > initialCount ? (
-        <div className="text-center mt-12">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setShowAll(!showAll)}
-          >
-            {showAll
-              ? t("experience.showLess")
-              : t("experience.showMore").replace(
-                  "{count}",
-                  remainingCount.toString()
-                )}
-          </Button>
-        </div>
-      ) : null}
     </section>
   );
 }

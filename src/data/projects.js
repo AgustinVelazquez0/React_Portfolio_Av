@@ -7,6 +7,12 @@
  *   group         → bucket visual (nextjsSaas | mobile | react | js)
  *   featured      → si tiene case study completo
  *   metric        → 1 número señal que se muestra en card y case study
+ *   file          → número de expediente, estable y visible en la card
+ *   evidence      → grado de evidencia declarado. Graduar las propias
+ *                   afirmaciones vale más que afirmarlas todas igual:
+ *                     production → dominio propio o tienda, con uso real
+ *                     live       → desplegado y accesible, sin uso real
+ *                     exercise   → código público, sin despliegue
  */
 
 import mentalWebImg from "../assets/Mental-web.png";
@@ -25,13 +31,15 @@ export const PROJECTS = [
   // ---- Next.js & SaaS ----
   {
     slug: "whatsapp-ai-saas",
+    file: "01",
+    evidence: "production",
     group: "nextjsSaas",
     featured: true,
     image: whatsappSaasImg,
     titleKey: "projects.NEXTJS_SAAS.whatsappAI.title",
     descriptionKey: "projects.NEXTJS_SAAS.whatsappAI.description",
     tag: { variant: "accent", label: "Agentic AI", dot: true },
-    metric: { value: "10", unit: "tool calls/loop", labelKey: "projects.metric.agentic" },
+    metric: { value: "12", unit: "tools · 5 write", labelKey: "projects.metric.agentic" },
     tech: [
       "Agentic AI",
       "Tool Use",
@@ -42,27 +50,30 @@ export const PROJECTS = [
       "tRPC v11",
       "Prisma ORM",
       "PostgreSQL",
-      "OpenAI API",
+      "OpenAI · Groq · Gemini",
       "NextAuth v5",
       "Stripe",
       "MercadoPago",
+      "Paddle",
       "Upstash Redis",
       "QStash",
       "Resend",
       "Zod",
       "TanStack Query",
-      "Jest",
+      "Vitest",
       "Sonner",
       "Tailwind CSS",
       "Vercel",
     ],
     links: {
       demo: "https://turniagenda.com",
-      code: "https://github.com/AgustinVelazquez0/whatsapp-ai-saas",
+      codePrivate: true,
     },
   },
   {
     slug: "arbix",
+    file: "02",
+    evidence: "production",
     group: "nextjsSaas",
     featured: true,
     image: arbibuyImg,
@@ -89,13 +100,15 @@ export const PROJECTS = [
     ],
     links: {
       demo: "https://getarbix.com",
-      code: "https://github.com/AgustinVelazquez0/arbibuy",
+      codePrivate: true,
     },
   },
 
   // ---- Mobile Apps ----
   {
     slug: "mental",
+    file: "03",
+    evidence: "production",
     group: "mobile",
     featured: true,
     image: mentalLogoImg,
@@ -130,6 +143,8 @@ export const PROJECTS = [
   // ---- React ----
   {
     slug: "mental-web",
+    file: "04",
+    evidence: "production",
     group: "react",
     image: mentalWebImg,
     titleKey: "projects.REACT.mentalWeb.title",
@@ -153,6 +168,8 @@ export const PROJECTS = [
   },
   {
     slug: "library",
+    file: "05",
+    evidence: "live",
     group: "react",
     image:
       "https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project24_library.png",
@@ -167,6 +184,8 @@ export const PROJECTS = [
   },
   {
     slug: "task-manager",
+    file: "06",
+    evidence: "live",
     group: "react",
     image:
       "https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project7.png",
@@ -181,6 +200,8 @@ export const PROJECTS = [
   },
   {
     slug: "food-menu",
+    file: "07",
+    evidence: "exercise",
     group: "react",
     collapsed: true,
     image:
@@ -197,6 +218,8 @@ export const PROJECTS = [
   // ---- Vanilla JS games ----
   {
     slug: "platformer-game",
+    file: "08",
+    evidence: "exercise",
     group: "js",
     image:
       "https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project8_platformer_game.png",
@@ -209,6 +232,8 @@ export const PROJECTS = [
   },
   {
     slug: "rpg-game",
+    file: "09",
+    evidence: "exercise",
     group: "js",
     image:
       "https://raw.githubusercontent.com/AgustinVelazquez0/React_Portfolio_Av/refs/heads/main/src/assets/projects/project10_role_playing_game.png",

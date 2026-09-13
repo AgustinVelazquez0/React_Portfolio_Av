@@ -21,18 +21,22 @@ CURRENT WORK (since 06/2025):
 - State: Zustand + TanStack Query.
 
 SIGNATURE PROJECTS:
-1) WhatsApp AI SaaS (https://turniagenda.com):
-   Production-grade SaaS with real AI tool use (not fixed workflow). Up to
-   10 iterations per message, LLM autonomously decides which tools to call
-   (DB queries, knowledge base, schedule messages). Multi-tenant via single
-   Prisma schema + business_id.
+1) Turnia — WhatsApp AI SaaS (https://turniagenda.com):
+   Multi-tenant SaaS with real AI tool use (not fixed workflow). 12 tools,
+   5 of them writing, so the agent books, reschedules and cancels against
+   the live calendar. Business rules (booking ownership, cancellation
+   window, deposit policy) are enforced in the tool layer, not the prompt.
+   Intent-based tool routing. Multi-tenant via single Prisma schema +
+   business_id.
    - Stack: Next.js 16, React 19, TypeScript, tRPC v11, Prisma, PostgreSQL,
-     OpenAI, NextAuth v5, Stripe + MercadoPago (LATAM), Upstash Redis,
-     QStash, Resend, Zod, Jest, Vercel.
+     Groq / Gemini / OpenAI with failover, NextAuth v5, Stripe +
+     MercadoPago + Paddle (LATAM), Upstash Redis, QStash, Resend, Zod,
+     Vitest, Vercel.
    - Production hardening: HMAC-SHA256 webhook validation, message
-     idempotency in Upstash Redis, dual payments for Uruguay/LATAM coverage,
-     custom evals system to regression-test agent trajectories, 16 Jest
-     tests, env var validation at boot.
+     idempotency in Upstash Redis, failover across 3 LLM providers, dual
+     payments for Uruguay/LATAM coverage, custom evals system with 11 cases
+     and 26 assertions to regression-test agent trajectories, 223 Vitest
+     tests across 18 files, env var validation at boot.
 
 2) Arbix (https://getarbix.com — own domain):
    Alibaba <-> Amazon FBA arbitrage SaaS. 5 fault-tolerant scrapers cached
@@ -58,10 +62,11 @@ STACK:
   MongoDB, Supabase + RLS.
 - AI: OpenAI tool use, agentic loops, ElevenLabs, prompt engineering,
   custom evals systems.
-- Payments: Stripe, MercadoPago, RevenueCat.
-- Infra: Upstash Redis, Upstash QStash, Resend, Vercel Cron, HMAC webhooks.
+- Payments: Stripe, MercadoPago, Paddle, RevenueCat.
+- Infra: Upstash Redis, Upstash QStash, Resend + Nodemailer (transactional
+  email, verified domains), Vercel Cron, HMAC webhooks.
 - Mobile: Expo, EAS, App Store Connect, Google Play Console, TestFlight.
-- Ops: Vercel, Sentry, Render, Docker, Git, Jest.
+- Ops: Vercel, Sentry, Render, Docker, Git, Vitest, Playwright.
 
 EDUCATION:
 - Instituto BIOS — Full-Stack MERN diploma (2024-2025).

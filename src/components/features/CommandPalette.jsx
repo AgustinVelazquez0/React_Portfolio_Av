@@ -18,6 +18,7 @@ import {
   FaLanguage,
   FaCopy,
   FaArrowUpRightFromSquare,
+  FaTerminal,
 } from "react-icons/fa6";
 
 /**
@@ -133,6 +134,15 @@ export default function CommandPalette({ open, onOpenChange, onSectionChange }) 
             >
               <Item icon={FaHouse} onSelect={() => goSection("hero")}>
                 {t("nav.home")}
+              </Item>
+              <Item
+                icon={FaTerminal}
+                onSelect={() => {
+                  close();
+                  window.location.assign("/consola");
+                }}
+              >
+                {language === "es" ? "Consola del expediente" : "File console"}
               </Item>
               <Item icon={FaCode} onSelect={() => goSection("technologies")}>
                 {t("nav.technologies")}

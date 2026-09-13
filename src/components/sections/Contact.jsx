@@ -73,7 +73,7 @@ function Contact() {
 
       <header className="mb-12">
         <p className="font-mono text-2xs uppercase tracking-mono text-ink-faint mb-3">
-          06 — {t("contact.title")}
+          07 — {t("contact.title")}
         </p>
         <motion.h2
           variants={fadeUp}

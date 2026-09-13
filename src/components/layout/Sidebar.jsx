@@ -21,12 +21,12 @@ function Sidebar({ isOpen, setIsOpen, onSectionChange, currentSection = "hero" }
 
   const sections = [
     { id: "hero", label: t("nav.home"), icon: FaHouse },
+    { id: "case-studies", label: "Case studies", icon: FaRocket },
+    { id: "projects", label: t("nav.projects"), icon: FaRocket },
+    { id: "experience", label: t("nav.experience"), icon: FaBriefcase },
     { id: "bento", label: "Proof", icon: FaSquarePollHorizontal },
     { id: "technologies", label: t("nav.technologies"), icon: FaCode },
-    { id: "experience", label: t("nav.experience"), icon: FaBriefcase },
-    { id: "case-studies", label: "Case studies", icon: FaRocket },
     { id: "certifications", label: t("nav.certifications"), icon: FaGraduationCap },
-    { id: "projects", label: t("nav.projects"), icon: FaRocket },
     { id: "contact", label: t("nav.contact"), icon: FaEnvelope },
   ];
 

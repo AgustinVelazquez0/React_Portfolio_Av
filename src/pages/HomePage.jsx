@@ -1,9 +1,11 @@
-import { lazy, Suspense, useState, useEffect } from "react";
+import { lazy, Suspense, useState, useEffect, useRef } from "react";
+import { track } from "@vercel/analytics";
 import Navbar from "../components/layout/Navbar.jsx";
 import Sidebar from "../components/layout/Sidebar.jsx";
 import Footer from "../components/layout/Footer.jsx";
 import Hero from "../components/sections/Hero";
 import CommandPalette from "../components/features/CommandPalette.jsx";
+import FileIndex from "../components/sections/FileIndex.jsx";
 
 const Bento = lazy(() => import("../components/sections/Bento"));
 const Technologies = lazy(() => import("../components/sections/Technologies"));
@@ -11,6 +13,7 @@ const Experience = lazy(() => import("../components/sections/Experience"));
 const Projects = lazy(() => import("../components/sections/Projects"));
 const CaseStudies = lazy(() => import("../components/sections/CaseStudies"));
 const Contact = lazy(() => import("../components/sections/Contact"));
+const EvidenceMatrix = lazy(() => import("../components/sections/EvidenceMatrix"));
 const Certifications = lazy(() =>
   import("../components/sections/Certifications.jsx")
 );
@@ -27,15 +30,37 @@ export default function HomePage({
 }) {
   const [currentSection, setCurrentSection] = useState("hero");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const reachedRef = useRef(new Set());
+
+  // Profundidad de scroll. Sin esto, recortar secciones es adivinar: la
+  // decisión de qué sacar de la home sale de acá, no de la intuición.
+  useEffect(() => {
+    const milestones = [25, 50, 75, 100];
+    const onScroll = () => {
+      const scrollable = document.body.scrollHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+      const pct = ((window.scrollY / scrollable) * 100).toFixed(0);
+      for (const m of milestones) {
+        if (pct >= m && !reachedRef.current.has(m)) {
+          reachedRef.current.add(m);
+          track("scroll_depth", { depth: `${m}%` });
+        }
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
+    // Debe seguir el orden de render de <main> para que el scroll-spy acierte.
     const sectionIds = [
       "hero",
-      "bento",
-      "technologies",
-      "experience",
+      "evidence-matrix",
       "case-studies",
       "projects",
+      "experience",
+      "bento",
+      "technologies",
       "certifications",
       "contact",
     ];
@@ -88,15 +113,17 @@ export default function HomePage({
         onSectionChange={handleSectionChange}
       />
 
-      <main className="container mx-auto px-6 lg:px-8">
+      <main className="paper-margin container mx-auto px-6 lg:px-8">
         <Hero />
+        <FileIndex />
         <Suspense fallback={<Loading />}>
+          <EvidenceMatrix />
+          <CaseStudies />
+          <Projects />
+          <Experience />
           <Bento />
           <Technologies />
-          <Experience />
-          <CaseStudies />
           <Certifications />
-          <Projects />
           <Contact />
           <Footer />
         </Suspense>

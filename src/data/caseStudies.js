@@ -17,7 +17,7 @@ export const CASE_STUDIES = [
     accent: "var(--accent)",
     tag: { label: "Agentic AI", variant: "accent" },
     metrics: [
-      { value: "10", label: { es: "tool calls / loop", en: "tool calls / loop" } },
+      { value: "12", label: { es: "tools · 5 de escritura", en: "tools · 5 writing" } },
       { value: "<2s", label: { es: "respuesta P50", en: "P50 response" } },
       { value: "HMAC", label: { es: "webhook firmado", en: "signed webhook" } },
     ],
@@ -26,8 +26,8 @@ export const CASE_STUDIES = [
       en: "WhatsApp AI SaaS — agents with real tool use",
     },
     summary: {
-      es: "SaaS production-grade donde el agente IA decide autónomamente qué herramientas llamar en lugar de seguir un workflow fijo. Hasta 10 iteraciones por mensaje, evals automatizadas, webhook HMAC-SHA256, idempotencia, pagos duales Stripe + MercadoPago y stack moderno tRPC v11 / NextAuth v5.",
-      en: "Production-grade SaaS where the AI agent autonomously decides which tools to call instead of following a fixed workflow. Up to 10 iterations per message, automated evals, HMAC-SHA256 webhook, idempotency, dual Stripe + MercadoPago payments and a modern tRPC v11 / NextAuth v5 stack.",
+      es: "SaaS multi-tenant donde el agente decide qué herramientas llamar en lugar de seguir un workflow fijo: 12 tools, 5 de escritura, contra el calendario real. Reglas de negocio validadas en la capa de herramientas y no en el prompt, failover entre 3 proveedores de LLM, webhook HMAC-SHA256 con idempotencia y pagos Stripe + MercadoPago + Paddle.",
+      en: "Multi-tenant SaaS where the agent decides which tools to call instead of following a fixed workflow: 12 tools, 5 of them writing, against the live calendar. Business rules enforced in the tool layer rather than the prompt, failover across 3 LLM providers, HMAC-SHA256 webhook with idempotency and Stripe + MercadoPago + Paddle payments.",
     },
     sections: [
       {
@@ -40,8 +40,8 @@ export const CASE_STUDIES = [
       {
         heading: { es: "Mi rol", en: "My role" },
         body: {
-          es: "End-to-end como solo developer: arquitectura del agente, schema Prisma multi-tenant, capa tRPC v11 type-safe, integración OpenAI tool calls, webhook de WhatsApp Business con validación HMAC, sistema de evals propio, billing dual Stripe + MercadoPago, dashboard NextAuth v5, suite de tests con Jest (16 tests) y deploy en Vercel.",
-          en: "End-to-end as solo developer: agent architecture, multi-tenant Prisma schema, type-safe tRPC v11 layer, OpenAI tool-call integration, HMAC-validated WhatsApp Business webhook, custom evals system, dual Stripe + MercadoPago billing, NextAuth v5 dashboard, Jest test suite (16 tests) and Vercel deploy.",
+          es: "End-to-end como solo developer: arquitectura del agente y sus 12 herramientas, schema Prisma multi-tenant, capa tRPC v11 type-safe, failover entre Groq, Gemini y OpenAI, webhook de WhatsApp Business con validación HMAC, sistema de evals propio, billing Stripe + MercadoPago + Paddle, email transaccional con Resend, dashboard NextAuth v5, suite de 223 tests con Vitest y deploy en Vercel.",
+          en: "End-to-end as solo developer: agent architecture and its 12 tools, multi-tenant Prisma schema, type-safe tRPC v11 layer, failover across Groq, Gemini and OpenAI, HMAC-validated WhatsApp Business webhook, custom evals system, Stripe + MercadoPago + Paddle billing, transactional email with Resend, NextAuth v5 dashboard, a 223-test Vitest suite and Vercel deploy.",
         },
       },
       {
@@ -50,6 +50,18 @@ export const CASE_STUDIES = [
           {
             es: "Tool use real (no workflow). La LLM decide la próxima acción cada turno. Costo extra en tokens, pero el agente maneja casos no anticipados sin código nuevo.",
             en: "Real tool use (not workflows). The LLM decides the next action each turn. Higher token cost, but the agent handles unforeseen cases without new code.",
+          },
+          {
+            es: "Las reglas de negocio se validan en la capa de herramientas, no en el prompt. Dueño de la reserva, ventana de cancelación y política de seña son código, no instrucciones en lenguaje natural. Un prompt se puede desobedecer; una guarda en la tool, no.",
+            en: "Business rules live in the tool layer, not in the prompt. Booking ownership, cancellation window and deposit policy are code, not natural-language instructions. A prompt can be disobeyed; a guard inside the tool cannot.",
+          },
+          {
+            es: "Ruteo de tools por intención: el agente solo recibe el subconjunto relevante en cada turno. Menos superficie de error y menos tokens que exponer las 12 siempre.",
+            en: "Intent-based tool routing: the agent only receives the relevant subset each turn. Smaller error surface and fewer tokens than always exposing all 12.",
+          },
+          {
+            es: "Failover entre 3 proveedores de LLM (Groq, Gemini, OpenAI). Un rate limit de un proveedor no puede tumbar el canal de reservas de un negocio.",
+            en: "Failover across 3 LLM providers (Groq, Gemini, OpenAI). One provider's rate limit cannot take down a business's booking channel.",
           },
           {
             es: "Loop con límite duro de 10 iteraciones. Evita runaway agents y costos descontrolados.",
@@ -76,8 +88,8 @@ export const CASE_STUDIES = [
             en: "QStash for deferred jobs (reminders, follow-ups) instead of plain cron. Auto-retries and exactly-once delivery without standing up own infra.",
           },
           {
-            es: "Sistema de evals propio (npm run evals). Cada trayectoria del agente se guarda y replaya contra una suite de prompts de regresión. Sin esto, los tool-use agents fallan creativamente en producción.",
-            en: "Custom evals system (npm run evals). Every agent trajectory is saved and replayed against a regression prompt suite. Without it, tool-use agents fail creatively in production.",
+            es: "Sistema de evals propio (npm run evals): 11 casos y 26 asserts que replayean trayectorias del agente contra regresiones. Sin esto, los tool-use agents fallan creativamente en producción.",
+            en: "Custom evals system (npm run evals): 11 cases and 26 assertions replaying agent trajectories against regressions. Without it, tool-use agents fail creatively in production.",
           },
         ],
       },
@@ -100,15 +112,16 @@ export const CASE_STUDIES = [
       "tRPC v11",
       "Prisma ORM",
       "PostgreSQL",
-      "OpenAI API",
+      "OpenAI · Groq · Gemini",
       "NextAuth v5",
       "Stripe",
       "MercadoPago",
+      "Paddle",
       "Upstash Redis",
       "QStash",
       "Resend",
       "Zod",
-      "Jest",
+      "Vitest",
       "Tailwind CSS",
       "Vercel",
     ],

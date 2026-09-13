@@ -1,10 +1,12 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import HomePage from "./pages/HomePage";
 
 const NowPage = lazy(() => import("./pages/NowPage"));
 const UsesPage = lazy(() => import("./pages/UsesPage"));
 const ChangelogPage = lazy(() => import("./pages/ChangelogPage"));
+const ConsolePage = lazy(() => import("./pages/ConsolePage"));
 
 function App() {
   const [paletteOpen, setPaletteOpen] = useState(false);
@@ -40,7 +42,7 @@ function App() {
   useEffect(() => {
     const styles = {
       title:
-        "font-family: monospace; font-size: 14px; padding: 8px 12px; background: #09090b; color: #fbbf24; border-radius: 4px;",
+        "font-family: monospace; font-size: 14px; padding: 8px 12px; background: #1a1a1a; color: #4a9eff; border-radius: 4px;",
       body: "font-family: monospace; font-size: 12px; color: #a1a1aa; line-height: 1.6;",
     };
     console.log("%cAV — Agustin Velazquez", styles.title);
@@ -105,6 +107,9 @@ function App() {
             <Route path="/now" element={<NowPage />} />
             <Route path="/uses" element={<UsesPage />} />
             <Route path="/changelog" element={<ChangelogPage />} />
+            {/* Anexo opcional: la consola nunca bloquea la portada. */}
+            <Route path="/consola" element={<ConsolePage />} />
+            <Route path="/console" element={<ConsolePage />} />
             <Route
               path="*"
               element={
@@ -116,6 +121,7 @@ function App() {
             />
           </Routes>
         </Suspense>
+        <Analytics />
       </div>
     </>
   );

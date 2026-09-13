@@ -1,38 +1,40 @@
 /* ============================================================
-   AV Design Tokens — Editorial dark-first system
-   Inspirado por Linear, Vercel, Rauno, Paco. Sin glow neón.
+   AV Design Tokens — sistema "expediente"
+   Derivado del dossier "Ingeniería de la compulsión": grises
+   neutros de documento, azul de referencia, y tres tonos
+   semánticos que gradúan evidencia en vez de decorar.
    ============================================================ */
 
 :root {
-  /* ---- Surfaces (warm zinc, no pure black) ---- */
-  --surface-0: #fafaf9;
-  --surface-1: #f4f4f5;
-  --surface-2: #e4e4e7;
-  --surface-3: #d4d4d8;
-  --surface-overlay: rgba(250, 250, 249, 0.72);
+  /* ---- Surfaces (papel neutro, no blanco puro) ---- */
+  --surface-0: #fbfbfa;
+  --surface-1: #f4f4f3;
+  --surface-2: #e9e9e7;
+  --surface-3: #d9d9d6;
+  --surface-overlay: rgba(251, 251, 250, 0.72);
 
   /* ---- Ink (text) ---- */
-  --ink-primary: #09090b;
-  --ink-secondary: #27272a;
-  --ink-muted: #71717a;
-  --ink-faint: #a1a1aa;
+  --ink-primary: #1a1a1a;
+  --ink-secondary: #3a3a3a;
+  --ink-muted: #6b6b6b;
+  --ink-faint: #8a8a8a;
 
   /* ---- Borders ---- */
-  --border-subtle: rgba(9, 9, 11, 0.08);
-  --border-default: rgba(9, 9, 11, 0.12);
-  --border-strong: rgba(9, 9, 11, 0.18);
+  --border-subtle: rgba(26, 26, 26, 0.08);
+  --border-default: rgba(26, 26, 26, 0.14);
+  --border-strong: rgba(26, 26, 26, 0.22);
 
-  /* ---- Accent: amber editorial (calienta y firma) ---- */
-  --accent: #f59e0b;
-  --accent-soft: #fcd34d;
-  --accent-deep: #b45309;
-  --accent-ink: #422006;
+  /* ---- Accent: azul de referencia (enlaces, citas, fuentes) ---- */
+  --accent: #1f6feb;
+  --accent-soft: #4a9eff;
+  --accent-deep: #14539a;
+  --accent-ink: #fbfbfa;
 
-  /* ---- Signal colors (semantic) ---- */
-  --signal-success: #16a34a;
-  --signal-warning: #ea580c;
-  --signal-danger: #dc2626;
-  --signal-info: #0284c7;
+  /* ---- Signal colors — escala de evidencia de la matriz ---- */
+  --signal-success: #2f8577;
+  --signal-warning: #9a6d00;
+  --signal-danger: #c03a32;
+  --signal-info: #1f6feb;
 
   /* ---- Typography scale (1.25 ratio, base 16) ---- */
   --type-2xs: 0.6875rem; /* 11px - eyebrow mono */
@@ -86,29 +88,35 @@
 }
 
 .dark {
-  /* ---- Surfaces (warm dark, no #000 puro) ---- */
-  --surface-0: #09090b;
-  --surface-1: #18181b;
-  --surface-2: #27272a;
-  --surface-3: #3f3f46;
-  --surface-overlay: rgba(9, 9, 11, 0.72);
+  /* ---- Surfaces — valores literales del dossier ---- */
+  --surface-0: #1a1a1a;
+  --surface-1: #232323;
+  --surface-2: #2e2e2e;
+  --surface-3: #3a3a3a;
+  --surface-overlay: rgba(26, 26, 26, 0.72);
 
   /* ---- Ink ---- */
-  --ink-primary: #fafaf9;
-  --ink-secondary: #e4e4e7;
-  --ink-muted: #a1a1aa;
-  --ink-faint: #71717a;
+  --ink-primary: #e6e6e6;
+  --ink-secondary: #b3b3b3;
+  --ink-muted: #8a8a8a;
+  --ink-faint: #6b6b6b;
 
   /* ---- Borders ---- */
-  --border-subtle: rgba(250, 250, 249, 0.06);
-  --border-default: rgba(250, 250, 249, 0.1);
-  --border-strong: rgba(250, 250, 249, 0.18);
+  --border-subtle: rgba(230, 230, 230, 0.07);
+  --border-default: rgba(230, 230, 230, 0.12);
+  --border-strong: rgba(230, 230, 230, 0.2);
 
-  /* Accent un poco más claro para contrastar en dark */
-  --accent: #fbbf24;
-  --accent-soft: #fde68a;
-  --accent-deep: #d97706;
-  --accent-ink: #0b0b0d;
+  /* Accent más claro para contrastar sobre gris oscuro */
+  --accent: #4a9eff;
+  --accent-soft: #7ab8ff;
+  --accent-deep: #2b7fe0;
+  --accent-ink: #141414;
+
+  /* Escala de evidencia, tal cual la usa la matriz de diseño */
+  --signal-success: #57b6a8;
+  --signal-warning: #d29922;
+  --signal-danger: #e5534b;
+  --signal-info: #4a9eff;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -124,12 +132,24 @@
   font-feature-settings: "tnum" 1, "calt" 0;
 }
 
-/* Tipografía display: Instrument Serif para personalidad editorial */
+/* Tipografía display: la misma sans que el cuerpo, muy apretada.
+   La serif leía editorial y competía con el registro de expediente. */
 .font-display {
-  font-family: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
-  font-weight: 400;
+  font-family: "Geist Sans", "Geist", "Inter", system-ui, sans-serif;
+  font-weight: 600;
   letter-spacing: var(--tracking-tight);
   line-height: var(--leading-none);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Geist no trae itálica real y la sintetizada se rompe a 7rem.
+   Dentro de display, la itálica pasa a ser contraste de peso. */
+.font-display.italic,
+.font-display .italic,
+.font-display em,
+.font-display i {
+  font-style: normal;
+  font-weight: 300;
 }
 
 /* Reusable surface helpers */

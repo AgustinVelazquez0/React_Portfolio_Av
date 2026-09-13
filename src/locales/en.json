@@ -25,6 +25,7 @@
     "ctaCV": "Download CV",
     "ctaProjects": "View projects",
     "ctaHire": "Looking for a developer?",
+    "attentionNote": "This site is built so you can decide in 60 seconds, not to keep you here. No infinite scroll, no autoplay, and every section ends.",
     "cmdkHint": "Tip — open the command palette with",
     "proof": {
       "stores": "app in stores",
@@ -56,9 +57,19 @@
     "description": "A curated selection — from production AI agents to apps shipped on the App Store and Google Play. Each one ships with a real metric, not a demo.",
     "viewCaseStudy": "View case study →",
     "metric": {
-      "agentic": "max iterations per message",
+      "agentic": "agent tools",
       "marketplaces": "supported countries",
       "stores": "stores live"
+    },
+    "file": "File",
+    "evidence": {
+      "label": "Evidence",
+      "production": "In production",
+      "productionNote": "Own domain or app store, with real usage",
+      "live": "Live",
+      "liveNote": "Deployed and reachable, no real usage",
+      "exercise": "Exercise",
+      "exerciseNote": "Public code, not deployed"
     },
     "buttonViewProject": "View project",
     "buttonAppStore": "App Store",
@@ -132,13 +143,17 @@
     "NEXTJS_SAAS": {
       "whatsappAI": {
         "title": "WhatsApp AI SaaS",
-        "description": "Production-grade SaaS with a real AI agent with tools — not a fixed workflow. The agent autonomously decides which tools to call, in what order and how many times — agentic loop up to 10 iterations that queries customer history and bookings, searches the business knowledge base, and schedules deferred follow-ups. Modern stack: Next.js 16 + React 19 + tRPC v11 + NextAuth v5. WhatsApp webhook with HMAC-SHA256 validation and idempotency on Upstash Redis. Dual Stripe + MercadoPago payments (Uruguay/LATAM). Deferred jobs with QStash, emails with Resend. Custom evals system for agent regression and Jest test suite. Multi-tenant, dashboard, analytics and multi-business support."
+        "description": "Multi-tenant SaaS with a real tool-using AI agent instead of a fixed workflow: 12 tools, 5 of them writing, so the agent books, reschedules and cancels against the live calendar. Business rules — booking ownership, cancellation window, deposit policy — are enforced in the tool layer, not in the prompt. Intent-based tool routing, WhatsApp webhook with HMAC-SHA256 validation and idempotency on Upstash Redis, failover across 3 LLM providers (Groq / Gemini / OpenAI) and deferred jobs with QStash. Stripe + MercadoPago + Paddle payments covering Uruguay and LATAM, transactional email with Resend. Custom eval suite of 11 cases and 26 assertions against agent regressions, plus 223 unit tests with Vitest. Stack: Next.js 16 + React 19 + tRPC v11 + NextAuth v5 + Prisma."
       },
       "arbibuy": {
         "title": "Arbix — Multi-marketplace Arbitrage Platform",
         "description": "SaaS on its own domain (getarbix.com) that finds resale opportunities across Amazon, Walmart and Alibaba. Product radar with live rankings and deep-link notifications, opportunity scoring engine (margin, competition, price stability), proprietary price-history tracking, multi-marketplace profit calculator (US, ES, MX, JP, DE, UK, FR, IT, BR) with real FBA fees by category and weight. Listing Studio with AI image generation, trend analysis with Google Trends, watchlist, investment tracker and weekly summary emails. Multi-layer caching (client + Upstash Redis) to protect third-party API quotas. Full i18n (EN/ES), Free / Pro $99 / Elite $199 plans, auth with Supabase + RLS and Vercel cron pipelines."
       }
-    }
+    },
+    "exercisesTitle": "Minor exhibits",
+    "exercisesNote": "Work deployed without real usage, plus practice exercises. The code is public and auditable; it does not weigh the same as the work above and I do not present it as if it did.",
+    "codePrivate": "Private code",
+    "codePrivateNote": "Client-owned private repository. I walk through it live on a call."
   },
   "experience": {
     "title": "Experience",
@@ -148,30 +163,22 @@
     "showLess": "Show less",
     "items": [
       {
-        "year": "06/2025 - Present",
+        "year": "06/2025 — Present",
         "role": "Full-Stack Developer",
         "company": "Mental",
-        "description": "Development and maintenance of the wellness and meditation mobile app (React Native / Expo), published on App Store and Google Play. Development of the web platform (React Native Web / Next.js) with advanced audio player, offline downloads and subscriptions with RevenueCat. Integration of OneSignal, Sentry, i18next and JWT authentication. State management with Zustand + TanStack Query. Continuous deployment on Vercel."
+        "description": "Development and maintenance of the wellness and meditation mobile app (React Native / Expo), published on the App Store and Google Play. Development of the web platform (React Native Web / Next.js) with an advanced audio player, offline downloads and RevenueCat subscriptions. Integration of OneSignal, Sentry, i18next and JWT auth. State with Zustand + TanStack Query. Continuous deployment on Vercel."
       },
       {
-        "year": "03/2024 - 01/2025",
+        "year": "08/2026 — Present",
         "role": "Full-Stack Developer",
-        "company": "Instituto BIOS",
-        "description": "• Development of complete MERN Stack applications\n• Implementation of RESTful APIs and relational/NoSQL databases\n• Production deployment with Docker and agile methodologies"
-      },
-      {
-        "year": "09/2024 - 01/2025",
-        "role": "Professional Digital Skills",
-        "company": "Instituto BIOS",
-        "description": "• Mastery of Microsoft Office 365 and Google Workspace tools\n• Data visualization with Power BI and design tools\n• Optimization of enterprise digital workflows"
-      },
-      {
-        "year": "09/2023 - 01/2024",
-        "role": "Web Development Certifications",
-        "company": "FreeCodeCamp",
-        "description": "• Built +10 deployed full-stack projects\n• Specialization in data visualization with D3.js\n• Development of microservices and database systems"
+        "company": "SOMMOS",
+        "description": "Freelance. Subscription app in Expo / expo-router with an audio and video catalogue, a monthly selection and a personalised section built from a questionnaire. Billing with RevenueCat, push with OneSignal and a Supabase backend. Marketing site in Next.js with the public catalogue and checkout."
       }
-    ]
+    ],
+    "redacted": {
+      "client": "external client",
+      "reason": "Name withheld: the product has not launched yet."
+    }
   },
   "technologies": {
     "title": "Technologies",

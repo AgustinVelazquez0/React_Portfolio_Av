@@ -10,6 +10,7 @@ import { fadeUp, viewport } from "../../lib/motion";
 import Surface from "./Surface";
 import Tag from "./Tag";
 import Button from "./Button";
+import Stamp from "./Stamp";
 
 /**
  * AV ProjectCard — data-driven, sin glow neón.
@@ -21,8 +22,18 @@ import Button from "./Button";
  */
 export default function ProjectCard({ project, onOpenCaseStudy }) {
   const { t } = useTranslation();
-  const { image, titleKey, descriptionKey, tag, metric, tech, links, qr } =
-    project;
+  const {
+    image,
+    titleKey,
+    descriptionKey,
+    tag,
+    metric,
+    tech,
+    links,
+    qr,
+    file,
+    evidence,
+  } = project;
 
   const buttons = [];
   if (links.demo) {
@@ -59,6 +70,17 @@ export default function ProjectCard({ project, onOpenCaseStudy }) {
       href: links.playStore,
       variant: "secondary",
       icon: FaGooglePlay,
+    });
+  }
+  // El repo es privado. Antes había un botón que llevaba a un 404: decirlo
+  // vale más que un enlace roto en el proyecto más fuerte del expediente.
+  if (links.codePrivate) {
+    buttons.push({
+      key: "code-private",
+      label: t("projects.codePrivate"),
+      variant: "ghost",
+      icon: FaGithub,
+      disabled: true,
     });
   }
   if (links.code) {
@@ -103,6 +125,18 @@ export default function ProjectCard({ project, onOpenCaseStudy }) {
         hoverable
         className="h-full flex flex-col gap-5"
       >
+        {/* Cabecera de expediente: número + sello de evidencia declarado */}
+        {file && evidence ? (
+          <div className="-mt-1 flex items-center justify-between gap-3">
+            <span className="font-mono text-2xs uppercase tracking-mono text-ink-faint">
+              {t("projects.file")} {file}
+            </span>
+            <Stamp tone={evidence} title={t(`projects.evidence.${evidence}Note`)}>
+              {t(`projects.evidence.${evidence}`)}
+            </Stamp>
+          </div>
+        ) : null}
+
         {/* Header: thumb + title + tag */}
         <div className="flex items-start gap-4">
           {qr ? (
@@ -184,20 +218,31 @@ export default function ProjectCard({ project, onOpenCaseStudy }) {
 
         {/* Actions */}
         <div className="flex flex-wrap items-center gap-2 mt-auto pt-2">
-          {buttons.map((b) => (
-            <Button
-              key={b.key}
-              variant={b.variant}
-              size="sm"
-              as="a"
-              href={b.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              trailingIcon={b.icon}
-            >
-              {b.label}
-            </Button>
-          ))}
+          {buttons.map((b) =>
+            b.disabled ? (
+              <span
+                key={b.key}
+                className="inline-flex items-center gap-1.5 px-2 py-1 font-mono text-2xs uppercase tracking-mono text-ink-faint"
+                title={t("projects.codePrivateNote")}
+              >
+                <b.icon aria-hidden />
+                {b.label}
+              </span>
+            ) : (
+              <Button
+                key={b.key}
+                variant={b.variant}
+                size="sm"
+                as="a"
+                href={b.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                trailingIcon={b.icon}
+              >
+                {b.label}
+              </Button>
+            )
+          )}
           {onOpenCaseStudy ? (
             <Button
               variant="link"

@@ -7,7 +7,6 @@ import {
   FaCodeCommit,
   FaCodePullRequest,
   FaCodeBranch,
-  FaStar,
   FaFire,
 } from "react-icons/fa6";
 import { FaEye, FaBug } from "react-icons/fa";
@@ -33,10 +32,10 @@ import { FaEye, FaBug } from "react-icons/fa";
 
 const API_BASE = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
 
-// Paleta amber del branding (5 niveles vacío → máximo)
+// Azul de referencia del branding (5 niveles vacío → máximo)
 const CALENDAR_THEME = {
-  dark: ["#1a1a1a", "#451a03", "#92400e", "#d97706", "#fbbf24"],
-  light: ["#f5f5f4", "#fef3c7", "#fcd34d", "#d97706", "#92400e"],
+  dark: ["#232323", "#173963", "#1f5bb0", "#2b7fe0", "#7ab8ff"],
+  light: ["#e9e9e7", "#cfe0fa", "#8fb9f5", "#4a9eff", "#14539a"],
 };
 
 export default function GitHubActivity({ username }) {

@@ -32,7 +32,7 @@ const USES = [
   {
     category: { es: "Stack diario", en: "Daily stack" },
     items: [
-      { label: "React 18 + Next.js 14/15", note: "" },
+      { label: "React 19 + Next.js 16", note: "" },
       { label: "TypeScript", note: { es: "estricto", en: "strict" } },
       { label: "Tailwind CSS + shadcn/ui", note: "" },
       { label: "Prisma + PostgreSQL", note: "" },

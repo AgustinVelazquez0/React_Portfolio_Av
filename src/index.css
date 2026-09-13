@@ -17,7 +17,7 @@
 
 :root {
   font-family: "Geist Sans", "Geist", "Inter", system-ui, sans-serif;
-  --font-display: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+  --font-display: "Geist Sans", "Geist", "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
@@ -37,10 +37,57 @@ body {
   transition: background-color var(--duration-base) var(--ease-standard);
 }
 
-/* Editorial selection — accent amber sin saturar */
+/* Selección con el azul de referencia del sistema */
 ::selection {
   background: var(--accent);
   color: var(--accent-ink);
+}
+
+/* ============================================================
+   Soporte de papel
+   El fondo deja de ser un color plano y pasa a ser una hoja: grano fino
+   e impreso encima. Es una capa fija, sin repintados durante el scroll.
+   ============================================================ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.dark body::before {
+  opacity: 0.055;
+}
+
+/* El contenido va por encima del grano */
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Margen de expediente: la línea vertical que llevan las carpetas foliadas.
+   Solo en pantallas anchas, donde hay sitio fuera de la columna de lectura. */
+.paper-margin {
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .paper-margin::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1.75rem;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--border-subtle) 4rem,
+      var(--border-subtle) calc(100% - 4rem),
+      transparent
+    );
+  }
 }
 
 /* Scroll-margin para anclas con navbar fijo */

@@ -45,12 +45,12 @@ const NOW_DATA = {
       items: {
         es: [
           "Roles full-time en producto con IA agéntica (remoto LATAM/EU).",
-          "Consultoría puntual: arquitectura AI agents, refactor a Next 14/15.",
+          "Consultoría puntual: arquitectura AI agents, refactor a Next 16.",
           "Pair programming sobre código real — siempre aprendo algo.",
         ],
         en: [
           "Full-time product roles working with agentic AI (remote LATAM/EU).",
-          "Punctual consulting: AI agent architecture, refactor to Next 14/15.",
+          "Punctual consulting: AI agent architecture, refactor to Next 16.",
           "Pair programming on real code — I always learn something.",
         ],
       },

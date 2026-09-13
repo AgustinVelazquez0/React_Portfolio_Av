@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
 import { fadeUp, stagger, viewport } from "../../lib/motion";
 import Tag from "../ui/Tag";
@@ -9,10 +8,9 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
  * AV Credentials — replaces old Certifications grid of glowing cards.
  *
  * Approach editorial:
- *   - 2 featured (BIOS Full Stack + Santander Data Science): cards principales
- *     con título display + tags neutros + link a credencial.
- *   - El resto en una grid densa de filas: institution / cert / year, con
- *     accordion para expandir todas las FreeCodeCamp.
+ *   - 1 featured (BIOS Full Stack): card principal con título display + tags
+ *     neutros + link a credencial.
+ *   - El resto en una grid densa de filas: institution / cert / year.
  *
  * Mantiene las URLs y assets originales pero reescribe el shell visual al
  * sistema de tokens (surfaces, tags, motion presets, sin glow shadows ni
@@ -31,29 +29,18 @@ const FEATURED = [
     tags: ["React", "Node.js", "MongoDB", "Express", "MERN"],
     url: "https://drive.google.com/file/d/1YKgsHIwNC8eGZc2k1cErBzAJJR2tgwSl/view?usp=drive_link",
   },
-  {
-    institution: "Santander Open Academy",
-    title: { es: "Introducción a Data Science", en: "Introduction to Data Science" },
-    year: "2024",
-    blurb: {
-      es: "Fundamentos analíticos, Python, metodologías y visualización de datos.",
-      en: "Analytical foundations, Python, methodologies and data viz.",
-    },
-    tags: ["Data Science", "Python", "Analytics"],
-    url: "https://drive.google.com/file/d/12z8akRooJ2q7XJXj5sp1TANJkpEZTOeo/view",
-  },
 ];
 
-// Orden replica el portfolio original:
-// primero los que eran "always visible" en cada bloque institucional
-// (BIOS → FCC → Santander), después los que requerían expandir.
+// Solo las que exigieron entregar proyectos evaluados. Quedaron fuera los
+// cursos de asistencia (Python, ChatGPT, habilidades digitales, inglés) y los
+// de FreeCodeCamp de nivel introductorio: enumerarlos al lado de un agente en
+// producción resta en vez de sumar.
 const OTHER = [
-  // ---- Originalmente always-visible ----
   {
-    institution: "Instituto BIOS",
-    title: { es: "Habilidades digitales profesionales", en: "Digital skills for the workplace" },
+    institution: "FreeCodeCamp",
+    title: { es: "JavaScript Algorithms & Data Structures", en: "JavaScript Algorithms & Data Structures" },
     year: "2024",
-    url: "https://drive.google.com/file/d/1FmlQ96_KjTt2A2_-JaCKlljDAejCCyYy/view",
+    url: "https://www.freecodecamp.org/certification/AgustinVelazquez/javascript-algorithms-and-data-structures-v8",
   },
   {
     institution: "FreeCodeCamp",
@@ -68,60 +55,15 @@ const OTHER = [
     url: "https://www.freecodecamp.org/certification/AgustinVelazquez/relational-database-v8",
   },
   {
-    institution: "Santander Open Academy",
-    title: { es: "English Essentials for Professional Growth", en: "English Essentials for Professional Growth" },
-    year: "2024",
-    url: "https://drive.google.com/file/d/1-wnjPOFy7Ujb_G7PwPGAUiqQ_imwr6Dx/view",
-  },
-  // ---- Originalmente expandibles (FCC + Santander) ----
-  {
-    institution: "FreeCodeCamp",
-    title: { es: "JavaScript Algorithms & Data Structures", en: "JavaScript Algorithms & Data Structures" },
-    year: "2024",
-    url: "https://www.freecodecamp.org/certification/AgustinVelazquez/javascript-algorithms-and-data-structures-v8",
-  },
-  {
     institution: "FreeCodeCamp",
     title: { es: "Quality Assurance", en: "Quality Assurance" },
     year: "2024",
     url: "https://www.freecodecamp.org/certification/AgustinVelazquez/quality-assurance-v7",
   },
-  {
-    institution: "FreeCodeCamp",
-    title: { es: "Data Visualization", en: "Data Visualization" },
-    year: "2024",
-    url: "https://www.freecodecamp.org/certification/AgustinVelazquez/data-visualization",
-  },
-  {
-    institution: "FreeCodeCamp",
-    title: { es: "Responsive Web Design", en: "Responsive Web Design" },
-    year: "2023",
-    url: "https://www.freecodecamp.org/certification/AgustinVelazquez/responsive-web-design",
-  },
-  {
-    institution: "FreeCodeCamp",
-    title: { es: "Front End Development Libraries", en: "Front End Development Libraries" },
-    year: "2023",
-    url: "https://www.freecodecamp.org/certification/AgustinVelazquez/front-end-development-libraries",
-  },
-  {
-    institution: "Santander Open Academy",
-    title: { es: "Python Programming", en: "Python Programming" },
-    year: "2024",
-    url: "https://drive.google.com/file/d/1ArqH7x6Owqm3Z6Tb3DATVXj9p258XeSJ/view",
-  },
-  {
-    institution: "Santander Open Academy",
-    title: { es: "ChatGPT para profesionales", en: "ChatGPT for professionals" },
-    year: "2024",
-    url: "https://drive.google.com/file/d/1HmojqKuGJJPOL6PuTFZmB1cGFd-WACJ7/view",
-  },
 ];
 
 export default function Certifications() {
-  const { language, t } = useTranslation();
-  const [expanded, setExpanded] = useState(false);
-  const visible = expanded ? OTHER : OTHER.slice(0, 4);
+  const { language } = useTranslation();
 
   return (
     <section
@@ -157,8 +99,8 @@ export default function Certifications() {
           className="mt-4 text-base text-ink-muted max-w-xl leading-relaxed"
         >
           {language === "es"
-            ? "Estudio formal y certificaciones online. Cada link abre la credencial original."
-            : "Formal education and online certifications. Every link opens the original credential."}
+            ? "Solo las que exigieron entregar proyectos evaluados, no asistir a un curso. Cada link abre la credencial original."
+            : "Only the ones that required submitting graded projects, not just attending a course. Every link opens the original credential."}
         </motion.p>
       </header>
 
@@ -168,7 +110,7 @@ export default function Certifications() {
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
-        className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-14"
+        className="grid grid-cols-1 gap-4 mb-14"
       >
         {FEATURED.map((cert) => (
           <motion.a
@@ -212,11 +154,10 @@ export default function Certifications() {
       </motion.div>
 
       {/* Otras — lista densa editorial.
-          Cada item maneja su propia entrada (sin variants heredados) para que
-          los items que aparecen al expandir también se animen correctamente. */}
+          Cada item maneja su propia entrada (sin variants heredados). */}
       <div className="border-t border-line-subtle">
         <AnimatePresence initial={false}>
-          {visible.map((cert, idx) => (
+          {OTHER.map((cert, idx) => (
             <motion.a
               key={cert.title.en + cert.year}
               initial={{ opacity: 0, y: 8 }}
@@ -225,7 +166,7 @@ export default function Certifications() {
               transition={{
                 duration: 0.28,
                 ease: [0, 0, 0.2, 1],
-                delay: idx < 4 ? idx * 0.04 : (idx - 4) * 0.03,
+                delay: idx * 0.04,
               }}
               href={cert.url}
               target="_blank"
@@ -255,24 +196,6 @@ export default function Certifications() {
           ))}
         </AnimatePresence>
       </div>
-
-      {OTHER.length > 4 && (
-        <div className="mt-6">
-          <button
-            type="button"
-            onClick={() => setExpanded((v) => !v)}
-            className="font-mono text-2xs uppercase tracking-mono text-ink-muted
-              hover:text-accent transition-colors"
-          >
-            {expanded
-              ? t("certifications.showLess")
-              : t("certifications.showMore").replace(
-                  "{count}",
-                  String(OTHER.length - 4)
-                )}
-          </button>
-        </div>
-      )}
     </section>
   );
 }

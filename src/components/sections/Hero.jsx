@@ -3,6 +3,7 @@ import { useTranslation } from "../../hooks/useTranslation";
 import { fadeUp, stagger, transitions } from "../../lib/motion";
 import Button from "../ui/Button";
 import Tag from "../ui/Tag";
+import FileHeader from "../brand/FileHeader";
 import { CV_URL_ES, CV_URL_EN } from "../../constants";
 import { FaArrowRight, FaGithub } from "react-icons/fa";
 
@@ -19,9 +20,11 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="pt-28 pb-16 lg:pb-24 min-h-[88vh] flex items-center"
+      className="pt-24 pb-16 lg:pb-24 min-h-[88vh] flex flex-col justify-center"
     >
-      <div className="w-full max-w-4xl">
+      <FileHeader />
+
+      <div className="w-full max-w-4xl mt-10">
         <motion.div
           variants={stagger(0.05)}
           initial="hidden"
@@ -132,11 +135,21 @@ function Hero() {
             </div>
           </motion.div>
 
+          {/* Declaración de atención — la promesa que el resto del sitio cumple */}
+          <motion.p
+            variants={fadeUp}
+            transition={{ ...transitions.standard, delay: 0.35 }}
+            className="mt-12 max-w-xl border-l-2 border-line-DEFAULT pl-4
+              text-sm text-ink-muted leading-relaxed"
+          >
+            {t("hero.attentionNote")}
+          </motion.p>
+
           {/* Hint de command palette — pista signature */}
           <motion.p
             variants={fadeUp}
             transition={{ ...transitions.standard, delay: 0.4 }}
-            className="mt-12 font-mono text-2xs uppercase tracking-mono text-ink-faint"
+            className="mt-6 font-mono text-2xs uppercase tracking-mono text-ink-faint"
           >
             {t("hero.cmdkHint")}{" "}
             <kbd

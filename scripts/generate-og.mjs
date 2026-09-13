@@ -28,7 +28,7 @@ import { Resvg } from "@resvg/resvg-js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 
-// ---- Load font (Instrument Serif via Google Fonts CSS) ----
+// ---- Load font (Geist via Google Fonts CSS) ----
 async function loadGoogleFont(family, weight = 400) {
   // satori requires TTF/OTF, not WOFF2. Force an older UA so Google Fonts
   // serves us the truetype variant.
@@ -48,11 +48,11 @@ async function loadGoogleFont(family, weight = 400) {
 }
 
 const PALETTE = {
-  bg: "#09090b",
-  surface: "#18181b",
-  ink: "#fafaf9",
-  inkMuted: "#a1a1aa",
-  accent: "#fbbf24",
+  bg: "#1a1a1a",
+  surface: "#232323",
+  ink: "#e6e6e6",
+  inkMuted: "#8a8a8a",
+  accent: "#4a9eff",
   border: "rgba(250,250,249,0.12)",
 };
 
@@ -159,8 +159,9 @@ function ogTemplate({ eyebrow, title, italicTail = "", subtitle, badge }) {
                 type: "div",
                 props: {
                   style: {
-                    fontFamily: "Instrument Serif",
-                    fontSize: 96,
+                    fontFamily: "Geist",
+                    fontWeight: 600,
+                    fontSize: 88,
                     lineHeight: 1.02,
                     letterSpacing: "-0.04em",
                     color: PALETTE.ink,
@@ -174,7 +175,7 @@ function ogTemplate({ eyebrow, title, italicTail = "", subtitle, badge }) {
                       ? {
                           type: "span",
                           props: {
-                            style: { color: PALETTE.inkMuted, fontStyle: "italic" },
+                            style: { color: PALETTE.inkMuted, fontWeight: 300 },
                             children: italicTail,
                           },
                         }
@@ -241,9 +242,9 @@ async function render(element, outPath) {
       style: "normal",
     },
     {
-      name: "Instrument Serif",
-      data: await loadGoogleFont("Instrument Serif", 400),
-      weight: 400,
+      name: "Geist",
+      data: await loadGoogleFont("Geist", 300),
+      weight: 300,
       style: "normal",
     },
   ];

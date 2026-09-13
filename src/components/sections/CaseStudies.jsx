@@ -71,7 +71,7 @@ export default function CaseStudies() {
     >
       <header className="mb-12">
         <p className="font-mono text-2xs uppercase tracking-mono text-ink-faint mb-3">
-          03 — Case studies
+          01 — Case studies
         </p>
         <motion.h2
           variants={fadeUp}
