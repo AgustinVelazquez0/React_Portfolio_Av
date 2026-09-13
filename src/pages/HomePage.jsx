@@ -1,5 +1,4 @@
 import { lazy, Suspense, useState, useEffect, useRef } from "react";
-import { track } from "@vercel/analytics";
 import Navbar from "../components/layout/Navbar.jsx";
 import Sidebar from "../components/layout/Sidebar.jsx";
 import Footer from "../components/layout/Footer.jsx";
@@ -34,16 +33,17 @@ export default function HomePage({
 
   // Profundidad de scroll. Sin esto, recortar secciones es adivinar: la
   // decisión de qué sacar de la home sale de acá, no de la intuición.
+  // Va por Umami porque los eventos personalizados de Vercel son de plan Pro.
   useEffect(() => {
     const milestones = [25, 50, 75, 100];
     const onScroll = () => {
       const scrollable = document.body.scrollHeight - window.innerHeight;
       if (scrollable <= 0) return;
-      const pct = ((window.scrollY / scrollable) * 100).toFixed(0);
+      const pct = (window.scrollY / scrollable) * 100;
       for (const m of milestones) {
         if (pct >= m && !reachedRef.current.has(m)) {
           reachedRef.current.add(m);
-          track("scroll_depth", { depth: `${m}%` });
+          window.umami?.track("scroll_depth", { depth: `${m}%` });
         }
       }
     };

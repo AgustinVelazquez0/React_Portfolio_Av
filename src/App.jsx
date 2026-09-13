@@ -3,6 +3,12 @@ import { Routes, Route } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import HomePage from "./pages/HomePage";
 
+// Umami para los eventos de profundidad de scroll. Vercel Analytics cubre las
+// páginas vistas, pero sus eventos personalizados son exclusivos del plan Pro,
+// así que la medición que decide qué recortar de la home va por acá.
+// Sin VITE_UMAMI_WEBSITE_ID no se carga nada.
+const UMAMI_ID = import.meta.env.VITE_UMAMI_WEBSITE_ID;
+
 const NowPage = lazy(() => import("./pages/NowPage"));
 const UsesPage = lazy(() => import("./pages/UsesPage"));
 const ChangelogPage = lazy(() => import("./pages/ChangelogPage"));
@@ -23,6 +29,16 @@ function App() {
     window.addEventListener("scroll", handleScrollProgress, { passive: true });
     handleScrollProgress();
     return () => window.removeEventListener("scroll", handleScrollProgress);
+  }, []);
+
+  useEffect(() => {
+    if (!UMAMI_ID) return;
+    const s = document.createElement("script");
+    s.src = "https://cloud.umami.is/script.js";
+    s.defer = true;
+    s.dataset.websiteId = UMAMI_ID;
+    document.head.appendChild(s);
+    return () => s.remove();
   }, []);
 
   // ⌘K → open command palette (global)
