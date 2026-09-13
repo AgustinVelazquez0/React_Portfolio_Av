@@ -37,8 +37,8 @@ export const CASE_STUDIES = [
       en: "WhatsApp AI SaaS — agents with real tool use",
     },
     summary: {
-      es: "SaaS multi-tenant donde el agente decide qué herramientas llamar en lugar de seguir un workflow fijo: 12 tools, 5 de escritura, contra el calendario real. Reglas de negocio validadas en la capa de herramientas y no en el prompt, failover entre 3 proveedores de LLM, webhook HMAC-SHA256 con idempotencia y pagos Stripe + MercadoPago + Paddle.",
-      en: "Multi-tenant SaaS where the agent decides which tools to call instead of following a fixed workflow: 12 tools, 5 of them writing, against the live calendar. Business rules enforced in the tool layer rather than the prompt, failover across 3 LLM providers, HMAC-SHA256 webhook with idempotency and Stripe + MercadoPago + Paddle payments.",
+      es: "SaaS multi-tenant donde el agente decide qué herramientas llamar en lugar de seguir un workflow fijo: 12 tools, 5 de escritura, contra el calendario real. Reglas de negocio validadas en la capa de herramientas y no en el prompt, failover entre 3 proveedores de LLM, webhook HMAC-SHA256 con idempotencia y pagos Stripe + MercadoPago + Paddle + PayPal.",
+      en: "Multi-tenant SaaS where the agent decides which tools to call instead of following a fixed workflow: 12 tools, 5 of them writing, against the live calendar. Business rules enforced in the tool layer rather than the prompt, failover across 3 LLM providers, HMAC-SHA256 webhook with idempotency and Stripe + MercadoPago + Paddle + PayPal payments.",
     },
     sections: [
       {
@@ -51,8 +51,8 @@ export const CASE_STUDIES = [
       {
         heading: { es: "Mi rol", en: "My role" },
         body: {
-          es: "End-to-end como solo developer: arquitectura del agente y sus 12 herramientas, schema Prisma multi-tenant, capa tRPC v11 type-safe, failover entre Groq, Gemini y OpenAI, webhook de WhatsApp Business con validación HMAC, sistema de evals propio, billing Stripe + MercadoPago + Paddle, email transaccional con Resend, dashboard NextAuth v5, suite de 223 tests con Vitest y deploy en Vercel.",
-          en: "End-to-end as solo developer: agent architecture and its 12 tools, multi-tenant Prisma schema, type-safe tRPC v11 layer, failover across Groq, Gemini and OpenAI, HMAC-validated WhatsApp Business webhook, custom evals system, Stripe + MercadoPago + Paddle billing, transactional email with Resend, NextAuth v5 dashboard, a 223-test Vitest suite and Vercel deploy.",
+          es: "End-to-end como solo developer: arquitectura del agente y sus 12 herramientas, schema Prisma multi-tenant, capa tRPC v11 type-safe, failover entre Groq, Gemini y OpenAI, webhook de WhatsApp Business con validación HMAC, sistema de evals propio, billing Stripe + MercadoPago + Paddle + PayPal, email transaccional con Resend, dashboard NextAuth v5, suite de 223 tests con Vitest y deploy en Vercel.",
+          en: "End-to-end as solo developer: agent architecture and its 12 tools, multi-tenant Prisma schema, type-safe tRPC v11 layer, failover across Groq, Gemini and OpenAI, HMAC-validated WhatsApp Business webhook, custom evals system, Stripe + MercadoPago + Paddle + PayPal billing, transactional email with Resend, NextAuth v5 dashboard, a 223-test Vitest suite and Vercel deploy.",
         },
       },
       {
@@ -114,7 +114,7 @@ export const CASE_STUDIES = [
     ],
     links: {
       demo: "https://turniagenda.com",
-      code: "https://github.com/AgustinVelazquez0/whatsapp-ai-saas",
+      codePrivate: true,
     },
     stack: [
       "Next.js 16",
@@ -128,6 +128,7 @@ export const CASE_STUDIES = [
       "Stripe",
       "MercadoPago",
       "Paddle",
+      "PayPal",
       "Upstash Redis",
       "QStash",
       "Resend",
@@ -302,7 +303,7 @@ export const CASE_STUDIES = [
     ],
     links: {
       demo: "https://getarbix.com",
-      code: "https://github.com/AgustinVelazquez0/arbibuy",
+      codePrivate: true,
     },
     stack: [
       "Next.js 16",

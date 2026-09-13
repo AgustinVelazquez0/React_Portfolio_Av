@@ -86,7 +86,7 @@ const STACK_GROUPS = {
     {
       label: "Pagos · Comunicación",
       items: [
-        ["Stripe · MercadoPago · Paddle", "suscripciones, webhooks idempotentes"],
+        ["Stripe · MercadoPago · Paddle · PayPal", "suscripciones, webhooks idempotentes"],
         ["Resend · Nodemailer", "email transaccional, dominios verificados"],
         ["Upstash Redis · QStash", "rate limit, colas, reintentos"],
         ["WhatsApp Cloud API", "webhooks, plantillas, sesiones de 24 h"],
@@ -156,7 +156,7 @@ const STACK_GROUPS = {
     {
       label: "Payments · Comms",
       items: [
-        ["Stripe · MercadoPago · Paddle", "subscriptions, idempotent webhooks"],
+        ["Stripe · MercadoPago · Paddle · PayPal", "subscriptions, idempotent webhooks"],
         ["Resend · Nodemailer", "transactional email, verified domains"],
         ["Upstash Redis · QStash", "rate limits, queues, retries"],
         ["WhatsApp Cloud API", "webhooks, templates, 24 h sessions"],

@@ -5,11 +5,14 @@ import Button from "../ui/Button";
 import Tag from "../ui/Tag";
 import FileHeader from "../brand/FileHeader";
 import { CV_URL_ES, CV_URL_EN } from "../../constants";
+import { PROJECTS } from "../../data/projects";
 import { FaArrowRight, FaGithub } from "react-icons/fa";
 
 function Hero() {
   const { t, language } = useTranslation();
   const cvUrl = language === "es" ? CV_URL_ES : CV_URL_EN;
+  // Del mismo dato que el contador de la cabecera, así no pueden discrepar.
+  const inProduction = PROJECTS.filter((p) => p.evidence === "production").length;
 
   const scrollToSection = (id) => {
     document
@@ -77,7 +80,7 @@ function Hero() {
           >
             <ProofMetric value="1" label={t("hero.proof.stores")} />
             <span className="hidden sm:inline text-ink-faint">·</span>
-            <ProofMetric value="5+" label={t("hero.proof.projects")} />
+            <ProofMetric value={String(inProduction)} label={t("hero.proof.projects")} />
             <span className="hidden sm:inline text-ink-faint">·</span>
             <ProofMetric value="2yr" label={t("hero.proof.production")} />
             <span className="hidden sm:inline text-ink-faint">·</span>

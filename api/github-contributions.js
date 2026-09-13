@@ -65,6 +65,9 @@ const QUERY = `
           websiteUrl
         }
       }
+      followers @include(if: $includeRepos) {
+        totalCount
+      }
       repositories(
         first: 100
         isFork: false
@@ -308,6 +311,7 @@ export default async function handler(req, res) {
         ...stats,
         totalStars,
         publicReposCount: users[0].repositories?.totalCount || 0,
+        followers: users[0].followers?.totalCount || 0,
       },
       topRepos,
       organizations,

@@ -143,7 +143,7 @@
     "NEXTJS_SAAS": {
       "whatsappAI": {
         "title": "WhatsApp AI SaaS",
-        "description": "Multi-tenant SaaS with a real tool-using AI agent instead of a fixed workflow: 12 tools, 5 of them writing, so the agent books, reschedules and cancels against the live calendar. Business rules — booking ownership, cancellation window, deposit policy — are enforced in the tool layer, not in the prompt. Intent-based tool routing, WhatsApp webhook with HMAC-SHA256 validation and idempotency on Upstash Redis, failover across 3 LLM providers (Groq / Gemini / OpenAI) and deferred jobs with QStash. Stripe + MercadoPago + Paddle payments covering Uruguay and LATAM, transactional email with Resend. Custom eval suite of 11 cases and 26 assertions against agent regressions, plus 223 unit tests with Vitest. Stack: Next.js 16 + React 19 + tRPC v11 + NextAuth v5 + Prisma."
+        "description": "Multi-tenant SaaS with a real tool-using AI agent instead of a fixed workflow: 12 tools, 5 of them writing, so the agent books, reschedules and cancels against the live calendar. Business rules — booking ownership, cancellation window, deposit policy — are enforced in the tool layer, not in the prompt. Intent-based tool routing, WhatsApp webhook with HMAC-SHA256 validation and idempotency on Upstash Redis, failover across 3 LLM providers (Groq / Gemini / OpenAI) and deferred jobs with QStash. Stripe + MercadoPago + Paddle + PayPal payments covering Uruguay and LATAM, transactional email with Resend. Custom eval suite of 11 cases and 26 assertions against agent regressions, plus 223 unit tests with Vitest. Stack: Next.js 16 + React 19 + tRPC v11 + NextAuth v5 + Prisma."
       },
       "arbibuy": {
         "title": "Arbix — Multi-marketplace Arbitrage Platform",
@@ -153,7 +153,7 @@
     "exercisesTitle": "Minor exhibits",
     "exercisesNote": "Work deployed without real usage, plus practice exercises. The code is public and auditable; it does not weigh the same as the work above and I do not present it as if it did.",
     "codePrivate": "Private code",
-    "codePrivateNote": "Client-owned private repository. I walk through it live on a call."
+    "codePrivateNote": "My own commercial product, private repository. I walk through it live on a call."
   },
   "experience": {
     "title": "Experience",

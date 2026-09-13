@@ -178,6 +178,8 @@ function CaseStudyCard({ cs, index, language, onOpen }) {
 }
 
 function CaseStudyOverlay({ cs, language, onClose }) {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") onClose();
@@ -373,6 +375,17 @@ function CaseStudyOverlay({ cs, language, onClose }) {
                   leadingIcon={FaGooglePlay}
                 >
                   Play Store
+                </Button>
+              ) : null}
+              {cs.links.codePrivate ? (
+                <Button
+                  variant="ghost"
+                  size="md"
+                  disabled
+                  leadingIcon={FaGithub}
+                  title={t("projects.codePrivateNote")}
+                >
+                  {t("projects.codePrivate")}
                 </Button>
               ) : null}
               {cs.links.code ? (

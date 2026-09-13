@@ -84,14 +84,20 @@ export default function GitHubActivity({ username }) {
           contribPromise,
         ]);
 
-        if (!userRes.ok) throw new Error("user fetch failed");
-
-        const user = await userRes.json();
+        // La API pública de GitHub da 60 pedidos por hora y por IP, así que a un
+        // visitante cualquiera le puede fallar. Nuestro backend ya trae repos,
+        // followers y stars con token, así que si esto falla el widget degrada
+        // en vez de mostrar un error en la sección que promete evidencia.
+        const user = userRes.ok ? await userRes.json() : null;
         const events = eventsRes.ok ? await eventsRes.json() : [];
 
         if (cancelled) return;
 
-        setProfile(user);
+        if (!user && !contrib?.contributions) {
+          throw new Error("github unavailable");
+        }
+
+        if (user) setProfile(user);
         if (contrib?.contributions) setContributions(contrib);
 
         const recentPushes = events
@@ -207,16 +213,20 @@ export default function GitHubActivity({ username }) {
       ) : null}
 
       {/* Profile stats — Repos / Followers / Stars / Últimos 12 meses */}
-      {profile ? (
+      {profile || stats ? (
         <div className="flex items-center gap-5 mb-4 flex-wrap">
-          <Stat
-            label={language === "es" ? "Repos" : "Repos"}
-            value={stats?.publicReposCount ?? profile.public_repos}
-          />
-          <Stat
-            label={language === "es" ? "Seguidores" : "Followers"}
-            value={profile.followers}
-          />
+          {(stats?.publicReposCount ?? profile?.public_repos) != null ? (
+            <Stat
+              label={language === "es" ? "Repos" : "Repos"}
+              value={stats?.publicReposCount ?? profile?.public_repos}
+            />
+          ) : null}
+          {(stats?.followers ?? profile?.followers) != null ? (
+            <Stat
+              label={language === "es" ? "Seguidores" : "Followers"}
+              value={stats?.followers ?? profile?.followers}
+            />
+          ) : null}
           {stats?.totalStars != null ? (
             <Stat
               label={language === "es" ? "Stars" : "Stars"}

@@ -81,8 +81,8 @@ const CLAIMS = [
   {
     grade: "medium",
     claim: {
-      es: "Cobros con Stripe, MercadoPago y Paddle funcionando",
-      en: "Working payments with Stripe, MercadoPago and Paddle",
+      es: "Cobros con Stripe, MercadoPago, Paddle y PayPal funcionando",
+      en: "Working payments with Stripe, MercadoPago, Paddle and PayPal",
     },
     backing: {
       es: "El checkout se puede recorrer en vivo, pero el código que lo sostiene es privado.",

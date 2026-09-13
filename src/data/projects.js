@@ -55,6 +55,7 @@ export const PROJECTS = [
       "Stripe",
       "MercadoPago",
       "Paddle",
+      "PayPal",
       "Upstash Redis",
       "QStash",
       "Resend",
@@ -178,7 +179,7 @@ export const PROJECTS = [
     tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT"],
     links: {
       demo: "https://corner-books-log.onrender.com/register",
-      front: "https://github.com/AgustinVelazquez0/library-front-end",
+      front: "https://github.com/AgustinVelazquez0/corner-books-log",
       back: "https://github.com/AgustinVelazquez0/library-back-end",
     },
   },
@@ -241,7 +242,7 @@ export const PROJECTS = [
     descriptionKey: "projects.JS.RolePlayingGame.description",
     tech: ["JavaScript", "Game Logic", "HTML5", "CSS3"],
     links: {
-      code: "https://github.com/AgustinVelazquez0/Role-Playing-Game",
+      code: "https://github.com/AgustinVelazquez0/role_playing_game",
     },
   },
 ];

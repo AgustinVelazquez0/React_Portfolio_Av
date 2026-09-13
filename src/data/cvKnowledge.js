@@ -29,8 +29,8 @@ export const CV_FACTS = {
   signatureProjects: [
     {
       name: "WhatsApp AI SaaS",
-      what: "SaaS multi-tenant con agente IA con tool use real (no workflow): 12 herramientas, 5 de escritura, con las reglas de negocio validadas en la capa de tools y no en el prompt. Ruteo de tools por intención, failover entre Groq, Gemini y OpenAI, webhook HMAC-SHA256 con idempotencia en Upstash Redis, pagos Stripe + MercadoPago + Paddle. 11 casos de eval con 26 asserts y 223 tests con Vitest.",
-      stack: "Next.js 16 · React 19 · tRPC v11 · NextAuth v5 · Prisma · PostgreSQL · Groq / Gemini / OpenAI · Stripe · MercadoPago · Paddle · Upstash Redis · QStash · Resend · Zod · Vitest · Vercel",
+      what: "SaaS multi-tenant con agente IA con tool use real (no workflow): 12 herramientas, 5 de escritura, con las reglas de negocio validadas en la capa de tools y no en el prompt. Ruteo de tools por intención, failover entre Groq, Gemini y OpenAI, webhook HMAC-SHA256 con idempotencia en Upstash Redis, pagos Stripe + MercadoPago + Paddle + PayPal. 11 casos de eval con 26 asserts y 223 tests con Vitest.",
+      stack: "Next.js 16 · React 19 · tRPC v11 · NextAuth v5 · Prisma · PostgreSQL · Groq / Gemini / OpenAI · Stripe · MercadoPago · Paddle · PayPal · Upstash Redis · QStash · Resend · Zod · Vitest · Vercel",
       url: "https://turniagenda.com",
     },
     {

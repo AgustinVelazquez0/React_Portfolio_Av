@@ -143,7 +143,7 @@
     "NEXTJS_SAAS": {
       "whatsappAI": {
         "title": "WhatsApp AI SaaS",
-        "description": "SaaS multi-tenant con un agente de IA con herramientas reales en lugar de un workflow fijo: 12 tools, 5 de ellas de escritura, así el agente reserva, reagenda y cancela contra el calendario real. Las reglas de negocio —dueño de la reserva, ventana de cancelación, política de seña— se validan en la capa de herramientas, no en el prompt. Ruteo de tools por intención, webhook de WhatsApp con validación HMAC-SHA256 e idempotencia en Upstash Redis, failover entre 3 proveedores de LLM (Groq / Gemini / OpenAI) y jobs diferidos con QStash. Pagos Stripe + MercadoPago + Paddle para cubrir Uruguay y LATAM, email transaccional con Resend. Suite propia de 11 casos de eval con 26 asserts contra regresiones del agente, más 223 tests unitarios con Vitest. Stack: Next.js 16 + React 19 + tRPC v11 + NextAuth v5 + Prisma."
+        "description": "SaaS multi-tenant con un agente de IA con herramientas reales en lugar de un workflow fijo: 12 tools, 5 de ellas de escritura, así el agente reserva, reagenda y cancela contra el calendario real. Las reglas de negocio —dueño de la reserva, ventana de cancelación, política de seña— se validan en la capa de herramientas, no en el prompt. Ruteo de tools por intención, webhook de WhatsApp con validación HMAC-SHA256 e idempotencia en Upstash Redis, failover entre 3 proveedores de LLM (Groq / Gemini / OpenAI) y jobs diferidos con QStash. Pagos Stripe + MercadoPago + Paddle + PayPal para cubrir Uruguay y LATAM, email transaccional con Resend. Suite propia de 11 casos de eval con 26 asserts contra regresiones del agente, más 223 tests unitarios con Vitest. Stack: Next.js 16 + React 19 + tRPC v11 + NextAuth v5 + Prisma."
       },
       "arbibuy": {
         "title": "Arbix — Plataforma de Arbitraje Multi-marketplace",
@@ -153,7 +153,7 @@
     "exercisesTitle": "Anexos menores",
     "exercisesNote": "Trabajos desplegados sin uso real y ejercicios de práctica. El código es público y auditable; no pesan lo mismo que lo de arriba y no los presento como si lo hicieran.",
     "codePrivate": "Código privado",
-    "codePrivateNote": "Repositorio privado del cliente. Lo reviso en vivo en una llamada."
+    "codePrivateNote": "Producto comercial propio, repositorio privado. Lo recorro en vivo en una llamada."
   },
   "experience": {
     "title": "Experiencia",

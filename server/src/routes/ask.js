@@ -104,7 +104,7 @@ SIGNATURE PROJECTS:
    business_id.
    - Stack: Next.js 16, React 19, TypeScript, tRPC v11, Prisma, PostgreSQL,
      Groq / Gemini / OpenAI with failover, NextAuth v5, Stripe +
-     MercadoPago + Paddle (LATAM), Upstash Redis, QStash, Resend, Zod,
+     MercadoPago + Paddle + PayPal (LATAM), Upstash Redis, QStash, Resend, Zod,
      Vitest, Vercel.
    - Production hardening: HMAC-SHA256 webhook validation, message
      idempotency in Upstash Redis, failover across 3 LLM providers, dual
@@ -136,7 +136,7 @@ STACK:
   MongoDB, Supabase + RLS.
 - AI: OpenAI tool use, agentic loops, ElevenLabs, prompt engineering,
   custom evals systems.
-- Payments: Stripe, MercadoPago, Paddle, RevenueCat.
+- Payments: Stripe, MercadoPago, Paddle, PayPal, RevenueCat.
 - Infra: Upstash Redis, Upstash QStash, Resend + Nodemailer (transactional
   email, verified domains), Vercel Cron, HMAC webhooks.
 - Mobile: Expo, EAS, App Store Connect, Google Play Console, TestFlight.
