@@ -5,6 +5,7 @@ import { CASE_STUDIES } from "../../data/caseStudies";
 import { fadeUp, viewport, transitions } from "../../lib/motion";
 import Tag from "../ui/Tag";
 import Button from "../ui/Button";
+import DemoVideo from "../ui/DemoVideo";
 import {
   FaArrowUpRightFromSquare,
   FaGithub,
@@ -245,6 +246,18 @@ function CaseStudyOverlay({ cs, language, onClose }) {
 
           {/* Body */}
           <div className="px-6 lg:px-10 py-8 space-y-10">
+            {/* Demo, solo si el caso tiene pieza en video */}
+            {cs.video ? (
+              <div className="max-w-md">
+                <DemoVideo
+                  src={cs.video.src}
+                  poster={cs.video.poster}
+                  label={cs.video.label[language]}
+                  nature={cs.video.nature[language]}
+                />
+              </div>
+            ) : null}
+
             {/* Metrics grid */}
             <div className="grid grid-cols-3 gap-4 -mt-2">
               {cs.metrics.map((m) => (

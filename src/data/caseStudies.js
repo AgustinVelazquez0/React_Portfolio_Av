@@ -15,6 +15,17 @@ export const CASE_STUDIES = [
     slug: "whatsapp-ai-saas",
     image: whatsappImg,
     accent: "var(--accent)",
+    // La pieza es una recreación animada del flujo, no una captura de una
+    // conversación real. Se declara para que no se lea como prueba.
+    video: {
+      src: "/videos/turnia-demo.mp4",
+      poster: "/videos/turnia-demo-poster.jpg",
+      label: {
+        es: "El agente resuelve una reserva a las 23:47, sin nadie del otro lado.",
+        en: "The agent books an appointment at 23:47, with nobody on the other side.",
+      },
+      nature: { es: "Demo animada · no es captura", en: "Animated demo · not a capture" },
+    },
     tag: { label: "Agentic AI", variant: "accent" },
     metrics: [
       { value: "12", label: { es: "tools · 5 de escritura", en: "tools · 5 writing" } },
