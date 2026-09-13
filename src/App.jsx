@@ -6,8 +6,8 @@ import HomePage from "./pages/HomePage";
 // Umami para los eventos de profundidad de scroll. Vercel Analytics cubre las
 // páginas vistas, pero sus eventos personalizados son exclusivos del plan Pro,
 // así que la medición que decide qué recortar de la home va por acá.
-// Sin VITE_UMAMI_WEBSITE_ID no se carga nada.
-const UMAMI_ID = import.meta.env.VITE_UMAMI_WEBSITE_ID;
+// El identificador no es secreto: viaja en el script que recibe cada visitante.
+const UMAMI_ID = "6144bbe9-4a28-431f-b3e3-f0277c77899a";
 
 const NowPage = lazy(() => import("./pages/NowPage"));
 const UsesPage = lazy(() => import("./pages/UsesPage"));
@@ -32,7 +32,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (!UMAMI_ID) return;
+    // Solo en producción: si no, las visitas mías en local ensucian la medición.
+    if (!import.meta.env.PROD) return;
     const s = document.createElement("script");
     s.src = "https://cloud.umami.is/script.js";
     s.defer = true;
