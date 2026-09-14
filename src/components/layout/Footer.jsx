@@ -1,8 +1,12 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa6";
+import { FaLinkedin, FaGithub, FaEnvelope, FaChartLine } from "react-icons/fa6";
 import { useTranslation } from "../../hooks/useTranslation";
 import { CONTACT } from "../../constants";
 import AVLogo from "../brand/AVLogo";
+
+const UMAMI_PANEL =
+  "https://cloud.umami.is/analytics/us/websites/6144bbe9-4a28-431f-b3e3-f0277c77899a/events";
 
 const FOOTER_LINKS = [
   { to: "/now", label: "/now" },
@@ -13,6 +17,17 @@ const FOOTER_LINKS = [
 function Footer() {
   const { t, language } = useTranslation();
   const year = new Date().getFullYear();
+
+  // Atajo al panel de métricas, visible solo en mi navegador.
+  // Se enciende con ?admin=1 y se apaga con ?admin=0. No es una medida de
+  // seguridad ni pretende serlo: el panel de Umami pide sesión igual.
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    const param = new URLSearchParams(window.location.search).get("admin");
+    if (param === "1") localStorage.setItem("av:admin", "1");
+    if (param === "0") localStorage.removeItem("av:admin");
+    setIsAdmin(localStorage.getItem("av:admin") === "1");
+  }, []);
 
   return (
     <footer className="border-t border-line-DEFAULT py-12 mt-8">
@@ -86,6 +101,21 @@ function Footer() {
             >
               <FaEnvelope />
             </a>
+            {isAdmin ? (
+              <a
+                href={UMAMI_PANEL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Analytics"
+                title={language === "es" ? "Mis métricas" : "My analytics"}
+                className="w-9 h-9 rounded-md inline-flex items-center justify-center
+                  border border-accent/40 text-accent
+                  hover:border-accent hover:bg-accent/10
+                  transition-colors duration-fast"
+              >
+                <FaChartLine />
+              </a>
+            ) : null}
           </div>
           <p className="text-xs text-ink-muted mt-2">
             © {year} Agustin Velazquez.
